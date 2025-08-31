@@ -12,6 +12,8 @@ output:
     highlight: kate
     css: style.css
     language: pt-PT 
+    config:
+      download: ["pdf"]
   bookdown::pdf_document2:
     always_allow_html: true
     number_sections: true
