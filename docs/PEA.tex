@@ -203,9 +203,9 @@ ISEG, Setembro de 2025
 2025 \textbar{} Nuno M. Brites \textbar{}
 \href{mailto:nbrites@iseg.ulisboa.pt}{\nolinkurl{nbrites@iseg.ulisboa.pt}}
 
-\chapter{Introdução aos processos estocásticos}\label{introduuxe7uxe3o-aos-processos-estocuxe1sticos}
+\chapter{Introdução aos processos estocásticos}\label{introducao-aos-processos-estocasticos}
 
-\section{Introdução}\label{introduuxe7uxe3o}
+\section{Conceitos fundamentais}\label{conceitos-fundamentais}
 
 Iniciamos esta secção com uma breve revisão de conceitos fundamentais de probabilidade e variáveis aleatórias. Em seguida, introduzimos o conceito de processo estocástico, que é uma coleção de variáveis aleatórias indexadas por um conjunto de parâmetros, geralmente representando o tempo. Por fim, exploramos os tipos clássicos de processos estocásticos, como os processos com incrementos independentes e estacionários, bem como os processos estacionários em sentido forte e fraco.
 
@@ -587,9 +587,9 @@ vez, \(t = 1, 2, \ldots\)
 
 \end{exercise}
 
-\section{Tipos clássicos de processos estocásticos}\label{tipos-cluxe1ssicos-de-processos-estocuxe1sticos}
+\section{Tipos clássicos de processos estocásticos}\label{tipos-classicos-de-processos-estocasticos}
 
-\subsection{Processos de incrementos independentes e estacionários}\label{processos-de-incrementos-independentes-e-estacionuxe1rios}
+\subsection{Processos de incrementos independentes e estacionários}\label{processos-de-incrementos-independentes-e-estacionarios}
 
 \begin{definition}[Processo com incrementos inpedendentes]
 \(\{X_t, t \in T\}\) é um PE com \textbf{incrementos independentes} sse
@@ -627,7 +627,7 @@ Num PE com incrementos estacionários, a distribuição de \(X_{t_{1+h}}-X_{t_1}
 \(X_{t_{2+h}}-X_{t_2}\), \(\forall ~ t_1,t_2 \in T\) e \(\forall ~ h \in \mathbb{R}_0^+\) tais que \(t_1+h, ~t_2+h \in T.\)
 \end{remark}
 
-\subsection{Processo estocástico real de 2ª ordem}\label{processo-estocuxe1stico-real-de-2uxaa-ordem}
+\subsection{Processo estocástico real de 2ª ordem}\label{processo-estocastico-real-de-2-ordem}
 
 \begin{definition}[Processo estocástico real de 2ª ordem]
 
@@ -674,7 +674,7 @@ Chama-se \textbf{Ruído Branco Gaussiano} a um PE \(\{\varepsilon_t, ~t \in T\}\
 
 \end{example}
 
-\subsection{Processos estacionários}\label{processos-estacionuxe1rios}
+\subsection{Processos estacionários}\label{processos-estacionarios}
 
 \begin{definition}[Processo estacionário em sentido forte]
 Diz-se que um PE \(\{X_t,~ t \in T\}\) é \textbf{estacionário em sentido forte} (ou fortemente estacionário) se:
@@ -1057,11 +1057,11 @@ Assim, uma cadeia de Markov pode interpretar-se com um PE cujo desenvolvimento s
 
 \chapter{Cadeias de Markov em tempo discreto}\label{cadeias-de-markov-em-tempo-discreto}
 
-\section{Introdução}\label{introduuxe7uxe3o-1}
+\section{Introdução}\label{introducao}
 
 Uma cadeia de Markov em tempo discreto, \(\{X_t, t \in T\}\), é um PE de Markov cujo espaço de estados é \textbf{finito} ou \textbf{infinito numerável}.
 
-\subsection{Conceitos básicos}\label{conceitos-buxe1sicos}
+\subsection{Conceitos básicos}\label{conceitos-basicos}
 
 \begin{definition}[Cadeia de Markov em tempo discreto]
 Um PE em tempo discreto \((X_n, ~n \in \mathbb{N}_0)\) com espaço de estados \(E\) discreto é uma \textbf{C.M. em tempo discreto} sse satisfaz a propriedade de Markov
@@ -1335,7 +1335,7 @@ O Teorema anterior pode ser re-escrito como
 Assim, \(P_{i,j}^m\) representa o elemento \((i,j)\) da matriz potência de ordem \(m\) de \(\mathbb{P}\).
 \end{theorem}
 
-\section{Classificação de estados de uma C.M.}\label{classificauxe7uxe3o-de-estados-de-uma-c.m.}
+\section{Classificação de estados de uma C.M.}\label{classificacao-de-estados-de-uma-c-m}
 
 Torna-se importante o estudo limite de \(P_{i,j}^n\) quando \(n \to +\infty\). Espera-se que a influência do estado inicial \(i\) diminua com o tempo, e que o limite de \(P_{i,j}^n\) quando \(n \to +\infty\) seja independente de \(i\).
 
@@ -1914,7 +1914,7 @@ Uma dada empresa identificou seis estados associados ao comportamento diário do
 
 \end{exercise}
 
-\subsection{Decomposição do espaço de estados}\label{decomposiuxe7uxe3o-do-espauxe7o-de-estados}
+\subsection{Decomposição do espaço de estados}\label{decomposicao-do-espaco-de-estados}
 
 Agora pretendemos decompor o espaço de estados de uma cadeia de Markov finita em subclasses. O objetivo é estudar propriedades da cadeia pela análise das propriedades de cada classe separadamente.
 
@@ -2113,7 +2113,7 @@ Nem todos os conjuntos fechados são classes. Atente-se ao exemplo anterior:
 
 \end{remark}
 
-\section{Probabilidades de absorção em estados recorrentes}\label{probabilidades-de-absoruxe7uxe3o-em-estados-recorrentes}
+\section{Probabilidades de absorção em estados recorrentes}\label{probabilidades-de-absorcao-em-estados-recorrentes}
 
 Um dos cálculos de interesse na teoria das cadeias de Markov está relacionado com o tempo (ou número de transições) necessário, para que, a cadeia partindo de algum estado inicial, \textbf{atinja algum estado terminal de interesse}.
 
@@ -2266,7 +2266,7 @@ Os negócios do José flutuam em anos sucessivos entre 3 estados: 0 (bancarrota)
 
 \section{Teoremas limite}\label{teoremas-limite}
 
-\subsection{Distribuição estacionária e distribuição limite}\label{distribuiuxe7uxe3o-estacionuxe1ria-e-distribuiuxe7uxe3o-limite}
+\subsection{Distribuição estacionária e distribuição limite}\label{distribuicao-estacionaria-e-distribuicao-limite}
 
 Seja \((X_n: ~n \in \mathbb{N}_0)\) uma C. M. definida num espaço de estados \(E\), com matriz de transição \(\mathbb{P}\) e distribuição inicial \(P(X_0=i), ~i \in E\). Existem duas questões pertinentes:
 
@@ -2405,7 +2405,7 @@ Uma C.M. irredutível, recorrente positiva, e com distribuição inicial estacio
 \[\pi_j=\lim\limits_{n \to +\infty} P(X_n=j).\]
 \end{corollary}
 
-\subsection{\texorpdfstring{Comportamento limite de \(P_{ij}^n\) quando \(n\to+\infty\)}{Comportamento limite de P\_\{ij\}\^{}n quando n\textbackslash to+\textbackslash infty}}\label{comportamento-limite-de-p_ijn-quando-ntoinfty}
+\subsection{\texorpdfstring{Comportamento limite de \(P_{ij}^n\) quando \(n\to+\infty\)}{Comportamento limite de P\_\{ij\}\^{}n quando n\textbackslash to+\textbackslash infty}}\label{comportamento-limite-de-p-ij-n-quando-n-to-infty}
 
 Qual a relação entre a existência de uma distribuição estacionária e o comportamento limite das probabilidades de transição a \(n\) passos, quando \(n \to +\infty\)?
 
@@ -2830,7 +2830,7 @@ Considere uma C.M. \((X_{n}, ~n=0,1,\dots)\) com espaço de estados \(E=\{1,2\}\
 
 \end{exercise}
 
-\chapter{Cadeias de Markov em tempo contínuo}\label{cadeias-de-markov-em-tempo-contuxednuo}
+\chapter{Cadeias de Markov em tempo contínuo}\label{cadeias-de-markov-em-tempo-continuo}
 
 Neste capítulo iremos considerar \((X_t, ~ t \in \mathbb{R}_0^+)\) uma C.M. com valores em \(\mathbb{N}_0\) e espaço de parâmetro \(\mathbb{R}_0^+\).
 
@@ -2839,7 +2839,7 @@ Vamos admitir que \((X_t, ~ t \in \mathbb{R}_0^+)\) é homogénea, isto é, tem 
 \[\forall ~t >0, ~P_{ij}(t)=P(X_{t+n}=j \mid X_n=i), \quad i,j \in \mathbb{N}_0\]
 é independente de \(n \geq 0\).
 
-\section{Processo de Poisson homogéneo}\label{processo-de-poisson-homoguxe9neo}
+\section{Processo de Poisson homogéneo}\label{processo-de-poisson-homogeneo}
 
 O processo de Poisson homogéneo é um processo estocástico que modela a ocorrência de eventos aleatórios ao longo do tempo, onde os eventos ocorrem de forma independente e com uma taxa constante. É frequentemente utilizado para modelar fenómenos como chamadas telefónicas recebidas num call center, chegadas de clientes a um serviço, ou falhas em sistemas, entre outros.
 
@@ -3490,7 +3490,7 @@ Seja \((N(t), ~t \geq 0)\) um processo de nascimento puro com \(N(0) = I\) e tax
 
 \section{Processo de nascimento e morte}\label{processo-de-nascimento-e-morte}
 
-\subsection{Definição e equações de Chapman-Kolmogorov}\label{definiuxe7uxe3o-e-equauxe7uxf5es-de-chapman-kolmogorov}
+\subsection{Definição e equações de Chapman-Kolmogorov}\label{definicao-e-equacoes-de-chapman-kolmogorov}
 
 \begin{definition}[Processo de nascimento e morte]
 Um processo estocástico \((X_t, ~ t \in \mathbb{R}_0^+)\), com valores em \(\mathbb{N}_0\), é um \textbf{processo de nascimento e morte} com taxas \(\{\lambda_k, ~k \in \mathbb{N}_0\}\) e \(\{\mu_k, ~k \in \mathbb{N}_0\}\) se é uma cadeia de markov em tempo contínuo homogénea, satisfazendo os axiomas:
@@ -3643,7 +3643,7 @@ Uma possível realização de \(X_t\) é:
 O movimento é análogo ao do caminho aleatório, com a diferença de que o tempo de espera em cada estado é uma v.a. com distribuição exponencial.
 \end{remark}
 
-\subsection{Equações diferenciais de processos de nascimento e morte}\label{equauxe7uxf5es-diferenciais-de-processos-de-nascimento-e-morte}
+\subsection{Equações diferenciais de processos de nascimento e morte}\label{equacoes-diferenciais-de-processos-de-nascimento-e-morte}
 
 As equações de Chapman-Kolmogorov descrevem a evolução das probabilidades de transição ao longo do tempo. A partir destas equações, podemos deduzir as equações diferenciais que descrevem a evolução das probabilidades de transição em função do tempo.
 
@@ -3859,7 +3859,7 @@ Considere ainda um processo de Poisson com parâmetro \(\lambda\), isto é, \((N
 
 \end{exercise}
 
-\chapter{Complementos de processos estocásticos}\label{complementos-de-processos-estocuxe1sticos}
+\chapter{Complementos de processos estocásticos}\label{complementos-de-processos-estocasticos}
 
 \section{Processo de Wiener}\label{processo-de-wiener}
 
@@ -4161,7 +4161,7 @@ A flutuação do preço de determinado tipo de acções pode ser descrita por um
 
 \end{exercise}
 
-\section{O integral de Itô}\label{o-integral-de-ituxf4}
+\section{O integral de Itô}\label{o-integral-de-ito}
 
 \begin{remark}
 No que se segue, adoptámos a seguinte notação para esperança matemática e probabilidade condicionadas:
@@ -5056,8 +5056,7 @@ X_t=\gamma+\exp\left\{e^{-\beta t}\left(\ln(x_0-\gamma)+\frac{1}{\beta}\left(\al
 
 \(\,\)
 
-\chapter*{Bibliografia}\label{bibliografia}
-\addcontentsline{toc}{chapter}{Bibliografia}
+\chapter{Bibliografia}\label{bibliografia}
 
 \textbf{Principal}
 

@@ -63,7 +63,7 @@ editor_options:
 
 
 
-#  {.unnumbered}
+#  {.unnumbered} 
 
 
 \begin{center}\includegraphics[width=0.4\linewidth]{figures/iseg} \end{center}
@@ -115,10 +115,10 @@ $\,$
 
 
 
-# Introdução aos processos estocásticos
+# Introdução aos processos estocásticos {#introducao-aos-processos-estocasticos}
 
 
-## Introdução
+## Conceitos fundamentais {#conceitos-fundamentais}
 
 Iniciamos esta secção com uma breve revisão de conceitos fundamentais de probabilidade e variáveis aleatórias. Em seguida, introduzimos o conceito de processo estocástico, que é uma coleção de variáveis aleatórias indexadas por um conjunto de parâmetros, geralmente representando o tempo. Por fim, exploramos os tipos clássicos de processos estocásticos, como os processos com incrementos independentes e estacionários, bem como os processos estacionários em sentido forte e fraco.
 
@@ -429,10 +429,10 @@ vez, $t = 1, 2, \ldots$
 (g) Determine a distribuição da v.a. "número de provas necessárias até à ocorrência de dois sucessos consecutivos de Bernoulli".
 :::
 
-## Tipos clássicos de processos estocásticos
+## Tipos clássicos de processos estocásticos {#tipos-classicos-de-processos-estocasticos}
 
 
-### Processos de incrementos independentes e estacionários
+### Processos de incrementos independentes e estacionários {#processos-de-incrementos-independentes-e-estacionarios}
 
 
 ::: {.definition name="Processo com incrementos inpedendentes"}
@@ -472,7 +472,7 @@ $X_{t_{2+h}}-X_{t_2}$, $\forall ~ t_1,t_2 \in T$ e $\forall ~ h \in \mathbb{R}_0
 :::
 
 
-### Processo estocástico real de 2ª ordem
+### Processo estocástico real de 2ª ordem {#processo-estocastico-real-de-2-ordem}
 
 ::: {.definition name="Processo estocástico real de 2ª ordem"}
 $\{X_t, t \in T\}$ é um **PE real de 2ª ordem** sse: $$\forall ~t \in T: E(X_t^2)<+\infty.$$
@@ -509,7 +509,7 @@ Chama-se **Ruído Branco Gaussiano** a um PE $\{\varepsilon_t, ~t \in T\}$ que s
 -   $\forall ~n \in \mathbb{N}, \forall ~t_1, t_2, \ldots, t_n \in T: (\varepsilon_{t_1}, \varepsilon_{t_2}, \ldots, \varepsilon_{t_n})$ é um vetor aleatório Gaussiano.
 :::
 
-### Processos estacionários
+### Processos estacionários {#processos-estacionarios}
 
 ::: {.definition name="Processo estacionário em sentido forte"}
 Diz-se que um PE $\{X_t,~ t \in T\}$ é **estacionário em sentido forte** (ou fortemente estacionário) se:
@@ -719,7 +719,7 @@ $$Y_t=\varepsilon_t -\theta \varepsilon_{t-1}-\dfrac{\theta}{2}\varepsilon_{t-2}
 (b) Determine a função de autocorrelação do processo $Y$.
 :::
 
-### Martingalas
+### Martingalas {#martingalas}
 
 Do ponto de vista da modelação, as martingalas são apropriadas para modelar fenómenos aleatórios, tais como jogos de azar.
 
@@ -782,7 +782,7 @@ Seja $(X_n, ~n=0,1,2,\dots)$ um PE com espaço de estados $\mathbb{N}_0$, com m�
 (c) Sabendo que $Var(X_n)=1$, o que pode afirmar quanto à estacionariedade fraca do processo $(X_n, ~n=0,1,2,\dots)$?
 :::
 
-### Processos de Markov
+### Processos de Markov {#processos-de-markov}
 
 Os processos de Markov são apropriados na modelação de fenómenos aleatórios cujo comportamento futuro não é alterado pelo conhecimento do seu passado, apenas interessa conhecer o estado presente, ou seja, a probabilidade de que o sistema físico esteja num determinado estado num dado instante $t$ pode deduzir-se a partir do conhecimento desse estado num instante qualquer anterior e essa probabilidade não depende da "história" do sistema antes de $t$.
 
@@ -809,13 +809,13 @@ Os processos de Markov, como quaisquer processos, são classificados de acordo c
 Assim, uma cadeia de Markov pode interpretar-se com um PE cujo desenvolvimento se pode considerar como uma série de transições entre valores determinados que têm a propriedade de que a distribuição de probabilidade do estado futuro do processo, sabendo-se que ele está num dado estado, depende apenas deste estado e não do modo de como o processo lá chegou. As  C.M. são classificadas em __discretas__ ou __contínuas__. Nesta UC iremos abordar ambos os casos. 
 :::
 
-# Cadeias de Markov em tempo discreto
+# Cadeias de Markov em tempo discreto {#cadeias-de-markov-em-tempo-discreto}
 
-## Introdução
+## Introdução {#introducao}
 
 Uma cadeia de Markov em tempo discreto, $\{X_t, t \in T\}$, é um PE de Markov cujo espaço de estados é __finito__ ou __infinito numerável__.
 
-### Conceitos básicos
+### Conceitos básicos {#conceitos-basicos}
 
 :::{.definition name="Cadeia de Markov em tempo discreto"}
 Um PE em tempo discreto $(X_n, ~n \in \mathbb{N}_0)$ com espaço de estados $E$ discreto é uma __C.M. em tempo discreto__ sse satisfaz a propriedade de Markov
@@ -1049,7 +1049,7 @@ $$P^{m+n}_{ij}=\sum\limits_{k \in E}P_{ik}^m ~ P_{kj}^n, \quad \forall ~i,j \in 
 Assim, $P_{i,j}^m$ representa o elemento $(i,j)$ da matriz potência de ordem $m$ de $\mathbb{P}$.
 :::
 
-## Classificação de estados de uma C.M.
+## Classificação de estados de uma C.M. {#classificacao-de-estados-de-uma-c-m}
 
 Torna-se importante o estudo limite de $P_{i,j}^n$ quando $n \to +\infty$. Espera-se que a influência do estado inicial $i$ diminua com o tempo, e que o limite de $P_{i,j}^n$ quando $n \to +\infty$ seja independente de $i$.  
 
@@ -1564,7 +1564,7 @@ $$\mathbb{P}= \begin{bmatrix}
 (b) Identifique os estados transitórios e os estados recorrentes.
 :::
 
-### Decomposição do espaço de estados
+### Decomposição do espaço de estados {#decomposicao-do-espaco-de-estados}
 
 Agora pretendemos decompor o espaço de estados de uma cadeia de Markov finita em subclasses. O objetivo é estudar propriedades da cadeia pela análise das propriedades de cada classe separadamente.
 
@@ -1733,7 +1733,7 @@ Nem todos os conjuntos fechados são classes. Atente-se ao exemplo anterior:
 :::
 
 
-## Probabilidades de absorção em estados recorrentes
+## Probabilidades de absorção em estados recorrentes {#probabilidades-de-absorcao-em-estados-recorrentes}
 
 Um dos cálculos de interesse na teoria das cadeias de Markov está relacionado com o tempo (ou número de transições) necessário, para que, a cadeia partindo de algum estado inicial, __atinja algum estado terminal de interesse__.
 
@@ -1870,9 +1870,9 @@ $$
 A nova cadeia de Markov é iredutível e aperiódica? Sabendo que os negócios do José estão a correr bem (estado 2), qual a probabilidade da mãe do José ter necessidade de dar novamente dinheiro ao filho apenas daqui a 3 anos?
 :::
 
-## Teoremas limite
+## Teoremas limite {#teoremas-limite}
 
-### Distribuição estacionária e distribuição limite
+### Distribuição estacionária e distribuição limite {#distribuicao-estacionaria-e-distribuicao-limite}
 
 Seja $(X_n: ~n \in \mathbb{N}_0)$ uma C. M. definida num espaço de estados $E$, com matriz de transição $\mathbb{P}$ e distribuição inicial $P(X_0=i), ~i \in E$. Existem duas questões pertinentes:
 
@@ -1986,7 +1986,7 @@ Uma C.M. irredutível, recorrente positiva, e com distribuição inicial estacio
 $$\pi_j=\lim\limits_{n \to +\infty} P(X_n=j).$$
 :::
 
-### Comportamento limite de $P_{ij}^n$ quando $n\to+\infty$
+### Comportamento limite de $P_{ij}^n$ quando $n\to+\infty$ {#comportamento-limite-de-p-ij-n-quando-n-to-infty}
 
 Qual a relação entre a existência de uma distribuição estacionária e o comportamento limite das probabilidades de transição a $n$ passos, quando $n \to +\infty$?
 
@@ -2324,7 +2324,7 @@ relacione justificadamente com a conclusão obtida na alínea
 anterior.
 :::
 
-# Cadeias de Markov em tempo contínuo
+# Cadeias de Markov em tempo contínuo {#cadeias-de-markov-em-tempo-continuo}
 
 Neste capítulo iremos considerar $(X_t, ~ t \in \mathbb{R}_0^+)$ uma C.M. com valores em $\mathbb{N}_0$ e espaço de parâmetro $\mathbb{R}_0^+$.
 
@@ -2333,7 +2333,7 @@ Vamos admitir que $(X_t, ~ t \in \mathbb{R}_0^+)$ é homogénea, isto é, tem pr
 $$\forall ~t >0, ~P_{ij}(t)=P(X_{t+n}=j \mid X_n=i), \quad i,j \in \mathbb{N}_0$$
 é independente de $n \geq 0$. 
 
-## Processo de Poisson homogéneo
+## Processo de Poisson homogéneo {#processo-de-poisson-homogeneo}
 
 O processo de Poisson homogéneo é um processo estocástico que modela a ocorrência de eventos aleatórios ao longo do tempo, onde os eventos ocorrem de forma independente e com uma taxa constante. É frequentemente utilizado para modelar fenómenos como chamadas telefónicas recebidas num call center, chegadas de clientes a um serviço, ou falhas em sistemas, entre outros.
 
@@ -2632,7 +2632,7 @@ P_{k}(t)=\frac{(\lambda t)^{k}}{k!}e^{-\lambda t} , \,k=0,1,2,\dots
 \]
 :::
 
-## Processo de nascimento puro
+## Processo de nascimento puro {#processo-de-nascimento-puro}
 
 Considere-se uma sucessão de números positivos $\{\lambda_k, ~k \in \mathbb{N}_0\}$.
 
@@ -2812,9 +2812,9 @@ $$
 
 :::
 
-## Processo de nascimento e morte
+## Processo de nascimento e morte {#processo-de-nascimento-e-morte}
 
-### Definição e equações de Chapman-Kolmogorov
+### Definição e equações de Chapman-Kolmogorov {#definicao-e-equacoes-de-chapman-kolmogorov}
 
 :::{.definition name="Processo de nascimento e morte"}
 Um processo estocástico $(X_t, ~ t \in \mathbb{R}_0^+)$, com valores em $\mathbb{N}_0$, é um **processo de nascimento e morte** com taxas $\{\lambda_k, ~k \in \mathbb{N}_0\}$ e $\{\mu_k, ~k \in \mathbb{N}_0\}$ se é uma cadeia de markov em tempo contínuo homogénea, satisfazendo os axiomas:
@@ -2890,7 +2890,7 @@ P(X_t=n) &= \sum\limits_{i=0}^{+\infty} P(X_{t}=n, X_{0}=i) \\
 Assim, as distribuições marginais do processo de nascimento e morte são dadas por
 $$\boxed{P(X_t=n)=\sum\limits_{i=0}^{+\infty} P_{in}(t) q_i, ~n \in \mathbb{N}_0.}$$
 
-### Tempo de espera
+### Tempo de espera {#tempo-de-espera}
 
 Considere-se agora a v.a.
 
@@ -2955,7 +2955,7 @@ O movimento é análogo ao do caminho aleatório, com a diferença de que o temp
 :::
 
 
-### Equações diferenciais de processos de nascimento e morte
+### Equações diferenciais de processos de nascimento e morte {#equacoes-diferenciais-de-processos-de-nascimento-e-morte}
 
 As equações de Chapman-Kolmogorov descrevem a evolução das probabilidades de transição ao longo do tempo. A partir destas equações, podemos deduzir as equações diferenciais que descrevem a evolução das probabilidades de transição em função do tempo.
 
@@ -3148,9 +3148,9 @@ Considere ainda um processo de Poisson com parâmetro $\lambda$, isto é, $(N(t)
 :::
 
 
-# Complementos de processos estocásticos
+# Complementos de processos estocásticos {#complementos-de-processos-estocasticos}
 
-## Processo de Wiener
+## Processo de Wiener {#processo-de-wiener}
 
 ::: {.definition name="Filtração"}
 Seja $X = (X(t), ~ t \in T)$ um processo estocástico definido no espaço de probabilidade $(\Omega, \mathcal{F}, P)$, com conjunto de índices $T = [0, +\infty[$. Uma família de sub-$\sigma$-álgebras de $\mathcal{F}$, tal que para $s \leq t$ se tenha $\mathcal{F}_s \subset \mathcal{F}_t$, designa-se por **filtração**.
@@ -3396,7 +3396,7 @@ $\,$
 A flutuação do preço de determinado tipo de acções pode ser descrita por um movimento browniano geométrico com desvio-padrão $\alpha = 0$. Supondo que adquire estas acções, quais são as hipóteses de ver o seu capital investido duplicar?
 :::
 
-## O integral de Itô
+## O integral de Itô {#o-integral-de-ito}
 
 ::: {.remark}
 No que se segue, adoptámos a seguinte notação para esperança matemática e probabilidade condicionadas:
@@ -4210,7 +4210,7 @@ $$
 
 $\,$
 
-# Bibliografia {.unnumbered}
+# Bibliografia 
 
 **Principal**
 
