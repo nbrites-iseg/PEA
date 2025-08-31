@@ -1,0 +1,30 @@
+\contentsline {chapter}{}{5}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Introdução aos processos estocásticos}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introdução}{7}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Tipos clássicos de processos estocásticos}{13}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Processos de incrementos independentes e estacionários}{13}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Processo estocástico real de 2ª ordem}{14}{subsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.2.1}Exemplos de PEs de 2ª ordem}{14}{subsubsection.1.2.2.1}%
+\contentsline {subsection}{\numberline {1.2.3}Processos estacionários}{14}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Martingalas}{18}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Processos de Markov}{19}{subsection.1.2.5}%
+\contentsline {chapter}{\numberline {2}Cadeias de Markov em tempo discreto}{21}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introdução}{21}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Conceitos básicos}{21}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Classificação de estados de uma C.M.}{25}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Decomposição do espaço de estados}{34}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3}Probabilidades de absorção em estados recorrentes}{37}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Teoremas limite}{40}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Distribuição estacionária e distribuição limite}{40}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Comportamento limite de \(P_{ij}^n\) quando \(n\to +\infty \)}{42}{subsection.2.4.2}%
+\contentsline {chapter}{\numberline {3}Cadeias de Markov em tempo contínuo}{49}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Processo de Poisson homogéneo}{49}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Processo de nascimento puro}{56}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Processo de nascimento e morte}{60}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Definição e equações de Chapman-Kolmogorov}{60}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Tempo de espera}{62}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Equações diferenciais de processos de nascimento e morte}{64}{subsection.3.3.3}%
+\contentsline {chapter}{\numberline {4}Complementos de processos estocásticos}{69}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Processo de Wiener}{69}{section.4.1}%
+\contentsline {section}{\numberline {4.2}O integral de Itô}{74}{section.4.2}%
+\contentsline {chapter}{Bibliografia}{91}{chapter*.3}%

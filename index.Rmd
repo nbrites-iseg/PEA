@@ -56,14 +56,22 @@ editor_options:
   wrap: 92
 ---
 
+```{r, eval = TRUE, echo=FALSE, prompt=TRUE, tidy=TRUE, collapse=TRUE}
+options(digits=4)
+```
 
-
-
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(kableExtra)
+```
 
 
 #  {.unnumbered}
 
-<img src="figures/iseg.png" width="40%" style="display: block; margin: auto;" />
+```{r fig200, echo = FALSE, fig.align = 'center', out.width = '40%'}
+knitr::include_graphics("figures/iseg.png")
+```
 
 $\,$
 
@@ -366,7 +374,25 @@ $\,$
 
 Segue-se um exemplo de uma trajetória de um PE:
 
-<img src="index_files/figure-html/simulacao-movimento-browniano-1.png" width="672" />
+```{r simulacao-movimento-browniano, echo=FALSE, fig.width=7, fig.height=4}
+set.seed(123)  # para reprodutibilidade
+
+# Parâmetros
+T <- 1        # tempo total
+n <- 500      # número de passos
+dt <- T / n   # tamanho do passo
+
+# Simulação do Movimento Browniano
+increments <- rnorm(n, mean = 0, sd = sqrt(dt))  # incrementos independentes N(0, dt)
+W <- c(0, cumsum(increments))                    # percurso do processo (começa em 0)
+time <- seq(0, T, length.out = n + 1)
+
+# Plot
+plot(time, W, type = "l", col = "blue", lwd = 2,
+     xlab = "Tempo", ylab = expression(X(t)),
+     main = "Exemplo de uma trajetória de um processo estocástico")
+grid()
+```
 
 $\,$
   
@@ -1057,10 +1083,18 @@ $\,$
 :::{.definition name="Estado acessível"}
 Diz-se que o estado $j \in E$ é __acessível__ a partir do estado $i \in E$, se para algum $n \in \mathbb{N}_0$ se observa $P_{ij}^n>0$. Representação: 
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/fig1-1.png" alt="Estado acessível" width="25%" />
-<p class="caption">(\#fig:fig1)Estado acessível</p>
-</div>
+```{tikz, fig1, echo=FALSE, fig.align = 'center', out.width = '25%', fig.cap='Estado acessível'}
+\begin{tikzpicture}[->, >=stealth, thick]
+
+% Define manual nodes
+\node[circle, draw, minimum size=.5cm] (A) at (0,0) {$i$};
+\node[circle, draw, minimum size=.5cm] (B) at (3,0) {$j$};
+
+% Draw arrow
+\draw (A) -- node[midway, above] {~} (B);
+
+\end{tikzpicture}
+```
 :::
 
 
@@ -1069,10 +1103,19 @@ $\,$
 :::{.definition name="Estados em comunicação"}
 Se dois estados $i,j \in E$ são acessíveis um relativamente ao outro, diz-se que intercomunicam ou que estão __em comunicação__. Representação: 
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/fig2-1.png" alt="Estados em comunicação" width="25%" />
-<p class="caption">(\#fig:fig2)Estados em comunicação</p>
-</div>
+```{tikz, fig2, echo=FALSE, fig.align = 'center', out.width = '25%', fig.cap='Estados em comunicação'}
+\begin{tikzpicture}[->, >=stealth, thick]
+
+% Define manual nodes
+\node[circle, draw, minimum size=.5cm] (A) at (0,0) {$i$};
+\node[circle, draw, minimum size=.5cm] (B) at (3,0) {$j$};
+
+% Draw arrow
+\draw (A) -- node[midway, above] {~} (B);
+\draw (B) -- node[midway, above] {~} (A);
+
+\end{tikzpicture}
+```
 :::
 
 $\,$
@@ -1129,7 +1172,31 @@ q & 0 & p & 0 & 0 & 0 \\
 \]
 e a representação gráfica é:
 
-<img src="index_files/figure-html/fig3-1.png" width="90%" style="display: block; margin: auto;" />
+```{tikz, fig3, echo=FALSE, fig.align = 'center', out.width = '90%'}
+\begin{tikzpicture}[->, >=stealth, auto, semithick]
+
+\node[draw, circle, thick, fill=red!40, minimum size=40pt] (A) at (0,0) {0};
+\node[draw, circle, thick, fill=yellow!40, minimum size=40pt] (B) at (5,0) {1};
+\node[draw, circle, thick, fill=yellow!40, minimum size=40pt] (C) at (8,0) {2};
+\node[draw, circle, thick, fill=yellow!40, minimum size=40pt] (D) at (11,0) {3};
+\node[draw, circle, thick, fill=yellow!40, minimum size=40pt] (E) at (14,0) {4};
+\node[draw, circle, thick, fill=green!40, minimum size=40pt] (F) at (19,0) {5};
+
+\path (A) edge[loop above] node {~} (A);
+\path (F) edge[loop above] node {~} (F);
+\path (B) edge[bend left] node[above] {$p$} (C);
+\path (C) edge[bend left] node[below] {$q$} (B);
+\path (C) edge[bend left] node[above] {$p$} (D);
+\path (D) edge[bend left] node[below] {$q$} (C);
+\path (D) edge[bend left] node[above] {$p$} (E);
+\path (E) edge[bend left] node[below] {$q$} (D);
+\path (E) edge[bend left] node[above] {$p$} (F);
+\path (A) edge[loop above] node {1} (A);
+\path (F) edge[loop above] node {1} (F);
+\path (B) edge[bend left] node[below] {$q$} (A);
+
+\end{tikzpicture}
+```
 As classes de equivalência estão representadas por cores.
 :::
 
@@ -1659,7 +1726,50 @@ Considere-se uma C.M com espaço de estados $E=\{1, 2,\dots, 7\}$ e com matriz d
 
 - O grafo associado à matriz $\mathbb{P}$ é:
 
-<img src="index_files/figure-html/fig4-1.png" width="90%" style="display: block; margin: auto;" />
+```{tikz, fig4, echo=FALSE, fig.align = 'center', out.width = '90%'}
+\begin{tikzpicture}[->, >=stealth, auto, semithick, node distance=2.8cm, every node/.style={scale=0.9}]
+
+% Nós na ordem desejada: 4, 2, 7, 1, 3, 5, 6
+\node[draw, circle, thick, fill=yellow!40, minimum size=40pt] (4) {4};
+\node[draw, circle, thick, fill=orange!40, minimum size=40pt, right of=4] (2) {2};
+\node[draw, circle, thick, fill=orange!40, minimum size=40pt, right of=2] (7) {7};
+\node[draw, circle, thick, fill=green!40, minimum size=40pt, right of=7] (1) {1};
+\node[draw, circle, thick, fill=green!40, minimum size=40pt, right of=1] (3) {3};
+\node[draw, circle, thick, fill=green!40, minimum size=40pt, right of=3] (5) {5};
+\node[draw, circle, thick, fill=blue!30, minimum size=40pt, below of=3, yshift=-2cm] (6) {6};
+
+% Transições:
+
+% Estado 1 → 3
+\path (1) edge[bend left=15] node[below] {1} (3);
+
+% Estado 2 → 2 e 7
+\path (2) edge[loop above] node {1/3} (2);
+\path (2) edge[bend left=15] node[above] {2/3} (7);
+
+% Estado 3 → 3 e 5
+\path (3) edge[loop above] node {1/2} (3);
+\path (3) edge[bend left=15] node[above] {1/2} (5);
+
+% Estado 4 → 2 e 4
+\path (4) edge[loop above] node {1/2} (4);
+\path (4) edge[bend left=15] node[below] {1/2} (2);
+
+% Estado 5 → 1, 3, 5
+\path (5) edge[loop above] node {1/3} (5);
+\path (5) edge[bend left=40] node[below] {1/3} (1);
+\path (5) edge[bend left=15] node[below] {1/3} (3);
+
+% Estado 6 → 6
+\path (6) edge[loop above] node {1} (6);
+
+% Estado 7 → 1, 2, 7
+\path (7) edge[loop above] node {1/2} (7);
+\path (7) edge[bend right=15] node[above] {1/4} (1);
+\path (7) edge[bend left=10] node[below] {1/4} (2);
+
+\end{tikzpicture}
+```
 
 - Classes de equivalência (partição de \( E \) com base na relação de comunicação \( i \longleftrightarrow j \)): 
 $$\{1,3,5\}, \{2,7\}, \{4\}, \{6\}.$$
@@ -1770,40 +1880,29 @@ $\,$
 ::: {.example}
 Num estudo no Reino Unido, após a Segunda Guerra Mundial, sobre a mobilidade social entre gerações foram identificados 3 níveis: 1 - superior, 2 - médio e 3 - inferior. Foram estimadas as probabilidades condicionais de um filho pertencer a uma classe social (nível superior, médio, ou inferior) mediante o nível social dos pais ser superior, médio ou inferior. Os resultados são apresentados na tabela seguinte:
 
-<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
- <thead>
-<tr>
-<th style="empty-cells: hide;border-bottom:hidden;" colspan="1"></th>
-<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">Filho</div></th>
-</tr>
-  <tr>
-   <th style="text-align:center;"> Pai </th>
-   <th style="text-align:center;"> Superior </th>
-   <th style="text-align:center;"> Médio </th>
-   <th style="text-align:center;"> Inferior </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> Superior </td>
-   <td style="text-align:center;"> 0.45 </td>
-   <td style="text-align:center;"> 0.48 </td>
-   <td style="text-align:center;"> 0.07 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Médio </td>
-   <td style="text-align:center;"> 0.05 </td>
-   <td style="text-align:center;"> 0.70 </td>
-   <td style="text-align:center;"> 0.25 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Inferior </td>
-   <td style="text-align:center;"> 0.01 </td>
-   <td style="text-align:center;"> 0.50 </td>
-   <td style="text-align:center;"> 0.49 </td>
-  </tr>
-</tbody>
-</table>
+```{r, echo=FALSE, warning=FALSE}
+# Criar os dados como data frame
+tabela <- data.frame(
+  Pai = c("Superior", "Médio", "Inferior"),
+  `Superior` = c(0.45, 0.05, 0.01),
+  `Médio` = c(0.48, 0.70, 0.50),
+  `Inferior` = c(0.07, 0.25, 0.49)
+)
+
+# Detectar o formato de saída
+output_format <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+
+# Gerar a tabela corretamente para HTML ou LaTeX
+if (output_format == "html") {
+  kable(tabela, format = "html", align = "c") %>%
+    add_header_above(c(" " = 1, "Filho" = 3)) %>%
+    kable_styling(full_width = FALSE, position = "center")
+} else {
+  kable(tabela, format = "latex", booktabs = TRUE, align = "c") %>%
+    add_header_above(c(" " = 1, "Filho" = 3))
+}
+
+```
 
 Admitamos que as transições entre classes de gerações sucessivas é uma família que pode ser considerada como transições de uma cadeia de Markov.  
 
@@ -1824,7 +1923,34 @@ A matriz de transição é dada por
 \end{bmatrix}, \quad E=\{1,2,3\}=\{2,3\}\cup\{1\}=T \cup C.
 \]
 O grafo é
-<img src="index_files/figure-html/fig5-1.png" width="40%" style="display: block; margin: auto;" />
+```{tikz, fig5, echo=FALSE, fig.align = 'center', out.width = '40%'}
+\begin{tikzpicture}[->, >=stealth, auto, semithick]
+
+\node[draw, circle, thick, fill=blue!10, minimum size=40pt] (1) at (0,0) {1};
+\node[draw, circle, thick, fill=blue!10, minimum size=40pt] (2) at (-3,-5) {2};
+\node[draw, circle, thick, fill=blue!10, minimum size=40pt] (3) at (3,-5) {3};
+
+\path[line width=1.5pt] (1) edge[loop above] node {0.45} (1);
+\path[line width=1.5pt] (2) edge[loop left] node {0.70} (2);
+\path[line width=1.5pt] (3) edge[loop right] node {0.49} (3);
+
+% Draw arrow
+%\draw[line width=1pt] (1) -- node[midway, above] {0.48} (2);
+%\draw[line width=2pt] (1) -- node[midway, right] {0.07} (3);
+%\draw[line width=2pt] (2) -- node[midway, above] {0.05} (1);
+%\draw[line width=2pt] (2) -- node[midway, above] {0.25} (3);
+%\draw[line width=2pt] (3) -- node[midway, above] {0.01} (1);
+%\draw[line width=2pt] (3) -- node[midway, above] {0.50} (2);
+
+\path[line width=1.5pt] (1) edge[bend left] node[left] {0.48} (2);
+\path[line width=1.5pt] (1) edge[bend left] node[right] {0.07} (3);
+\path[line width=1.5pt] (2) edge[bend left] node[left] {0.05} (1);
+\path[line width=1.5pt] (2) edge[bend left] node[below] {0.25} (3);
+\path[line width=1.5pt] (3) edge[bend left] node[right] {0.01} (1);
+\path[line width=1.5pt] (3) edge[bend left] node[below] {0.50} (2);
+
+\end{tikzpicture}
+```
 
 1. Pretende-se determinar a probabilidade de, começando no estado 2, o primeiro momento em que a cadeia entra no estado 1 seja no instante 2. Para tal, iremos usar a probabilidade de primeira passagem do estado 2 para o estado 1 em 2 passos, isto é,
 \begin{eqnarray*}
@@ -2167,7 +2293,23 @@ $\,$
 <!-- Ex2.1 Exer. Alfredo -->
 Considere uma cadeia de Markov homogénea definida pelo seguinte grafo:
 
-<img src="index_files/figure-html/Ex2.1ExerAlfredo-1.png" width="40%" style="display: block; margin: auto;" />
+```{tikz, Ex2.1ExerAlfredo, echo=FALSE, fig.align = 'center', out.width = '40%'}
+\begin{tikzpicture}[->, >=stealth, auto, semithick]
+
+\node[draw, circle, thick, fill=blue!10, minimum size=40pt] (1) at (-3,0) {1};
+\node[draw, circle, thick, fill=blue!10, minimum size=40pt] (2) at (3,0) {2};
+\node[draw, circle, thick, fill=blue!10, minimum size=40pt] (3) at (0,-3) {3};
+
+\path (1) edge[bend left=15] node[above] {$1-p$} (2);
+\path (2) edge[bend left=10] node[below] {1} (1);
+\path (1) edge node[above] {$p$} (3);
+\path (3) edge node[above] {$q$} (2);
+\path (3) edge[loop below] node {$1-q$} (3);
+
+
+
+\end{tikzpicture}
+```
 
 (a) Determine a matriz das probabilidades de transição.
 
@@ -2346,7 +2488,39 @@ O processo de Poisson homogéneo é um processo estocástico que modela a ocorr�
 
 Seja $X_t$ uma função que conta o número de vezes que um determinado acontecimento ocorre durante o período de tempo de 0 a $t$. Assim, a aplicação $t \longrightarrow X_t$ é uma função em escada, não decrescente, em que os saltos correspondem às ocorrências dos acontecimentos:
 
-<img src="index_files/figure-html/fig6-1.png" width="50%" style="display: block; margin: auto;" />
+```{tikz, fig6, echo=FALSE, fig.align = 'center', out.width = '50%'}
+\begin{tikzpicture}[scale=1.2]
+  % Eixos
+  \draw[->] (0,0) -- (6,0) node[right] {$t$};
+  \draw[->] (0,0) -- (0,3.2) node[above] {$X_t(\omega)$};
+
+  % Linhas verticais (saltos)
+  \draw[dashed] (1,0) -- (1,1);
+  \draw[dashed] (2.5,0) -- (2.5,2);
+  \draw[dashed] (4,0) -- (4,3);
+
+  % Degraus
+  \draw[thick] (0,0) -- (1,0);
+  \draw[thick] (1,1) -- (2.5,1);
+  \draw[thick] (2.5,2) -- (4,2);
+  \draw[thick] (4,3) -- (5.5,3);
+
+  % Pontos de salto (aberto à esquerda, fechado à direita)
+  \fill (1,1) circle (1pt);
+  \fill (2.5,2) circle (1pt);
+  \fill (4,3) circle (1pt);
+
+  \draw[fill=white] (1,0) circle (1.5pt);
+  \draw[fill=white] (2.5,1) circle (1.5pt);
+  \draw[fill=white] (4,2) circle (1.5pt);
+
+  % Marcas de tempo
+  \node[below] at (1,0) {$t_1$};
+  \node[below] at (2.5,0) {$t_2$};
+  \node[below] at (4,0) {$t_3$};
+  \node[below left] at (0,0) {$0$};
+\end{tikzpicture}
+```
 
 
 $\,$
@@ -2951,7 +3125,20 @@ A descrição do movimento de $X_t$ descreve-se a seguir. O processo permanece n
 
 Esquematicamente, temos:
 
-<img src="index_files/figure-html/fig7-1.png" width="50%" style="display: block; margin: auto;" />
+```{tikz, fig7, echo=FALSE, fig.align = 'center', out.width = '50%'}
+\begin{tikzpicture}[->, >=stealth, auto, semithick]
+
+\node[draw, circle, thick, fill=white, minimum size=40pt] (A) at (0,0) {$i$};
+\node[draw, circle, thick, fill=white, minimum size=40pt] (B) at (5,0) {$i$};
+\node[draw, circle, thick, fill=white, minimum size=40pt] (C) at (10,2) {$i+1$};
+\node[draw, circle, thick, fill=white, minimum size=40pt] (D) at (10,-2) {$i-1$};
+
+\draw (A) -- node[midway, above] {$T_i \sim Exp(\lambda_i+\mu_i)$} (B);
+\path (B) edge[bend left] node[above] {$\lambda_i/(\lambda_i+\mu_i)$} (C);
+\path (B) edge[bend right] node[below] {$\mu_i/(\lambda_i+\mu_i)$} (D);
+
+\end{tikzpicture}
+```
 
 Uma possível realização de $X_t$ é: 
 $$i \longrightarrow i+1 \longrightarrow i \longrightarrow i-1 \longrightarrow \dots$$
@@ -3284,7 +3471,26 @@ $\,$
 
 Na imagem seguinte apresentam-se duas trajectórias de um processo de Wiener. As trajectórias foram obtidas por simulação numérica, considerando incrementos independentes e normalmente distribuídos com média zero e variância proporcional ao incremento temporal.
 
-<img src="index_files/figure-html/fig-wiener-trajectories-1.png" width="672" />
+```{r fig-wiener-trajectories, echo=FALSE, message=FALSE, warning=FALSE}
+set.seed(123)  # para reprodutibilidade
+
+# Parâmetros
+T <- 1       # tempo final
+N <- 1000    # número de passos
+dt <- T/N    # tamanho do passo
+t <- seq(0, T, length.out = N + 1)
+
+# Simulação de duas trajetórias independentes
+W1 <- c(0, cumsum(rnorm(N, mean = 0, sd = sqrt(dt))))
+W2 <- c(0, cumsum(rnorm(N, mean = 0, sd = sqrt(dt))))
+
+# Gráfico
+plot(t, W1, type = "l", col = "blue", lwd = 2,
+     xlab = "Tempo", ylab = "W(t)", main = "Exemplo de duas trajectórias do processo de Wiener")
+lines(t, W2, col = "orange", lwd = 2)
+legend("topleft", legend = c("Trajectória 1", "Trajectória 2"),
+       col = c("blue", "orange"), lwd = 2, bty = "n")
+```
 
 $\,$
 
@@ -4221,17 +4427,23 @@ $\,$
 
 -   Muller, D. (2007) Processos Estocásticos e Aplicações. II Série, nº3, Coleção Económicas. Almedina.
 
-<img src="figures/book1.png" width="20%" style="display: block; margin: auto;" />
+```{r, echo = FALSE, fig.align = 'center', out.width = '20%'}
+knitr::include_graphics("figures/book1.png")
+```
 
 **Secundária**
 
 -   Muller, D. (2011) Probabilidades e Processos Estocásticos. II Série, nº17, Coleção Económicas. Almedina.
 
-<img src="figures/book1.png" width="20%" style="display: block; margin: auto;" />
+```{r, echo = FALSE, fig.align = 'center', out.width = '20%'}
+knitr::include_graphics("figures/book1.png")
+```
 
 -   Taylor, H. M., Karlin, S. (1998) An Introduction to Stochastic Modeling (3rd Edition), Academic Press, New York.
 
-<img src="figures/book3.png" width="20%" style="display: block; margin: auto;" />
+```{r, echo = FALSE, fig.align = 'center', out.width = '20%'}
+knitr::include_graphics("figures/book3.png")
+```
 
 \vfill
 

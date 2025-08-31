@@ -1,4 +1,6 @@
-output_dir: docs
+book_filename: "PEA"
+output_dir: "docs"     # é aqui que o site final ficará
+clean: ["_bookdown_files", "_main_files", "_book"]  # opcional, para limpar
 new_session: yes
 language:
   label:

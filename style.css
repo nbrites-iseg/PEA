@@ -14,6 +14,20 @@
   margin: 1em 0;
 }
 
+.proposition {
+  background-color: #fff3e0;
+  padding: 15px;
+  border-left: 5px solid #fb8c00;
+  margin: 1em 0;
+}
+
+.hypothesis {
+  background-color: #e0f7fa; /* tom suave de azul */
+  padding: 15px;
+  border-left: 5px solid #00acc1; /* azul mais escuro */
+  margin: 1em 0;
+}
+
 .corollary {
   background-color: #fff3e0;
   padding: 15px;
