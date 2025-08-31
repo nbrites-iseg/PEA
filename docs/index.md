@@ -63,7 +63,8 @@ editor_options:
 
 #  {.unnumbered}
 
-<img src="figures/iseg.png" width="40%" style="display: block; margin: auto;" />
+
+\begin{center}\includegraphics[width=0.4\linewidth]{figures/iseg} \end{center}
 
 $\,$
 
@@ -366,7 +367,7 @@ $\,$
 
 Segue-se um exemplo de uma trajetória de um PE:
 
-<img src="index_files/figure-html/simulacao-movimento-browniano-1.png" width="672" />
+![](index_files/figure-latex/simulacao-movimento-browniano-1.pdf)<!-- --> 
 
 $\,$
   
@@ -1057,10 +1058,14 @@ $\,$
 :::{.definition name="Estado acessível"}
 Diz-se que o estado $j \in E$ é __acessível__ a partir do estado $i \in E$, se para algum $n \in \mathbb{N}_0$ se observa $P_{ij}^n>0$. Representação: 
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/fig1-1.png" alt="Estado acessível" width="25%" />
-<p class="caption">(\#fig:fig1)Estado acessível</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.25\linewidth]{index_files/figure-latex/fig1-1} 
+
+}
+
+\caption{Estado acessível}(\#fig:fig1)
+\end{figure}
 :::
 
 
@@ -1069,10 +1074,14 @@ $\,$
 :::{.definition name="Estados em comunicação"}
 Se dois estados $i,j \in E$ são acessíveis um relativamente ao outro, diz-se que intercomunicam ou que estão __em comunicação__. Representação: 
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/fig2-1.png" alt="Estados em comunicação" width="25%" />
-<p class="caption">(\#fig:fig2)Estados em comunicação</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.25\linewidth]{index_files/figure-latex/fig2-1} 
+
+}
+
+\caption{Estados em comunicação}(\#fig:fig2)
+\end{figure}
 :::
 
 $\,$
@@ -1129,7 +1138,8 @@ q & 0 & p & 0 & 0 & 0 \\
 \]
 e a representação gráfica é:
 
-<img src="index_files/figure-html/fig3-1.png" width="90%" style="display: block; margin: auto;" />
+
+\begin{center}\includegraphics[width=0.9\linewidth]{index_files/figure-latex/fig3-1} \end{center}
 As classes de equivalência estão representadas por cores.
 :::
 
@@ -1659,7 +1669,8 @@ Considere-se uma C.M com espaço de estados $E=\{1, 2,\dots, 7\}$ e com matriz d
 
 - O grafo associado à matriz $\mathbb{P}$ é:
 
-<img src="index_files/figure-html/fig4-1.png" width="90%" style="display: block; margin: auto;" />
+
+\begin{center}\includegraphics[width=0.9\linewidth]{index_files/figure-latex/fig4-1} \end{center}
 
 - Classes de equivalência (partição de \( E \) com base na relação de comunicação \( i \longleftrightarrow j \)): 
 $$\{1,3,5\}, \{2,7\}, \{4\}, \{6\}.$$
@@ -1770,40 +1781,18 @@ $\,$
 ::: {.example}
 Num estudo no Reino Unido, após a Segunda Guerra Mundial, sobre a mobilidade social entre gerações foram identificados 3 níveis: 1 - superior, 2 - médio e 3 - inferior. Foram estimadas as probabilidades condicionais de um filho pertencer a uma classe social (nível superior, médio, ou inferior) mediante o nível social dos pais ser superior, médio ou inferior. Os resultados são apresentados na tabela seguinte:
 
-<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
- <thead>
-<tr>
-<th style="empty-cells: hide;border-bottom:hidden;" colspan="1"></th>
-<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">Filho</div></th>
-</tr>
-  <tr>
-   <th style="text-align:center;"> Pai </th>
-   <th style="text-align:center;"> Superior </th>
-   <th style="text-align:center;"> Médio </th>
-   <th style="text-align:center;"> Inferior </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> Superior </td>
-   <td style="text-align:center;"> 0.45 </td>
-   <td style="text-align:center;"> 0.48 </td>
-   <td style="text-align:center;"> 0.07 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Médio </td>
-   <td style="text-align:center;"> 0.05 </td>
-   <td style="text-align:center;"> 0.70 </td>
-   <td style="text-align:center;"> 0.25 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Inferior </td>
-   <td style="text-align:center;"> 0.01 </td>
-   <td style="text-align:center;"> 0.50 </td>
-   <td style="text-align:center;"> 0.49 </td>
-  </tr>
-</tbody>
-</table>
+
+\begin{tabular}{cccc}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{3}{c}{Filho} \\
+\cmidrule(l{3pt}r{3pt}){2-4}
+Pai & Superior & Médio & Inferior\\
+\midrule
+Superior & 0.45 & 0.48 & 0.07\\
+Médio & 0.05 & 0.70 & 0.25\\
+Inferior & 0.01 & 0.50 & 0.49\\
+\bottomrule
+\end{tabular}
 
 Admitamos que as transições entre classes de gerações sucessivas é uma família que pode ser considerada como transições de uma cadeia de Markov.  
 
@@ -1824,7 +1813,8 @@ A matriz de transição é dada por
 \end{bmatrix}, \quad E=\{1,2,3\}=\{2,3\}\cup\{1\}=T \cup C.
 \]
 O grafo é
-<img src="index_files/figure-html/fig5-1.png" width="40%" style="display: block; margin: auto;" />
+
+\begin{center}\includegraphics[width=0.4\linewidth]{index_files/figure-latex/fig5-1} \end{center}
 
 1. Pretende-se determinar a probabilidade de, começando no estado 2, o primeiro momento em que a cadeia entra no estado 1 seja no instante 2. Para tal, iremos usar a probabilidade de primeira passagem do estado 2 para o estado 1 em 2 passos, isto é,
 \begin{eqnarray*}
@@ -2167,7 +2157,8 @@ $\,$
 <!-- Ex2.1 Exer. Alfredo -->
 Considere uma cadeia de Markov homogénea definida pelo seguinte grafo:
 
-<img src="index_files/figure-html/Ex2.1ExerAlfredo-1.png" width="40%" style="display: block; margin: auto;" />
+
+\begin{center}\includegraphics[width=0.4\linewidth]{index_files/figure-latex/Ex2.1ExerAlfredo-1} \end{center}
 
 (a) Determine a matriz das probabilidades de transição.
 
@@ -2346,7 +2337,8 @@ O processo de Poisson homogéneo é um processo estocástico que modela a ocorr�
 
 Seja $X_t$ uma função que conta o número de vezes que um determinado acontecimento ocorre durante o período de tempo de 0 a $t$. Assim, a aplicação $t \longrightarrow X_t$ é uma função em escada, não decrescente, em que os saltos correspondem às ocorrências dos acontecimentos:
 
-<img src="index_files/figure-html/fig6-1.png" width="50%" style="display: block; margin: auto;" />
+
+\begin{center}\includegraphics[width=0.5\linewidth]{index_files/figure-latex/fig6-1} \end{center}
 
 
 $\,$
@@ -2951,7 +2943,8 @@ A descrição do movimento de $X_t$ descreve-se a seguir. O processo permanece n
 
 Esquematicamente, temos:
 
-<img src="index_files/figure-html/fig7-1.png" width="50%" style="display: block; margin: auto;" />
+
+\begin{center}\includegraphics[width=0.5\linewidth]{index_files/figure-latex/fig7-1} \end{center}
 
 Uma possível realização de $X_t$ é: 
 $$i \longrightarrow i+1 \longrightarrow i \longrightarrow i-1 \longrightarrow \dots$$
@@ -3284,7 +3277,7 @@ $\,$
 
 Na imagem seguinte apresentam-se duas trajectórias de um processo de Wiener. As trajectórias foram obtidas por simulação numérica, considerando incrementos independentes e normalmente distribuídos com média zero e variância proporcional ao incremento temporal.
 
-<img src="index_files/figure-html/fig-wiener-trajectories-1.png" width="672" />
+![](index_files/figure-latex/fig-wiener-trajectories-1.pdf)<!-- --> 
 
 $\,$
 
@@ -4221,17 +4214,20 @@ $\,$
 
 -   Muller, D. (2007) Processos Estocásticos e Aplicações. II Série, nº3, Coleção Económicas. Almedina.
 
-<img src="figures/book1.png" width="20%" style="display: block; margin: auto;" />
+
+\begin{center}\includegraphics[width=0.2\linewidth]{figures/book1} \end{center}
 
 **Secundária**
 
 -   Muller, D. (2011) Probabilidades e Processos Estocásticos. II Série, nº17, Coleção Económicas. Almedina.
 
-<img src="figures/book1.png" width="20%" style="display: block; margin: auto;" />
+
+\begin{center}\includegraphics[width=0.2\linewidth]{figures/book1} \end{center}
 
 -   Taylor, H. M., Karlin, S. (1998) An Introduction to Stochastic Modeling (3rd Edition), Academic Press, New York.
 
-<img src="figures/book3.png" width="20%" style="display: block; margin: auto;" />
+
+\begin{center}\includegraphics[width=0.2\linewidth]{figures/book3} \end{center}
 
 \vfill
 
