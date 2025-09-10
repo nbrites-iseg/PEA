@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Cadeias de Markov em tempo discreto | Processos Estocásticos e Aplicações</title>
+  <meta name="description" content="2 Cadeias de Markov em tempo discreto | Processos Estocásticos e Aplicações" />
+  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Cadeias de Markov em tempo discreto | Processos Estocásticos e Aplicações" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Cadeias de Markov em tempo discreto | Processos Estocásticos e Aplicações" />
+  
+  
+  
+
+<meta name="author" content="Nuno M. Brites" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introducao-aos-processos-estocasticos.html"/>
+<link rel="next" href="cadeias-de-markov-em-tempo-continuo.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="index.html#section" id="toc-section"></a></li>
+<li class="chapter" data-level="1" data-path="introducao-aos-processos-estocasticos.html"><a href="introducao-aos-processos-estocasticos.html"><i class="fa fa-check"></i><b>1</b> Introdução aos processos estocásticos</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introducao-aos-processos-estocasticos.html"><a href="introducao-aos-processos-estocasticos.html#conceitos-fundamentais"><i class="fa fa-check"></i><b>1.1</b> Conceitos fundamentais</a></li>
+<li class="chapter" data-level="1.2" data-path="introducao-aos-processos-estocasticos.html"><a href="introducao-aos-processos-estocasticos.html#tipos-classicos-de-processos-estocasticos"><i class="fa fa-check"></i><b>1.2</b> Tipos clássicos de processos estocásticos</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introducao-aos-processos-estocasticos.html"><a href="introducao-aos-processos-estocasticos.html#processos-de-incrementos-independentes-e-estacionarios"><i class="fa fa-check"></i><b>1.2.1</b> Processos de incrementos independentes e estacionários</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introducao-aos-processos-estocasticos.html"><a href="introducao-aos-processos-estocasticos.html#processo-estocastico-real-de-2-ordem"><i class="fa fa-check"></i><b>1.2.2</b> Processo estocástico real de 2ª ordem</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introducao-aos-processos-estocasticos.html"><a href="introducao-aos-processos-estocasticos.html#processos-estacionarios"><i class="fa fa-check"></i><b>1.2.3</b> Processos estacionários</a></li>
+<li class="chapter" data-level="1.2.4" data-path="introducao-aos-processos-estocasticos.html"><a href="introducao-aos-processos-estocasticos.html#martingalas"><i class="fa fa-check"></i><b>1.2.4</b> Martingalas</a></li>
+<li class="chapter" data-level="1.2.5" data-path="introducao-aos-processos-estocasticos.html"><a href="introducao-aos-processos-estocasticos.html#processos-de-markov"><i class="fa fa-check"></i><b>1.2.5</b> Processos de Markov</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html"><i class="fa fa-check"></i><b>2</b> Cadeias de Markov em tempo discreto</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#introducao"><i class="fa fa-check"></i><b>2.1</b> Introdução</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#conceitos-basicos"><i class="fa fa-check"></i><b>2.1.1</b> Conceitos básicos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#classificacao-de-estados-de-uma-c-m"><i class="fa fa-check"></i><b>2.2</b> Classificação de estados de uma C.M.</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#decomposicao-do-espaco-de-estados"><i class="fa fa-check"></i><b>2.2.1</b> Decomposição do espaço de estados</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#probabilidades-de-absorcao-em-estados-recorrentes"><i class="fa fa-check"></i><b>2.3</b> Probabilidades de absorção em estados recorrentes</a></li>
+<li class="chapter" data-level="2.4" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#teoremas-limite"><i class="fa fa-check"></i><b>2.4</b> Teoremas limite</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#distribuicao-estacionaria-e-distribuicao-limite"><i class="fa fa-check"></i><b>2.4.1</b> Distribuição estacionária e distribuição limite</a></li>
+<li class="chapter" data-level="2.4.2" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#comportamento-limite-de-p-ij-n-quando-n-to-infty"><i class="fa fa-check"></i><b>2.4.2</b> Comportamento limite de <span class="math inline">\(P_{ij}^n\)</span> quando <span class="math inline">\(n\to+\infty\)</span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html"><i class="fa fa-check"></i><b>3</b> Cadeias de Markov em tempo contínuo</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html#processo-de-poisson-homogeneo"><i class="fa fa-check"></i><b>3.1</b> Processo de Poisson homogéneo</a></li>
+<li class="chapter" data-level="3.2" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html#processo-de-nascimento-puro"><i class="fa fa-check"></i><b>3.2</b> Processo de nascimento puro</a></li>
+<li class="chapter" data-level="3.3" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html#processo-de-nascimento-e-morte"><i class="fa fa-check"></i><b>3.3</b> Processo de nascimento e morte</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html#definicao-e-equacoes-de-chapman-kolmogorov"><i class="fa fa-check"></i><b>3.3.1</b> Definição e equações de Chapman-Kolmogorov</a></li>
+<li class="chapter" data-level="3.3.2" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html#tempo-de-espera"><i class="fa fa-check"></i><b>3.3.2</b> Tempo de espera</a></li>
+<li class="chapter" data-level="3.3.3" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html#equacoes-diferenciais-de-processos-de-nascimento-e-morte"><i class="fa fa-check"></i><b>3.3.3</b> Equações diferenciais de processos de nascimento e morte</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="complementos-de-processos-estocasticos.html"><a href="complementos-de-processos-estocasticos.html"><i class="fa fa-check"></i><b>4</b> Complementos de processos estocásticos</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="complementos-de-processos-estocasticos.html"><a href="complementos-de-processos-estocasticos.html#processo-de-wiener"><i class="fa fa-check"></i><b>4.1</b> Processo de Wiener</a></li>
+<li class="chapter" data-level="4.2" data-path="complementos-de-processos-estocasticos.html"><a href="complementos-de-processos-estocasticos.html#o-integral-de-ito"><i class="fa fa-check"></i><b>4.2</b> O integral de Itô</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i><b>5</b> Bibliografia</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Processos Estocásticos e Aplicações</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="cadeias-de-markov-em-tempo-discreto" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Cadeias de Markov em tempo discreto<a href="cadeias-de-markov-em-tempo-discreto.html#cadeias-de-markov-em-tempo-discreto" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introducao" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Introdução<a href="cadeias-de-markov-em-tempo-discreto.html#introducao" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Uma cadeia de Markov em tempo discreto, <span class="math inline">\(\{X_t, t \in T\}\)</span>, é um PE de Markov cujo espaço de estados é <strong>finito</strong> ou <strong>infinito numerável</strong>.</p>
+<div id="conceitos-basicos" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Conceitos básicos<a href="cadeias-de-markov-em-tempo-discreto.html#conceitos-basicos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-52" class="definition"><strong>Definição 2.1  (Cadeia de Markov em tempo discreto) </strong></span>Um PE em tempo discreto <span class="math inline">\((X_n, ~n \in \mathbb{N}_0)\)</span> com espaço de estados <span class="math inline">\(E\)</span> discreto é uma <strong>C.M. em tempo discreto</strong> sse satisfaz a propriedade de Markov
+<span class="math display">\[\forall ~n \in \mathbb{N}, ~\forall ~x_0, \ldots, x_{n+1} \in E^{n+1}: P(X_0=x_0, \ldots, X_n=x_n)&gt;0, \text{tem-se que }\]</span> <span class="math display">\[P(X_{n+1}=x_{n+1} \mid X_{0}=x_0, \ldots X_{n}=x_n)=P(X_{n+1}=x_{n+1} \mid X_{n}=x_n).\]</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-53" class="exercise"><strong>Exercício 2.1  </strong></span>Seja <span class="math inline">\((X_n, ~n=1,2,\dots)\)</span> uma sucessão de variáveis aleatórias i.d.d. com distribuição de probabilidade definida por:
+<span class="math display">\[P(X_n=x)=p(1-p)^x, \quad x=0,1,2,\dots; ~ p \in (0,1).\]</span>
+Considere ainda o PE
+<span class="math display">\[Y=(Y_n=\sum\limits_{i=1}^{n}X_i: ~n=1,2,\dots).\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Identifique o espaço de estados de <span class="math inline">\(Y\)</span>.</p></li>
+<li><p>Mostre que <span class="math inline">\(P(Y_{n+1}=y \mid Y_n=x)\)</span> é independente de <span class="math inline">\(n\)</span>.</p></li>
+<li><p>Verifique que <span class="math inline">\(Y\)</span> é uma Cadeia de Markov.</p></li>
+<li><p>Calcule <span class="math inline">\(P(Y_1=y_1, Y_3=y_3)\)</span>.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-54" class="exercise"><strong>Exercício 2.2  </strong></span>Seja <span class="math inline">\((X_n, ~n=1,2,\dots)\)</span> uma sucessão de variáveis aleatórias i.d.d. com distribuição de probabilidade definida por:
+<span class="math display">\[P(X_n=1)=p=1-P(X_n=-1), \quad n=1,2,\dots; ~p \in (0,1).\]</span>
+Considere o PE <span class="math inline">\(S=(S_n: ~n\geq 0)\)</span>, conhecido como passeio aleatório simples, definido por:
+<span class="math display">\[S_0=0 \quad \text{e} \quad S_n=\sum\limits_{i=1}^{n}X_i, ~n=1,2,\dots\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Identifique o espaço de estados do processo <span class="math inline">\(S\)</span>.</p></li>
+<li><p>Prove que <span class="math inline">\(S\)</span> é uma Cadeia de Markov para qualquer valor de <span class="math inline">\(p\)</span>.</p></li>
+<li><p>Determine para que valores de <span class="math inline">\(p\)</span>, o passeio aleatório <span class="math inline">\(S\)</span> é uma Martingala.</p></li>
+<li><p>Calcule a função de autocovariância do processo <span class="math inline">\(S\)</span> e verifique se o processo é estacionário em sentido estrito.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<p>Associada a uma C.M. em tempo discreto tem-se a <strong>função de probabilidade de transição a um passo</strong>:
+<span class="math display">\[P(X_{n+1}=j \mid X_n=i):=P_{ij}(n,n+1),\]</span>
+que representa a probabilidade de <span class="math inline">\(X_{n+1}\)</span> estar no estado <span class="math inline">\(j\)</span> no instabte <span class="math inline">\(n+1\)</span> sabendo que no instante <span class="math inline">\(n\)</span> a cadeia estava no estado <span class="math inline">\(i\)</span>.</p>
+<p>Se as probabilidades <span class="math inline">\(P_{ij}(n,n+1)\)</span> não dependerem de <span class="math inline">\(n\)</span>, então a C.M. em tempo discreto diz-se <strong>homogénea</strong>. Assim, numa C.M. homogénea observa-se</p>
+<p><span class="math display">\[P(X_{n+1}=j \mid X_n=i):=P_{ij},~\forall ~i,j \in E, ~\forall ~n \in \mathbb{N}_0.\]</span>
+<span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-55" class="remark"><em>Nota</em>. </span>A expressão <span class="math inline">\(P(X_{n+1}=j \mid X_n=i):=P_{ij}\)</span>:</p>
+<ul>
+<li><p>representa a probabilidade de cadeia ir do estado <span class="math inline">\(i\)</span> para o estado <span class="math inline">\(j\)</span> <strong>num só passo</strong>;</p></li>
+<li><p>é independente de <span class="math inline">\(n\)</span>, isto é, é homogénea no tempo.</p></li>
+</ul>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<p>Nesta UC apenas iremos estudar C.M. homogéneas. As probabilidade de transição, <span class="math inline">\(P_{ij}\)</span> são fundamentais para o estudo da estrutura probabilística das C.M.</p>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-56" class="definition"><strong>Definição 2.2  (Matriz de transição) </strong></span>Define-se <strong>Matriz de transição</strong> ou <strong>Matriz de probabilidade de transição</strong> de uma C.M. homogénea à matriz
+<span class="math display">\[\mathbb{P}=[P_{ij}]_{~i,j \in E}= \begin{bmatrix}
+    P_{00} &amp; P_{01} &amp; \dots &amp; P_{0j}  &amp; \dots \\
+    P_{10} &amp; P_{11} &amp; \dots &amp; P_{1j}  &amp; \dots \\
+    \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+    P_{i0} &amp; P_{i1} &amp; \dots &amp; P_{ij}  &amp; \dots \\
+    \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+\end{bmatrix}, \qquad E=\mathbb{N}_0\]</span>
+definida pelas probabilidades de transição <span class="math inline">\(P_{ij}\)</span> do processo.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-57" class="remark"><em>Nota</em>. </span>Na matriz de transição <span class="math inline">\(\mathbb{P}\)</span>, observa-se:</p>
+<ul>
+<li><p><span class="math inline">\(0 \leq P_{ij} \leq 1, ~i,j=0,1,\ldots\)</span>, uma vez que <span class="math inline">\(P_{ij}\)</span> representa uma probabilidade;</p></li>
+<li><p><span class="math inline">\(\sum\limits_{j=0}^{+\infty} P_{ij}=1\)</span>, uma vez que <span class="math inline">\(\sum\limits_{j \in E} P_{ij}=\sum\limits_{j \in E}P(X_{n+1}=j \mid X_n=i)\)</span>.</p></li>
+</ul>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-58" class="exercise"><strong>Exercício 2.3  </strong></span>Quatro bolas, duas brancas e duas pretas, são distribuídas em duas caixas <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, de tal forma que, em cada caixa, ficam duas bolas. Tira-se uma bola de cada caixa e coloca-se cada uma na caixa oposta. Seja <span class="math inline">\(X_0\)</span> o número de bolas brancas que existiam inicialmente na caixa <span class="math inline">\(A\)</span>. Para <span class="math inline">\(n \geq 1\)</span>, seja <span class="math inline">\(X_n\)</span> o número de bolas brancas que existirão na caixa <span class="math inline">\(A\)</span> depois de se terem efetuado <span class="math inline">\(n\)</span> trocas de bolas.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Identifique o espaço de estados.</p></li>
+<li><p>Determine a matriz das probabilidades de transição.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-59" class="theorem"><strong>Teorema 2.1  </strong></span>Um PE <span class="math inline">\((X_t, ~t \in \mathbb{N}_0)\)</span> é uma C.M. homogénea sse existe uma distribuição de <span class="math inline">\(X_0\)</span> e uma matriz estocástica <span class="math inline">\(\mathbb{P}\)</span> tal que:
+<span class="math display">\[\forall ~(i_0,i_1,\ldots,i_n) \in \mathbb{N}_0^{n+1}: P(X_0=i_0, X_1=i_1, \ldots, X_n=i_n)=P(X_0=i_0)P_{i_0i_1} \ldots P_{i_{n-1}i_n}.\]</span>
+Este Teorema mostra que a distribuição do vetor aleatório <span class="math inline">\((X_0,X_1,\ldots,X_n)\)</span> fica completamente determinada se conhecermos a distribuição inicial de <span class="math inline">\(X_0\)</span> e matriz de transição <span class="math inline">\(\mathbb{P}\)</span>.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-60" class="example"><strong>Exemplo 2.1  (Passeio aleatório) </strong></span>Seja <span class="math inline">\((Y_n)_{n \in \mathbb{N}_0}\)</span> uma sequência de variáveis aleatórias independentes que tomam valores em <span class="math inline">\(\mathbb{Z}\)</span>. A primeira variável, <span class="math inline">\(Y_0\)</span>, pode ter uma distribuição diferente, mas as outras <span class="math inline">\(Y_n\)</span>, para <span class="math inline">\(n \geq 1\)</span>, têm todas a mesma distribuição <span class="math inline">\(p(x)\)</span>, para <span class="math inline">\(x \in \mathbb{Z}\)</span>.</p>
+<p>O processo definido por
+<span class="math display">\[
+X_n = \sum_{m=0}^n Y_m, \quad n \in \mathbb{N}_0,
+\]</span>
+chama-se <strong>passeio aleatório</strong> (ou deslocação de um ponto no plano), tendo estado inicial <span class="math inline">\(X_0\)</span> e distribuição <span class="math inline">\(p\)</span>.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-61" class="exercise"><strong>Exercício 2.4  </strong></span></p>
+<!-- ver resolução no meu resumo ou nos slides -->
+<p>Mostre que o processo aleatório definido no exemplo anterior é uma C.M. homogénea com matriz de transição com probabilidades
+<span class="math display">\[P_{xy}=p(y-x), ~\forall ~(x,y) \in \mathbb{Z}.\]</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-62" class="example"><strong>Exemplo 2.2  (Passeio aleatório unidimensional) </strong></span>Um passeio aleatório a uma dimensão é uma C.M. cujo espaço de estados é um conjunto finito ou infinito numerável de inteiros, no qual a partícula estando no estado <span class="math inline">\(i\)</span>, pode deslocar-se, numa transição, para o estado <span class="math inline">\(i+1\)</span>, <span class="math inline">\(i-1\)</span>, ou permanecer no estado <span class="math inline">\(i\)</span>, isto é,</p>
+<p><span class="math display">\[
+P(X_{n+1}=j \mid X_n=i)=
+\begin{cases}
+q_i, \quad j=i-1\\
+r_i, \quad j=i,\\
+p_i, \quad j=i+1.\\
+\end{cases}
+\]</span>
+A matriz de transição é definida por</p>
+<p><span class="math display">\[\mathbb{P}= \begin{bmatrix}
+    r_0 &amp; p_0 &amp; 0 &amp; 0  &amp; \dots \\
+    q_1 &amp; r_1 &amp; p_1 &amp; 0  &amp; \dots \\
+    0 &amp; q_2 &amp; r_2 &amp; p_2 &amp; \vdots \\
+    \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+\end{bmatrix},\]</span>
+onde <span class="math inline">\(q_i&gt;0, ~r_i&gt;0, ~p_i&gt;0; ~q_i+r_i+p_i=1, ~i=1,2,\ldots; ~p_0 \geq 0, ~r_0 \geq 0: ~r_0+p_0=1.\)</span></p>
+<p>Em particular, quando no instante <span class="math inline">\(n\)</span> o processo está no estado <span class="math inline">\(i\)</span>, isto é, quando <span class="math inline">\(X_n=i\)</span>, observa-se:</p>
+<ul>
+<li><p><span class="math inline">\(P(X_{n+1}=i+1 \mid X_n=i)=p_i\)</span>;</p></li>
+<li><p><span class="math inline">\(P(X_{n+1}=i-1 \mid X_n=i)=q_i\)</span>;</p></li>
+<li><p><span class="math inline">\(P(X_{n+1}=i \mid X_n=i)=r_i\)</span>.</p></li>
+</ul>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-63" class="example"><strong>Exemplo 2.3  (Versão discreta do movimento Browniano) </strong></span>Trata-se de um caso particular do passeio aleatório unidimensional com:
+<span class="math display">\[q_i=q, ~r_i=r, ~ p_i=p, ~\forall ~i.\]</span>
+Interpretação: uma partícula, no instante <span class="math inline">\(t\)</span>, pode efetuar 3 movimentos:</p>
+<ul>
+<li><p>deslocar-se para a direita com probabilidade <span class="math inline">\(p\)</span>;</p></li>
+<li><p>deslocar-se para a esquerda com probabilidade <span class="math inline">\(q\)</span>;</p></li>
+<li><p>manter-se na mesma posição com probabilidade <span class="math inline">\(r\)</span>;</p></li>
+</ul>
+<p>Se <span class="math inline">\(X_n\)</span> representar a posição da partícula ao fim de <span class="math inline">\(n\)</span> movimentos, tem-se
+<span class="math display">\[X_n=\sum\limits_{i=0}^n Y_i,\]</span>
+onde
+<span class="math display">\[
+Y_i=
+\begin{cases}
+1, &amp; \text{partícula deslocou-se para a direita},\\
+-1, &amp; \text{partícula deslocou-se para a esquerda},\\
+0, &amp; \text{partícula não se deslocou}.\\
+\end{cases}
+\]</span></p>
+<p>O que representam os processos <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>?</p>
+<ul>
+<li><p><span class="math inline">\((Y_n, ~n \in \mathbb{N}_0)\)</span>: sucessão de v.a.’s independentes (são independentes da posição <span class="math inline">\(X_n\)</span> da partícula);</p></li>
+<li><p><span class="math inline">\((X_n, ~n \in \mathbb{N}_0)\)</span>: passeio aleatório, isto é, CM homogénea, com espaço de estados <span class="math inline">\(\mathbb{Z}\)</span> e matriz de transição <span class="math inline">\(\mathbb{P}\)</span> onde:</p></li>
+</ul>
+<p><span class="math display">\[
+P_{ij}=P(X_n=j \mid X_{n-1}=i)=
+\begin{cases}
+p, \quad j=i+1,\\
+q, \quad j=i-1,\\
+r, \quad j=i.\\
+\end{cases}
+\]</span>
+Assim, <span class="math inline">\(P_{ij}=p(j-i)\)</span> representa a lei de probabilidade (distribuição de probabilidade) de <span class="math inline">\(Y_n\)</span>. Tipicamente considera-se <span class="math inline">\(p=q=0.5\)</span> e <span class="math inline">\(r=0\)</span>.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-64" class="remark"><em>Nota</em>. </span>Notação:
+<span class="math display">\[P^m_{ij}=P(X_{n+m}=j \mid X_n=i)\]</span>
+representa a probabilidade de, em <span class="math inline">\(m\)</span> passos, a cadeia de Markov homogénea passar do estado <span class="math inline">\(i\)</span> para o estado <span class="math inline">\(j\)</span>.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-65" class="theorem"><strong>Teorema 2.2  </strong></span>Seja <span class="math inline">\(\mathbb{P}=[P_{ij}]\)</span> a matriz de transição a um passo de uma C.M. <span class="math inline">\((X_n, ~n \in \mathbb{N}_0)\)</span>. Então,
+<span class="math display">\[P^m_{ij}=\sum\limits_{k=0}^{+\infty}P_{ik}^r ~ P_{kj}^s,\]</span>
+onde <span class="math inline">\((r,s) \in \mathbb{N}_0^2\)</span> tal que <span class="math inline">\(r+s=m\)</span> e <span class="math inline">\(P_{ij}^0=1\)</span> se <span class="math inline">\(i=j\)</span>, e <span class="math inline">\(P_{ij}^0=0\)</span> se <span class="math inline">\(i \neq j\)</span>.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-66" class="exercise"><strong>Exercício 2.5  </strong></span></p>
+<!-- resolução no meu resumo ou slides -->
+<p>Considere <span class="math inline">\(m=2\)</span> e prove o Teorema anterior.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-67" class="theorem"><strong>Teorema 2.3  (Equações de Chapman-Kolmogorov) </strong></span>O Teorema anterior pode ser re-escrito como
+<span class="math display">\[P^{m+n}_{ij}=\sum\limits_{k \in E}P_{ik}^m ~ P_{kj}^n, \quad \forall ~i,j \in E.\]</span>
+Assim, <span class="math inline">\(P_{i,j}^m\)</span> representa o elemento <span class="math inline">\((i,j)\)</span> da matriz potência de ordem <span class="math inline">\(m\)</span> de <span class="math inline">\(\mathbb{P}\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="classificacao-de-estados-de-uma-c-m" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Classificação de estados de uma C.M.<a href="cadeias-de-markov-em-tempo-discreto.html#classificacao-de-estados-de-uma-c-m" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Torna-se importante o estudo limite de <span class="math inline">\(P_{i,j}^n\)</span> quando <span class="math inline">\(n \to +\infty\)</span>. Espera-se que a influência do estado inicial <span class="math inline">\(i\)</span> diminua com o tempo, e que o limite de <span class="math inline">\(P_{i,j}^n\)</span> quando <span class="math inline">\(n \to +\infty\)</span> seja independente de <span class="math inline">\(i\)</span>.</p>
+<p>Para se poder analisar o comportamento assintótico do processo, vamos introduzir alguns critérios de classificação de estados de uma C.M.. Consideremos, no que se segue, uma C. M. <span class="math inline">\((X_n, n \in \mathbb{N}_0)\)</span> com matriz de transição <span class="math inline">\(\mathbb{P}=[P_{i,j}], ~i,j \in E\)</span>.</p>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-68" class="definition"><strong>Definição 2.3  (Estado acessível) </strong></span>Diz-se que o estado <span class="math inline">\(j \in E\)</span> é <strong>acessível</strong> a partir do estado <span class="math inline">\(i \in E\)</span>, se para algum <span class="math inline">\(n \in \mathbb{N}_0\)</span> se observa <span class="math inline">\(P_{ij}^n&gt;0\)</span>. Representação:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig1"></span>
+<img src="index_files/figure-html/fig1-1.png" alt="Estado acessível" width="25%" />
+<p class="caption">
+Figura 2.1: Estado acessível
+</p>
+</div>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-69" class="definition"><strong>Definição 2.4  (Estados em comunicação) </strong></span>Se dois estados <span class="math inline">\(i,j \in E\)</span> são acessíveis um relativamente ao outro, diz-se que intercomunicam ou que estão <strong>em comunicação</strong>. Representação:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig2"></span>
+<img src="index_files/figure-html/fig2-1.png" alt="Estados em comunicação" width="25%" />
+<p class="caption">
+Figura 2.2: Estados em comunicação
+</p>
+</div>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-70" class="remark"><em>Nota</em>. </span>Se dois estados <span class="math inline">\(i,j \in E\)</span> não comunicam, então:
+<span class="math display">\[\forall ~n \in \mathbb{N}_0, ~P_{ij}^n=0 ~\vee ~ P_{ji}^n=0.\]</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-71" class="theorem"><strong>Teorema 2.4  </strong></span>A intercomunicação dos estados define uma relação de equivalência.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-72" class="exercise"><strong>Exercício 2.6  </strong></span></p>
+<!-- resolução no meu resumo ou slides -->
+<p>Mostre o Teorema anterior. Sugestão: mostre que a intercomunicação entre estados é reflexiva, simétrica e transitiva.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-73" class="remark"><em>Nota</em>. </span>A relação de equivalência do último Teorema induz uma partição do conjunto de todos os estados em classe de equivalência. Dentro de cada classe todos os estados comunicam entre si.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-74" class="example"><strong>Exemplo 2.4  </strong></span>Considere a seguinte matriz de transição, com <span class="math inline">\(E=\{0,1,2,\dots,r\}\)</span>, de um passeio aleatório:
+<span class="math display">\[\mathbb{P}= \begin{bmatrix}
+    1 &amp; 0 &amp; 0 &amp; 0  &amp; \dots &amp; 0 &amp; 0 \\
+    q &amp; 0 &amp; p &amp; 0  &amp; \dots &amp; 0 &amp; 0 \\
+    0 &amp; q &amp; 0 &amp; p  &amp; \dots &amp; 0 &amp; 0 \\
+    \dots &amp; \dots &amp; \dots &amp; \dots  &amp; \dots &amp; \dots &amp; \dots \\
+    0 &amp; 0 &amp; 0 &amp; 0  &amp; q &amp; 0 &amp; p \\
+    0 &amp; 0 &amp; 0 &amp; 0  &amp; \dots &amp; 0 &amp; 1 \\
+\end{bmatrix}.\]</span>
+A relação de equivalência de comunicação induz as classes:
+<span class="math display">\[\{0\}, ~ \{1,2,\dots,r-1\}, ~\{r\},\]</span>
+donde se conclui que: do estado <span class="math inline">\(0\)</span> só se pode ir para o estado <span class="math inline">\(0\)</span>; todos os estados <span class="math inline">\(1,2,\dots,r-1\)</span> comunicam entre si; do estado <span class="math inline">\(r\)</span> só se pode ir para o estado <span class="math inline">\(r\)</span>. Para <span class="math inline">\(r=5\)</span>, isto é, 6 estados, a matriz de transição é:
+<span class="math display">\[
+\mathbb{P} =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+q &amp; 0 &amp; p &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; q &amp; 0 &amp; p &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; q &amp; 0 &amp; p &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; q &amp; 0 &amp; p \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\
+\end{bmatrix}
+\]</span>
+e a representação gráfica é:</p>
+<p><img src="index_files/figure-html/fig3-1.png" width="90%" style="display: block; margin: auto;" />
+As classes de equivalência estão representadas por cores.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-75" class="definition"><strong>Definição 2.5  (Período) </strong></span>Chama-se <strong>período</strong> do estado <span class="math inline">\(i\)</span>, e representa-se por <span class="math inline">\(d(i)\)</span>, ao máximo divisor comum de todos os inteiros <span class="math inline">\(n\geq 1\)</span> tais que <span class="math inline">\(P_{ii}^n &gt; 0\)</span>, isto é,
+<span class="math display">\[d(i)=\text{m.d.c.}(n \geq 1: P_{ii}^n &gt;0).\]</span>
+Convenção: se <span class="math inline">\(\forall ~n \geq 1, P_{ii}^n=0\)</span>, então <span class="math inline">\(d(i)=0\)</span>.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-76" class="remark"><em>Nota</em>. </span>Dois estados em comunicação têm o mesmo período, isto é,</p>
+<p><span class="math display">\[i \longleftrightarrow j \iff d(i)=d(j).\]</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-77" class="exercise"><strong>Exercício 2.7  </strong></span>Determine o período dos estados do exemplo anterior.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-78" class="exercise"><strong>Exercício 2.8  </strong></span>Considere a C.M. de espaço de estados finito com matriz de transição
+<span class="math display">\[
+\mathbb{P} =
+\begin{bmatrix}
+0 &amp; 1 &amp; 0 &amp; \dots &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; \dots &amp; 0 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+0 &amp; 0 &amp; 0 &amp; \dots &amp; 1 \\
+1 &amp; 0 &amp; 0 &amp; \dots &amp; 0  \\
+\end{bmatrix}, \quad E=\{0,1,\dots,n-1\}.
+\]</span>
+Mostre que <span class="math inline">\(d(i)=n, ~\forall ~n \in E.\)</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-79" class="definition"><strong>Definição 2.6  (Estado aperiódico. Cadeia aperiódica.) </strong></span>Um estado diz-se <strong>aperiódico</strong> se tem período um. A cadeia é <strong>aperiódica</strong> se todos os estados acessíveis entre si (isto é, na mesma classe de comunicação) são aperiódicos.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-80" class="definition"><strong>Definição 2.7  (Estado recorrente) </strong></span>Um estado <span class="math inline">\(i\)</span> diz-se <strong>recorrente</strong> se, partindo de <span class="math inline">\(i\)</span>, a probabilidade de regressar a <span class="math inline">\(i\)</span> em algum instante futuro é igual a <span class="math inline">\(1\)</span>.</p>
+<p>Seja
+<span class="math display">\[
+T_i = \inf \{ n \geq 1 : X_n = i \mid X_0 = i \},
+\]</span>
+o <strong>tempo de retorno ao estado <span class="math inline">\(i\)</span></strong>, isto é, o primeiro instante (após a partida) em que a cadeia volta a atingir o estado <span class="math inline">\(i\)</span>.</p>
+<p>Então, o estado <span class="math inline">\(i\)</span> é recorrente se
+<span class="math display">\[
+P(T_i &lt; +\infty) = 1.
+\]</span></p>
+<p>De forma equivalente, um estado <span class="math inline">\(i\)</span> é recorrente se
+<span class="math display">\[
+\sum_{n=1}^\infty P_{ii}^n = +\infty,
+\]</span>
+onde <span class="math inline">\(P_{ii}^n = P(X_n = i \mid X_0 = i)\)</span> representa a probabilidade de estar em <span class="math inline">\(i\)</span> ao fim de <span class="math inline">\(n\)</span> passos, partindo de <span class="math inline">\(i\)</span>.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-81" class="definition"><strong>Definição 2.8  (Estado transitório) </strong></span>Um estado <span class="math inline">\(i\)</span> diz-se <strong>transitório</strong> se, partindo do estado <span class="math inline">\(i\)</span>, a probabilidade de retorno a <span class="math inline">\(i\)</span> é menor que 1, isto é,
+<span class="math display">\[
+P(T_i &lt; +\infty) &lt; 1,
+\]</span>
+equivalentemente,
+<span class="math display">\[
+\sum_{n=1}^\infty P_{ii}^n &lt; +\infty.
+\]</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-82" class="definition"><strong>Definição 2.9  (Tempo mínimo de passagem) </strong></span>Considere-se a v.a. <span class="math inline">\(T_{ij}\)</span>, que representa o <strong>tempo da primeira passagem</strong> do estado <span class="math inline">\(i\)</span> ao estado <span class="math inline">\(j\)</span>, definida por
+<span class="math display">\[
+T_{ij} = \min\{n \geq 1 : X_n = j\}.
+\]</span></p>
+<p>A função de probabilidade de <span class="math inline">\(T_{ij}\)</span>, denotada por <span class="math inline">\(f_{ij}^n\)</span>, é dada por:
+<span class="math display">\[
+f_{ij}^n = P_i(X_n = j,~ X_1 \ne j, \ldots, X_{n-1} \ne j), \quad n \geq 1.
+\]</span></p>
+<p>Isto é, <span class="math inline">\(f_{ij}^n\)</span> representa a probabilidade de, partindo do estado <span class="math inline">\(i\)</span>, chegar ao estado <span class="math inline">\(j\)</span> pela primeira vez ao fim de <span class="math inline">\(n\)</span> passos.</p>
+<p>Em particular:
+<span class="math display">\[
+f_{ij}^1 = P_{ij}, \quad \text{e} \quad f_{ij}^0 = 0, \quad \forall i, j \in E,~ i \neq j.
+\]</span></p>
+<p>Uma outra forma de interpretar <span class="math inline">\(T_{ij}\)</span> é como o tempo de espera até à primeira chegada ao estado <span class="math inline">\(j\)</span>, tendo começado em <span class="math inline">\(i\)</span>.</p>
+<p>Para <span class="math inline">\(n \geq 2\)</span> e <span class="math inline">\(i \neq j\)</span>, a função de primeira passagem satisfaz a seguinte relação de recorrência:
+<span class="math display">\[
+f_{ij}^n = \sum_{k \in E \setminus \{j\}} P_{ik} \, f_{kj}^{n-1}.
+\]</span></p>
+<p>Esta fórmula diz-nos que, para chegar pela primeira vez a <span class="math inline">\(j\)</span> no passo <span class="math inline">\(n\)</span>, o processo deve ir de <span class="math inline">\(i\)</span> para um estado <span class="math inline">\(k \neq j\)</span> no primeiro passo (com probabilidade <span class="math inline">\(P_{ik}\)</span>), e depois ir de <span class="math inline">\(k\)</span> até <span class="math inline">\(j\)</span> pela primeira vez ao fim de <span class="math inline">\(n-1\)</span> passos (com probabilidade <span class="math inline">\(f_{kj}^{n-1}\)</span>).</p>
+<p>Condições iniciais:
+<span class="math display">\[
+f_{ij}^1 = P_{ij}, \quad \text{e} \quad f_{ij}^0 = 0, \quad \forall~i,j \in E,~i \neq j.
+\]</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-83" class="theorem"><strong>Teorema 2.5  </strong></span><span class="math display">\[\forall ~n \in \mathbb{N}: P_{ij}^n=\sum\limits_{k=1}^n f_{ij}^k \, P_{jj}^{n-k}.\]</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-84" class="exercise"><strong>Exercício 2.9  </strong></span>Faça a demonstração do Teorema anterior.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-85" class="theorem"><strong>Teorema 2.6  </strong></span>Considere-se a probabilidade:
+<span class="math display">\[f_{ij}=P(\text{partindo de } i, \text{ eventualmente chegar a } j, \text{ num número finito de passos}).\]</span>
+Então,
+<span class="math display">\[f_{ij}=\sum\limits_{n=1}^{+\infty}f_{ij}^n,\]</span>
+isto é, <span class="math inline">\(f_{ij}\)</span> representa a soma da probabilidade de sair de <span class="math inline">\(i\)</span>, chegar a <span class="math inline">\(j\)</span>, pela 1ª vez, em <span class="math inline">\(k\)</span> passos, e</p>
+<p><span class="math display">\[f_{ij}&gt;0 \iff j \text{ é acessível a partir de } i.\]</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-86" class="definition"><strong>Definição 2.10  (Estado recorrente) </strong></span>O estado <span class="math inline">\(i\)</span> diz-se <strong>recorrente</strong> (ou persistente) sse
+<span class="math display">\[\sum\limits_{n=1}^{+\infty}f_{ii}^n=1,\]</span>
+isto é, dizer que o estado <span class="math inline">\(i\)</span> é <strong>recorrente</strong> significa que, partindo de <span class="math inline">\(i\)</span>, volta-se com probabilidade 1 a <span class="math inline">\(i\)</span>, num número finito de transições. Por outras palavras, há sempre a possibilidade de sair de <span class="math inline">\(i\)</span> e chegar a <span class="math inline">\(i\)</span> em <span class="math inline">\(n\)</span> passos.</p>
+<p>Em termos da v.a.
+<span class="math display">\[T_{ij}= \text{ tempo mínimo para transitar do estado } i \text{ para o estado } j,\]</span>
+uma vez que
+<span class="math display">\[f_{ij}^n=P(T_{ij}=n),\]</span>
+então a definição de recorrência pode ser reescrita como:
+<span class="math display">\[i \text{ é recorrente } \iff P(T_{ii}&lt;+\infty)=1.\]</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-87" class="definition"><strong>Definição 2.11  (Estado transitório) </strong></span>O estado <span class="math inline">\(i\)</span> diz-se <strong>transitório</strong> se a probabilidade de voltar a <span class="math inline">\(i\)</span>, partindo de <span class="math inline">\(i\)</span>, for estritamente menor que 1, ou seja:
+<span class="math display">\[
+\sum_{n=1}^{+\infty} f_{ii}^n &lt; 1.
+\]</span>
+Isto significa que, partindo de <span class="math inline">\(i\)</span>, existe uma probabilidade positiva de <strong>não regressar</strong> a <span class="math inline">\(i\)</span>. Em termos da variável aleatória <span class="math inline">\(T_{ii}\)</span>, isto é equivalente a:
+<span class="math display">\[
+i \text{ é transitório} \iff P(T_{ii} &lt; +\infty) &lt; 1.
+\]</span></p>
+</div>
+<p>Muito usado para a verificação se um estado é recorrente é o seguinte Teorema:</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-88" class="theorem"><strong>Teorema 2.7  (Teorema de Abel) </strong></span>Um estado <span class="math inline">\(i\)</span> é recorrente sse
+<span class="math display">\[\sum\limits_{n=1}^{+\infty}P_{ii}^n=+\infty.\]</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-89" class="theorem"><strong>Teorema 2.8  (Critério de recorrêcia e transitoriedade) </strong></span><span class="math display">\[\sum\limits_{n=1}^{+\infty}P_{ii}^n=+\infty \iff i \text{ é recorrente}.\]</span>
+<span class="math display">\[\sum\limits_{n=1}^{+\infty}P_{ii}^n&lt;+\infty \iff i \text{ é transitório}.\]</span>
+<span class="math display">\[i \longleftrightarrow j \text{ e } i \text{ é recorrente}\implies j \text{ é recorrente}.\]</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-90" class="remark"><em>Nota</em>. </span>O último critério apresentado no Teorema anterior mostra que a recorrência é uma propriedade da classe, isto é, numa classe de equivalência todos os estados são recorrentes ou não são recorrentes. Consequentemente:</p>
+<ul>
+<li><p>de um estado recorrente só se podem alcançar estados recorrentes;</p></li>
+<li><p>o conjunto dos estados recorrentes forma num conjunto fechado.</p></li>
+</ul>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-91" class="theorem"><strong>Teorema 2.9  </strong></span>Se <span class="math inline">\(i\)</span> é um estado recorrente e se <span class="math inline">\(j\)</span> é acessível a partir de <span class="math inline">\(i\)</span>, então <span class="math inline">\(f_{ij}=1\)</span>.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-92" class="definition"><strong>Definição 2.12  (Conjunto fechado) </strong></span>Seja um C.M. com espaço de estados <span class="math inline">\(E\)</span> e matriz de transição <span class="math inline">\(\mathbb{P}=[P_{ij}]_{i,j \in E}\)</span>. Diz-se que um conjunto <span class="math inline">\(C \subset E\)</span> é <strong>fechado</strong> sse
+<span class="math display">\[\forall ~i \in C, ~\forall ~\ j \notin C, ~P_{ij}=0,\]</span>
+ou seja, sse nenhum estado <strong>não pertencente</strong> a <span class="math inline">\(C\)</span> é acessível a partir de qualquer estado do conjunto <span class="math inline">\(C\)</span>. Isto quer dizer que:</p>
+<ul>
+<li><p>não existem “setas” de dentro para fora de <span class="math inline">\(C\)</span>;</p></li>
+<li><p>uma classe de estados não é necessariamente um conjunto fechado.</p></li>
+</ul>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<p style="text-align:center;">
+<strong>Resumo: critérios para estabelecer a recorrência/transitoriedade</strong>
+</p>
+<ul>
+<li><p>Critério 1:
+<span class="math display">\[\sum\limits_{n=1}^{+\infty}f_{ii}^n=1 \implies \text{ estado recorrente}.\]</span>
+<span class="math display">\[\sum\limits_{n=1}^{+\infty}f_{ii}^n&lt;1 \implies \text{ estado transitório}.\]</span></p></li>
+<li><p>Critério 2:
+<span class="math display">\[P(T_{ii}&lt;+\infty)=1 \implies \text{ estado recorrente}.\]</span>
+<span class="math display">\[P(T_{ii}&lt;+\infty)&lt;1\implies \text{ estado transitório}.\]</span></p></li>
+<li><p>Critério 3:
+<span class="math display">\[\sum\limits_{n=0}^{+\infty}P_{ii}^n=+\infty \implies \text{ estado recorrente}.\]</span>
+<span class="math display">\[\sum\limits_{n=0}^{+\infty}P_{ii}^n&lt;+\infty \implies \text{ estado transitório}.\]</span></p></li>
+</ul>
+<p><span class="math inline">\(\,\)</span></p>
+<p style="text-align:center;">
+<strong>Resumo: classificação de estados recorrentes</strong>
+</p>
+<p>Defina-se <span class="math inline">\(E[T_{ii}]=\mu_i=\sum\limits_{n=1}^{+\infty}nf_{ii}^n\)</span>, isto é, <span class="math inline">\(\mu_i\)</span> representa o tempo de recorrência médio de um estado <span class="math inline">\(i\)</span> (recorrente).</p>
+<p>O estado <span class="math inline">\(i\)</span> é:</p>
+<ul>
+<li><p><strong>recorrente positivo</strong> se <span class="math inline">\(\mu_i&lt;+\infty\)</span>, isto é, o tempo médio de recorrência do estado <span class="math inline">\(i\)</span> é finito;</p></li>
+<li><p><strong>recorrente nulo</strong> se <span class="math inline">\(\mu_i=+\infty\)</span>;</p></li>
+<li><p><strong>recorrente ergódico</strong> se <span class="math inline">\(i\)</span> for recorrente positivo e aperiódico.</p></li>
+</ul>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-93" class="definition"><strong>Definição 2.13  (Cadeia de Markov irredutível) </strong></span>Uma cadeia de Markov com espaço de estados <span class="math inline">\(E\)</span> diz-se <strong>irredutível</strong> se, para quaisquer estados <span class="math inline">\(i, j \in E\)</span>, existe um número natural <span class="math inline">\(n \geq 1\)</span> tal que
+<span class="math display">\[
+P_{ij}^n = P(X_n = j \mid X_0 = i) &gt; 0,
+\]</span>
+isto é, existe uma probabilidade positiva de se atingir o estado <span class="math inline">\(j\)</span> a partir do estado <span class="math inline">\(i\)</span> num número finito de passos.</p>
+<p>Em termos informais, isto significa que todos os estados da cadeia <strong>comunicam entre si</strong>, ou seja, é possível ir de qualquer estado para qualquer outro (talvez em vários passos), com probabilidade positiva.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-94" class="example"><strong>Exemplo 2.5  </strong></span>Considere uma cadeia de Markov com espaço de estados <span class="math inline">\(\{0, 1, 2\}\)</span> e matriz de transição
+<span class="math display">\[
+\mathbb{P} =
+\begin{bmatrix}
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1 \\
+1 &amp; 0 &amp; 0
+\end{bmatrix}.
+\]</span></p>
+<p>Esta cadeia é irredutível porque, partindo de qualquer estado, é possível atingir qualquer outro estado num número finito de passos, com probabilidade positiva. Por exemplo:
+<span class="math display">\[
+0 \longrightarrow 1 \longrightarrow 2 \longrightarrow 0,
+\]</span>
+o que permite circular por todos os estados.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<p>Por último, temos o seguinte Teorema que ajuda a classificar os estados de uma cadeia de Markov:</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-95" class="theorem"><strong>Teorema 2.10  </strong></span>Numa <strong>cadeia de Markov irredutível</strong> com espaço de estados finito ou infinito numerável, <strong>ou</strong> todos os estados são transitórios, <strong>ou</strong> todos os estados são recorrentes nulos, <strong>ou</strong> todos os estados são recorrentes positivos.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-96" class="exercise"><strong>Exercício 2.10  </strong></span>Seja <span class="math inline">\(X_0, X_1, X_2, \dots\)</span> uma sucessão de variáveis aleatórias i.i.d.’s tal que:
+<span class="math display">\[P(X_i=-1)=P(X_i=1)=0.5, \quad i=0,1,2,\dots.\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Prove que <span class="math inline">\((X_n: ~n \in \mathbb{N}_0)\)</span> é uma C.M. homogénea com matriz de transição</li>
+</ol>
+<p><span class="math display">\[\mathbb{P}=
+\begin{bmatrix}
+0.5 &amp; 0.5  \\
+0.5 &amp; 0.5  \\
+\end{bmatrix}.
+\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><p>Determine a probabilidade de que o processo <span class="math inline">\((X_n: ~n \in \mathbb{N}_0)\)</span>, partindo do estado 1, volte a atingir este estado, pela primeira vez, num número par de passos.</p></li>
+<li><p>Considere o PE <span class="math inline">\((Y_n: ~n \in \mathbb{N})\)</span> definido por:</p></li>
+</ol>
+<p><span class="math display">\[
+Y_n=
+\begin{cases}
+X_{n-1} \cdot X_{n+1}, &amp; n \text{ par}\\
+X_{n}, &amp; n \text{ ímpar}
+\end{cases}.
+\]</span></p>
+<p>Verifique se <span class="math inline">\(Y\)</span> é um ruído branco e, em caso afirmativo, identifique a sua variância. Prove que <span class="math inline">\(Y\)</span> não é uma C.M.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-97" class="exercise"><strong>Exercício 2.11  </strong></span>Considere uma estação de táxis, onde de <span class="math inline">\(s\)</span> em <span class="math inline">\(s\)</span> segundos chega um táxi. Se não existem clientes a ser servidos, o táxi parte de imediato, chegando outro <span class="math inline">\(s\)</span> segundos depois. Caso contrário, os clientes vão sendo atendidos por ordem de chegada, havendo sempre um período de tempo constante de <span class="math inline">\(s\)</span> segundos entre cada serviço. Durante esse período de tempo podem, no entanto, chegar novos clientes. Suponhamos que o número de chegadas ao <span class="math inline">\(n-\)</span>ésimo período de tempo é uma variável aleatória <span class="math inline">\(Z_n\)</span> cuja distribuição é independente do período em que ocorrem as chegadas, e é dada por
+<span class="math display">\[P(\text{k clientes chegarem num intervalo de tempo entre 2 chegadas consecutivas de táxi})= a_k,\]</span>
+onde <span class="math inline">\(a_k \geq 0, ~\forall ~k \in \mathbb{N}_0\)</span>, e <span class="math inline">\(\sum\limits_{k=0}^{+\infty}a_k=1\)</span>.</p>
+<p>O estado do sistema no início do <span class="math inline">\((n+1)-\)</span>ésimo período de tempo entre duas chegadas consecutivas de táxi é definido pelo número de clientes que esperam para serem atendidos, sendo esse número representado por <span class="math inline">\(X_n, ~n \in \mathbb{N}_0\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Prove que <span class="math inline">\(\{X_n, ~n \in \mathbb{N}_0\}\)</span> é uma C.M. homogénea. Indique os respetivos espaço de estados e matriz de transição.</p></li>
+<li><p>Sabendo que no início de um determinado intervalo a fila tem zero clientes, qual a probabilidade de o sistema voltar a atingir este estado (pela primeira vez) ao fim de três chegadas de táxis?</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-98" class="exercise"><strong>Exercício 2.12  </strong></span>Seja <span class="math inline">\(\{Y_i^{(n)} : i, n \in \mathbb{N} \}\)</span> uma família de variáveis aleatórias independentes e identicamente distribuídas com distribuição binomial <span class="math inline">\(B(2; 0.5)\)</span>.</p>
+<p>Considere um processo estocástico <span class="math inline">\(\{X_n\}_{n \in \mathbb{N}_0}\)</span> definido por:
+<span class="math display">\[
+X_0 = a, ~\text{ com } a \in \mathbb{N} \text{ fixo, e para todo } n \geq 1:
+\quad X_n =
+\begin{cases}
+\sum\limits_{i=1}^{X_{n-1}} Y_i^{(n)}, &amp; \text{se } X_{n-1} \geq a. \\
+a, &amp; \text{se } X_{n-1} &lt; a
+\end{cases}
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Identifique o espaço de estados do processo <span class="math inline">\(X\)</span>.</p></li>
+<li><p>Prove que <span class="math inline">\(X\)</span> é uma C.M. homogénea e identifique a matriz de transição.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-99" class="exercise"><strong>Exercício 2.13  </strong></span>Determinado ser vivo produz, durante a sua vida, um número de descendentes <span class="math inline">\(Y\)</span> de acordo com uma distribuição dada por:
+<span class="math display">\[\forall ~k \in \mathbb{N}_0, ~P(Y=k)=\dfrac{\lambda^k}{k!}e^{-\lambda}, \quad \lambda &gt;0 \text{ constante}.\]</span>
+A cada indivíduo <span class="math inline">\(i\)</span> da população associamos uma v.a. <span class="math inline">\(Y_i=\)</span> número de descendentes do indivíduo <span class="math inline">\(i\)</span>. Para cada <span class="math inline">\(n \in \mathbb{N}_0\)</span>, define-se a v.a. <span class="math inline">\(X_n\)</span> que representa o tamanho da população na geração de ordem <span class="math inline">\(n\)</span>. Considere o PE <span class="math inline">\((X_n: ~n \in \mathbb{N}_0)\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Prove que <span class="math inline">\((X_n: ~n \in \mathbb{N}_0)\)</span> é uma C.M. homogénea.</p></li>
+<li><p>Calcule a probabilidade de existirem <span class="math inline">\(k \in \mathbb{N}_0\)</span> indivíduos na geração de ordem <span class="math inline">\(n+2\)</span>, sabendo que na geração de ordem <span class="math inline">\(n\)</span> existiam <span class="math inline">\(j \in \mathbb{N}_0\)</span>.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-100" class="exercise"><strong>Exercício 2.14  </strong></span>Considere lançamentos repetidos de um dado honesto. Seja <span class="math inline">\(X_n\)</span> o máximo dos números que ocorreram nos <span class="math inline">\(n\)</span> primeiros lançamentos.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Indique o espaço de estados da C.M. <span class="math inline">\((X_n: ~n \in \mathbb{N})\)</span> e a respetiva matriz de transição.</p></li>
+<li><p>Determine <span class="math inline">\(P(X_i=i), ~i=1,2,\dots,6\)</span> e <span class="math inline">\(P(X_2=3)\)</span>.</p></li>
+<li><p>Desenhe o grafo da cadeia, classifique os seus estados, e analise o tipo de recorrência.</p></li>
+<li><p>Verifique que a cadeia é aperiódica.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-101" class="exercise"><strong>Exercício 2.15  </strong></span>Seja <span class="math inline">\((X_n: ~n \in \mathbb{N})\)</span> uma C.M. com espaço de estados <span class="math inline">\(E=\mathbb{N}_0\)</span> e probabilidades de transição <span class="math inline">\(P_{ij}\)</span> tais que:
+<span class="math display">\[P_{k0}=\dfrac{1}{k+2} \quad \text{e} \quad P_{k,k+1}=\dfrac{k+1}{k+2}.\]</span>
+Mostre que a cadeia é irredutível.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-102" class="exercise"><strong>Exercício 2.16  </strong></span>Seja <span class="math inline">\((Z_n: ~n \in \mathbb{N}_0)\)</span> uma C.M. homogénea com espaço de estados <span class="math inline">\(E=\mathbb{N}_0\)</span> e probabilidades de transição:
+<span class="math display">\[\mathbb{P}= \begin{bmatrix}
+    1-a_0 &amp; a_0 &amp; 0 &amp; 0  &amp; \dots  \\
+    1-a_1 &amp; 0 &amp; a_1 &amp; 0  &amp; \dots  \\
+    1-a_2 &amp; 0 &amp; 0 &amp; a_2  &amp; \dots  \\
+    \dots &amp; \dots &amp; \dots &amp; \dots  &amp; \dots  \\
+\end{bmatrix}, \quad 0&lt;a_i&lt;1, ~i=0,1,2,\dots\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>A cadeia dada é irredutível e aperiódica? Justifique.</p></li>
+<li><p>Determine a probabilidade <span class="math inline">\(f_{00}^n\)</span> de que a cadeia, partindo do estado 0, volte novamente a esse estado, pela primeira vez, em <span class="math inline">\(n\)</span> passos. De seguida, mostre que:
+<span class="math display">\[\sum\limits_{n=1}^{M+1}f_{00}^n=1-\prod\limits_{i=0}^{M}a_i.\]</span></p></li>
+<li><p>Atendendo aos resultados das alíneas anteriores, enuncie, em termos dos <span class="math inline">\(a_i\)</span>’s, uma condição necessária e suficiente para que todos os estados sejam recorrentes. Justifique a sua resposta.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-103" class="exercise"><strong>Exercício 2.17  </strong></span>Uma dada empresa identificou seis estados associados ao comportamento diário dos seus colaboradores: <span class="math inline">\(0,1,2,3,4,5\)</span>. As transições de estado para estado podem ser modeladas por uma C.M. com matriz de transição:
+<span class="math display">\[\mathbb{P}= \begin{bmatrix}
+    1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0  \\
+    0.5 &amp; 0 &amp; 0.5 &amp; 0 &amp; 0 &amp; 0  \\
+    0.1 &amp; 0 &amp; 0.5 &amp; 0.3 &amp; 0 &amp; 0.1  \\
+    0 &amp; 0 &amp; 0 &amp; 0.7 &amp; 0.1 &amp; 0.2  \\
+    0.3 &amp; 0 &amp; 0 &amp; 0.3 &amp; 0.4 &amp; 0  \\
+    0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1  \\
+\end{bmatrix}.\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Desenhe o grafo de <span class="math inline">\(\mathbb{P}\)</span>.</p></li>
+<li><p>Identifique os estados transitórios e os estados recorrentes.</p></li>
+</ol>
+</div>
+<div id="decomposicao-do-espaco-de-estados" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Decomposição do espaço de estados<a href="cadeias-de-markov-em-tempo-discreto.html#decomposicao-do-espaco-de-estados" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Agora pretendemos decompor o espaço de estados de uma cadeia de Markov finita em subclasses. O objetivo é estudar propriedades da cadeia pela análise das propriedades de cada classe separadamente.</p>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-104" class="definition"><strong>Definição 2.14  (Classe fechada) </strong></span>Uma <strong>classe fechada</strong> é uma classe de comunicação <span class="math inline">\(C\)</span> tal que, se <span class="math inline">\(i \in C\)</span> e <span class="math inline">\(P_{ij} &gt; 0\)</span>, então <span class="math inline">\(j \in C\)</span>.</p>
+<p>Note-se que, a cadeia nunca pode sair de <span class="math inline">\(C\)</span> depois de entrar.</p>
+</div>
+<p>Coloca-se agora a questão: como encontrar todos os estados que pertencem a uma mesma classe de comunicação (e, em particular, a uma classe fechada)? Seguem-se os passos:</p>
+<ul>
+<li><p><strong>Passo 1:</strong> inclui-se em <span class="math inline">\(C\)</span> todos os estados <span class="math inline">\(j\)</span> para os quais <span class="math inline">\(P_{ij}&gt;0\)</span>, isto é, <span class="math inline">\(i \longrightarrow j\)</span>;</p></li>
+<li><p><strong>Passo 2:</strong> inclui-se em <span class="math inline">\(C\)</span> todos os estados <span class="math inline">\(k\)</span> para os quais <span class="math inline">\(P_{jk}&gt;0\)</span>, <span class="math inline">\(\forall ~j \in C\)</span>, isto é, <span class="math inline">\(i \longrightarrow k\)</span> (propriedade da transitividade);</p></li>
+<li><p><strong>Passo 3:</strong> repetir o Passo 2 até não se poder incluir mais estados em <span class="math inline">\(C\)</span>;</p></li>
+<li><p><strong>Passo 4:</strong> verificar se algum estado de <span class="math inline">\(C\)</span> tem transições para fora.</p>
+<ul>
+<li>Se não tiver, <span class="math inline">\(C\)</span> é uma <strong>classe fechada</strong>.<br />
+</li>
+<li>Caso contrário, <span class="math inline">\(C\)</span> é apenas uma <strong>classe de comunicação</strong> (não fechada).</li>
+</ul></li>
+</ul>
+<p>Nota: se começarmos num estado <strong>transitório</strong> e aplicarmos o algoritmo, o conjunto construído acabará por conduzir a uma <strong>classe fechada</strong>. Assim, as classes fechadas são precisamente os <strong>menores subconjuntos</strong> do espaço de estados obtidos pela aplicação do algoritmo a todos os estados.</p>
+<p>O resultado seguinte permite uma decomposição do espaço de estados de uma cadeia de Markov, chamada <strong>decomposição canónica</strong>.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-105" class="theorem"><strong>Teorema 2.11  (Decomposição canónica) </strong></span>Seja <span class="math inline">\(\mathbb{P}\)</span> a matriz de transição de uma C.M. com espaço de estados <span class="math inline">\(E\)</span>. Então, <span class="math inline">\(E\)</span> pode ser decomposto numa união (finita ou infinita enumerável) da forma:
+<span class="math display">\[
+E = T \cup C_1 \cup C_2 \cup \dots,
+\]</span>
+onde:</p>
+<ul>
+<li><p><span class="math inline">\(T\)</span> é o conjunto dos estados transitórios;</p></li>
+<li><p><span class="math inline">\(C_1, C_2, \dots\)</span> são classes de comunicação disjuntas, fechadas e constituídas apenas por estados recorrentes.</p></li>
+</ul>
+<p>Para cada <span class="math inline">\(j \in C_a\)</span>, a probabilidade de atingir um estado <span class="math inline">\(k \in E\)</span> num número finito de passos é dada por:</p>
+<p><span class="math display">\[
+\sum_{n=1}^{+\infty} f_{jk}^{n} =
+\begin{cases}
+1, &amp; \text{se } k \in C_a, \\
+0, &amp; \text{se } k \notin C_a,
+\end{cases}
+\]</span></p>
+<p>onde <span class="math inline">\(f_{jk}^{n} = P(X_n = k, X_1 \neq k, \dots, X_{n-1} \neq k \mid X_0 = j)\)</span> é a probabilidade de atingir <span class="math inline">\(k\)</span> pela primeira vez no instante <span class="math inline">\(n\)</span>, começando em <span class="math inline">\(j\)</span>.</p>
+<p>Adicionalmente, reordenando os estados de forma conveniente, a matriz de transição <span class="math inline">\(\mathbb{P}\)</span> pode ser escrita na forma em blocos:
+<span class="math display">\[
+\mathbb{P} =
+\begin{bmatrix}
+R &amp; S \\
+0 &amp; Q
+\end{bmatrix},
+\]</span>
+onde:</p>
+<ul>
+<li><p><span class="math inline">\(R\)</span> descreve as transições entre estados em <span class="math inline">\(T\)</span>;</p></li>
+<li><p><span class="math inline">\(S\)</span> descreve as transições de <span class="math inline">\(T\)</span> para as classes <span class="math inline">\(C_1, C_2, \dots\)</span>;</p></li>
+<li><p><span class="math inline">\(Q\)</span> é uma matriz bloco-diagonal com submatrizes <span class="math inline">\(P_1, P_2, \dots\)</span>, onde cada <span class="math inline">\(P_a = [P_{ij}]_{i,j \in C_a}\)</span> representa as transições internas em cada classe recorrente.</p></li>
+</ul>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-106" class="remark"><em>Nota</em>. </span>A decomposição canónica do espaço de estados de uma C.M. é muito útil para analisar as propriedades da cadeia, como a recorrência e a transitoriedade dos estados, bem como a classificação dos estados em classes de comunicação. Em particular, quando o espaço de estados <span class="math inline">\(E\)</span> de uma C.M. é finito, a classificação dos estados pode fazer-se da seguinte forma:</p>
+<ul>
+<li><p>Passo 1: decompor <span class="math inline">\(E\)</span> em classes de equivalência (classes de comunicação);</p></li>
+<li><p>Passo 2: identificar quais dessas classes são fechadas;</p></li>
+<li><p>Passo 3:</p>
+<ul>
+<li><p>em cada classe fechada, todos os estados são recorrentes positivos (porque a classe é finita e fechada);</p></li>
+<li><p>nas classes não fechadas, todos os estados são transitórios.</p></li>
+</ul></li>
+</ul>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-107" class="example"><strong>Exemplo 2.6  </strong></span>Considere-se uma C.M com espaço de estados <span class="math inline">\(E=\{1, 2,\dots, 7\}\)</span> e com matriz de transição
+<span class="math display">\[
+\mathbb{P} =
+\begin{bmatrix}
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0  \\
+0 &amp; 1/3 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 2/3  \\
+0 &amp; 0 &amp; 1/2 &amp; 0 &amp; 1/2 &amp; 0 &amp; 0  \\
+0 &amp; 1/2 &amp; 0 &amp; 1/2 &amp; 0 &amp; 0 &amp; 0 \\
+1/3 &amp; 0 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+1/4 &amp; 1/4 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1/2   \\
+\end{bmatrix}.
+\]</span></p>
+<ul>
+<li>O grafo associado à matriz <span class="math inline">\(\mathbb{P}\)</span> é:</li>
+</ul>
+<p><img src="index_files/figure-html/fig4-1.png" width="90%" style="display: block; margin: auto;" /></p>
+<ul>
+<li><p>Classes de equivalência (partição de <span class="math inline">\(E\)</span> com base na relação de comunicação <span class="math inline">\(i \longleftrightarrow j\)</span>):
+<span class="math display">\[\{1,3,5\}, \{2,7\}, \{4\}, \{6\}.\]</span></p></li>
+<li><p>Classes fechadas (classes de equivalência sem saída):
+<span class="math display">\[\{1,3,5\}, \{6\}.\]</span></p></li>
+<li><p>Conjuntos fechados (qualquer subconjunto sem transições para fora):
+<span class="math display">\[\{1,3,5\},\{6\}.\]</span></p></li>
+<li><p>Estados recorrentes positivos (estados em classes fechadas finitas):
+<span class="math display">\[1,3,5,6.\]</span></p></li>
+<li><p>Estados transitórios (estados que podem sair da sua classe, ou que não são atingidos novamente):
+<span class="math display">\[2,4,7.\]</span></p></li>
+<li><p>Decomposição (separação entre transitórios e classes recorrentes):
+<span class="math display">\[E=T \cup C_1 \cup C_2=\{2,4,7\} \cup \{1,3,5\} \cup \{6\}.\]</span></p></li>
+<li><p>A matriz de transição pode ser reescrita como:</p></li>
+</ul>
+<p><span class="math display">\[
+\mathbb{P} =
+\left[
+\begin{array}{c:ccc:ccc}
+\color{red}{1} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0  \\ \hdashline
+0 &amp; \color{blue}{0} &amp; \color{blue}{1} &amp; \color{blue}{0} &amp; 0 &amp; 0 &amp; 0  \\
+0 &amp; \color{blue}{0} &amp; \color{blue}{1/2} &amp; \color{blue}{1/2} &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; \color{blue}{1/3} &amp; \color{blue}{1/3} &amp; \color{blue}{1/3} &amp; 0 &amp; 0 &amp; 0  \\ \hdashline
+\color{green}{0} &amp; \color{orange}{0} &amp; \color{orange}{0} &amp; \color{orange}{0} &amp; \color{pink}{1/3} &amp; \color{pink}{0} &amp; \color{pink}{2/3}  \\
+\color{green}{0} &amp; \color{orange}{0} &amp; \color{orange}{0} &amp; \color{orange}{0} &amp; \color{pink}{1/2} &amp; \color{pink}{1/2} &amp; \color{pink}{0}  \\
+\color{green}{0} &amp; \color{orange}{1/4} &amp; \color{orange}{0} &amp; \color{orange}{0} &amp; \color{pink}{1/4} &amp; \color{pink}{0} &amp; \color{pink}{3/4}  
+\end{array}
+\right]
+=
+\left[
+\begin{array}{ccc}
+\color{red}{P_1} &amp; \textbf{0} &amp; \textbf{0} \\
+\textbf{0} &amp; \color{blue}{P_2} &amp; \textbf{0} \\
+\color{green}{Q_1} &amp; \color{orange}{Q_2} &amp; \color{pink}{Q_3}
+\end{array}
+\right],
+\]</span>
+onde <span class="math inline">\(P_i\)</span> representa a matriz de probabilidades de transição da classe <span class="math inline">\(C_i\)</span> e <span class="math inline">\(Q_i\)</span> é a matriz associada a estados de transição.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-108" class="remark"><em>Nota</em>. </span>Nem todos os conjuntos fechados são classes. Atente-se ao exemplo anterior:</p>
+<ul>
+<li><p><span class="math inline">\(\{1,3,5,6\}\)</span> é fechado, mas não é uma classe de equivalência, pois 6 não comunica com os outros.</p></li>
+<li><p>todas as classes fechadas são conjuntos fechados, mas o inverso não é verdadeiro.</p></li>
+<li><p>classes de equivalência disjuntas partilham zero comunicação entre si (por definição).</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="probabilidades-de-absorcao-em-estados-recorrentes" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Probabilidades de absorção em estados recorrentes<a href="cadeias-de-markov-em-tempo-discreto.html#probabilidades-de-absorcao-em-estados-recorrentes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Um dos cálculos de interesse na teoria das cadeias de Markov está relacionado com o tempo (ou número de transições) necessário, para que, a cadeia partindo de algum estado inicial, <strong>atinja algum estado terminal de interesse</strong>.</p>
+<p>Este assunto está muitas vezes associado ao problema da determinação de probabilidades de absorção, com a seguinte formulação.</p>
+<ul>
+<li><p>Seja <span class="math inline">\(E=T \cup C_1 \cup C_2 \cup \dots\)</span> a decomposição canónica do espaço de estados <span class="math inline">\(E\)</span>, onde <span class="math inline">\(T\)</span> é definido pelos estados transitórios da cadeia, e <span class="math inline">\(C_i\)</span> são classes fechadas e recorrentes.</p></li>
+<li><p>Se a cadeia parte de um estado recorrente em <span class="math inline">\(C_a\)</span>, nunca mais deixará <span class="math inline">\(C_a\)</span> (<span class="math inline">\(C_a\)</span> é fechada).</p></li>
+<li><p>Se a cadeia parte do estado transitório de <span class="math inline">\(T\)</span>, a cadeia poderá ser absorvida por uma das classes <span class="math inline">\(C_a, ~a=1,2,\dots.\)</span></p></li>
+</ul>
+<p>Nestas circunstâncias estamos interessados nas probabilidades de absorção.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-109" class="definition"><strong>Definição 2.15  </strong></span>Seja <span class="math inline">\(C := \bigcup\limits_a C_a\)</span> a união das classes fechadas de estados recorrentes, e seja <span class="math inline">\(T\)</span> o conjunto de estados transitórios. Seja <span class="math inline">\(S\)</span> a variável aleatória definida por
+<span class="math display">\[
+S := \min\{n \geq 1 : X_n \in C\},
+\]</span>
+isto é, o instante da primeira entrada numa classe recorrente, partindo de um estado transitório.</p>
+<p>Dado <span class="math inline">\(X_0 = i\)</span>, com <span class="math inline">\(i \in T\)</span>, o valor
+<span class="math display">\[
+a_{ij} := P(X_S = j \mid X_0 = i), \quad j \in C,
+\]</span>
+representa a probabilidade de a cadeia, partindo de <span class="math inline">\(i\)</span>, ser absorvida no estado recorrente <span class="math inline">\(j\)</span>.</p>
+<p>Esta quantidade é chamada <strong>probabilidade de absorção</strong> do estado transitório <span class="math inline">\(i\)</span> no estado recorrente <span class="math inline">\(j\)</span>.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-110" class="theorem"><strong>Teorema 2.12  (Probabilidades de absorção) </strong></span>Seja <span class="math inline">\(E\)</span> um espaço de estados finito, <span class="math inline">\(T \subset E\)</span> o conjunto de estados transitórios, e <span class="math inline">\(C = \bigcup\limits_a C_a\)</span> a união das classes fechadas de estados recorrentes.</p>
+<p>Para cada par <span class="math inline">\((i,j) \in T \times C\)</span>, a <strong>probabilidade de absorção</strong> no estado <span class="math inline">\(j\)</span>, partindo de <span class="math inline">\(i\)</span>, é dada por
+<span class="math display">\[
+a_{ij} = P_{ij} + \sum_{k \in T} P_{ik} \, a_{kj},
+\]</span>
+onde <span class="math inline">\(P_{ik}\)</span> são as probabilidades de transição de 1 passo da matriz <span class="math inline">\(\mathbb{P}\)</span>.</p>
+<p><strong>Interpretação:</strong> a cadeia pode ser absorvida no estado <span class="math inline">\(j \in C\)</span> de forma imediata (via <span class="math inline">\(P_{ij}\)</span>) ou, caso isso não ocorra, pode passar para um estado intermédio <span class="math inline">\(k \in T\)</span>, a partir do qual será absorvida em <span class="math inline">\(j\)</span>.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-111" class="example"><strong>Exemplo 2.7  </strong></span>Num estudo no Reino Unido, após a Segunda Guerra Mundial, sobre a mobilidade social entre gerações foram identificados 3 níveis: 1 - superior, 2 - médio e 3 - inferior. Foram estimadas as probabilidades condicionais de um filho pertencer a uma classe social (nível superior, médio, ou inferior) mediante o nível social dos pais ser superior, médio ou inferior. Os resultados são apresentados na tabela seguinte:</p>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Filho
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:center;">
+Pai
+</th>
+<th style="text-align:center;">
+Superior
+</th>
+<th style="text-align:center;">
+Médio
+</th>
+<th style="text-align:center;">
+Inferior
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+Superior
+</td>
+<td style="text-align:center;">
+0.45
+</td>
+<td style="text-align:center;">
+0.48
+</td>
+<td style="text-align:center;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Médio
+</td>
+<td style="text-align:center;">
+0.05
+</td>
+<td style="text-align:center;">
+0.70
+</td>
+<td style="text-align:center;">
+0.25
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Inferior
+</td>
+<td style="text-align:center;">
+0.01
+</td>
+<td style="text-align:center;">
+0.50
+</td>
+<td style="text-align:center;">
+0.49
+</td>
+</tr>
+</tbody>
+</table>
+<p>Admitamos que as transições entre classes de gerações sucessivas é uma família que pode ser considerada como transições de uma cadeia de Markov.</p>
+<ol style="list-style-type: decimal">
+<li><p>Qual a probabilidade de um neto de uma família com nível médio seja o primeiro descendente a ser considerado com um nível social superior, isto é, qual o valor de <span class="math inline">\(f_{21}^2\)</span>?</p></li>
+<li><p>Qual a probabilidade de que, em alguma geração, de uma família com nível social inferior, seja atingida pela primeira vez o nível superior?</p></li>
+</ol>
+<p><strong>Solução</strong></p>
+<p>A matriz de transição é dada por</p>
+<p><span class="math display">\[
+\mathbb{P} =
+\begin{bmatrix}
+0.45 &amp; 0.48 &amp; 0.07   \\
+0.05 &amp; 0.70 &amp; 0.25  \\
+0.01 &amp; 0.50 &amp; 0.49 \\
+\end{bmatrix}, \quad E=\{1,2,3\}=\{2,3\}\cup\{1\}=T \cup C.
+\]</span>
+O grafo é
+<img src="index_files/figure-html/fig5-1.png" width="40%" style="display: block; margin: auto;" /></p>
+<ol style="list-style-type: decimal">
+<li><p>Pretende-se determinar a probabilidade de, começando no estado 2, o primeiro momento em que a cadeia entra no estado 1 seja no instante 2. Para tal, iremos usar a probabilidade de primeira passagem do estado 2 para o estado 1 em 2 passos, isto é,
+<span class="math display">\[\begin{eqnarray*}
+f_{21}^2 &amp;=&amp; P(X_2=1, X_1 \neq 1 \mid X_0=2) \\
+      &amp;=&amp; P(X_2=1, X_1 = 2 \mid X_0=2)+P(X_2=1, X_1 = 3 \mid X_0=2)\\
+      &amp;=&amp; \sum\limits_{k \neq 1} P_{2k}P_{k1}\\
+      &amp;=&amp; P_{22}P_{21}+P_{23}P_{31}\\
+      &amp;=&amp; 0.70 \times 0.05 + 0.25 \times 0.01\\
+      &amp;=&amp; 0.0375.
+\end{eqnarray*}\]</span></p></li>
+<li><p>Nesta questão, estamos interessados no cálculo do tempo necessário para que a cadeia, partindo de um estado inicial (“nível social inferior”), atinja um estado recorrente (“nível superior”). Podemos, portanto, utilizar as probabilidades de absorção e aplicar o Teorema 2.12. Assim,</p></li>
+</ol>
+<p><span class="math display">\[a_{31}=P_{31}+\sum\limits_{k \in T} P_{3k}a_{k1}=P_{31}+P_{32}a_{21}+P_{33}a_{31}.\]</span>
+Uma vez que não sabemos o valor de <span class="math inline">\(a_{21}\)</span>, podemos resolver o sistema:</p>
+<p><span class="math display">\[
+\begin{cases}
+a_{31} = P_{31} + P_{32} a_{21} + P_{33} a_{31} \\
+a_{21} = P_{21} + P_{22} a_{21} + P_{23} a_{31}
+\end{cases},
+\]</span>
+donde se obtém <span class="math inline">\(a_{31}=1\)</span> (e <span class="math inline">\(a_{21}=1\)</span>), ou seja, com probabilidade <span class="math inline">\(1\)</span>, a cadeia partindo do estado 3 (nível social inferior) atingirá o estado 1 (nível superior) em alguma geração futura.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-112" class="exercise"><strong>Exercício 2.18  </strong></span>Os negócios do José flutuam em anos sucessivos entre 3 estados: 0 (bancarrota), 1 (perto da bancarrota) e 2 (solvência). A matriz de transição que indica a probabilidade de passagem de um estado para outro é:
+<span class="math display">\[
+\mathbb{P} =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0   \\
+0.5 &amp; 0.25 &amp; 0.25  \\
+0.5 &amp; 0.25 &amp; 0.25 \\
+\end{bmatrix}.
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Qual a probabilidade dos negócios do José conduzirem a uma bancarrota sabendo que ele começou no estado de solvência?</p></li>
+<li><p>A mãe do José considera ser mau para o nome da família permitir que os negócios do seu filho vão à bancarrota. Assim, quando o estado 0 é atingido, a mãe do José dá-lhe dinheiro efetivo de modo a que os negócios do José passem ao estado de solvência com probabilidade 1. A matriz de transição desta nova cadeia de Markov é dada por:
+<span class="math display">\[
+\mathbb{P} =
+\begin{bmatrix}
+0 &amp; 0 &amp; 1   \\
+0.5 &amp; 0.25 &amp; 0.25  \\
+0.5 &amp; 0.25 &amp; 0.25 \\
+\end{bmatrix}.
+\]</span>
+A nova cadeia de Markov é iredutível e aperiódica? Sabendo que os negócios do José estão a correr bem (estado 2), qual a probabilidade da mãe do José ter necessidade de dar novamente dinheiro ao filho apenas daqui a 3 anos?</p></li>
+</ol>
+</div>
+</div>
+<div id="teoremas-limite" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Teoremas limite<a href="cadeias-de-markov-em-tempo-discreto.html#teoremas-limite" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="distribuicao-estacionaria-e-distribuicao-limite" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Distribuição estacionária e distribuição limite<a href="cadeias-de-markov-em-tempo-discreto.html#distribuicao-estacionaria-e-distribuicao-limite" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Seja <span class="math inline">\((X_n: ~n \in \mathbb{N}_0)\)</span> uma C. M. definida num espaço de estados <span class="math inline">\(E\)</span>, com matriz de transição <span class="math inline">\(\mathbb{P}\)</span> e distribuição inicial <span class="math inline">\(P(X_0=i), ~i \in E\)</span>. Existem duas questões pertinentes:</p>
+<ul>
+<li><p>Qual o comportamento de <span class="math inline">\(X_n\)</span> após um “longo” número de transições?</p></li>
+<li><p>Poderá a cadeia atingir um “comportamento estável” após um “longo” número de transições?</p></li>
+</ul>
+<p>Em geral, a sucessão de v.a.’s <span class="math inline">\((X_n: ~n \in \mathbb{N}_0)\)</span> não converge para um estado específico, já que a cadeia goza da propriedade da flutuação aleatória inerente ao próprio processo definida pela matriz de transições. No entanto, pode acontecer que a distribuição de <span class="math inline">\(X_n\)</span> estabilize de algum modo após um elevado número de transições.</p>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-113" class="definition"><strong>Definição 2.16  (Distribuição limite) </strong></span>Se existir
+<span class="math display">\[\lim\limits_{n \to +\infty} P(X_n=j), ~ ~j \in E,\]</span>
+e esse limite, usualmente denotado por <span class="math inline">\(\pi_j\)</span>, definir uma distribuição de probabilidade, então o vetor
+<span class="math display">\[\tilde{\pi}=(\pi_j, ~ ~j \in E)\]</span>
+designa-se por <strong>distribuição limite</strong> da cadeia.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<p>O estudo da existência de uma distribuição limite da cadeia, nomeadamente de uma distribuição de probabilidade <span class="math inline">\((\pi_j, ~ ~j \in E)\)</span>, tal que
+<span class="math display">\[\forall ~j \in E,~~ \pi_j=\lim\limits_{n \to +\infty} P(X_n=j)\]</span>
+está relacionado com a existência da chamada distribuição estacionária.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-114" class="definition"><strong>Definição 2.17  (Distribuição estacionária) </strong></span>Diz-se que a C.M. possui <strong>distribuição estacionária</strong> se existir <span class="math inline">\(\tilde{\pi}=(\pi_j, ~ ~j \in E)\)</span> tal que:</p>
+<ol style="list-style-type: lower-roman">
+<li><p><span class="math inline">\(\tilde{\pi}\)</span> define uma distribuição de probabilidade (<span class="math inline">\(\pi_j&gt;0, ~\forall ~j \in E\)</span> e <span class="math inline">\(\sum\limits_{j \in E} \pi_j=1\)</span>);</p></li>
+<li><p><span class="math inline">\(\tilde{\pi}=\tilde{\pi}~\mathbb{P}\)</span>, isto é,
+<span class="math display" id="eq:distest">\[
+\forall ~j \in E: ~\pi_j = \sum\limits_{i \in E} \pi_i P_{ij}. \tag{2.1}
+\]</span></p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-115" class="remark"><em>Nota</em>. </span></p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(\tilde{\pi}=[\pi_0 ~~ \pi_1 ~~ \pi_2 ~~\dots]\)</span> se <span class="math inline">\(E=\mathbb{N}_0\)</span>.</p></li>
+<li><p>A razão pela qual uma distribuição de probabilidade discreta <span class="math inline">\(\tilde{\pi}=(\pi_j, ~ ~j \in E)\)</span> que satisfaz (ii) é chamada de distribuição estacionária, tem a ver com o facto de</p></li>
+</ol>
+<p><span class="math display">\[\begin{eqnarray*}
+\tilde{\pi}= \tilde{\pi}~ \mathbb{P} \implies
+\tilde{\pi} &amp;=&amp; (\tilde{\pi}~ \mathbb{P}) ~ \mathbb{P} = \tilde{\pi}~ \mathbb{P}^2 \\
+            &amp;=&amp; (\tilde{\pi}~ \mathbb{P}) ~ \mathbb{P}^2 = \tilde{\pi}~ \mathbb{P}^3 \\
+            &amp;=&amp; \dots \\
+            &amp;=&amp; \tilde{\pi}~ \mathbb{P}^n, ~\forall ~n \in \mathbb{N}.
+\end{eqnarray*}\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Por outro lado, pelas propriedades da distribuição das C. M., sabemos que a distribuição de <span class="math inline">\(X_n\)</span> é dada por:
+<span class="math display" id="eq:distest2">\[
+P(X_n=j)= \sum\limits_{i \in E} P(X_0=i)P_{ij}^n, ~~\forall ~n \in \mathbb{N}_0. \tag{2.2}
+\]</span>
+Assim, comparando as relações <a href="cadeias-de-markov-em-tempo-discreto.html#eq:distest">(2.1)</a> e <a href="cadeias-de-markov-em-tempo-discreto.html#eq:distest2">(2.2)</a>, se a distribuição inicial for a distribuição estacionária da cadeia, isto é, se
+<span class="math display">\[P(X_0=i)=\pi_i, ~i\in E,\]</span>
+então a distribuição de probabilidade de <span class="math inline">\(X_n\)</span> também é a distribuição estacionária da cadeia, ou seja,
+<span class="math display">\[P(X_n=j)=\pi_j, ~j\in E, ~n \in \mathbb{N}_0.\]</span>
+Consequentemente, nestas condições, teríamos:</li>
+</ol>
+<ul>
+<li><p>a distribuição de <span class="math inline">\(X_n\)</span> é estacionária com a passagem do tempo (isto é, não se altera com o número de transições <span class="math inline">\(n\)</span>);</p></li>
+<li><p>os vetores aleatórios
+<span class="math display">\[(X_{n_1}, \dots, X_{n_k}) \text{ e } (X_{n_1+m}, \dots, X_{n_k+m})\]</span>
+têm a mesma distribuição, isto é, a cadeia é um processo estritamente estacionário.</p></li>
+</ul>
+</div>
+<p>Do exposto, podemos observar o seguinte Teorema:</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-116" class="theorem"><strong>Teorema 2.13  </strong></span>Se a C.M. tem distribuição estacionária <span class="math inline">\(\tilde{\pi}=(\pi_j, ~j \in E)\)</span> e a distribuição inicial da cadeia for também <span class="math inline">\(\tilde{\pi}\)</span>, isto é,
+<span class="math display">\[P(X_0=i)=\pi_i, ~\forall i \in E,\]</span>
+então existe distribuição limite da cadeia e é dada por
+<span class="math display">\[\lim\limits_{n \to +\infty} P(X_n=j)=\pi_j, ~j \in E.\]</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-117" class="remark"><em>Nota</em>. </span>Para <span class="math inline">\(n\)</span> suficientemente elevado, se os <span class="math inline">\(X_n\)</span> tiverem a mesma distribuição de probabilidade, e se tomarmos essa distribuição como a distribuição inicial, então a C.M. terá um comportamento estável após um elevado número de transições dos estados da cadeia.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<p>Em que condições a C.M. tem distribuição estacionária? Atente-se ao seguinte Teorema:</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-118" class="theorem"><strong>Teorema 2.14  </strong></span>Uma C.M. irredutível tem uma distribuição estacionária
+<span class="math display">\[\tilde{\pi}=(\pi_j, ~j \in E),\]</span>
+sse os estados são todos recorrentes positivos. Neste caso, <span class="math inline">\(\tilde{\pi}\)</span> é a única distribuição estacionária e é dada por
+<span class="math display">\[\pi_j=\dfrac{1}{\mu_j}, ~j \in E,\]</span>
+onde <span class="math inline">\(\mu_j\)</span> é o tempo médio de recorrência do estado <span class="math inline">\(j\)</span>.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-119" class="remark"><em>Nota</em>. </span>Este Teorema fornece um método para testar se uma C.M. irredutível é recorrente positiva. Para tal basta procurar a distribuição estacionária. Como se obtém esta distribuição?
+<span class="math display">\[\tilde{\pi} ~ \text{  satisfaz:  } ~ \begin{cases}
+\tilde{\pi} = \tilde{\pi} ~\mathbb{P}\\
+\sum\limits_{j \in E} \pi_j=1.
+\end{cases}\]</span>
+Se existir <span class="math inline">\(\tilde{\pi_j}\)</span> então a C.M. é recorrente positiva e <span class="math inline">\(\pi_j=1/\mu_j\)</span>.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-120" class="corollary"><strong>Corolário 2.1  </strong></span>Uma C.M. irredutível, recorrente positiva, e com distribuição inicial estacionária <span class="math inline">\(\tilde{\pi}=(\pi_j, ~j \in E)\)</span>, tem distribuição limite dada por
+<span class="math display">\[\pi_j=\lim\limits_{n \to +\infty} P(X_n=j).\]</span></p>
+</div>
+</div>
+<div id="comportamento-limite-de-p-ij-n-quando-n-to-infty" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Comportamento limite de <span class="math inline">\(P_{ij}^n\)</span> quando <span class="math inline">\(n\to+\infty\)</span><a href="cadeias-de-markov-em-tempo-discreto.html#comportamento-limite-de-p-ij-n-quando-n-to-infty" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Qual a relação entre a existência de uma distribuição estacionária e o comportamento limite das probabilidades de transição a <span class="math inline">\(n\)</span> passos, quando <span class="math inline">\(n \to +\infty\)</span>?</p>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-121" class="theorem"><strong>Teorema 2.15  </strong></span>Se existir uma distribuição de probabilidade <span class="math inline">\(\tilde{\pi}=(\pi_j, ~j \in E)\)</span>, tal que
+<span class="math display">\[\forall ~i,j \in E: ~ \pi_j=\lim\limits_{n \to +\infty} P_{ij}^n,\]</span>
+então,</p>
+<ol style="list-style-type: lower-roman">
+<li><p><span class="math inline">\(\displaystyle \lim_{n\to\infty} P(X_n=j) = \pi_j, ~\forall ~ j \in E\)</span>, ou seja, <span class="math inline">\(\pi\)</span> é a distribuição limite da cadeia, independente da distribuição inicial;</p></li>
+<li><p><span class="math inline">\(\tilde\pi\)</span> é estacionária: <span class="math inline">\(\tilde\pi = \tilde\pi \mathbb{P}\)</span>.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-122" class="remark"><em>Nota</em>. </span>Pode acontecer que uma C.M. tenha uma única distribuição estacionária <span class="math inline">\(\tilde{\pi}\)</span>, mas não ser a distribuição limite da cadeia, isto é, a cadeia pode não ser <strong>estável</strong>. No entanto, se esta distribuição estacionária única for tal que
+<span class="math display">\[\pi_j=\lim\limits_{n \to +\infty} P_{ij}^n, ~~j \in E\]</span>
+então, necessariamente <span class="math inline">\(\tilde{\pi}\)</span> é a distribuição limite da C.M. Assim, podemos concluir que se existir o <span class="math inline">\(\lim\limits_{n \to +\infty} P_{ij}^n\)</span>, e se este definir uma distribuição de probabilidade, independentemente do estado inicial <span class="math inline">\(i\)</span>, então essa distribuição definirá a distribuição limite da cadeia. Neste sentido, o estudo do comportamento limite da cadeia <strong>não dependerá</strong> da distribuição inicial <span class="math inline">\(P(X_0=i), ~i \in E\)</span>, mas apenas do comportamento limite das probabilidades de transição a <span class="math inline">\(n\)</span> passos, quando <span class="math inline">\(n \to +\infty\)</span>, ou seja, de
+<span class="math display">\[\lim\limits_{n \to +\infty} P_{ij}^n, ~~ \forall ~ i,j \in E.\]</span></p>
+</div>
+<p>Mas existirá sempre este limite? Não! E, quando existe, como se calcula? Em geral, os cálculos para a obtenção de <span class="math inline">\(\mathbb{P}^n\)</span> são morosos e difíceis, principalmente para valores de <span class="math inline">\(n\)</span> elevados.</p>
+<p>Para contornar esta dificuldade, analisa-se o comportamento das probabilidades <span class="math inline">\(P_{ij}^n\)</span> quando <span class="math inline">\(n \to +\infty\)</span>. Caso estas sejam fáceis de obter, poderão ser utilizadas como aproximações das probabilidades de transição a um número finito de <span class="math inline">\(n\)</span> passos, para <span class="math inline">\(n\)</span> suficientemente elevado. Atente-se ao seguinte Teorema:</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-123" class="theorem"><strong>Teorema 2.16  </strong></span>Se uma C.M. é irredutível, aperiódica, e recorrente, então
+<span class="math display">\[\exists ~ \lim\limits_{n \to +\infty} P_{ij}^n \quad \text{ e } \quad \lim\limits_{n \to +\infty} P_{ij}^n=\lim\limits_{n \to +\infty} P_{jj}^n=\dfrac{1}{\mu_j}, ~\forall ~i,j \in E.\]</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-124" class="theorem"><strong>Teorema 2.17  </strong></span>Em cadeias de Markov irredutíveis e aperiódicas, todos os seus estados são recorrentes positivos, isto é, a cadeia é <strong>ergódica</strong>:</p>
+<ol style="list-style-type: lower-roman">
+<li>sse o sistema de equações lineares
+<span class="math display">\[
+\begin{cases}
+\pi_j = \sum\limits_{i \in E} \pi_i~P_{ij}, ~~j \in E, \\
+\sum\limits_{j \in E} \pi_j =1
+\end{cases},
+\]</span>
+tiver solução
+<span class="math display">\[\pi = [\pi_0 \quad \pi_1 \quad \dots ~ ], \text{ com } E=\mathbb{N}_0.\]</span></li>
+<li>se tiver solução, será única, estritamente positiva e,
+<span class="math display">\[\pi_j=\lim\limits_{n \to +\infty} P_{ij}^n, ~~\forall ~i,j \in E.\]</span></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-125" class="remark"><em>Nota</em>. </span></p>
+<ol style="list-style-type: decimal">
+<li><p>O Teorema anterior apresenta uma condição necessária e suficiente para que cadeira irredutível e aperiódica seja ergódica;</p></li>
+<li><p>A solução do sistema, quando existir, é simultaneamente distribuição estacionária e distribuição limite.</p></li>
+<li><p>Uma vez que
+<span class="math display">\[\lim\limits_{n \to +\infty} P_{ij}^n=\pi_j,\]</span>
+pode-se aproximar a matriz <span class="math inline">\(\mathbb{P}^n\)</span> à matriz <span class="math inline">\([\pi_j]_{j \in E}\)</span> para valores elevados de <span class="math inline">\(n\)</span>.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-126" class="remark"><em>Nota</em>. </span>Numa C.M. irredutível com um número finito de estados não pode haver nem estados transitórios, nem recorrentes nulos, pois em qualquer dos casos
+<span class="math display">\[\lim\limits_{n \to +\infty} P_{ij}^n=0.\]</span>
+Assim, numa C.M. irredutível finita, como todos os estados intercomunicam, eles serão todos recorrentes positivos. Atente-se ao Corolário seguinte.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-127" class="corollary"><strong>Corolário 2.2  </strong></span>Numa C.M. irredutível, aperiódica e finita, o sistema de equações lineares
+<span class="math display">\[
+\begin{cases}
+\pi_i = \sum\limits_{i \in E} \pi_i~P_{ij}, \\
+\sum\limits_{j \in E} \pi_j =1
+\end{cases},
+\]</span>
+tem solução única, estritamente positiva e <span class="math inline">\(\pi_j=\lim\limits_{n \to +\infty} P_{ij}^n\)</span>.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-128" class="exercise"><strong>Exercício 2.19  </strong></span>Num dado centro comercial existem 4 restaurantes <span class="math inline">\(A,B,C\)</span> e <span class="math inline">\(D\)</span>. Desde que a Ana trabalha numa das lojas do centro, ela almoça regularmente num dos 4 restaurantes. Sabe-se ainda que a escolha diária do restaurante está de acordo uma C.M. homogénea com matriz de transição:
+<span class="math display">\[
+\mathbb{P} =
+\begin{bmatrix}
+0.5 &amp; 0.5 &amp; 0 &amp; 0   \\
+0.3 &amp; 0 &amp; 0.1 &amp; 0.6   \\
+0.4 &amp; 0 &amp; 0.3 &amp; 0.3   \\
+0 &amp; 0 &amp; 1 &amp; 0   \\
+\end{bmatrix}.
+\]</span>
+Sabe-se que no primeiro dia de trabalho qualquer um dos 4 restaurantes tinha igual probabilidade de ser selecionado pela Ana.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Defina distribuição inicial de uma C.M. e indique a distribuição inicial da cadeia dada.</p></li>
+<li><p>Calcule a probabilidade de no segundo dia de trabalho a Ana selecione o restaurante <span class="math inline">\(B\)</span> para almoçar.</p></li>
+<li><p>Classifique quanto à recorrência todos os estados da cadeia.</p></li>
+<li><p>Sabendo que a Ana almoçou hoje no restaurante <span class="math inline">\(B\)</span>, qual a probabilidade da Ana nos próximos dias optar pelo restaurante <span class="math inline">\(A\)</span> antes de selecionar o restaurante <span class="math inline">\(D\)</span>?</p></li>
+<li><p>Qual o número médio de dias entre dois almoços no restaurante <span class="math inline">\(B\)</span>?</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-129" class="exercise"><strong>Exercício 2.20  </strong></span>Considere uma C.M. sobre o espaço um espaço de estados <span class="math inline">\(E=\{1,2,3,4,5,6\}\)</span> e com matriz de transição:
+<span class="math display">\[
+\mathbb{P} =
+\begin{bmatrix}
+0.5 &amp; 0.5 &amp; 0 &amp; 0 &amp; 0 &amp; 0  \\
+0.25 &amp; 0.75 &amp; 0 &amp; 0 &amp; 0 &amp; 0  \\
+0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0 &amp; 0  \\
+0.25 &amp; 0 &amp; 0.25 &amp; 0.25 &amp; 0 &amp; 0.25  \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0.5 &amp; 0.5  \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0.5 &amp; 0.5  \\
+\end{bmatrix}.
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Classifique os estados da cadeia identificando as classes fechadas e a periodicidade de todos os estados da cadeia.</p></li>
+<li><p>Determine a parobabilidade de que a cadeia, partindo do estado 1, regresse novamente a 1, pela primeira vez, em <span class="math inline">\(n\)</span> passos.</p></li>
+<li><p>Determine o número médio de transições necessárias para que a cadeia, partindo de 1 volte a 1, isto é, o tempo médio de recorrência do estado 1.</p></li>
+<li><p>Encontre a distribuição estacionária relativa à C.M. restrita ao sub-espaço <span class="math inline">\(\{1,2\} \subset E\)</span>. A partir desta, determine o tempo médio de recorrência para o estado 1.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-130" class="exercise"><strong>Exercício 2.21  </strong></span>Relativamente ao funcionamento de uma máquina analisa-se a durabilidade, em número de dias completos, de um certo tipo de peça. Para tal, considere-se que sempre que a peça falha a máquina pára, procedendo-se à substituição da peça por outra idêntica, de modo que no dia seguinte a máquina retoma o seu funcionamento com a nova peça.</p>
+<p>Seja <span class="math inline">\(Z_{n+1}\)</span> o tempo de vida (contado em dias completos) da peça instalada no <span class="math inline">\(n-\)</span>ésimo dia, e denote por <span class="math inline">\(p_k\)</span> a probabilidade de que uma peça nova dure <span class="math inline">\(k\)</span> dias completos, com <span class="math inline">\(k=0,1,2,\dots\)</span>.</p>
+<p>Represente por <span class="math inline">\(X_n\)</span> o tempo de vida (contado em dias completos) que resta à peça que está em uso no <span class="math inline">\(n-\)</span>ésimo dia de observação do processo.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Prove que o processo <span class="math inline">\((X_n: ~n \in \mathbb{N}_0)\)</span> é uma C.M. homogénea sobre o espaço <span class="math inline">\(\mathbb{N}_0\)</span> e com matriz de transição:
+<span class="math display">\[
+\mathbb{P} =
+\begin{bmatrix}
+p_0 &amp; p_1 &amp; p_2 &amp; \dots   \\
+1 &amp; 0 &amp; 0 &amp; \dots   \\
+0 &amp; 1 &amp; 0 &amp; \dots   \\
+0 &amp; 0 &amp; 1 &amp; \dots   \\
+\dots &amp; \dots &amp; \dots &amp; \dots   \\
+\end{bmatrix}.
+\]</span></p></li>
+<li><p>A cadeia <span class="math inline">\((X_n: ~n \in \mathbb{N}_0)\)</span> é irredutível e aperiódica? Justifique.</p></li>
+<li><p>Defina distribuição estacionária de uma C.M. e mostre que a cadeia dada possui distribuição estacionária sse o tempo médio de vida das peças novas é finito, isto é,
+<span class="math display">\[\sum\limits_{k=0}^{+\infty}kp_k&lt;+\infty.\]</span>
+Note que <span class="math inline">\(p_0+p_1+p_2+\dots=1\)</span>.</p></li>
+<li><p>Sob que condição a cadeia dada é ergódica? Justifique.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-131" class="exercise"><strong>Exercício 2.22  </strong></span></p>
+<!-- Ex2.1 Exer. Alfredo -->
+<p>Considere uma cadeia de Markov homogénea definida pelo seguinte grafo:</p>
+<p><img src="index_files/figure-html/Ex2.1ExerAlfredo-1.png" width="40%" style="display: block; margin: auto;" /></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Determine a matriz das probabilidades de transição.</p></li>
+<li><p>Em que condições esta cadeia é irredutível e aperiódica?</p></li>
+<li><p>Determine a distribuição estacionária <span class="math inline">\(\pi=(\pi _{1},\pi _{2},\pi _{3})\)</span>.</p></li>
+<li><p>Calcule os valores de <span class="math inline">\(p\)</span> e <span class="math inline">\(q\)</span> tais que <span class="math inline">\(\pi _{1}=\pi _{2}=\pi _{3}\)</span>.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-132" class="exercise"><strong>Exercício 2.23  </strong></span></p>
+<!-- Ex2.4 Exer. Alfredo -->
+<p>Considere uma C.M. com espaço de estados <span class="math inline">\(E=\{1,2,3,4\}\)</span> e matriz de transição
+<span class="math display">\[
+\mathbb{P}=\left[
+\begin{array}{cccc}
+1/2 &amp; 1/2 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1/3 &amp; 2/3 &amp; 0 \\
+1/2 &amp; 0 &amp; 1/2 &amp; 0%
+\end{array}
+\right]
+\]</span>
+Classifique os estados.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-133" class="exercise"><strong>Exercício 2.24  </strong></span></p>
+<!-- Ex2.5 Exer. Alfredo -->
+<p>Considere uma C.M. homogénea <span class="math inline">\(\{X_{n}, ~ n\geq 0\}\)</span>, com espaço de estados <span class="math inline">\(E=\{1,2,3\}\)</span> e matriz de probabilidades de transição a um passo:
+<span class="math display">\[
+\mathbb{P}=\left[
+\begin{array}{ccc}
+p &amp; 1-p &amp; 0 \\
+0 &amp; 0 &amp; 1 \\
+0 &amp; 1-q &amp; q%
+\end{array}
+\right] ,\;\;\;0&lt;p&lt;1\;\;\;\mathrm{e}\;\;\;0&lt;q&lt;1.
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Classifique, justificando, cada um dos estados da cadeia.</p></li>
+<li><p>Calcule o limite
+<span class="math display">\[\lim\limits_{n \to \infty }P(X_{n}=3).\]</span></p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-134" class="exercise"><strong>Exercício 2.25  </strong></span></p>
+<!-- Ex2.6 Exer. Alfredo -->
+<p>Uma urna contém 6 bolas, das quais 3 são encarnadas e 3 são verdes. São selecionadas ao acaso da urna 2 bolas simultaneamente. Se uma for verde e a outra for encarnada, então são postas de lado e são colocadas duas bolas azuis na urna. Se não for o caso, colocam-se de volta as bolas retiradas na urna. O processo repete-se até só haver bolas azuis na urna.</p>
+<p>Seja <span class="math inline">\(X_{n}\)</span> o número de bolas encarnadas na urna depois da tiragem <span class="math inline">\(n\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Justifique que <span class="math inline">\(\{X_{n}\}\)</span> é uma C.M homogénea. Defina o espaço de estados e construa a respetiva matriz das probabilidades de transição.</p></li>
+<li><p>Classifique, justificando, os estados da cadeia.</p></li>
+<li><p>Calcule a probabilidade de, a determinada altura, a urna apenas conter bolas azuis partindo de <span class="math inline">\(X_{0}=3\)</span>.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-135" class="exercise"><strong>Exercício 2.26  </strong></span></p>
+<!-- Ex2.9 Exer. Alfredo -->
+<p>Considere uma C.M com estados 0 e 1, e matriz de transição
+<span class="math display">\[
+\mathbb{P}=\left[
+\begin{array}{cc}
+a &amp; 1-a \\
+1-b &amp; b%
+\end{array}
+\right] \, , \; 0&lt;a,~ b&lt;1.
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Calcule a probabilidade do primeiro retorno ao estado 1 em <span class="math inline">\(n\)</span> passos,
+<span class="math inline">\(f_{11}^{n}, ~n=1,2,...\)</span>, e verifique que o estado 1 é recorrente
+positivo.</p></li>
+<li><p>Calcule a distribuição limite <span class="math inline">\((\pi _{0},\pi _{1})\)</span> e discuta a
+sua existência. Relacione <span class="math inline">\(\pi _{1}\)</span> com a média do tempo de
+primeiro retorno ao estado 1.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-136" class="exercise"><strong>Exercício 2.27  </strong></span></p>
+<!-- Ex2.10 Exer. Alfredo -->
+<p>Considere a C.M <span class="math inline">\((X_{n}, ~n=0,1,\cdots )\)</span> com espaço de estados <span class="math inline">\(E=\{0,1\}\)</span> e tal que,
+<span class="math display">\[
+0&lt;p_{00}&lt;1\;\;\;\mathrm{e}\;\;\;0&lt;p_{11}&lt;1.
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Prove que a cadeia é recorrente positiva.</p></li>
+<li><p>Determine a distribuição estacionária da cadeia.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-137" class="exercise"><strong>Exercício 2.28  </strong></span></p>
+<!-- Ex2.13 Exer. Alfredo -->
+<p>Considere uma C.M com espaço de
+estados <span class="math inline">\(E=\{1,2,3,4\}\)</span> e matriz de transição
+<span class="math display">\[
+\mathbb{P}=\left[
+\begin{array}{cccc}
+1/3 &amp; 2/3 &amp; 0 &amp; 0 \\
+1/2 &amp; 1/2 &amp; 0 &amp; 0 \\
+1/4 &amp; 0 &amp; 1/4 &amp; 1/2 \\
+0 &amp; 0 &amp; 0 &amp; 1%
+\end{array}
+\right]
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Classifique, justificando, os estados da cadeia.</p></li>
+<li><p>Calcule <span class="math inline">\(f_{34}(n)\)</span>, a probabilidade de a primeira
+visita ao estado 4 ter lugar no <span class="math inline">\(n\)</span>-ésimo passo, partindo de 3, e
+calcule a probabilidade de absorção no estado 4, partindo de 3.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-138" class="exercise"><strong>Exercício 2.29  </strong></span></p>
+<!-- Ex2.15 Exer. Alfredo -->
+<p>Considere uma C.M. definida pela matriz das probabilidades
+de transição:
+<span class="math display">\[
+\mathbb{P}=\left[
+\begin{array}{ccc}
+0 &amp; 2/3 &amp; 1/3 \\
+3/8 &amp; 1/8 &amp; 1/2 \\
+1/2 &amp; 1/2 &amp; 0%
+\end{array}
+\right]
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Verifique que a cadeia é irredutível e aperiódica.</p></li>
+<li><p>Verifique a existência de distribuição limite e determine-a.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-139" class="exercise"><strong>Exercício 2.30  </strong></span></p>
+<!-- Ex2.18 Exer. Alfredo -->
+<p>Considere uma C.M. <span class="math inline">\((X_{n}, ~n=0,1,\dots)\)</span> com espaço de estados <span class="math inline">\(E=\{1,2\}\)</span>, em que <span class="math inline">\(P_{12}=P_{21}=1\)</span> e <span class="math inline">\(P(X_{0}=1)=P(X_{0}=2)=1/2\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>O que pode concluir quanto à convergência de <span class="math inline">\(P_{ii}^{n}, ~i=1,2\)</span>, quando <span class="math inline">\(n \to +\infty?\)</span> Justifique.</p></li>
+<li><p>Mostre que
+<span class="math display">\[
+P(X_{n}=1)=P(X_{n}=2)=1/2,\;\;\;\forall \,n=1,2,\dots,
+\]</span>
+isto é, a distribuição de <span class="math inline">\(X_{n}\)</span> é estacionária. Comente e
+relacione justificadamente com a conclusão obtida na alínea
+anterior.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introducao-aos-processos-estocasticos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cadeias-de-markov-em-tempo-continuo.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["PEA.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

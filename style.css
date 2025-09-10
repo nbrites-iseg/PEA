@@ -1,0 +1,59 @@
+
+
+.definition {
+  background-color: #e0f7fa;
+  padding: 15px;
+  border-left: 5px solid #0097a7;
+  margin: 1em 0;
+}
+
+.theorem {
+  background-color: #fff3e0;
+  padding: 15px;
+  border-left: 5px solid #fb8c00;
+  margin: 1em 0;
+}
+
+.proposition {
+  background-color: #fff3e0;
+  padding: 15px;
+  border-left: 5px solid #fb8c00;
+  margin: 1em 0;
+}
+
+.hypothesis {
+  background-color: #e0f7fa; /* tom suave de azul */
+  padding: 15px;
+  border-left: 5px solid #00acc1; /* azul mais escuro */
+  margin: 1em 0;
+}
+
+.corollary {
+  background-color: #fff3e0;
+  padding: 15px;
+  border-left: 5px solid #fb8c00;
+  margin: 1em 0;
+}
+
+.example {
+  background-color: #e8f5e9;
+  padding: 15px;
+  border-left: 5px solid #43a047;
+  margin: 1em 0;
+}
+
+.remark {
+  background-color: #f3e5f5;
+  padding: 15px;
+  border-left: 5px solid #8e24aa;
+  margin: 1em 0;
+}
+
+.exercise {
+  background-color: #fbe9e7;
+  padding: 15px;
+  border-left: 5px solid #d84315;
+  margin: 1em 0;
+}
+
+

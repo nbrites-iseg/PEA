@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Introdução aos processos estocásticos | Processos Estocásticos e Aplicações</title>
+  <meta name="description" content="1 Introdução aos processos estocásticos | Processos Estocásticos e Aplicações" />
+  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Introdução aos processos estocásticos | Processos Estocásticos e Aplicações" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Introdução aos processos estocásticos | Processos Estocásticos e Aplicações" />
+  
+  
+  
+
+<meta name="author" content="Nuno M. Brites" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="cadeias-de-markov-em-tempo-discreto.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="index.html#section" id="toc-section"></a></li>
+<li class="chapter" data-level="1" data-path="introducao-aos-processos-estocasticos.html"><a href="introducao-aos-processos-estocasticos.html"><i class="fa fa-check"></i><b>1</b> Introdução aos processos estocásticos</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introducao-aos-processos-estocasticos.html"><a href="introducao-aos-processos-estocasticos.html#conceitos-fundamentais"><i class="fa fa-check"></i><b>1.1</b> Conceitos fundamentais</a></li>
+<li class="chapter" data-level="1.2" data-path="introducao-aos-processos-estocasticos.html"><a href="introducao-aos-processos-estocasticos.html#tipos-classicos-de-processos-estocasticos"><i class="fa fa-check"></i><b>1.2</b> Tipos clássicos de processos estocásticos</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introducao-aos-processos-estocasticos.html"><a href="introducao-aos-processos-estocasticos.html#processos-de-incrementos-independentes-e-estacionarios"><i class="fa fa-check"></i><b>1.2.1</b> Processos de incrementos independentes e estacionários</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introducao-aos-processos-estocasticos.html"><a href="introducao-aos-processos-estocasticos.html#processo-estocastico-real-de-2-ordem"><i class="fa fa-check"></i><b>1.2.2</b> Processo estocástico real de 2ª ordem</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introducao-aos-processos-estocasticos.html"><a href="introducao-aos-processos-estocasticos.html#processos-estacionarios"><i class="fa fa-check"></i><b>1.2.3</b> Processos estacionários</a></li>
+<li class="chapter" data-level="1.2.4" data-path="introducao-aos-processos-estocasticos.html"><a href="introducao-aos-processos-estocasticos.html#martingalas"><i class="fa fa-check"></i><b>1.2.4</b> Martingalas</a></li>
+<li class="chapter" data-level="1.2.5" data-path="introducao-aos-processos-estocasticos.html"><a href="introducao-aos-processos-estocasticos.html#processos-de-markov"><i class="fa fa-check"></i><b>1.2.5</b> Processos de Markov</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html"><i class="fa fa-check"></i><b>2</b> Cadeias de Markov em tempo discreto</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#introducao"><i class="fa fa-check"></i><b>2.1</b> Introdução</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#conceitos-basicos"><i class="fa fa-check"></i><b>2.1.1</b> Conceitos básicos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#classificacao-de-estados-de-uma-c-m"><i class="fa fa-check"></i><b>2.2</b> Classificação de estados de uma C.M.</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#decomposicao-do-espaco-de-estados"><i class="fa fa-check"></i><b>2.2.1</b> Decomposição do espaço de estados</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#probabilidades-de-absorcao-em-estados-recorrentes"><i class="fa fa-check"></i><b>2.3</b> Probabilidades de absorção em estados recorrentes</a></li>
+<li class="chapter" data-level="2.4" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#teoremas-limite"><i class="fa fa-check"></i><b>2.4</b> Teoremas limite</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#distribuicao-estacionaria-e-distribuicao-limite"><i class="fa fa-check"></i><b>2.4.1</b> Distribuição estacionária e distribuição limite</a></li>
+<li class="chapter" data-level="2.4.2" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#comportamento-limite-de-p-ij-n-quando-n-to-infty"><i class="fa fa-check"></i><b>2.4.2</b> Comportamento limite de <span class="math inline">\(P_{ij}^n\)</span> quando <span class="math inline">\(n\to+\infty\)</span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html"><i class="fa fa-check"></i><b>3</b> Cadeias de Markov em tempo contínuo</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html#processo-de-poisson-homogeneo"><i class="fa fa-check"></i><b>3.1</b> Processo de Poisson homogéneo</a></li>
+<li class="chapter" data-level="3.2" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html#processo-de-nascimento-puro"><i class="fa fa-check"></i><b>3.2</b> Processo de nascimento puro</a></li>
+<li class="chapter" data-level="3.3" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html#processo-de-nascimento-e-morte"><i class="fa fa-check"></i><b>3.3</b> Processo de nascimento e morte</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html#definicao-e-equacoes-de-chapman-kolmogorov"><i class="fa fa-check"></i><b>3.3.1</b> Definição e equações de Chapman-Kolmogorov</a></li>
+<li class="chapter" data-level="3.3.2" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html#tempo-de-espera"><i class="fa fa-check"></i><b>3.3.2</b> Tempo de espera</a></li>
+<li class="chapter" data-level="3.3.3" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html#equacoes-diferenciais-de-processos-de-nascimento-e-morte"><i class="fa fa-check"></i><b>3.3.3</b> Equações diferenciais de processos de nascimento e morte</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="complementos-de-processos-estocasticos.html"><a href="complementos-de-processos-estocasticos.html"><i class="fa fa-check"></i><b>4</b> Complementos de processos estocásticos</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="complementos-de-processos-estocasticos.html"><a href="complementos-de-processos-estocasticos.html#processo-de-wiener"><i class="fa fa-check"></i><b>4.1</b> Processo de Wiener</a></li>
+<li class="chapter" data-level="4.2" data-path="complementos-de-processos-estocasticos.html"><a href="complementos-de-processos-estocasticos.html#o-integral-de-ito"><i class="fa fa-check"></i><b>4.2</b> O integral de Itô</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i><b>5</b> Bibliografia</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Processos Estocásticos e Aplicações</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introducao-aos-processos-estocasticos" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Introdução aos processos estocásticos<a href="introducao-aos-processos-estocasticos.html#introducao-aos-processos-estocasticos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="conceitos-fundamentais" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Conceitos fundamentais<a href="introducao-aos-processos-estocasticos.html#conceitos-fundamentais" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Nesta secção procede-se a uma revisão sumária de noções basilares de probabilidade e de variáveis aleatórias. Seguidamente, introduz-se o conceito de processo estocástico, entendido como uma família de variáveis aleatórias definidas sobre um espaço de probabilidade e indexadas por um conjunto de parâmetros, usualmente interpretados como o tempo. Finalmente, analisam-se algumas classes fundamentais de processos estocásticos, em particular os processos com incrementos independentes e estacionários, bem como os processos estacionários em sentido forte e em sentido fraco.</p>
+<p>Designa-se, como habitualmente, por <strong>espaço amostral</strong> o conjunto de todos os resultados possíveis de uma experiência aleatória, representado por <span class="math inline">\(\Omega\)</span>. No que se segue, consideramos que <span class="math inline">\(\Omega\)</span> é um conjunto não vazio.</p>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-1" class="definition"><strong>Definição 1.1  (Sigma-álgebra) </strong></span>Uma <span class="math inline">\(\sigma\)</span>-álgebra é uma família <span class="math inline">\(\mathcal{F}\)</span> de subconjuntos de <span class="math inline">\(\Omega\)</span> que satisfaz as seguintes propriedades:</p>
+<ol style="list-style-type: lower-roman">
+<li><p><span class="math inline">\(\emptyset \in \mathcal{F}\)</span> e <span class="math inline">\(\Omega \in \mathcal{F}\)</span>;</p></li>
+<li><p>Se <span class="math inline">\(A \in \mathcal{F}\)</span>, então <span class="math inline">\(A^c \in \mathcal{F}\)</span>, onde <span class="math inline">\(A^c\)</span> denota o complementar de <span class="math inline">\(A\)</span> relativamente a <span class="math inline">\(\Omega\)</span>;</p></li>
+<li><p>Se <span class="math inline">\(A_n \subseteq \mathcal{F}, ~n \in \mathbb{N}\)</span>, então <span class="math inline">\(\displaystyle \bigcup_{n \in \mathbb{N}} A_n \in \mathcal{F}\)</span>.</p></li>
+</ol>
+<p>Os elementos de <span class="math inline">\(\mathcal{F}\)</span> designam-se por conjuntos mensuráveis (ou <span class="math inline">\(\mathcal{F}\)</span>-mensuráveis, para explicitar a <span class="math inline">\(\sigma\)</span>-álgebra a que pertencem).</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-2" class="definition"><strong>Definição 1.2  (Medida de probabilidade) </strong></span>Uma medida de probabilidade <span class="math inline">\(P\)</span> na <span class="math inline">\(\sigma\)</span>-álgebra <span class="math inline">\(\mathcal{F}\)</span> é uma função <span class="math inline">\(P: \mathcal{F} \rightarrow [0,1]\)</span> que satisfaz as seguintes propriedades:</p>
+<ol style="list-style-type: lower-roman">
+<li><p><span class="math inline">\(P(\emptyset) = 0\)</span>;</p></li>
+<li><p><span class="math inline">\(P(\Omega) = 1\)</span>;</p></li>
+<li><p>Se <span class="math inline">\((A_n)_{n \in \mathbb{N}}\)</span> é uma família de conjuntos dois a dois disjuntos em <span class="math inline">\(\mathcal{F}\)</span>, então
+<span class="math display">\[P\left(\bigcup_{n \in \mathbb{N}}{A_n}\right)=\sum_{n \in \mathbb{N}}{P(A_n)}.\]</span></p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-3" class="definition"><strong>Definição 1.3  (Espaço de probabilidade) </strong></span>Um espaço de probabilidade é um terno <span class="math inline">\((\Omega,\mathcal{F},P),\)</span> onde <span class="math inline">\(\Omega\)</span> é um conjunto, <span class="math inline">\(\mathcal{F}\)</span> é uma <span class="math inline">\(\sigma\)</span>-álgebra em <span class="math inline">\(\Omega\)</span> e <span class="math inline">\(P\)</span> é uma medida de probabilidade em <span class="math inline">\(\mathcal{F}\)</span>.</p>
+<p>Os elementos de <span class="math inline">\(\mathcal{F}\)</span> chamam-se acontecimentos; <span class="math inline">\(P(A), ~A \in \mathcal{F}\)</span>, representa a probabilidade do acontecimento <span class="math inline">\(A\)</span>.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-4" class="definition"><strong>Definição 1.4  (Sigma-álgebra de Borel) </strong></span>Uma <span class="math inline">\(\sigma-\)</span>álgebra de Borel, <span class="math inline">\(\mathcal{B}\)</span>, definida num conjunto <span class="math inline">\(E\)</span> satisfaz as seguintes propriedades:</p>
+<ul>
+<li><p><span class="math inline">\(\emptyset \in \mathcal{B}\)</span> e <span class="math inline">\(E \in \mathcal{B}\)</span>;</p></li>
+<li><p><span class="math inline">\(\mathcal{B}\)</span> é fechada relativamente ao complementar, isto é,
+<span class="math inline">\(\forall ~ A \in \mathcal{B}: A^c \in \mathcal{B}\)</span>;</p></li>
+<li><p><span class="math inline">\(\mathcal{B}\)</span> é fechada relativamente à reunião numerável, isto é, se <span class="math inline">\(A_i \in \mathcal{B}\)</span> para todo <span class="math inline">\(i \in \mathbb{N}\)</span>, então <span class="math inline">\(\bigcup\limits_{i=1}^{n} A_i \in \mathcal{B}\)</span>.</p></li>
+</ul>
+<p>Uma <span class="math inline">\(\sigma-\)</span>álgebra de Borel é um caso particular de uma <span class="math inline">\(\sigma-\)</span>álgebra e aplica-se aos conjuntos abertos de <span class="math inline">\(E\)</span>. A <span class="math inline">\(\sigma-\)</span>álgebra de Borel mais comum é a <span class="math inline">\(\sigma-\)</span>álgebra de Borel em <span class="math inline">\(\mathbb{R}\)</span>, que se denota por <span class="math inline">\(\mathcal{B}_{\mathbb{R}}\)</span>, ou simplesmente <span class="math inline">\(\mathcal{B}\)</span> caso não existam ambiguidades.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-5" class="definition"><strong>Definição 1.5  (Variável aleatória) </strong></span>Seja <span class="math inline">\((\Omega,\mathcal{F},P)\)</span> um espaço de probabilidade. Diz-se que uma função <span class="math inline">\(X:\Omega \rightarrow \mathbb{R}\)</span> é uma variável aleatória (v.a.) se
+<span class="math display">\[
+\forall ~ B \in \mathcal{B}: X^{-1}(B) \in \mathcal{F},
+\]</span>
+onde <span class="math inline">\(\mathcal{B}\)</span> denota a <span class="math inline">\(\sigma\)</span>-álgebra de Borel em <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<p>Adicionalmente, diz-que <span class="math inline">\(X\)</span> é <span class="math inline">\(\mathcal{F}-\)</span>mensurável, ou simplesmente mensurável quando a <span class="math inline">\(\sigma\)</span>-álgebra associada estiver subentendida.</p>
+<p>Em termos gráficos,</p>
+<p><img src="index_files/figure-html/fig0-1.png" width="60%" style="display: block; margin: auto;" /></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-6" class="theorem"><strong>Teorema 1.1  </strong></span>Seja <span class="math inline">\(X:\Omega \to \mathbb{R}\)</span> uma variável aleatória. Defina-se
+<span class="math display">\[
+\sigma(X) = \{ X^{-1}(B) : B \in \mathcal{B} \}.
+\]</span>
+Então, <span class="math inline">\(\sigma(X)\)</span> é a menor <span class="math inline">\(\sigma\)</span>-álgebra sobre <span class="math inline">\(\Omega\)</span> para a qual <span class="math inline">\(X\)</span> é mensurável. Esta σ-álgebra, que está contida em <span class="math inline">\(\mathcal{F}\)</span>, designa-se por <strong>σ-álgebra gerada por <span class="math inline">\(X\)</span></strong>.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-7" class="definition"><strong>Definição 1.6  (Média e variância) </strong></span>Sejam <span class="math inline">\((\Omega,\mathcal{F},P)\)</span> um espaço de probabilidade e <span class="math inline">\(X:\Omega \rightarrow \mathbb{R}\)</span> uma variável aleatória. Define-se o <strong>valor esperado</strong> (ou média) e a <strong>variância</strong> de <span class="math inline">\(X\)</span> da seguinte forma:</p>
+<p><strong>1. Caso geral (medida de probabilidade <span class="math inline">\(P\)</span>):</strong>
+<span class="math display">\[
+E(X) = \int_\Omega X \, dP, \quad
+\operatorname{Var}(X) = \int_\Omega (X - E(X))^2 \, dP,
+\]</span>
+desde que estes integrais existam e sejam finitos.</p>
+<p><strong>2. Caso discreto:</strong><br />
+Se <span class="math inline">\(X\)</span> assume valores em um conjunto discreto <span class="math inline">\(\{x_1, x_2, \dots\}\)</span> com probabilidades <span class="math inline">\(p_i = P(X=x_i)\)</span>, então
+<span class="math display">\[
+E(X) = \sum_i x_i \, p_i, \quad
+\operatorname{Var}(X) = \sum_i (x_i - E(X))^2 \, p_i.
+\]</span></p>
+<p><strong>3. Caso contínuo:</strong><br />
+Se <span class="math inline">\(X\)</span> possui densidade <span class="math inline">\(f_X(x)\)</span> relativamente à medida de Lebesgue, então
+<span class="math display">\[
+E(X) = \int_{-\infty}^{+\infty} x f_X(x) \, dx, \quad
+\operatorname{Var}(X) = \int_{-\infty}^{+\infty} (x - E(X))^2 f_X(x) \, dx.
+\]</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-8" class="definition"><strong>Definição 1.7  </strong></span>Sejam <span class="math inline">\((\Omega,\mathcal{F},P)\)</span> um espaço de probabilidade e <span class="math inline">\(X\)</span> uma variável aleatória definida nesse espaço.</p>
+<ol style="list-style-type: lower-roman">
+<li><p>Diz-se que <span class="math inline">\(X\)</span> é uma variável aleatória de quadrado integrável quando
+<span class="math display">\[E(X^2)&lt;+\infty;\]</span></p></li>
+<li><p>O espaço <span class="math inline">\(L^2\)</span> é o conjunto das variáveis aleatórias de quadrado integrável definidas em <span class="math inline">\((\Omega,\mathcal{F},P)\)</span>;</p></li>
+<li><p>A norma <span class="math inline">\(L^2\)</span> é a norma definida por
+<span class="math display">\[\forall ~ X \in L^2:~ ||X||_{L^2} = \left(E(X^2)\right)^{1/2}.\]</span></p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-9" class="remark"><em>Nota</em>. </span>Relativamente à definiçao de espaço <span class="math inline">\(L^2\)</span>, na realidade deveríamos dizer: “espaço constituído pelas classes de equivalência de variáveis aleatórias…”, isto é, para duas variáveis aletórias <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> definidas em <span class="math inline">\((\Omega,\mathcal{F},P)\)</span>, considere-se a relação de equivalência
+<span class="math display">\[X \sim Y \iff P(X \neq Y)=0\]</span>
+e constrói-se o espaço <span class="math inline">\(L^2\)</span> a partir da classe de equivalência <span class="math inline">\([X]=\{Y: X \sim Y\}\)</span>.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-10" class="definition"><strong>Definição 1.8  </strong></span>Seja <span class="math inline">\((X_n: n \in \mathbb{N})\)</span> uma sucessão de variáveis aleatórias em <span class="math inline">\(L^2\)</span>. Diz-se que <span class="math inline">\((X_n: n \in \mathbb{N})\)</span> converge para <span class="math inline">\(X\)</span> em <span class="math inline">\(L^2\)</span> se
+<span class="math display">\[||X_n-X||_{L^2}\rightarrow 0 \quad \text{ quando } \quad n \to +\infty,\]</span>
+ou, de modo equivalente,
+<span class="math display">\[E((X_n-X)^2) \to 0 \quad \text{ quando } \quad n \to +\infty.\]</span>
+A este tipo de convergência chama-se convergência em média quadrática e representa-se por
+<span class="math display">\[X_n \xrightarrow{m.q.}X \quad \text{ quando } \quad n \to +\infty\]</span>
+ou
+<span class="math display">\[\mathop{l.i.m.}\limits_{n \to +\infty}X_n=X.\]</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-11" class="definition"><strong>Definição 1.9  </strong></span>Sejam <span class="math inline">\(X\)</span> uma variável aleatória e <span class="math inline">\((X_n : n \in \mathbb{N})\)</span> uma sucessão de variáveis aleatórias definidas no espaço de probabilidade <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span>.</p>
+<ol style="list-style-type: lower-roman">
+<li><p>Diz-se que <span class="math inline">\(X_n\)</span> converge quase certamente (q.c.), ou que converge com probabilidade 1 para <span class="math inline">\(X\)</span>, e denota-se por<br />
+<span class="math display">\[
+X_n \xrightarrow{q.c.} X \quad \text{ou} \quad \lim_{n \to +\infty} X_n = X \quad q.c.,
+\]</span><br />
+se <span class="math inline">\(X_n(\omega) \to X(\omega)\)</span> para todo <span class="math inline">\(\omega \in \Omega \setminus N\)</span>, onde <span class="math inline">\(N \in \mathcal{F}\)</span> é um conjunto de medida nula, isto é, <span class="math inline">\(P(N) = 0\)</span>.</p></li>
+<li><p>Diz-se que <span class="math inline">\(X_n\)</span> converge em probabilidade (ou converge estocasticamente) para <span class="math inline">\(X\)</span>, e denota-se por<br />
+<span class="math display">\[
+X_n \xrightarrow{P} X \quad \text{ou} \quad P-\lim_{n \to +\infty} X_n = X,
+\]</span><br />
+se, para todo <span class="math inline">\(\delta &gt; 0\)</span>,<br />
+<span class="math display">\[
+P(|X_n - X| &gt; \delta) \to 0 \quad \text{quando} \quad n \to +\infty.
+\]</span><br />
+</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<p>Quando se pretende estudar fenómenos que não têm qualquer evolução, usam-se <strong>amostras
+aleatórias</strong> (repetições de observações i.i.d.’s). Mas, e se estivermos perante <strong>variáveis
+aleatórias</strong> que já se observaram (ou podiam observar) no passado e que poderemos observar
+no futuro? Tal ocorre quando pretendemos estudar, por exemplo:</p>
+<ul>
+<li><p>cotação diária de uma ação na bolsa de valores;</p></li>
+<li><p>evolução da taxa de desemprego num dado período;</p></li>
+<li><p>número de pessoas que chegam a uma certa fila para serem atendidas;</p></li>
+<li><p>evolução da temperatura num local;</p></li>
+<li><p><span class="math inline">\(\ldots\)</span></p></li>
+</ul>
+<p>Nos casos acima descritos dispomos apenas de uma única observação (chamada <strong>trajetória</strong>) a
+partir da qual se pretende extrair conclusões. Nesta trajetória não existe independência
+entre observações. Tipicamente pretendemos fazer:</p>
+<ul>
+<li><p>previsão de observações futuras;</p></li>
+<li><p>identificação do tipo de evolução;</p></li>
+<li><p>filtragem (previsão com a ajuda de observações parciais).</p></li>
+</ul>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-12" class="definition"><strong>Definição 1.10  (Processo estocástico) </strong></span>Um <strong>processo estocástico</strong> (PE) é uma família de v.a <span class="math inline">\(\{X_t, ~t \in T\}\)</span>, definida sobre o
+mesmo espaço de probabilidade <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> e assumindo valores num mesmo
+espaço mensurável <span class="math inline">\((E,\mathcal{B})\)</span>, onde:</p>
+<ul>
+<li><p><span class="math inline">\(T:\)</span> espaço dos parâmetros (ou do tempo);</p></li>
+<li><p><span class="math inline">\(\Omega:\)</span> espaço de resultados possíveis;</p></li>
+<li><p><span class="math inline">\(\mathcal{F}:\)</span> <span class="math inline">\(\sigma-\)</span>álgebra definida em <span class="math inline">\(\Omega\)</span>;</p></li>
+<li><p><span class="math inline">\(P:\)</span> medida de probabilidade;</p></li>
+<li><p><span class="math inline">\(E:\)</span> conjunto de espaço de estados (a definir posteriormente);</p></li>
+<li><p><span class="math inline">\(\mathcal{B}:\)</span> <span class="math inline">\(\sigma-\)</span>álgebra de Borel definida em <span class="math inline">\(E\)</span>.</p></li>
+</ul>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-13" class="remark"><em>Nota</em>. </span></p>
+<ul>
+<li><p>Dado um espaço de probabilidade <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> e um conjunto arbitrário <span class="math inline">\(T\)</span>,
+um PE é uma função <span class="math inline">\(X(t,\omega)\)</span> definida em <span class="math inline">\(T \times \Omega\)</span>, tal que, para cada
+<span class="math inline">\(t \in T\)</span>, <span class="math inline">\(X_t(\omega)\)</span> é uma v.a..</p></li>
+<li><p>O conceito de PE generaliza o de v.a. fazendo-a depender de um parâmetros <span class="math inline">\(t\)</span> com
+domínio em <span class="math inline">\(T\)</span>. Assim, podemos interpretar um PE como uma família ordenada de v.a.’s.</p></li>
+<li><p>Para cada <span class="math inline">\(\omega_0\)</span> fixo, <span class="math inline">\(\omega_0 \in \Omega\)</span>, <span class="math inline">\(X(\omega_0,t)\)</span> é uma função não
+aleatória de <span class="math inline">\(t\)</span>. Deste modo, um PE pode identificar-se com um sistema que a cada ponto
+<span class="math inline">\(\omega \in \Omega\)</span>, faz corresponder uma função de parâmetro <span class="math inline">\(t\)</span>. Cada uma dessas
+funções diz-se uma trajetória ou realização do processo <span class="math inline">\(X\)</span>.</p></li>
+</ul>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-14" class="definition"><strong>Definição 1.11  (Trajetória de um processo estocástico) </strong></span>Chama-se <strong>trajetória</strong> ou <strong>realização</strong> de um processo estocástico <span class="math inline">\(X\)</span> à coleção
+<span class="math inline">\(\{X_t(\omega), t \in T\}\)</span>, <span class="math inline">\(\forall ~ \omega \in \Omega\)</span>.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-15" class="remark"><em>Nota</em>. </span>Em geral <span class="math inline">\((E,\mathcal{B})=(\mathbb{R}^n, \mathcal{B}_{\mathbb{R}^n})\)</span>, onde:</p>
+<ul>
+<li><p><span class="math inline">\(\mathbb{R}^n:\)</span> conjunto dos possíveis valores do processo <span class="math inline">\(X_t\)</span>;</p></li>
+<li><p><span class="math inline">\(\mathcal{B}_{\mathbb{R}^n}:\)</span> <span class="math inline">\(\sigma-\)</span>álgebra dos borelianos de <span class="math inline">\(\mathbb{R}^n\)</span>;</p></li>
+<li><p>Se <span class="math inline">\(n=1\)</span> o PE chama-se processo estocástico univariado;</p></li>
+<li><p>Se <span class="math inline">\(n&gt;1\)</span> o PE chama-se processo estocástico multivariado;</p></li>
+<li><p><span class="math inline">\(t:\)</span> instante onde é feita a observação ou o período relativo a essa observação;</p></li>
+<li><p>Se <span class="math inline">\(E\)</span> for finito ou infinito numerável então <span class="math inline">\(X\)</span> é um PE de espaço de estados
+discreto;</p></li>
+<li><p>Se <span class="math inline">\(E=\mathbb{R}\)</span> então <span class="math inline">\(X\)</span> é um PE de valores reais;</p></li>
+<li><p>Se <span class="math inline">\(T\)</span> for finito ou infinito numerável então <span class="math inline">\(X\)</span> é um PE de tempo discreto (tipicamente
+<span class="math inline">\(T=\mathbb{N}_0\)</span> ou <span class="math inline">\(T=\mathbb{Z}\)</span>);</p></li>
+<li><p>Se <span class="math inline">\(T\)</span> for infinito não numerável então <span class="math inline">\(X\)</span> é um PE de tempo contínuo (tipicamente
+<span class="math inline">\(T=\mathbb{R}^+_0\)</span> ou <span class="math inline">\(T=\mathbb{R}\)</span>).</p></li>
+</ul>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<p>Segue-se um exemplo de uma trajetória de um PE:</p>
+<p><img src="index_files/figure-html/simulacao-movimento-browniano-1.png" width="672" /></p>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-16" class="exercise"><strong>Exercício 1.1  </strong></span>Para cada um dos seguintes processos estocásticos indique o espaço parâmetro e o espaço de estados:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Sejam <span class="math inline">\(X_i\)</span> a quantidade de cerveja (em litros) pedida pelo <span class="math inline">\(i-\)</span>ésimo cliente que entrou num bar e <span class="math inline">\(N(t)\)</span> o número de clientes que chegaram ao bar até ao instante <span class="math inline">\(t\)</span>. O processo estocástico é
+<span class="math display">\[Z_t=\sum\limits_{i=1}^{N(t)}X_i, ~t \geq 0,\]</span>
+onde <span class="math inline">\(Z_t\)</span> representa a quantidade de cerveja pedida até ao instante <span class="math inline">\(t\)</span>.</p></li>
+<li><p>Trinta e seis pontos são escolhidos aleatoriamente no Alaska de acordo com alguma distribuição de probabilidade. Centrado em cada um desses pontos é desenhado um círculo de raio aleatório originando assim uma região <span class="math inline">\(\Delta\)</span> do Alaska. Seja <span class="math inline">\(X(A)\)</span> o preço do petróleo extraído no solo da região <span class="math inline">\(A \cap \Delta\)</span>. O processo é
+<span class="math display">\[(X(B): ~B \subset Alaska).\]</span></p></li>
+<li><p>Um bebé dorme numa de três posições: (i) de barriga para cima com feição radiante; (ii) enrolada na posição fetal; (iii) na posição fetal, chupando o dedo polegar. Seja <span class="math inline">\(X_t\)</span> a posição de dormir do bebé no instante <span class="math inline">\(t\)</span>. O processo é <span class="math inline">\((X_t: ~t\geq 0)\)</span>.</p></li>
+<li><p>Seja <span class="math inline">\(X_n\)</span> o estado (ligado ou desligado) de uma fotocopiadora de um escritório ao meio-dia do <span class="math inline">\(n-\)</span>ésimo dia. O processo é <span class="math inline">\((X_n: ~ n =1, 2, \dots)\)</span>.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-17" class="exercise"><strong>Exercício 1.2  </strong></span></p>
+<!-- Ex1.1 Exer. Alfredo -->
+<p>Seja <span class="math inline">\(\Omega = \{\omega_1, \omega_2, \omega_3, \omega_4\}\)</span> com <span class="math inline">\(P(\omega_i) = 1/4\)</span>, para <span class="math inline">\(i = 1, 2, 3, 4\)</span>. Considere-se o processo estocástico <span class="math inline">\(\{X(t, \omega): ~ t \geq 0\}\)</span> tal que
+<span class="math display">\[
+X(t, \omega_i) = t \times i, \quad i = 1, 2, 3, 4.
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Classifique o processo em causa;</p></li>
+<li><p>Determine a função distribuição de <span class="math inline">\(X\)</span> para <span class="math inline">\(t = 1\)</span>;</p></li>
+<li><p>Indique as trajectórias do processo;</p></li>
+<li><p>Determine a função distribuição conjunta de <span class="math inline">\(\left(X(1), X(2), X(3)\right)\)</span>.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-18" class="exercise"><strong>Exercício 1.3  </strong></span></p>
+<!-- Ex1.2 Exer. Alfredo -->
+<p>Considere uma sucessão infinita de provas de Bernoulli. Seja
+<span class="math inline">\(X_{t}\)</span> o número de provas até obter um sucesso pela <span class="math inline">\(t\)</span>-ésima
+vez, <span class="math inline">\(t = 1, 2, \ldots\)</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Defina o exposto como um processo estocástico, indicando o espaço dos parâmetros e dos estados.</p></li>
+<li><p>Determine, para cada <span class="math inline">\(t\)</span>, a função de probabilidade de <span class="math inline">\(X_{t}\)</span>.</p></li>
+<li><p>Represente graficamente uma trajectória do processo.</p></li>
+<li><p>Determine a distribuição conjunta de <span class="math inline">\((X_{2}, X_{3}, X_{4})\)</span>.</p></li>
+<li><p>Calcule <span class="math inline">\(P(X_{4} = x \mid X_{3} = x_{3}, X_{2} = x_{2})\)</span> e <span class="math inline">\(P(X_{4} = x \mid X_{3} = x_{3})\)</span>. Comente o resultado.</p></li>
+<li><p>Determine a distribuição da v.a. “tempo ou número de provas entre dois sucessos de Bernoulli”.</p></li>
+<li><p>Determine a distribuição da v.a. “número de provas necessárias até à ocorrência de dois sucessos consecutivos de Bernoulli”.</p></li>
+</ol>
+</div>
+</div>
+<div id="tipos-classicos-de-processos-estocasticos" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Tipos clássicos de processos estocásticos<a href="introducao-aos-processos-estocasticos.html#tipos-classicos-de-processos-estocasticos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="processos-de-incrementos-independentes-e-estacionarios" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Processos de incrementos independentes e estacionários<a href="introducao-aos-processos-estocasticos.html#processos-de-incrementos-independentes-e-estacionarios" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-19" class="definition"><strong>Definição 1.12  (Processo com incrementos inpedendentes) </strong></span><span class="math inline">\(\{X_t, ~ t \in T\}\)</span> é um PE com <strong>incrementos independentes</strong> sse
+<span class="math display">\[\forall ~n \in \mathbb{N}, \forall ~t_1, \ldots,t_n \in T: ~t_1 &lt;t_2&lt;\ldots&lt;t_n \implies X_{t_2}-X_{t_1}, X_{t_3}-X_{t_2},\ldots,X_{t_n}-X_{t_{n-1}}\]</span>
+são v.a.’s mutuamente independentes.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-20" class="definition"><strong>Definição 1.13  (Processo com incrementos estacionários) </strong></span><span class="math inline">\(\{X_t, ~ t \in T\}\)</span> tem <strong>incrementos estacionários</strong> sse <span class="math inline">\(\forall ~s, t \in T, ~s&lt;t,\)</span> a
+distribuição de <span class="math inline">\(X_t-X_s\)</span> depende apenas da amplitude <span class="math inline">\(t-s\)</span>.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-21" class="remark"><em>Nota</em>. </span>Num PE com incrementos estacionários, a distribuição de <span class="math inline">\(X_{t_{1+h}}-X_{t_1}\)</span> é a mesma de
+<span class="math inline">\(X_{t_{2+h}}-X_{t_2}\)</span>, <span class="math inline">\(\forall ~ t_1,t_2 \in T\)</span> e <span class="math inline">\(\forall ~ h \in \mathbb{R}_0^+\)</span> tais que <span class="math inline">\(t_1+h, ~t_2+h \in T.\)</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<p>Do ponto de vista da modelação, a propriedade de independência de incrementos pode ser
+postulada para o modelo quando os resultados obtidos em intervalo de tempo disjuntos forem
+independentes. Adicionalmente, a propriedade de estacionariedade de incrementos pode ser
+postulada para o modelo quando for plausível que a distribuição de resultados em qualquer
+intervalo de tempo depende apenas da amplitude desse intervalo.</p>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-22" class="definition"><strong>Definição 1.14  (Processo de incrementos independentes e estacionários) </strong></span>Dado um PE <span class="math inline">\(X:=\{X_t, ~ t \in T\}\)</span>, onde <span class="math inline">\(T\)</span> está munido de uma relação de ordem, <span class="math inline">\(X\)</span> é um PE
+de <strong>incrementos independentes e estacionários</strong> sse tiver incrementos independentes e
+incrementos estacionários.</p>
+</div>
+</div>
+<div id="processo-estocastico-real-de-2-ordem" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Processo estocástico real de 2ª ordem<a href="introducao-aos-processos-estocasticos.html#processo-estocastico-real-de-2-ordem" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-23" class="definition"><strong>Definição 1.15  (Processo Gaussiano) </strong></span>Diz-se que <span class="math inline">\(\{X_t, ~t \in T\}\)</span> é um <strong>Processo Gaussiano</strong> se
+<span class="math display">\[
+\forall ~n \in \mathbb{N},~ \forall ~t_1, \ldots, t_n \in T, \quad (X_{t_1}, X_{t_2}, \ldots, X_{t_n}) \sim \mathcal{N}_n(\mu, \Sigma),
+\]</span>
+isto é, qualquer vetor finito de variáveis aleatórias do processo tem distribuição normal multivariada.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-24" class="definition"><strong>Definição 1.16  (Processo estocástico real de 2ª ordem) </strong></span>Diz-se que <span class="math inline">\(\{X_t, ~ t \in T\}\)</span> é um <strong>processo estocástico real de 2ª ordem</strong> se, e só se,<br />
+<span class="math display">\[
+\forall ~t \in T: \; E\!\left(X_t^2\right) &lt; +\infty.
+\]</span></p>
+<p>Nestes casos, a descrição do processo faz-se habitualmente em termos dos seus dois primeiros momentos:</p>
+<ul>
+<li><strong>função média</strong>: <span class="math inline">\(m(t) = E(X_t), \quad \forall~t \in T\)</span>;</li>
+<li><strong>função de covariância</strong>: <span class="math inline">\(\Gamma(s,t) = \mathrm{Cov}(X_s, X_t), \quad \forall~s,t \in T\)</span>.</li>
+</ul>
+<p>Em geral, a informação fornecida por <span class="math inline">\(m(t)\)</span> e <span class="math inline">\(\Gamma(s,t)\)</span> não determina completamente a distribuição do processo. Contudo, no caso particular de um processo Gaussiano, a especificação destes dois primeiros momentos é suficiente para caracterizar completamente o processo.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-25" class="example"><strong>Exemplo 1.1  (Ruído Branco Gaussiano) </strong></span>Chama-se <strong>Ruído Branco Gaussiano</strong> a um PE <span class="math inline">\(\{\varepsilon_t, ~t \in T\}\)</span> que satisfaz:</p>
+<ul>
+<li><p><span class="math inline">\(\forall ~t \in T, ~E(\varepsilon_t)=0\)</span>;</p></li>
+<li><p><span class="math inline">\(\forall ~t \in T, ~Var(\varepsilon_t)=\sigma^2\)</span>;</p></li>
+<li><p><span class="math inline">\(\forall ~s, t \in T, s \neq t, ~Cov(\varepsilon_s,\varepsilon_t)=0\)</span>;</p></li>
+<li><p><span class="math inline">\(\forall ~n \in \mathbb{N}, \forall ~t_1, t_2, \ldots, t_n \in T: (\varepsilon_{t_1}, \varepsilon_{t_2}, \ldots, \varepsilon_{t_n})\)</span> é um vetor aleatório Gaussiano.</p></li>
+</ul>
+</div>
+</div>
+<div id="processos-estacionarios" class="section level3 hasAnchor" number="1.2.3">
+<h3><span class="header-section-number">1.2.3</span> Processos estacionários<a href="introducao-aos-processos-estocasticos.html#processos-estacionarios" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-26" class="definition"><strong>Definição 1.17  (Processo estacionário em sentido forte) </strong></span>Diz-se que um PE <span class="math inline">\(\{X_t,~ t \in T\}\)</span> é <strong>estacionário em sentido forte</strong> (ou fortemente estacionário) se:
+<span class="math display">\[\forall~n \in \mathbb{N},~ \forall~t_1, \ldots, t_n \in T,~ \forall~h \in \mathbb{R} \text{ tal que } t_1 + h, \ldots, t_n + h \in T,\]</span>
+<span class="math display">\[(X_{t_1}, \ldots, X_{t_n}) \buildrel d \over = (X_{t_1+h}, \ldots, X_{t_n+h}),\]</span>
+ou seja, a distribuição conjunta de qualquer vetor finito de variáveis do processo é invariante por translação do tempo.</p>
+</div>
+<p>Como consequência da estacionariedade forte, temos o seguinte Teorema:</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-27" class="theorem"><strong>Teorema 1.2  </strong></span>Se <span class="math inline">\(\{X_t, t \in T\}\)</span> é um PE de 2ª ordem e se é fortemente estacionário, então:</p>
+<ul>
+<li><p><span class="math inline">\(E(X_t)=m\)</span>, isto é, a média do processo é independente de <span class="math inline">\(t\)</span>;</p></li>
+<li><p><span class="math inline">\(\forall ~h \in T, ~ \Gamma(t,t+h)=Cov(X_t,X_{t+h})=Cov(X_0,X_h)=\gamma(h)\)</span>,
+independente de <span class="math inline">\(t\)</span>.</p></li>
+</ul>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-28" class="definition"><strong>Definição 1.18  (Processo estacionário em sentido fraco) </strong></span>Um PE <span class="math inline">\(\{X_t, t \in T\}\)</span> é <strong>estacionário em sentido fraco</strong> (ou estacionário de 2ª ordem),
+sse:</p>
+<ul>
+<li><p><span class="math inline">\(\forall ~t \in T, ~E(X^2_t)&lt; + \infty\)</span>;</p></li>
+<li><p><span class="math inline">\(\forall ~t \in T, ~E(X_t)=m\)</span>, independente de <span class="math inline">\(t\)</span>;</p></li>
+<li><p><span class="math inline">\(\forall ~t \in T, \forall ~h \in T,  ~Cov(X_t,X_{t+h})=\gamma(h)\)</span>, isto é, a covariância
+apenas depende de <span class="math inline">\(h\)</span>.</p></li>
+</ul>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-29" class="remark"><em>Nota</em>. </span>A função <span class="math inline">\(\gamma(h), ~\forall ~ h \in T\)</span>, chama-se <strong>função de autocovariância</strong>. Se <span class="math inline">\(h=0\)</span>,
+então <span class="math inline">\(Cov(X_t,X_{t+h})=Var(X_t)=\gamma(0), ~\forall ~t \in T.\)</span> A esta propriedade chama-se
+propriedade da homocedasticidade.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<p>Vejamos agora que o Ruído Branco, <span class="math inline">\(\{\varepsilon_t, ~t \in T\}\)</span>, é um exemplo de um PE
+estacionário de 2ª ordem:</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-30" class="example"><strong>Exemplo 1.2  </strong></span></p>
+<ul>
+<li><p><span class="math inline">\(E(\varepsilon_t)=0\)</span>;</p></li>
+<li><p><span class="math inline">\(Var(\varepsilon_t)=\sigma^2 \implies E(\varepsilon^2_t) &lt; + \infty\)</span>;</p></li>
+<li><p><span class="math inline">\(t \neq s, ~Cov(\varepsilon_s,\varepsilon_t)=0, \implies\)</span> independência de <span class="math inline">\(t\)</span> e de <span class="math inline">\(s\)</span>.</p></li>
+</ul>
+<p>Assim,</p>
+<p><span class="math display">\[
+\gamma(h)=
+\begin{cases}
+\sigma^2, \quad h=0,\\
+0, \quad h \neq 0.
+\end{cases}
+\]</span> Logo, estão satisfeitas as condições de estacionariedade fraca.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-31" class="remark"><em>Nota</em> (Observação importante). </span><span class="math display">\[\text{Estacionariedade forte} + E(X_t^2) &lt;+\infty \Rightarrow \text{Estacionariedade fraca}.\]</span>
+<span class="math display">\[\text{Estacionariedade fraca} \nRightarrow \text{Estacionariedade forte}.\]</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-32" class="example"><strong>Exemplo 1.3  </strong></span>Considere o PE <span class="math inline">\((X_t, ~t \in \mathbb{N})\)</span> onde <span class="math inline">\(X_t\)</span> tem distribuição de Cauchy, isto é, com
+f.d.p. <span class="math inline">\(f(x)=\dfrac{1}{\pi(1+x^2)}\)</span>. Uma vez que não existe <span class="math inline">\(E(X_t)\)</span>, então <span class="math inline">\(E(X_t^2)\)</span> não
+está definido. Assim, o processo é fortemente estacionário mas não é fracamente
+estacionário.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-33" class="proposition"><strong>Propriedade 1.1  (Propriedades da função de autocovariância em processos estacionários) </strong></span>A função de autocovariância <span class="math inline">\(\gamma(h)\)</span> goza das seguintes propriedades:</p>
+<ul>
+<li><p><span class="math inline">\(\gamma(h)=\gamma(-h), ~ \forall ~h \in \mathbb{Z}\)</span>, isto é, a função de autocovariância é
+par;</p></li>
+<li><p><span class="math inline">\(\forall ~n \in \mathbb{N}, \forall ~a_j \in \mathbb{R}, \forall ~t_j \in \mathbb{Z}, ~j=1, \ldots,n:\)</span>
+<span class="math display">\[\forall~n \in \mathbb{N},~ \forall~a_1, \ldots, a_n \in \mathbb{R},~ \forall~t_1, \ldots, t_n \in \mathbb{Z}, \quad
+  \sum_{j=1}^{n} \sum_{k=1}^{n} a_j a_k\, \gamma(t_j - t_k) \geq 0,\]</span>
+isto é, a função de autocovariância define uma forma quadrática não-negativa.</p></li>
+</ul>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-34" class="definition"><strong>Definição 1.19  (Função de autocorrelação em processos estacionários) </strong></span>Seja <span class="math inline">\(\{X_t, ~ t \in T\}\)</span> um PE estacionário. Chama-se <strong>função de autocorrelação</strong> à função
+<span class="math inline">\(\rho\)</span> definida por:
+<span class="math display">\[\rho(h)=Corr(X_t,X_{t+h})=\dfrac{Cov(X_t,X_{t+h})}{\sqrt{V(X_t)}\sqrt{V(X_{t+h})}}=\dfrac{\gamma(h)}{\gamma(0)}.\]</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-35" class="proposition"><strong>Propriedade 1.2  (Propriedades da função de autocorrelação em processos estacionários) </strong></span>A função de autocorrelação <span class="math inline">\(\rho(h)\)</span> goza das seguintes propriedades:</p>
+<ul>
+<li><p><span class="math inline">\(\rho(h)=\rho(-h), \forall ~h \in \mathbb{Z}\)</span>, isto é, a função de autocovariância é
+par;</p></li>
+<li><p><span class="math inline">\(\forall ~n \in \mathbb{N}, \forall ~a_j \in \mathbb{R}, \forall ~t_j \in \mathbb{Z}, ~j=1, \ldots,n:\)</span>
+<span class="math display">\[\sum\limits_{j=1}^{n}\sum\limits_{k=1}^{n} a_ja_k\rho(t_j-t_k) \geq 0,\]</span> isto é,
+trata-se de uma função semi-definida positiva.</p></li>
+</ul>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-36" class="exercise"><strong>Exercício 1.4  </strong></span></p>
+<!-- Isabel Pereira Ficha 2 ex 2 -->
+<p>Sejam <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> duas variáveis aleatórias com média nula, não correlacionadas e com a mesma variância <span class="math inline">\(\sigma^2&gt;0\)</span>. Considere-se o PE <span class="math inline">\((Z_t: ~t \in \mathbb{Z})\)</span> definido por:</p>
+<p><span class="math display">\[Z_t=f(t) \cdot X + g(t) \cdot Y, \quad t \in \mathbb{Z},\]</span>
+onde <span class="math inline">\(f\)</span> e <span class="math inline">\(g\)</span> são função determinísticas.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Encontre expressões para <span class="math inline">\(f\)</span> e <span class="math inline">\(g\)</span> de modo a garantir que o processo <span class="math inline">\((Z_t: ~t \in \mathbb{Z})\)</span> admita variância constante mas não seja necessariamente estacionário em sentido fraco.</p></li>
+<li><p>Concretize <span class="math inline">\(f\)</span> e <span class="math inline">\(g\)</span> de modo a que <span class="math inline">\((Z_t: ~t \in \mathbb{Z})\)</span> seja fracamente estacionário.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-37" class="exercise"><strong>Exercício 1.5  </strong></span>Seja <span class="math inline">\(\varepsilon = (\varepsilon_t: ~t \in \mathbb{Z})\)</span> um ruído branco de variância <span class="math inline">\(\sigma^2 &gt; 0\)</span>. Considere os processos estocásticos <span class="math inline">\(X = (X_t: ~ t \in \mathbb{Z})\)</span> e <span class="math inline">\(Y = (Y_t: ~ t \in \mathbb{Z})\)</span> definidos do seguinte modo:
+<span class="math display">\[X_t = \varepsilon_t \quad \text{e} \quad Y_t = (-1)^t \varepsilon_t, \quad \forall ~ t \in \mathbb{Z}.\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Prove que <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> são fracamente estacionários.</p></li>
+<li><p>Mostre que o processo <span class="math inline">\((Z_t = X_t + Y_t: ~  t \in \mathbb{Z})\)</span> é um processo não estacionário.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-38" class="exercise"><strong>Exercício 1.6  </strong></span>Considere um processo estocástico <span class="math inline">\(Y = (Y_t: t \in \mathbb{Z})\)</span> tal que <span class="math inline">\(Y_t = \varepsilon_t - \theta \varepsilon_{t-1}\)</span>, <span class="math inline">\(\theta \in [-1,1]\)</span>, onde <span class="math inline">\((\varepsilon_t: t \in \mathbb{Z})\)</span> é um ruído branco gaussiano de variância <span class="math inline">\(\sigma^2 &gt; 0\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Mostre que <span class="math inline">\(Y\)</span> é gaussiano.</p></li>
+<li><p>Determine a distribuição da variável aleatória <span class="math inline">\(Y_t, ~\forall ~t \in \mathbb{Z}\)</span>.</p></li>
+<li><p>Determine a função de autocorrelação de <span class="math inline">\(Y\)</span>.</p></li>
+<li><p>O que pode concluir quanto à estacionariedade forte e fraca de <span class="math inline">\(Y\)</span>?</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-39" class="exercise"><strong>Exercício 1.7  </strong></span>Seja <span class="math inline">\(X = (X_t: ~ t \geq 0)\)</span> um processo estocástico, definido sobre o espaço de probabilidade <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span>, tal que, para todo <span class="math inline">\(t \geq 0\)</span>, <span class="math inline">\(X_t \sim \mathcal{N}(0, t)\)</span>, e <span class="math inline">\(P(X_0 = 0) = 1\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Diga em que condições será <span class="math inline">\(X\)</span> um processo de incrementos independentes e estacionários.</p></li>
+<li><p>Supondo que <span class="math inline">\(X\)</span> é um processo de incrementos independentes e estacionários, mostre que: (i) <span class="math inline">\(\forall~ t, s \in [0,+\infty[\)</span>, com <span class="math inline">\(t &gt; s\)</span>, tem-se que <span class="math inline">\(X_t - X_s \sim \mathcal{N}(0, |t - s|)\)</span>; (ii) <span class="math inline">\(X\)</span> é um processo gaussiano centrado.</p></li>
+<li><p>Considere o processo estocástico <span class="math inline">\(Y = (Y_t: t \geq 0)\)</span> tal que:
+<span class="math display">\[
+Y(t)=
+\begin{cases}
+t, &amp; X_t \geq 0\\
+-t, &amp; X_t &lt; 0.\\
+\end{cases}
+\]</span>
+Mostre que <span class="math inline">\(Y\)</span> é um processo estocástico de segunda ordem centrado. Será <span class="math inline">\(Y\)</span> estacionário em algum sentido? Justifique.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-40" class="exercise"><strong>Exercício 1.8  </strong></span>Sejam <span class="math inline">\(X = (X_t: ~t \in \mathbb{Z})\)</span> e <span class="math inline">\((\varepsilon_t: ~t \in \mathbb{Z})\)</span> dois processos estocásticos definidos sobre o espaço de probabilidade <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span>, tais que:
+<span class="math display">\[
+\forall ~t \in \mathbb{Z}, \quad X_t = \sum\limits_{j=0}^{+\infty} \left( \frac{4}{5} \right)^j \varepsilon_{t-j}.
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Explique em que condições será <span class="math inline">\(\varepsilon\)</span> um ruído branco.</p></li>
+<li><p>Suponha que <span class="math inline">\(\varepsilon\)</span> é um ruído branco tal que <span class="math inline">\(E[\varepsilon_t^2] = 9/50\)</span>. (i) Prove que <span class="math inline">\(X\)</span> é fracamente estacionário e indique as respetivas função média e função de autocovariância; (ii) Suponha agora que <span class="math inline">\(X\)</span> é um processo gaussiano. Indique a distibuição do vector aleatório <span class="math inline">\((X_t, X_s), ~ \forall ~ t, s \in \mathbb{Z}\)</span>.</p></li>
+<li><p>Considere o processo estocástico <span class="math inline">\(Y = (Y_t: t \in \mathbb{Z})\)</span> tal que:
+<span class="math display">\[
+Y_t =
+\begin{cases}
+1/2, &amp; X_t \geq 0 \\
+-1, &amp; X_t &lt; 0,
+\end{cases}
+\]</span>
+admitindo que <span class="math inline">\(X\)</span> está nas condições da alínea b) ii). Calcule a função média de <span class="math inline">\(Y\)</span> e mostre que <span class="math inline">\(Y\)</span> é fracamente estacionário.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-41" class="exercise"><strong>Exercício 1.9  </strong></span>Seja <span class="math inline">\((\varepsilon_t: t \in \mathbb{Z})\)</span> um ruído branco gaussiano de variância <span class="math inline">\(\sigma^2&gt;0\)</span>. Considere um outro processo estocástico <span class="math inline">\((Y_t: ~t \in \mathbb{Z})\)</span> definido por:
+<span class="math display">\[Y_t=\varepsilon_t -\theta \varepsilon_{t-1}-\dfrac{\theta}{2}\varepsilon_{t-2}, \quad \theta \in [-1,1].\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Defina processo gaussiano e mostre que <span class="math inline">\(Y\)</span> é gaussiano.</p></li>
+<li><p>Determine a função de autocorrelação do processo <span class="math inline">\(Y\)</span>.</p></li>
+</ol>
+</div>
+</div>
+<div id="martingalas" class="section level3 hasAnchor" number="1.2.4">
+<h3><span class="header-section-number">1.2.4</span> Martingalas<a href="introducao-aos-processos-estocasticos.html#martingalas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Do ponto de vista da modelação, as martingalas são apropriadas para modelar fenómenos aleatórios, tais como jogos de azar.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-42" class="definition"><strong>Definição 1.20  (Martingala) </strong></span>Um PE <span class="math inline">\(\{X_t, ~ t \in T\}\)</span> é uma <strong>Martingala</strong> sse:</p>
+<ul>
+<li><p><span class="math inline">\(E(\mid X_t \mid) &lt; +\infty;\)</span></p></li>
+<li><p><span class="math inline">\(\forall ~n \in \mathbb{N}, ~\forall ~t_1&lt; \ldots &lt; t_{n+1} \in T: E(X_{t_{n+1}} \mid X_{t_1}, \ldots X_{t_n})=X_{t_n}\)</span>.</p></li>
+</ul>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-43" class="example"><strong>Exemplo 1.4  </strong></span>Considere-se <span class="math inline">\(E\)</span> discreto e <span class="math inline">\(T=\mathbb{N}\)</span>. Se interpretarmos <span class="math inline">\(X_n\)</span> como a fortuna de um jogador após a realização do <span class="math inline">\(n-\)</span>ésimo jogo, então a 2ª condição da definição anterior estabelece que a fortuna <strong>esperada</strong> após a <span class="math inline">\((n+1)-\)</span>ésima partida do jogo é igual à fortuna depois do <span class="math inline">\(n-\)</span>ésimo jogo, independentemente do que ocorreu anteriormente.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-44" class="remark"><em>Nota</em>. </span>Na definição de Martingala, podemos ainda considerar,</p>
+<ul>
+<li><p>Submartingalas, quando <span class="math inline">\(\forall ~n \in \mathbb{N}, ~\forall ~t_1&lt; \ldots &lt; t_{n+1} \in T: E(X_{t_{n+1}} \mid X_{t_1}, \ldots X_{t_n}) \leq X_{t_n}\)</span>.</p></li>
+<li><p>Supermartingalas, quando <span class="math inline">\(\forall ~n \in \mathbb{N}, ~\forall ~t_1&lt; \ldots &lt; t_{n+1} \in T: E(X_{t_{n+1}} \mid X_{t_1}, \ldots X_{t_n}) \geq X_{t_n}\)</span>.</p></li>
+</ul>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-45" class="exercise"><strong>Exercício 1.10  </strong></span></p>
+<!-- Muller pg 190 -->
+<p>Sejam <span class="math inline">\(X_0, X_1, \dots\)</span> v.a.’s independentes com média finita e nula e <span class="math inline">\(S_n=\sum\limits_{i=0}^{n}X_i\)</span>. Mostre que o PE <span class="math inline">\(\{S_n: ~n \in \mathbb{N}_0\}\)</span> é uma Martingala.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-46" class="exercise"><strong>Exercício 1.11  </strong></span></p>
+<!-- Muller pg 191 -->
+<p>Considere um jogo no qual, em cada jogada, o jogador pode ganhar ou perder um euro, com igual probabilidade. Após <span class="math inline">\(n\)</span> jogadas o ganho desse jogador é dado por <span class="math inline">\(S_n=\sum\limits_{i=i}^{n}X_i\)</span>, onde <span class="math inline">\(X_1, X_2, \dots\)</span> são v.a.’s independentes. Mostre que o PE <span class="math inline">\(\{S_n: ~n \in \mathbb{N}\}\)</span> é uma Martingala.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-47" class="exercise"><strong>Exercício 1.12  </strong></span></p>
+<!-- Muller pg 191 -->
+<p>Sejam <span class="math inline">\(X_1, X_2, \dots\)</span> são v.a.’s independentes com média unitária. Mostre que o PE <span class="math inline">\(\{Z_n: ~n \in \mathbb{N}\}\)</span>, definido por
+<span class="math display">\[Z_n=\prod\limits_{i=1}^{n}X_i\]</span>
+é uma Martingala.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-48" class="exercise"><strong>Exercício 1.13  </strong></span>Seja <span class="math inline">\((X_n, ~n=0,1,2,\dots)\)</span> um PE com espaço de estados <span class="math inline">\(\mathbb{N}_0\)</span>, com média unitária para <span class="math inline">\(n \geq 1\)</span>, com incrementos independentes e tal que <span class="math inline">\(P(X_0=0)=1\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>O que significa dizer que o processo <span class="math inline">\(X\)</span> tem incrementos independentes?</p></li>
+<li><p>Prove que o processo <span class="math inline">\((X_n, ~n=0,1,2,\dots)\)</span> é uma Martingala.</p></li>
+<li><p>Sabendo que <span class="math inline">\(Var(X_n)=1\)</span>, o que pode afirmar quanto à estacionariedade fraca do processo <span class="math inline">\((X_n, ~n=0,1,2,\dots)\)</span>?</p></li>
+</ol>
+</div>
+</div>
+<div id="processos-de-markov" class="section level3 hasAnchor" number="1.2.5">
+<h3><span class="header-section-number">1.2.5</span> Processos de Markov<a href="introducao-aos-processos-estocasticos.html#processos-de-markov" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Os processos de Markov são apropriados na modelação de fenómenos aleatórios cujo comportamento futuro não é alterado pelo conhecimento do seu passado, apenas interessa conhecer o estado presente, ou seja, a probabilidade de que o sistema físico esteja num determinado estado num dado instante <span class="math inline">\(t\)</span> pode deduzir-se a partir do conhecimento desse estado num instante qualquer anterior e essa probabilidade não depende da “história” do sistema antes de <span class="math inline">\(t\)</span>.</p>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-49" class="definition"><strong>Definição 1.21  (Processo de Markov) </strong></span>Um PE <span class="math inline">\(\{X_t, t \in T\}\)</span> com espaço de estados <span class="math inline">\(E\)</span> diz-se um <strong>processo de Markov</strong> (ou <strong>Markoviano</strong>) sse <span class="math inline">\(\forall ~n \in \mathbb{N}, ~\forall ~t_1&lt; \ldots &lt; t_{n+1} \in T, ~\forall ~x_1, \ldots, x_{n+1} \in E, ~\forall ~B \in \mathcal{B}:\)</span>
+<span class="math display">\[P(X_{t_{n+1}} \in B \mid X_{t_1}=x_1, \ldots X_{t_n}=x_n)=P(X_{t_{n+1}} \in B \mid X_{t_n}=x_n).\]</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-50" class="theorem"><strong>Teorema 1.3  </strong></span>Se <span class="math inline">\(E\)</span> for discreto e <span class="math inline">\(T=\mathbb{N}\)</span>, a propriedade de Markov da definição anterior é equivalente à seguinte:
+<span class="math display">\[\forall ~n \in \mathbb{N}, ~\forall ~x_0, \ldots, x_{n+1} \in E: P(X_0=x_0, \ldots, X_n=x_n)&gt;0, \text{tem-se que }\]</span> <span class="math display">\[P(X_{n+1}=x_{n+1} \mid X_{0}=x_0, \ldots X_{n}=x_n)=P(X_{n+1}=x_{n+1} \mid X_{n}=x_n).\]</span></p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-51" class="remark"><em>Nota</em>. </span>Os processos de Markov, como quaisquer processos, são classificados de acordo com a natureza do espaço de estados <span class="math inline">\(E\)</span> e do espaço dos parâmetros <span class="math inline">\(T\)</span>. Uma classe especial de processos de Markov são as <strong>Cadeias de Markov</strong> (C.M.): processos de Markov com espaço de estados <span class="math inline">\(E\)</span> <strong>discreto</strong>.</p>
+<p>Assim, uma cadeia de Markov pode interpretar-se com um PE cujo desenvolvimento se pode considerar como uma série de transições entre valores determinados que têm a propriedade de que a distribuição de probabilidade do estado futuro do processo, sabendo-se que ele está num dado estado, depende apenas deste estado e não do modo de como o processo lá chegou. As C.M. são classificadas em <strong>discretas</strong> ou <strong>contínuas</strong>. Nesta UC iremos abordar ambos os casos.</p>
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cadeias-de-markov-em-tempo-discreto.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["PEA.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
