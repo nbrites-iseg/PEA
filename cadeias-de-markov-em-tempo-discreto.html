@@ -476,7 +476,7 @@ Convenção: se <span class="math inline">\(\forall ~n \geq 1, P_{ii}^n=0\)</spa
 <ol style="list-style-type: decimal">
 <li>Considere a matriz de transição
 <span class="math display">\[
-P = \begin{bmatrix}
+\mathbb{P} = \begin{bmatrix}
 0 &amp; 1 \\
 1 &amp; 0
 \end{bmatrix}.
@@ -491,7 +491,7 @@ P = \begin{bmatrix}
 <ol start="2" style="list-style-type: decimal">
 <li>Considere a matriz de transição
 <span class="math display">\[
-P = \begin{bmatrix}
+\mathbb{P} = \begin{bmatrix}
 0.5 &amp; 0.5 \\
 0.5 &amp; 0.5
 \end{bmatrix}.
@@ -615,18 +615,18 @@ isto é, existe uma probabilidade positiva de nunca mais regressar a <span class
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-85" class="theorem"><strong>Teorema 2.6  (Critérios de recorrência/transitoriedade) </strong></span>Seja <span class="math inline">\(P_{ii}^n = P(X_n=i \mid X_0=i)\)</span>. Então:</p>
+<p><span id="thm:unlabeled-div-85" class="theorem"><strong>Teorema 2.6  (Critérios de recorrência/transitoriedade) </strong></span>Seja <span class="math inline">\(P_{ii}^n = P(X_n=i \mid X_0=i)\)</span> e <span class="math inline">\(f_{ii}^n = P(T_{ii}=n \mid X_0=i)\)</span>, onde <span class="math inline">\(T_{ii}\)</span> é o tempo mínimo de retorno a <span class="math inline">\(i\)</span>. Então:</p>
 <ul>
-<li><p>O estado <span class="math inline">\(i\)</span> é <strong>recorrente</strong> sse a probabilidade de regressar a <span class="math inline">\(i\)</span> em algum instante é igual a 1, ou seja, a soma das probabilidades de primeira visita é igual a 1:</p>
-<p><span class="math display">\[
-\sum_{n=1}^{+\infty} f_{ii}^n = 1.
-\]</span></p></li>
-<li><p>O estado <span class="math inline">\(i\)</span> é <strong>recorrente</strong> sse o tempo de retorno a <span class="math inline">\(i\)</span> é finito com probabilidade 1, isto é,<br />
+<li><p>O estado <span class="math inline">\(i\)</span> é <strong>recorrente</strong> sse a probabilidade de regressar a <span class="math inline">\(i\)</span> em algum instante é igual a 1, ou seja,
 <span class="math display">\[
-P(T_{ii} &lt; +\infty) = 1.
+\sum_{n=1}^{+\infty} f_{ii}^n = P(T_{ii}&lt;\infty \mid X_0=i) = 1.
 \]</span></p></li>
-<li><p>O estado <span class="math inline">\(i\)</span> é <strong>recorrente</strong> sse a soma das probabilidades de estar em <span class="math inline">\(i\)</span> ao longo de todos os instantes é infinita, ou seja,</p>
-<p><span class="math display">\[
+<li><p>O estado <span class="math inline">\(i\)</span> é <strong>recorrente</strong> sse o tempo de retorno a <span class="math inline">\(i\)</span> é finito com probabilidade 1:
+<span class="math display">\[
+P(T_{ii} &lt; +\infty \mid X_0=i) = 1.
+\]</span></p></li>
+<li><p>O estado <span class="math inline">\(i\)</span> é <strong>recorrente</strong> sse a soma das probabilidades de <strong>estar em <span class="math inline">\(i\)</span> ao longo de todos os instantes</strong> é infinita:
+<span class="math display">\[
 \sum_{n=1}^{+\infty} P_{ii}^n = +\infty.
 \]</span></p></li>
 </ul>
@@ -873,10 +873,11 @@ Mostre que a cadeia é irredutível.</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-99" class="definition"><strong>Definição 2.11  (Classe fechada) </strong></span>Uma <strong>classe fechada</strong> é uma classe de comunicação <span class="math inline">\(C\)</span> tal que, se <span class="math inline">\(i \in C\)</span> e <span class="math inline">\(P_{ij} &gt; 0\)</span>, então <span class="math inline">\(j \in C\)</span>, ou seja, a cadeia nunca pode sair de <span class="math inline">\(C\)</span> depois de entrar.</p>
 </div>
+<p><span class="math inline">\(\,\)</span></p>
 <p>Coloca-se agora a questão: como encontrar todos os estados que pertencem a uma mesma classe de comunicação (e, em particular, a uma classe fechada)? Seguem-se os passos:</p>
 <ul>
 <li><p><strong>Passo 1:</strong> inclui-se em <span class="math inline">\(C\)</span> todos os estados <span class="math inline">\(j\)</span> para os quais <span class="math inline">\(P_{ij}&gt;0\)</span>, isto é, <span class="math inline">\(i \longrightarrow j\)</span>;</p></li>
-<li><p><strong>Passo 2:</strong> inclui-se em <span class="math inline">\(C\)</span> todos os estados <span class="math inline">\(k\)</span> para os quais <span class="math inline">\(P_{jk}&gt;0\)</span>, <span class="math inline">\(\forall ~j \in C\)</span>, isto é, <span class="math inline">\(i \longrightarrow k\)</span> (propriedade da transitividade);</p></li>
+<li><p><strong>Passo 2:</strong> inclui-se em <span class="math inline">\(C\)</span> todos os estados <span class="math inline">\(k\)</span> para os quais existe <span class="math inline">\(j \in C\)</span> com <span class="math inline">\(P_{jk}&gt;0\)</span>, isto é, <span class="math inline">\(j \longrightarrow k\)</span> para algum <span class="math inline">\(j \in C\)</span> (propriedade da transitividade);</p></li>
 <li><p><strong>Passo 3:</strong> repetir o Passo 2 até não se poder incluir mais estados em <span class="math inline">\(C\)</span>;</p></li>
 <li><p><strong>Passo 4:</strong> verificar se algum estado de <span class="math inline">\(C\)</span> tem transições para fora.</p>
 <ul>
@@ -988,7 +989,7 @@ onde:</p>
 \end{array}
 \right],
 \]</span>
-onde <span class="math inline">\(P_i\)</span> representa a matriz de probabilidades de transição da classe <span class="math inline">\(C_i\)</span> e <span class="math inline">\(Q_i\)</span> é a matriz associada a estados de transição.</p>
+onde <span class="math inline">\(P_i\)</span> representa a matriz de probabilidades de transição da classe <span class="math inline">\(C_i\)</span> e <span class="math inline">\(Q_i\)</span> é a matriz associada a estados de transição. Nota: para re-escrever a matriz usou-se a permutação <span class="math inline">\((6,1,3,5,4,2,7)\)</span>.</p>
 </div>
 </div>
 </div>
