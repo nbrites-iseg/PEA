@@ -100,11 +100,7 @@
 <li class="chapter" data-level="2.2.1" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#decomposicao-do-espaco-de-estados"><i class="fa fa-check"></i><b>2.2.1</b> Decomposição do espaço de estados</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#probabilidades-de-absorcao-em-estados-recorrentes"><i class="fa fa-check"></i><b>2.3</b> Probabilidades de absorção em estados recorrentes</a></li>
-<li class="chapter" data-level="2.4" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#teoremas-limite"><i class="fa fa-check"></i><b>2.4</b> Teoremas limite</a>
-<ul>
-<li class="chapter" data-level="2.4.1" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#distribuicao-estacionaria-e-distribuicao-limite"><i class="fa fa-check"></i><b>2.4.1</b> Distribuição estacionária e distribuição limite</a></li>
-<li class="chapter" data-level="2.4.2" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#comportamento-limite-de-p-ij-n-quando-n-to-infty"><i class="fa fa-check"></i><b>2.4.2</b> Comportamento limite de <span class="math inline">\(P_{ij}^n\)</span> quando <span class="math inline">\(n\to+\infty\)</span></a></li>
-</ul></li>
+<li class="chapter" data-level="2.4" data-path="cadeias-de-markov-em-tempo-discreto.html"><a href="cadeias-de-markov-em-tempo-discreto.html#teoremas-limite"><i class="fa fa-check"></i><b>2.4</b> Teoremas limite</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html"><i class="fa fa-check"></i><b>3</b> Cadeias de Markov em tempo contínuo</a>
 <ul>
@@ -145,7 +141,7 @@
 <div id="processo-de-wiener" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Processo de Wiener<a href="complementos-de-processos-estocasticos.html#processo-de-wiener" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unlabeled-div-163" class="definition"><strong>Definição 4.1  (Filtração) </strong></span>Seja <span class="math inline">\(X = (X(t), ~ t \in T)\)</span> um processo estocástico definido no espaço de probabilidade <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span>, com conjunto de índices <span class="math inline">\(T = [0, +\infty[\)</span>. Uma família de sub-<span class="math inline">\(\sigma\)</span>-álgebras de <span class="math inline">\(\mathcal{F}\)</span>, tal que para <span class="math inline">\(s \leq t\)</span> se tenha <span class="math inline">\(\mathcal{F}_s \subset \mathcal{F}_t\)</span>, designa-se por <strong>filtração</strong>.</p>
+<p><span id="def:unlabeled-div-154" class="definition"><strong>Definição 4.1  (Filtração) </strong></span>Seja <span class="math inline">\(X = (X(t), ~ t \in T)\)</span> um processo estocástico definido no espaço de probabilidade <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span>, com conjunto de índices <span class="math inline">\(T = [0, +\infty[\)</span>. Uma família de sub-<span class="math inline">\(\sigma\)</span>-álgebras de <span class="math inline">\(\mathcal{F}\)</span>, tal que para <span class="math inline">\(s \leq t\)</span> se tenha <span class="math inline">\(\mathcal{F}_s \subset \mathcal{F}_t\)</span>, designa-se por <strong>filtração</strong>.</p>
 <p>Denomina-se <strong>filtração natural</strong> do processo <span class="math inline">\(X\)</span> a família<br />
 <span class="math display">\[
 \left(\mathcal{F}_t = \sigma\big(X_s : 0 \leq s \leq t\big), \; t \in T\right),
@@ -157,7 +153,7 @@ formada pelas álgebras-<span class="math inline">\(\sigma\)</span> geradas pelo
 <p>Em 1828, o botânico inglês Robert Brown observou pequenas partículas de pólen imersas num líquido a movimentarem-se de forma completamente aleatória. Mais tarde, em 1905, Albert Einstein justificou este movimento com a constante colisão entre as partículas e as moléculas do líquido envolvente e caracterizou-o por um processo estocástico que viria a ser chamado processo de Wiener. Finalmente, em 1918, apareceu a primeira definição matemática do termo através do matemático Norbert Wiener.m</p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-164" class="definition"><strong>Definição 4.2  (Processo de Wiener padrão (ou movimento Browniano)) </strong></span>Um <strong>processo de Wiener padrão</strong> (ou <strong>movimento Browniano</strong>) é um processo estocástico <span class="math inline">\(W = (W_t)_{t \geq 0}\)</span> definido num espaço de probabilidade <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span>, que satisfaz as seguintes propriedades:</p>
+<p><span id="def:unlabeled-div-155" class="definition"><strong>Definição 4.2  (Processo de Wiener padrão (ou movimento Browniano)) </strong></span>Um <strong>processo de Wiener padrão</strong> (ou <strong>movimento Browniano</strong>) é um processo estocástico <span class="math inline">\(W = (W_t)_{t \geq 0}\)</span> definido num espaço de probabilidade <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span>, que satisfaz as seguintes propriedades:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Condição inicial:</strong> <span class="math inline">\(W_0 = 0\)</span> quase certamente, isto é,<br />
 <span class="math display">\[
@@ -183,7 +179,7 @@ onde <span class="math inline">\(C([0, \infty[)\)</span> denota o espaço das fu
 <p>Nos processos estocásticos e, em particular, nas equações diferenciais estocásticas, o processo de Wiener representa o efeito acumulado das perturbações aleatórias na evolução de determinado fenómeno em estudo. Dada a importância deste processo, iremos apresentar algumas das suas propriedades.</p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-165" class="definition"><strong>Definição 4.3  </strong></span>Considere-se uma função <span class="math inline">\(f:[0,t] \rightarrow \mathbb{R}\)</span> e uma sequência de partições <span class="math inline">\(\mathcal{P}_n = \{t_0^n, t_1^n, \ldots, t_n^n\}\)</span> do intervalo <span class="math inline">\([0,t]\)</span>, com <span class="math inline">\(0 = t_0^n &lt; t_1^n &lt; \cdots &lt; t_n^n = t\)</span> para cada <span class="math inline">\(n \in \mathbb{N}\)</span>, tais que
+<p><span id="def:unlabeled-div-156" class="definition"><strong>Definição 4.3  </strong></span>Considere-se uma função <span class="math inline">\(f:[0,t] \rightarrow \mathbb{R}\)</span> e uma sequência de partições <span class="math inline">\(\mathcal{P}_n = \{t_0^n, t_1^n, \ldots, t_n^n\}\)</span> do intervalo <span class="math inline">\([0,t]\)</span>, com <span class="math inline">\(0 = t_0^n &lt; t_1^n &lt; \cdots &lt; t_n^n = t\)</span> para cada <span class="math inline">\(n \in \mathbb{N}\)</span>, tais que
 <span class="math display">\[
 \delta_n = \max_{0 \leq i \leq n-1} |t_{i+1}^n - t_i^n| \to 0 \quad \text{quando } n \to +\infty.
 \]</span></p>
@@ -205,7 +201,7 @@ V_f^2(t) := \lim_{n \to +\infty} \sum_{i=0}^{n-1} |f(t_{i+1}^n) - f(t_i^n)|^2.
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-166" class="proposition"><strong>Propriedade 4.1  (Propriedades do processo de Wiener) </strong></span>O processo de Wiener, <span class="math inline">\(W_t\)</span>, possui as seguintes propriedades:</p>
+<p><span id="prp:unlabeled-div-157" class="proposition"><strong>Propriedade 4.1  (Propriedades do processo de Wiener) </strong></span>O processo de Wiener, <span class="math inline">\(W_t\)</span>, possui as seguintes propriedades:</p>
 <ol style="list-style-type: decimal">
 <li><p>Existe uma versão separável e contínua do processo, isto é, com trajectórias quase certamente contínuas;</p></li>
 <li><p>Para todo <span class="math inline">\(t \geq 0\)</span>, <span class="math inline">\(W_t \sim \mathcal{N}(0,t);\)</span></p></li>
@@ -220,7 +216,7 @@ V_f^2(t) := \lim_{n \to +\infty} \sum_{i=0}^{n-1} |f(t_{i+1}^n) - f(t_i^n)|^2.
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="remark">
-<p><span id="unlabeled-div-167" class="remark"><em>Nota</em> (Ruído branco como derivada generalizada do processo de Wiener). </span>Embora as trajectórias do processo de Wiener sejam, quase certamente, contínuas mas não diferenciáveis (propriedade 7), e tenham variação total infinita (propriedade 8), é possível interpretar a sua derivada no <strong>sentido das distribuições generalizadas</strong> (ou distribuições de Schwartz).</p>
+<p><span id="unlabeled-div-158" class="remark"><em>Nota</em> (Ruído branco como derivada generalizada do processo de Wiener). </span>Embora as trajectórias do processo de Wiener sejam, quase certamente, contínuas mas não diferenciáveis (propriedade 7), e tenham variação total infinita (propriedade 8), é possível interpretar a sua derivada no <strong>sentido das distribuições generalizadas</strong> (ou distribuições de Schwartz).</p>
 <p>Neste contexto, define-se a <strong>derivada generalizada</strong> do processo de Wiener como
 <span class="math display">\[
 \frac{dW_t}{dt} = \xi_t,
@@ -242,7 +238,7 @@ onde <span class="math inline">\(\delta\)</span> é a função delta de Dirac, i
 <p><img src="index_files/figure-html/fig-wiener-trajectories-1.png" width="672" /></p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-168" class="exercise"><strong>Exercício 4.1  (Braumann (2005)) </strong></span>Tirando partido das propriedades do processo de Wiener, calcule ou determine:</p>
+<p><span id="exr:unlabeled-div-159" class="exercise"><strong>Exercício 4.1  (Braumann (2005)) </strong></span>Tirando partido das propriedades do processo de Wiener, calcule ou determine:</p>
 <ol style="list-style-type: decimal">
 <li><p><span class="math inline">\(P(W(2.7) &gt; 1.5)\)</span>.</p></li>
 <li><p><span class="math inline">\(P(-1.5 &lt; W(2.7) &lt; 1.5)\)</span>.</p></li>
@@ -262,7 +258,7 @@ onde <span class="math inline">\(\delta\)</span> é a função delta de Dirac, i
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-169" class="exercise"><strong>Exercício 4.2  </strong></span></p>
+<p><span id="exr:unlabeled-div-160" class="exercise"><strong>Exercício 4.2  </strong></span></p>
 <!-- Alfredo 6.1-->
 <p>Considere um movimento Browniano standard <span class="math inline">\((B(t), ~t\geq 0)\)</span> nos instantes <span class="math inline">\(0&lt;u&lt;u+v&lt;u+v+w\)</span>, em que <span class="math inline">\(u,v,w&gt;0\)</span>. Calcule
 <span class="math display">\[
@@ -271,7 +267,7 @@ E(B(u)B(u+v)B(u+v+w)).
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-170" class="exercise"><strong>Exercício 4.3  </strong></span></p>
+<p><span id="exr:unlabeled-div-161" class="exercise"><strong>Exercício 4.3  </strong></span></p>
 <!-- Alfredo 6.2-->
 <p>Seja <span class="math inline">\((B(t), ~t\geq 0)\)</span> com <span class="math inline">\(B(0)\equiv 3\)</span>, um movimento Browniano com variância <span class="math inline">\(\sigma^{2}\)</span>. Determine
 <span class="math display">\[
@@ -280,7 +276,7 @@ Cov(B(t),B(s)), \quad t,s \geq 0.
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-171" class="exercise"><strong>Exercício 4.4  </strong></span></p>
+<p><span id="exr:unlabeled-div-162" class="exercise"><strong>Exercício 4.4  </strong></span></p>
 <!-- Alfredo 6.3-->
 <p>Considere um movimento Browniano standard <span class="math inline">\((B(t), ~t\geq 0)\)</span>. Determine as funções de covariância para os processos estocásticos seguintes:</p>
 <ol style="list-style-type: lower-alpha">
@@ -291,7 +287,7 @@ Cov(B(t),B(s)), \quad t,s \geq 0.
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-172" class="exercise"><strong>Exercício 4.5  </strong></span></p>
+<p><span id="exr:unlabeled-div-163" class="exercise"><strong>Exercício 4.5  </strong></span></p>
 <!-- Alfredo 6.5-->
 <p>Considere um movimento Browniano standard <span class="math inline">\((B(t), ~t \geq 0)\)</span>. Para <span class="math inline">\(t\)</span> fixo e <span class="math inline">\(M(t)=\max\limits_{0\leq u\leq t}B(u)\)</span>, mostre que:</p>
 <ol style="list-style-type: lower-alpha">
@@ -304,13 +300,13 @@ f_{M(t)}(x)=\frac{2}{\sqrt{t}}\phi (x/\sqrt{t}),  ~ x&gt;0.
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-173" class="exercise"><strong>Exercício 4.6  </strong></span></p>
+<p><span id="exr:unlabeled-div-164" class="exercise"><strong>Exercício 4.6  </strong></span></p>
 <!-- Alfredo 6.6-->
 <p>Sejam <span class="math inline">\(B_{1}(t)\)</span> e <span class="math inline">\(B_{2}(t)\)</span> dois movimentos Brownianos independentes e <span class="math inline">\(R(t)=\sqrt{B_{1}(u)^{2}+B_{2}(u)^{2}},\)</span> <span class="math inline">\(t\geq 0\)</span>. Calcule <span class="math inline">\(E(R(t)).\)</span></p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-174" class="exercise"><strong>Exercício 4.7  </strong></span></p>
+<p><span id="exr:unlabeled-div-165" class="exercise"><strong>Exercício 4.7  </strong></span></p>
 <!-- Alfredo 6.7-->
 <p>As flutuações de preço das acções de determinada companhia são modeladas por um movimento Browniano <span class="math inline">\((A(t),\, t \geq 0)\)</span>. Suponha que a companhia entra em falência se o preço de mercado das acções atingir o nível zero.</p>
 <p>Se o valor inicial das acções for <span class="math inline">\(A(0) = 5\)</span> u.m., determine a probabilidade de …</p>
@@ -321,13 +317,13 @@ f_{M(t)}(x)=\frac{2}{\sqrt{t}}\phi (x/\sqrt{t}),  ~ x&gt;0.
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-175" class="exercise"><strong>Exercício 4.8  </strong></span></p>
+<p><span id="exr:unlabeled-div-166" class="exercise"><strong>Exercício 4.8  </strong></span></p>
 <!-- Alfredo 6.8-->
 <p>Considere um movimento Browniano com parâmetros <span class="math inline">\(\mu=0.1\)</span> e <span class="math inline">\(\sigma =2\)</span>. Calcule a probabilidade do processo sair fora do intervalo <span class="math inline">\((a,b]\)</span> no ponto <span class="math inline">\(b\)</span>, partindo de <span class="math inline">\(X(0)=0\)</span>, para <span class="math inline">\(b=1,10,100\)</span> e <span class="math inline">\(a=-b\)</span>.</p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-176" class="exercise"><strong>Exercício 4.9  </strong></span></p>
+<p><span id="exr:unlabeled-div-167" class="exercise"><strong>Exercício 4.9  </strong></span></p>
 <!-- Alfredo 6.9-->
 <p>A flutuação do preço de determinado tipo de acções pode ser descrita por um movimento browniano geométrico com desvio-padrão <span class="math inline">\(\alpha = 0\)</span>. Supondo que adquire estas acções, quais são as hipóteses de ver o seu capital investido duplicar?</p>
 </div>
@@ -335,14 +331,14 @@ f_{M(t)}(x)=\frac{2}{\sqrt{t}}\phi (x/\sqrt{t}),  ~ x&gt;0.
 <div id="o-integral-de-ito" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> O integral de Itô<a href="complementos-de-processos-estocasticos.html#o-integral-de-ito" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="remark">
-<p><span id="unlabeled-div-177" class="remark"><em>Nota</em>. </span>No que se segue, adoptámos a seguinte notação para esperança matemática e probabilidade condicionadas:</p>
+<p><span id="unlabeled-div-168" class="remark"><em>Nota</em>. </span>No que se segue, adoptámos a seguinte notação para esperança matemática e probabilidade condicionadas:</p>
 <p><span class="math display">\[E(\cdot \mid X_s=x)=E_{s,x}(\cdot)\]</span>
 e
 <span class="math display">\[P(\cdot \mid X_s=x)=P_{s,x}(\cdot).\]</span></p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-178" class="definition"><strong>Definição 4.4  (Processo de difusão) </strong></span>Seja <span class="math inline">\((\Omega,\mathcal{F},P)\)</span> um espaço de probabilidade e <span class="math inline">\((X_t, t \geq 0)\)</span> um processo estocástico definido nesse espaço. Diz-se que <span class="math inline">\(X_t\)</span> é um <strong>processo de difusão</strong> se satisfizer as seguintes propriedades:</p>
+<p><span id="def:unlabeled-div-169" class="definition"><strong>Definição 4.4  (Processo de difusão) </strong></span>Seja <span class="math inline">\((\Omega,\mathcal{F},P)\)</span> um espaço de probabilidade e <span class="math inline">\((X_t, t \geq 0)\)</span> um processo estocástico definido nesse espaço. Diz-se que <span class="math inline">\(X_t\)</span> é um <strong>processo de difusão</strong> se satisfizer as seguintes propriedades:</p>
 <ol style="list-style-type: lower-roman">
 <li><p><span class="math inline">\(X_t\)</span> é um processo de Markov;</p></li>
 <li><p>As trajectórias de <span class="math inline">\(X_t\)</span> são quase certamente contínuas;</p></li>
@@ -367,7 +363,7 @@ e
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-179" class="exercise"><strong>Exercício 4.10  (Fonte: Braumann (2005)) </strong></span></p>
+<p><span id="exr:unlabeled-div-170" class="exercise"><strong>Exercício 4.10  (Fonte: Braumann (2005)) </strong></span></p>
 <ol style="list-style-type: lower-roman">
 <li><p>Mostre que o processo de Wiener <span class="math inline">\(W_t\)</span> é um processo de difusão homogéneo com coeficiente de tendência nulo e coeficiente de difusão unitário.</p></li>
 <li><p>Mostre que <span class="math inline">\(X_t = x_0 + \sigma W_t\)</span>, com <span class="math inline">\(x_0\)</span> e <span class="math inline">\(\sigma\)</span> constantes, sendo um processo de Wiener (não-padrão), é um processo de difusão homogéneo com coeficiente de tendência nulo e coeficiente de difusão <span class="math inline">\(\sigma^2\)</span>.</p></li>
@@ -376,7 +372,7 @@ e
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-180" class="definition"><strong>Definição 4.5  (Função delta de Dirac) </strong></span>Chama-se <strong>função delta de Dirac</strong> à função generalizada <span class="math inline">\(\delta(x)\)</span> com as seguintes propriedades:</p>
+<p><span id="def:unlabeled-div-171" class="definition"><strong>Definição 4.5  (Função delta de Dirac) </strong></span>Chama-se <strong>função delta de Dirac</strong> à função generalizada <span class="math inline">\(\delta(x)\)</span> com as seguintes propriedades:</p>
 <ol style="list-style-type: decimal">
 <li><p><span class="math inline">\(\delta(x) = 0\)</span>, para todo o <span class="math inline">\(x \neq 0\)</span>;</p></li>
 <li><p><span class="math inline">\(\delta(0) = +\infty\)</span>;</p></li>
@@ -387,7 +383,7 @@ e
 <p>A caraterização, do ponto de vista probabilístico, de um processo de difusão recorre apenas aos seus momentos infinitesimais e às equações de Kolmogorov.</p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-181" class="theorem"><strong>Teorema 4.1  </strong></span>Seja <span class="math inline">\(X_t\)</span> um processo de difusão, como definido anteriormente, com função densidade de transição <span class="math inline">\(p(t, y \mid s, x)\)</span>, contínua em <span class="math inline">\(s\)</span>, com derivadas parciais de primeira e segunda ordem em relação a <span class="math inline">\(x\)</span> finitas e contínuas em <span class="math inline">\(s\)</span>. Nessas condições, verificam-se:</p>
+<p><span id="thm:unlabeled-div-172" class="theorem"><strong>Teorema 4.1  </strong></span>Seja <span class="math inline">\(X_t\)</span> um processo de difusão, como definido anteriormente, com função densidade de transição <span class="math inline">\(p(t, y \mid s, x)\)</span>, contínua em <span class="math inline">\(s\)</span>, com derivadas parciais de primeira e segunda ordem em relação a <span class="math inline">\(x\)</span> finitas e contínuas em <span class="math inline">\(s\)</span>. Nessas condições, verificam-se:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Equação de Kolmogorov progressiva</strong> (ou <strong>equação de Fokker-Planck</strong>):
 <span class="math display">\[
@@ -508,7 +504,7 @@ E\left[\left(S_{\lambda}(W(t)) - \frac{W^2(t)}{2} - \left(\lambda - \frac{1}{2}\
 <p>Vamos agora dedicar-nos ao estudo do integral de Itô. Começamos com a introdução de algumas definições e resultados importantes.</p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-182" class="definition"><strong>Definição 4.6  </strong></span>Seja <span class="math inline">\(W(t),\ t \geq 0\)</span>, um processo de Wiener padrão definido num espaço de probabilidade <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span>.</p>
+<p><span id="def:unlabeled-div-173" class="definition"><strong>Definição 4.6  </strong></span>Seja <span class="math inline">\(W(t),\ t \geq 0\)</span>, um processo de Wiener padrão definido num espaço de probabilidade <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span>.</p>
 <ol style="list-style-type: decimal">
 <li><p>Chama-se <strong>filtração natural do processo de Wiener até ao instante</strong> <span class="math inline">\(s &gt; 0\)</span> à <span class="math inline">\(\sigma\)</span>-álgebra
 <span class="math display">\[
@@ -529,13 +525,13 @@ E\left[\left(S_{\lambda}(W(t)) - \frac{W^2(t)}{2} - \left(\lambda - \frac{1}{2}\
 <p>A escolha da filtração não-antecipativa <span class="math inline">\(\mathcal{A}_s\)</span> costuma coincidir com a própria filtração natural do processo de Wiener, <span class="math inline">\(\mathcal{M}_s\)</span>, desde que não seja necessário incluir informação adicional sobre o processo. Caso contrário, considera-se uma filtração <strong>maior</strong> (por exemplo, de modo a incluir a condição inicial de um problema de Cauchy), desde que a mesma seja não-antecipativa.</p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-183" class="definition"><strong>Definição 4.7  (Processo não-antecipativo) </strong></span>Um processo estocástico <span class="math inline">\(G(t)\)</span> é chamado de <strong>não-antecipativo</strong>, relativamente à filtração <span class="math inline">\(\mathcal{A}_t\)</span>, se <span class="math inline">\(G(t)\)</span> é <span class="math inline">\(\mathcal{A}_t\)</span>-mensurável, para todo <span class="math inline">\(t \geq 0\)</span> (ou seja, <span class="math inline">\(G(t)\)</span> depende apenas da informação disponível até ao instante <span class="math inline">\(t\)</span>).</p>
+<p><span id="def:unlabeled-div-174" class="definition"><strong>Definição 4.7  (Processo não-antecipativo) </strong></span>Um processo estocástico <span class="math inline">\(G(t)\)</span> é chamado de <strong>não-antecipativo</strong>, relativamente à filtração <span class="math inline">\(\mathcal{A}_t\)</span>, se <span class="math inline">\(G(t)\)</span> é <span class="math inline">\(\mathcal{A}_t\)</span>-mensurável, para todo <span class="math inline">\(t \geq 0\)</span> (ou seja, <span class="math inline">\(G(t)\)</span> depende apenas da informação disponível até ao instante <span class="math inline">\(t\)</span>).</p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <p>Tendo em conta estas definições, podemos definir o integral de Itô para uma classe especial de funções não-antecipativas, as <strong>funções em escada</strong>. Nota: na realidade, para definir o integral de Itô, não basta que <span class="math inline">\(G\)</span> seja não-antecipativa. É necessário que <span class="math inline">\(G = G(t,\omega)\)</span> seja <em>conjuntamente mensurável</em>.</p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-184" class="definition"><strong>Definição 4.8  (Espaço de Hilbert) </strong></span>Chama-se <strong>espaço de Hilbert</strong>, no intervalo <span class="math inline">\([0,t]\)</span>, e representa-se por <span class="math inline">\(H^2[0,t]\)</span>, ao espaço das funções
+<p><span id="def:unlabeled-div-175" class="definition"><strong>Definição 4.8  (Espaço de Hilbert) </strong></span>Chama-se <strong>espaço de Hilbert</strong>, no intervalo <span class="math inline">\([0,t]\)</span>, e representa-se por <span class="math inline">\(H^2[0,t]\)</span>, ao espaço das funções
 <span class="math display">\[ G:[0,t] \times \Omega \rightarrow \mathbb{R} \]</span>
 que verificam as seguintes condições:</p>
 <ul>
@@ -546,14 +542,14 @@ que verificam as seguintes condições:</p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="remark">
-<p><span id="unlabeled-div-185" class="remark"><em>Nota</em>. </span>Nesta última definição considerámos, de modo abusivo, uma qualquer função <span class="math inline">\(G\)</span> com a propriedade de ser conjuntamente mensurável relativamente às medidas <span class="math inline">\(l\)</span> e <span class="math inline">\(P\)</span>.</p>
+<p><span id="unlabeled-div-176" class="remark"><em>Nota</em>. </span>Nesta última definição considerámos, de modo abusivo, uma qualquer função <span class="math inline">\(G\)</span> com a propriedade de ser conjuntamente mensurável relativamente às medidas <span class="math inline">\(l\)</span> e <span class="math inline">\(P\)</span>.</p>
 <p>Formalmente, deveríamos referir-nos ao conjunto das funções conjuntamente mensuráveis que sejam <strong>quase iguais</strong>, no seguinte sentido: duas funções <span class="math inline">\(G_1\)</span> e <span class="math inline">\(G_2\)</span> dizem-se quase iguais quando o conjunto de pontos <span class="math inline">\((t,\omega)\)</span> onde diferem tem medida nula relativamente à medida produto <span class="math inline">\(l \times P\)</span>.</p>
 <p>Assim, a função <span class="math inline">\(G\)</span> é, na realidade, um <strong>representante da classe de equivalência</strong> das funções conjuntamente mensuráveis relativamente à relação de equivalência de quase-igualdade.</p>
 <p>Deste modo, para simplificar a linguagem, referimo-nos à função <span class="math inline">\(G\)</span> como um representante da classe de equivalência, em vez de referir explicitamente a própria classe de equivalência.</p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-186" class="definition"><strong>Definição 4.9  (Função em escada) </strong></span>Uma função <span class="math inline">\(G\)</span>, no espaço <span class="math inline">\(H^2[0,t]\)</span>, é chamada de <strong>função em escada</strong> se existir uma partição <span class="math inline">\(\{0 = t_0 &lt; t_1 &lt; \ldots &lt; t_n = t\}\)</span> do intervalo <span class="math inline">\([0,t]\)</span> tal que:</p>
+<p><span id="def:unlabeled-div-177" class="definition"><strong>Definição 4.9  (Função em escada) </strong></span>Uma função <span class="math inline">\(G\)</span>, no espaço <span class="math inline">\(H^2[0,t]\)</span>, é chamada de <strong>função em escada</strong> se existir uma partição <span class="math inline">\(\{0 = t_0 &lt; t_1 &lt; \ldots &lt; t_n = t\}\)</span> do intervalo <span class="math inline">\([0,t]\)</span> tal que:</p>
 <p><span class="math display">\[
 G(t) = G(t_i), \hspace{20pt} t_i \leq t \leq t_{i+1}, \hspace{5pt} i = 0, \ldots, n-1.
 \]</span></p>
@@ -562,14 +558,14 @@ G(t) = G(t_i), \hspace{20pt} t_i \leq t \leq t_{i+1}, \hspace{5pt} i = 0, \ldots
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-187" class="definition"><strong>Definição 4.10  (Integral de Itô para funções em escada) </strong></span>Seja <span class="math inline">\(G\)</span> uma função em <span class="math inline">\(H_E^2[0,t]\)</span>. O integral de Itô da função <span class="math inline">\(G\)</span> no intervalo <span class="math inline">\([0,t]\)</span> é dado por:</p>
+<p><span id="def:unlabeled-div-178" class="definition"><strong>Definição 4.10  (Integral de Itô para funções em escada) </strong></span>Seja <span class="math inline">\(G\)</span> uma função em <span class="math inline">\(H_E^2[0,t]\)</span>. O integral de Itô da função <span class="math inline">\(G\)</span> no intervalo <span class="math inline">\([0,t]\)</span> é dado por:</p>
 <p><span class="math display">\[
 \int_0^t G(s) \, dW(s) = \sum_{i=0}^{n-1} G(t_i)\left(W(t_{i+1}) - W(t_i)\right).
 \]</span></p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-188" class="theorem"><strong>Teorema 4.2  (Propriedades do integral de Itô) </strong></span>Sejam <span class="math inline">\(F\)</span> e <span class="math inline">\(G\)</span> duas funções em <span class="math inline">\(H_E^2[0,t]\)</span>, e <span class="math inline">\(\alpha, \beta \in \mathbb{R}\)</span> duas constantes. Verificam-se as seguintes propriedades:</p>
+<p><span id="thm:unlabeled-div-179" class="theorem"><strong>Teorema 4.2  (Propriedades do integral de Itô) </strong></span>Sejam <span class="math inline">\(F\)</span> e <span class="math inline">\(G\)</span> duas funções em <span class="math inline">\(H_E^2[0,t]\)</span>, e <span class="math inline">\(\alpha, \beta \in \mathbb{R}\)</span> duas constantes. Verificam-se as seguintes propriedades:</p>
 <ol style="list-style-type: decimal">
 <li><p>Linearidade:
 <span class="math display">\[
@@ -592,14 +588,14 @@ E\left[\left(\int_0^t F(s) \, dW(s)\right)^2\right]
 <p>Definimos, assim, o integral de Itô para funções em escada, ou seja, funções no espaço <span class="math inline">\(H_E^2[0,t]\)</span>. Vamos agora generalizar este integral para funções genéricas em <span class="math inline">\(H^2[0,t]\)</span>, através da existência de sucessões aproximadoras de funções em escada.</p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-189" class="theorem"><strong>Teorema 4.3  (Aproximação em média quadrática) </strong></span>Seja <span class="math inline">\(G \in H^2[0,t]\)</span> uma função. Então, existe uma sucessão de funções limitadas em escada, <span class="math inline">\(G_n \in H_E^2[0,t]\)</span>, tal que:</p>
+<p><span id="thm:unlabeled-div-180" class="theorem"><strong>Teorema 4.3  (Aproximação em média quadrática) </strong></span>Seja <span class="math inline">\(G \in H^2[0,t]\)</span> uma função. Então, existe uma sucessão de funções limitadas em escada, <span class="math inline">\(G_n \in H_E^2[0,t]\)</span>, tal que:</p>
 <p><span class="math display">\[
 E\left[\int_0^t |G(s) - G_n(s)|^2 \, ds\right] \xrightarrow{m.q.} 0, \quad n \rightarrow +\infty.
 \]</span></p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-190" class="definition"><strong>Definição 4.11  </strong></span>Sejam <span class="math inline">\(G\)</span> e <span class="math inline">\(G_n\)</span> como no teorema anterior. O <strong>integral de Itô</strong> da função <span class="math inline">\(G\)</span> no intervalo <span class="math inline">\([0,t]\)</span> é definido como:</p>
+<p><span id="def:unlabeled-div-181" class="definition"><strong>Definição 4.11  </strong></span>Sejam <span class="math inline">\(G\)</span> e <span class="math inline">\(G_n\)</span> como no teorema anterior. O <strong>integral de Itô</strong> da função <span class="math inline">\(G\)</span> no intervalo <span class="math inline">\([0,t]\)</span> é definido como:</p>
 <p><span class="math display">\[
 \int_0^t G(s) \, dW(s) = \lim_{n \to +\infty} \int_0^t G_n(s) \, dW(s),
 \]</span></p>
@@ -607,7 +603,7 @@ E\left[\int_0^t |G(s) - G_n(s)|^2 \, ds\right] \xrightarrow{m.q.} 0, \quad n \ri
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-191" class="theorem"><strong>Teorema 4.4  (Propriedades do integral de Itô) </strong></span>Sejam <span class="math inline">\(F\)</span> e <span class="math inline">\(G\)</span> duas funções em <span class="math inline">\(H^2[0,t]\)</span>, e <span class="math inline">\(\alpha, \beta \in \mathbb{R}\)</span> duas constantes. Verificam-se as seguintes propriedades:</p>
+<p><span id="thm:unlabeled-div-182" class="theorem"><strong>Teorema 4.4  (Propriedades do integral de Itô) </strong></span>Sejam <span class="math inline">\(F\)</span> e <span class="math inline">\(G\)</span> duas funções em <span class="math inline">\(H^2[0,t]\)</span>, e <span class="math inline">\(\alpha, \beta \in \mathbb{R}\)</span> duas constantes. Verificam-se as seguintes propriedades:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Linearidade</strong>:</p>
 <p><span class="math display">\[
@@ -641,14 +637,14 @@ E\left[\int_0^t F(s) G(s) \, ds\right].
 A prova destas propriedades encontra-se fora do âmbito desta unidade curricular.</p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-192" class="definition"><strong>Definição 4.12  (Integral indefinido de Itô) </strong></span>Seja <span class="math inline">\(G \in H^2[0,d]\)</span> uma função, e <span class="math inline">\([0,d]\)</span> um intervalo. O integral de Itô da função <span class="math inline">\(G\)</span>, considerando <span class="math inline">\(t\)</span> como limite superior de integração, é dado por:</p>
+<p><span id="def:unlabeled-div-183" class="definition"><strong>Definição 4.12  (Integral indefinido de Itô) </strong></span>Seja <span class="math inline">\(G \in H^2[0,d]\)</span> uma função, e <span class="math inline">\([0,d]\)</span> um intervalo. O integral de Itô da função <span class="math inline">\(G\)</span>, considerando <span class="math inline">\(t\)</span> como limite superior de integração, é dado por:</p>
 <p><span class="math display">\[
 Z(t) = \int_0^t G(s) \, dW(s) = \int_0^d G(s) \, I_{[0,t]}(s) \, dW(s).
 \]</span></p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-193" class="theorem"><strong>Teorema 4.5  </strong></span>Seja <span class="math inline">\(Z(t)\)</span> o processo estocástico definido acima. São válidas as seguintes propriedades:</p>
+<p><span id="thm:unlabeled-div-184" class="theorem"><strong>Teorema 4.5  </strong></span>Seja <span class="math inline">\(Z(t)\)</span> o processo estocástico definido acima. São válidas as seguintes propriedades:</p>
 <ol style="list-style-type: decimal">
 <li><p><span class="math inline">\(Z(t)\)</span> é uma martingala relativamente à filtração <span class="math inline">\(\mathcal{A}_t\)</span>;</p></li>
 <li><p><span class="math inline">\(Z(t)\)</span> possui uma versão contínua (com trajectórias quase certamente contínuas);</p></li>
@@ -659,7 +655,7 @@ Z(t) = \int_0^t G(s) \, dW(s) = \int_0^d G(s) \, I_{[0,t]}(s) \, dW(s).
 <p>As classes de funções até aqui apresentadas são bastante simples. Na prática, interessa-nos estudar integrais de Itô em que a função <span class="math inline">\(G\)</span> não pertence apenas ao espaço <span class="math inline">\(H^2[0,t]\)</span>, mas sim a uma classe mais ampla: o espaço <span class="math inline">\(M^2[0,t]\)</span>.</p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-194" class="definition"><strong>Definição 4.13  </strong></span>Dizemos que <span class="math inline">\(G(s, \omega)\)</span> é uma função no espaço <span class="math inline">\(M^2[0,t]\)</span> se:</p>
+<p><span id="def:unlabeled-div-185" class="definition"><strong>Definição 4.13  </strong></span>Dizemos que <span class="math inline">\(G(s, \omega)\)</span> é uma função no espaço <span class="math inline">\(M^2[0,t]\)</span> se:</p>
 <ol style="list-style-type: decimal">
 <li><p>É <strong>conjuntamente mensurável</strong>;</p></li>
 <li><p>É <strong>não-antecipativa</strong> em relação à filtração <span class="math inline">\(\mathcal{A}_s\)</span>;</p></li>
@@ -682,14 +678,14 @@ H^2[0,t] \subset M^2[0,t]
 <p>A extensão do integral de Itô a funções do espaço <span class="math inline">\(M^2[0,t]\)</span> é feita de forma semelhante à aproximação por funções em escada em <span class="math inline">\(H_E^2[0,t]\)</span>, com a diferença de que a <strong>convergência requerida é mais fraca</strong>.</p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-195" class="theorem"><strong>Teorema 4.6  </strong></span>Seja <span class="math inline">\(G \in M^2[0,t]\)</span>. Então, existe uma sucessão de funções limitadas em escada <span class="math inline">\(G_n \in H_E^2[0,t]\)</span> tal que:</p>
+<p><span id="thm:unlabeled-div-186" class="theorem"><strong>Teorema 4.6  </strong></span>Seja <span class="math inline">\(G \in M^2[0,t]\)</span>. Então, existe uma sucessão de funções limitadas em escada <span class="math inline">\(G_n \in H_E^2[0,t]\)</span> tal que:</p>
 <p><span class="math display">\[
 \int_0^t (G(s) - G_n(s))^2 \, ds \to 0 \quad \text{quase certamente}, \quad n \to +\infty
 \]</span></p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-196" class="definition"><strong>Definição 4.14  </strong></span>Sejam <span class="math inline">\(G\)</span> e <span class="math inline">\(G_n\)</span> como no teorema anterior. O <strong>integral de Itô</strong> da função <span class="math inline">\(G\)</span> no intervalo <span class="math inline">\([0,t]\)</span> é definido por:</p>
+<p><span id="def:unlabeled-div-187" class="definition"><strong>Definição 4.14  </strong></span>Sejam <span class="math inline">\(G\)</span> e <span class="math inline">\(G_n\)</span> como no teorema anterior. O <strong>integral de Itô</strong> da função <span class="math inline">\(G\)</span> no intervalo <span class="math inline">\([0,t]\)</span> é definido por:</p>
 <p><span class="math display">\[
 \int_0^t G(s) \, dW(s) = P-\lim_{n \to +\infty} \int_0^t G_n(s) \, dW(s),
 \]</span></p>
@@ -697,14 +693,14 @@ H^2[0,t] \subset M^2[0,t]
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="remark">
-<p><span id="unlabeled-div-197" class="remark"><em>Nota</em> (Nota sobre propriedades do integral). </span>Dada a natureza das funções no espaço <span class="math inline">\(M^2[0,t]\)</span>, não existe garantia de que as propriedades clássicas do integral de Itô — tais como esperança nula, isometria, e covariância — se verifiquem, pois os respetivos momentos podem não existir.</p>
+<p><span id="unlabeled-div-188" class="remark"><em>Nota</em> (Nota sobre propriedades do integral). </span>Dada a natureza das funções no espaço <span class="math inline">\(M^2[0,t]\)</span>, não existe garantia de que as propriedades clássicas do integral de Itô — tais como esperança nula, isometria, e covariância — se verifiquem, pois os respetivos momentos podem não existir.</p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <p>Finda a apresentação do integral de Itô, é agora necessário introduzir as <strong>regras de cálculo</strong> destes integrais: o chamado <strong>cálculo de Itô</strong>.</p>
 <p>O cálculo de Itô difere do cálculo clássico devido à introdução de uma nova regra de diferenciação — a <strong>regra da cadeia de Itô</strong>. Apresentamos de seguida a definição de <strong>processo de Itô</strong> e o respetivo <strong>teorema de Itô</strong>, base fundamental do cálculo de integrais estocásticos.</p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-198" class="definition"><strong>Definição 4.15  (Processo de Itô) </strong></span>Sejam:</p>
+<p><span id="def:unlabeled-div-189" class="definition"><strong>Definição 4.15  (Processo de Itô) </strong></span>Sejam:</p>
 <ul>
 <li><p><span class="math inline">\((W(t), t \geq 0)\)</span> o processo de Wiener;</p></li>
 <li><p><span class="math inline">\(X_0\)</span> uma variável aleatória <span class="math inline">\(\mathcal{A}_0\)</span>-mensurável;</p></li>
@@ -725,7 +721,7 @@ dX(t) = F(t) \, dt + G(t) \, dW(t).
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-199" class="theorem"><strong>Teorema 4.7  (Teorema de Itô) </strong></span>Seja <span class="math inline">\(X(t,\omega)\)</span> um processo de Itô como definido anteriormente, e seja <span class="math inline">\(Y(t) = h(t,X(t))\)</span>, onde <span class="math inline">\(h\)</span>, <span class="math inline">\(h_{t}(t,x)\)</span> e <span class="math inline">\(h_{xx}(t,x)\)</span> são funções contínuas. Então:</p>
+<p><span id="thm:unlabeled-div-190" class="theorem"><strong>Teorema 4.7  (Teorema de Itô) </strong></span>Seja <span class="math inline">\(X(t,\omega)\)</span> um processo de Itô como definido anteriormente, e seja <span class="math inline">\(Y(t) = h(t,X(t))\)</span>, onde <span class="math inline">\(h\)</span>, <span class="math inline">\(h_{t}(t,x)\)</span> e <span class="math inline">\(h_{xx}(t,x)\)</span> são funções contínuas. Então:</p>
 <ol style="list-style-type: lower-roman">
 <li><p><span class="math inline">\(Y(t) = Y(t,\omega)\)</span> é um processo de Itô com condição inicial <span class="math inline">\(Y_0 = h(0, X_0)\)</span>;</p></li>
 <li><p>a forma diferencial de <span class="math inline">\(Y(t)\)</span> é dada pela <strong>regra da cadeia de Itô</strong>:</p></li>
@@ -751,7 +747,7 @@ Y_t = Y_0 + \int\limits_{0}^{t} \left( \frac{\partial h(s,X_s)}{\partial s} + \f
 </ul>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-200" class="definition"><strong>Definição 4.16  (Solução de uma EDE de Itô) </strong></span>Um processo estocástico <span class="math inline">\(X_t\)</span> é solução da equação diferencial estocástica de Itô</p>
+<p><span id="def:unlabeled-div-191" class="definition"><strong>Definição 4.16  (Solução de uma EDE de Itô) </strong></span>Um processo estocástico <span class="math inline">\(X_t\)</span> é solução da equação diferencial estocástica de Itô</p>
 <p><span class="math display">\[
 \label{sol_ito}
 \begin{cases}
@@ -774,7 +770,7 @@ X_t = X_0 + \int_{0}^{t} F(X_s, s) \, ds + \int_{0}^{t} G(X_s, s) \, dW_s
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-201" class="theorem"><strong>Teorema 4.8  (Teorema de existência e unicidade de soluções de EDE de Itô) </strong></span>Sejam <span class="math inline">\(F:\mathbb{R} \times [0,T] \rightarrow \mathbb{R}\)</span> e <span class="math inline">\(G:\mathbb{R} \times [0,T] \rightarrow \mathbb{R}\)</span> duas funções contínuas que satisfazem as seguintes condições:</p>
+<p><span id="thm:unlabeled-div-192" class="theorem"><strong>Teorema 4.8  (Teorema de existência e unicidade de soluções de EDE de Itô) </strong></span>Sejam <span class="math inline">\(F:\mathbb{R} \times [0,T] \rightarrow \mathbb{R}\)</span> e <span class="math inline">\(G:\mathbb{R} \times [0,T] \rightarrow \mathbb{R}\)</span> duas funções contínuas que satisfazem as seguintes condições:</p>
 <ol style="list-style-type: lower-roman">
 <li><p><span class="math inline">\(|F(x,t) - F(y,t)| \leq L |x - y|\)</span> e <span class="math inline">\(|G(x,t) - G(y,t)| \leq L |x - y|\)</span>, para todo o <span class="math inline">\(t \in [0,T]\)</span> e <span class="math inline">\(x, y \in \mathbb{R}\)</span>;</p></li>
 <li><p><span class="math inline">\(|F(x,t)| \leq L(1 + |x|)\)</span> e <span class="math inline">\(|G(x,t)| \leq L(1 + |x|)\)</span>, para todo o <span class="math inline">\(t \in [0,T]\)</span> e <span class="math inline">\(x \in \mathbb{R}\)</span>,</p></li>
@@ -803,21 +799,21 @@ P(X_t = Y_t) = 1, \quad \forall t \in [0, T].
 <p>A demonstração deste teorema recorre ao <em>Lema de Gronwall</em> e pode ser encontrada em qualquer bom livro sobre equações diferenciais estocásticas.</p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-202" class="exercise"><strong>Exercício 4.11  (Fonte: Braumann (2005)) </strong></span>Determine <span class="math inline">\(d(tW(t))\)</span> e utilize o resultado para mostrar que
+<p><span id="exr:unlabeled-div-193" class="exercise"><strong>Exercício 4.11  (Fonte: Braumann (2005)) </strong></span>Determine <span class="math inline">\(d(tW(t))\)</span> e utilize o resultado para mostrar que
 <span class="math display">\[
 \int_0^t s \, dW(s) = tW(t) - \int_0^t W(s)\, ds.
 \]</span></p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-203" class="exercise"><strong>Exercício 4.12  (Fonte: Braumann (2005)) </strong></span>Mostre que a equação <span class="math inline">\(dY(t) = Y(t)\, dW(t)\)</span>, com <span class="math inline">\(Y(0) = 1\)</span>, tem como solução
+<p><span id="exr:unlabeled-div-194" class="exercise"><strong>Exercício 4.12  (Fonte: Braumann (2005)) </strong></span>Mostre que a equação <span class="math inline">\(dY(t) = Y(t)\, dW(t)\)</span>, com <span class="math inline">\(Y(0) = 1\)</span>, tem como solução
 <span class="math display">\[
 Y(t) = \exp\left(W(t) - \frac{t}{2}\right), \quad \text{para } t \geq 0.
 \]</span></p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-204" class="exercise"><strong>Exercício 4.13  </strong></span>Considere a seguinte EDE:
+<p><span id="exr:unlabeled-div-195" class="exercise"><strong>Exercício 4.13  </strong></span>Considere a seguinte EDE:
 <span class="math display">\[
 dY(t) = \mu\,dt + \sigma\,dW(t), \quad Y(0) = y_0.
 \]</span>
@@ -829,7 +825,7 @@ Y(t) = y_0 + \mu t + \sigma W(t).
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-205" class="exercise"><strong>Exercício 4.14  </strong></span>Considere a seguinte EDE, conhecida como modelo de <strong>Ornstein-Uhlenbeck</strong>:
+<p><span id="exr:unlabeled-div-196" class="exercise"><strong>Exercício 4.14  </strong></span>Considere a seguinte EDE, conhecida como modelo de <strong>Ornstein-Uhlenbeck</strong>:
 <span class="math display">\[
 dX(t) = -\theta X(t)\,dt + \sigma\,dW(t), \quad X(0) = x_0.
 \]</span>
@@ -841,7 +837,7 @@ X(t) = x_0 e^{-\theta t} + \sigma \int_0^t e^{-\theta (t-s)}\,dW(s).
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-206" class="exercise"><strong>Exercício 4.15  </strong></span>Considere a seguinte EDE, conhecida como modelo de <strong>Vasicek</strong>:
+<p><span id="exr:unlabeled-div-197" class="exercise"><strong>Exercício 4.15  </strong></span>Considere a seguinte EDE, conhecida como modelo de <strong>Vasicek</strong>:
 <span class="math display">\[
 dY(t)=b(A-Y(t))\,dt + \sigma\,dW(t), \quad Y(0)=y_0.
 \]</span>
@@ -853,7 +849,7 @@ Y(t) = A + (y_0 - A)e^{-bt} + \sigma \int_0^t e^{-b(t-s)}\,dW(s).
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-207" class="exercise"><strong>Exercício 4.16  </strong></span>Considere a seguinte EDE, conhecida como modelo de <strong>Gompertz</strong> (ou de <strong>Fox</strong>):
+<p><span id="exr:unlabeled-div-198" class="exercise"><strong>Exercício 4.16  </strong></span>Considere a seguinte EDE, conhecida como modelo de <strong>Gompertz</strong> (ou de <strong>Fox</strong>):
 <span class="math display">\[
 dX(t)=rX(t)(\ln K - \ln X(t))\,dt + \sigma X(t)\,dW(t), \quad X(0)=x_0.
 \]</span>
@@ -870,7 +866,7 @@ X(t)=\exp\!\left(
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-208" class="exercise"><strong>Exercício 4.17  </strong></span>Considere a seguinte EDE, conhecida como modelo de <strong>Black-Scholes</strong>:
+<p><span id="exr:unlabeled-div-199" class="exercise"><strong>Exercício 4.17  </strong></span>Considere a seguinte EDE, conhecida como modelo de <strong>Black-Scholes</strong>:
 <span class="math display">\[
 dY(t) = rY(t)\,dt + \sigma Y(t)\,dW(t), \quad Y(0)=y_0.
 \]</span>
@@ -882,7 +878,7 @@ Y(t) = y_0\, e^{\left(r - \frac{\sigma^2}{2}\right)t + \sigma W(t)}.
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-209" class="exercise"><strong>Exercício 4.18  </strong></span>Seja <span class="math inline">\(X(t)\)</span> o valor de uma ação no instante <span class="math inline">\(t \geq 0\)</span>, assumindo que satisfaz o modelo de Black-Scholes, com <span class="math inline">\(X(0) = \$52.800\)</span>, <span class="math inline">\(r = 0.312/\text{trimestre}\)</span> e <span class="math inline">\(\sigma^2 = 0.087/\text{trimestre}\)</span>. Determine:</p>
+<p><span id="exr:unlabeled-div-200" class="exercise"><strong>Exercício 4.18  </strong></span>Seja <span class="math inline">\(X(t)\)</span> o valor de uma ação no instante <span class="math inline">\(t \geq 0\)</span>, assumindo que satisfaz o modelo de Black-Scholes, com <span class="math inline">\(X(0) = \$52.800\)</span>, <span class="math inline">\(r = 0.312/\text{trimestre}\)</span> e <span class="math inline">\(\sigma^2 = 0.087/\text{trimestre}\)</span>. Determine:</p>
 <ol style="list-style-type: lower-alpha">
 <li><p><span class="math inline">\(P(X(2\ \text{trimestres}) &gt; \$70.000 \mid X(1\ \text{trimestre}) = \$60.500)\)</span></p></li>
 <li><p><span class="math inline">\(E(X(1\ \text{trimestre}))\)</span></p></li>
@@ -904,7 +900,7 @@ E(X^2(t)) = X(0)^2 \cdot E(e^{2Z(t)}) = X(0)^2 \cdot \exp\left( E(2Z(t)) + \frac
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-210" class="exercise"><strong>Exercício 4.19  </strong></span>Considere a seguinte EDE, conhecida como modelo de <strong>log-normal inverso</strong>:
+<p><span id="exr:unlabeled-div-201" class="exercise"><strong>Exercício 4.19  </strong></span>Considere a seguinte EDE, conhecida como modelo de <strong>log-normal inverso</strong>:
 <span class="math display">\[
 dY(t) = -\frac{\sigma^2}{2} Y(t)\,dt + \sigma Y(t)\,dW(t), \quad Y(0)=y_0.
 \]</span>
@@ -916,7 +912,7 @@ Y(t) = y_0\,e^{\sigma W(t)}.
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-211" class="exercise"><strong>Exercício 4.20  </strong></span>Considere a seguinte EDE, conhecida como modelo de <strong>Gompertz com parâmetro limite</strong>:
+<p><span id="exr:unlabeled-div-202" class="exercise"><strong>Exercício 4.20  </strong></span>Considere a seguinte EDE, conhecida como modelo de <strong>Gompertz com parâmetro limite</strong>:
 <span class="math display">\[
 dX(t)=(X(t)-\gamma)(\alpha-\beta\ln(X(t)-\gamma))dt + \sigma (X(t)-\gamma)dW(t), \quad X(0)=x_0
 \]</span>
