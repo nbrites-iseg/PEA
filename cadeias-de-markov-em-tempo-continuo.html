@@ -149,60 +149,67 @@
 <p><img src="index_files/figure-html/fig6-1.png" width="50%" style="display: block; margin: auto;" /></p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="hypothesis">
-<p><span id="hyp:unlabeled-div-125" class="hypothesis"><strong>Hipótese 3.1  (Postulados do processo de Poisson) </strong></span></p>
+<p><span id="hyp:unlabeled-div-125" class="hypothesis"><strong>Hipótese 3.1  (Postulados do processo de Poisson homogéneo) </strong></span></p>
 <ul>
-<li><p>P1. O número de acontecimentos que ocorrem em intervalos de tempo disjuntos são v.a.’s independentes.</p></li>
-<li><p>P2. A v.a. <span class="math inline">\(X_{t_0+t}-X_{t_0}\)</span> (isto é, o acréscimo) depende apenas de <span class="math inline">\(t\)</span> e não de <span class="math inline">\(t_0\)</span> ou de <span class="math inline">\(X_{t_0}\)</span>.</p></li>
-<li><p>P3. A probabilidade de ocorrer pelo menos um acontecimento num intervalo de tempo pequeno de amplitude <span class="math inline">\(h\)</span> é proporcional à amplitude desse intervalo. Assim,
-<span class="math display">\[P(h)=\lambda h + o(h), \quad h \to 0, ~\lambda &gt;0,\]</span>
-onde <span class="math inline">\(g(t)=o(t), ~t \to 0, \iff \lim\limits_{t \to 0}\dfrac{g(t)}{t}=0.\)</span></p></li>
-<li><p>P4. A probabilidade de ocorrer mais do que um acontecimento num intervalo de tempo pequeno de amplitude <span class="math inline">\(h\)</span> é negligível quando <span class="math inline">\(h\)</span> é pequeno. Isto mostra que num intervalo pequeno, ou ocorre um acontecimento, ou não ocorre nenhum, excluindo a possibilidade de ocorrência simultânea de dois ou mais acontecimentos. Assim,
-<span class="math display">\[\sum\limits_{i=2}^{+\infty}P_i(k)=o(h), \quad h \to 0,\]</span>
-onde <span class="math inline">\(P_i(k)=P(X_k=i)\)</span>.</p></li>
+<li><p>P0. <span class="math inline">\(X_0=0\)</span>.</p></li>
+<li><p>P1. O número de acontecimentos que ocorrem em intervalos de tempo disjuntos são v.a.’s independentes (incrementos independentes).</p></li>
+<li><p>P2. A v.a. <span class="math inline">\(X_{t_0+t}-X_{t_0}\)</span> (isto é, o acréscimo no intervalo <span class="math inline">\([t_0,t_0+t]\)</span>) depende apenas de <span class="math inline">\(t\)</span>, e não de <span class="math inline">\(t_0\)</span> ou de <span class="math inline">\(X_{t_0}\)</span> (incrementos estacionários).</p></li>
+<li><p>P3. A probabilidade de ocorrer <strong>exatamente</strong> um acontecimento num intervalo de tempo pequeno de amplitude <span class="math inline">\(h\)</span> é proporcional a <span class="math inline">\(h\)</span>. Assim,
+<span class="math display">\[P(h)=P(X_{t+h}-X_t=1)=\lambda h + o(h), \quad h \to 0, ~\lambda &gt;0,\]</span>
+onde <span class="math inline">\(g(h)=o(h), ~h \to 0 \iff \lim\limits_{h \to 0}\dfrac{g(h)}{h}=0.\)</span></p></li>
+<li><p>P4. A probabilidade de ocorrerem <strong>dois ou mais</strong> acontecimentos num intervalo de tempo pequeno de amplitude <span class="math inline">\(h\)</span> é negligível quando <span class="math inline">\(h \to 0\)</span>. Assim,
+<span class="math display">\[P(X_{t+h}-X_t \geq 2)=o(h), \quad h \to 0.\]</span></p></li>
 </ul>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
-<p>Representemos por <span class="math inline">\(P_n(t)\)</span> a probabilidade de ocorrerem <span class="math inline">\(n\)</span> acontecimentos no intervalo de tempo <span class="math inline">\([0,t]\)</span>. Assim, num intervlao de amplitude <span class="math inline">\(t+h\)</span> temos:</p>
+<p>Representemos por <span class="math inline">\(P_n(t)=P(X_t=n)\)</span> a probabilidade de ocorrerem <span class="math inline">\(n\)</span> acontecimentos num intervalo de tempo <span class="math inline">\([0,t]\)</span>. Assim, num intervalo de amplitude <span class="math inline">\(t+h\)</span> temos:</p>
 <ul>
 <li>Para <span class="math inline">\(n=0\)</span>:
 <span class="math display">\[\begin{align*}
-P_0(t+h) &amp;= P_0(t) \cdot P_{0}(h)\\
-       &amp;= P_0(t) \cdot (1- P(\text{ocorrer mais do que 1 acontecimento}))\\
-       &amp;= P_0(t) \cdot (1-P(h))\\
-       &amp;= P_0(t) - P_0(t) \cdot P(h).
+P_0(t+h) &amp;= P_0(t) \cdot P_{0}(h), &amp; \text{(por P1})\\
+       &amp;= P_0(t) \cdot [1-P(X_{t+h}-X_t \geq 1)] &amp; \\
+       &amp;= P_0(t) \cdot [1-(P(X_{t+h}-X_t =1)+P(X_{t+h}-X_t \geq 2))] &amp; \text{(por P3 e P4})\\
+       &amp;= P_0(t) \cdot [1-(\lambda h + o(h)+o(h))] &amp; \\
+       &amp;= P_0(t) \cdot (1-\lambda h + o(h)) &amp;
 \end{align*}\]</span></li>
 </ul>
 <p>Temos então que:</p>
-<p><span class="math display">\[P_0(t+h) -P_0(t) = - P_0(t) \cdot P(h) \iff \dfrac{P_0(t+h) -P_0(t)}{h} = - P_0(t) \cdot \dfrac{P(h)}{h}.\]</span>
-Aplicando limites, e tendo em conta o Postulado P3, obtemos:</p>
-<p><span class="math display">\[\lim\limits_{h \to 0}\dfrac{P_0(t+h) -P_0(t)}{h} = - P_0(t) \cdot \lim\limits_{h \to 0} \dfrac{P(h)}{h},\]</span>
+<p><span class="math display">\[P_0(t+h) = P_0(t) \cdot (1-\lambda h + o(h)) \iff \dfrac{P_0(t+h) -P_0(t)}{h} = - P_0(t) \cdot \dfrac{\lambda h +o(h)}{h}.\]</span>
+Aplicando limites, obtemos:</p>
+<p><span class="math display">\[\lim\limits_{h \to 0}\dfrac{P_0(t+h) -P_0(t)}{h} = - P_0(t) \cdot \lim\limits_{h \to 0} \dfrac{\lambda h +o(h)}{h},\]</span>
 o que resulta em</p>
-<p><span class="math display">\[\dfrac{d}{dt}P_0(t) = - P_0(t) \cdot \lim\limits_{h \to 0} \dfrac{\lambda h + o(h)}{h},\]</span>
-ou seja,
-<span class="math display">\[\dfrac{d}{dt}P_0(t) = - \lambda P_0(t),\]</span>
-isto é, a probabilidade do acontecimento não se realizar no intervalo de tempo <span class="math inline">\([0,t]\)</span>, <span class="math inline">\(P_0(t)\)</span>, satisfaz a equação diferencial
+<p><span class="math display">\[\dfrac{d}{dt}P_0(t) = - \lambda P_0(t),\]</span></p>
+<p>isto é, a probabilidade do acontecimento não se realizar no intervalo de tempo <span class="math inline">\([0,t]\)</span>, <span class="math inline">\(P_0(t)\)</span>, satisfaz a equação diferencial
 <span class="math display">\[\boxed{P^{&#39;}_0(t)=-\lambda P_0(t).}\]</span></p>
-<p>multiplicando pelo fator integrante <span class="math inline">\(e^{\lambda t}\)</span>, a solução desta equação diferencial é,
+<p>Multiplicando pelo fator integrante <span class="math inline">\(e^{\lambda t}\)</span>, a solução desta equação diferencial é,
 <span class="math display">\[P_0(t)=K \cdot e^{-\lambda t},\]</span>
 onde <span class="math inline">\(K\)</span> é uma constante de integração. Como <span class="math inline">\(P_0(0)=1\)</span>, temos que <span class="math inline">\(K=1\)</span>. Assim, a solução da equação diferencial é</p>
 <p><span class="math display">\[\boxed{P_0(t)=e^{-\lambda t}.}\]</span></p>
 <ul>
-<li>Para <span class="math inline">\(n \geq 1\)</span>: se no intervalo <span class="math inline">\([0,t]\)</span> ocorrerm <span class="math inline">\(n\)</span> eventos, no intervalo <span class="math inline">\([t,t+h]\)</span> ocorrem zero; se no intervalo <span class="math inline">\([0,t]\)</span> ocorrerm <span class="math inline">\(n-1\)</span> eventos, no intervalo <span class="math inline">\([t,t+h]\)</span> ocorre 1; se no intervalo <span class="math inline">\([0,t]\)</span> ocorrerm <span class="math inline">\(n-2\)</span> eventos, no intervalo <span class="math inline">\([t,t+h]\)</span> ocorrem 2; e assim sucessivamente. Logo,</li>
+<li><p>Para <span class="math inline">\(n \geq 1\)</span>:</p>
+<ul>
+<li>se no intervalo <span class="math inline">\([0,t]\)</span> ocorrem <span class="math inline">\(n\)</span> eventos, no intervalo <span class="math inline">\([t,t+h]\)</span> ocorrem zero;<br />
+</li>
+<li>se no intervalo <span class="math inline">\([0,t]\)</span> ocorrem <span class="math inline">\(n-1\)</span> eventos, no intervalo <span class="math inline">\([t,t+h]\)</span> ocorre 1;</li>
+<li>se no intervalo <span class="math inline">\([0,t]\)</span> ocorrem <span class="math inline">\(n-2\)</span> eventos, no intervalo <span class="math inline">\([t,t+h]\)</span> ocorrem 2;</li>
+<li>e assim sucessivamente.</li>
+</ul></li>
 </ul>
+<p>Logo,</p>
 <p><span class="math display">\[\begin{align*}
 P_n(t+h) &amp;= P_n(t) \cdot P_{0}(h) + P_{n-1}(t) \cdot P_{1}(h) + P_{n-2}(t) \cdot P_{2}(h) + \dots\\
          &amp;= P_n(t) \cdot P_{0}(h) + P_{n-1}(t) \cdot P_{1}(h) + \sum\limits_{i \geq 2}P_{n-i}(t) \cdot P_{i}(h)\\
-         &amp;= P_n(t) \cdot (1-P(h)) + P_{n-1}(t) \cdot (P(h)+o(h)) + \sum\limits_{i \geq 2}P_{n-i}(t) \cdot P_{i}(h),
+         &amp;= P_n(t) \cdot (1-\lambda h + o(h)) + P_{n-1}(t) \cdot (\lambda h+o(h)) + \sum\limits_{i \geq 2}P_{n-i}(t) \cdot P_{i}(h),
 \end{align*}\]</span>
 donde se obtém:
-<span class="math display">\[P_n(t+h)-P_n(t)=-P_n(t) \cdot P(h) + P_{n-1}(t) \cdot P(h) + P_{n-1}(t) \cdot o(h) + o(h)+\sum\limits_{i \geq 2}P_{n-i}(t) \cdot P_{i}(h).\]</span>
+<span class="math display">\[P_n(t+h)-P_n(t)=P_n(t) \cdot (-\lambda h+o(h)) + P_{n-1}(t) \cdot (\lambda h + o(h))+\sum\limits_{i \geq 2}P_{n-i}(t) \cdot P_{i}(h).\]</span>
 Dividindo por <span class="math inline">\(h\)</span> e aplicando o limite quando <span class="math inline">\(h \to 0\)</span>, obtemos:</p>
 <p><span class="math display">\[\begin{align*}
-\lim\limits_{h \to 0}\dfrac{P_n(t+h)-P_n(t)}{h} &amp;= -P_n(t) \cdot \lim\limits_{h \to 0} \dfrac{P(h)}{h} + P_{n-1}(t) \cdot \lim\limits_{h \to 0} \dfrac{P(h)}{h} + P_{n-1}(t) \cdot \lim\limits_{h \to 0} \dfrac{o(h)}{h} \\
-&amp; + \lim\limits_{h \to 0} \dfrac{o(h)}{h}+\lim\limits_{h \to 0} \dfrac{\sum\limits_{i \geq 2}P_{n-i}(t) \cdot P_{i}(h)}{h},
+\lim\limits_{h \to 0}\dfrac{P_n(t+h)-P_n(t)}{h} &amp;= P_n(t) \cdot \lim\limits_{h \to 0} \dfrac{- \lambda h + o(h)}{h} + P_{n-1}(t) \cdot \lim\limits_{h \to 0} \dfrac{\lambda h + o(h)}{h} \\
+&amp; +\lim\limits_{h \to 0} \dfrac{\sum\limits_{i \geq 2}P_{n-i}(t) \cdot P_{i}(h)}{h},
 \end{align*}\]</span>
 ou seja,
-<span class="math display">\[\dfrac{d}{dt}P_n(t)=-P_n(t) \cdot \lambda +  P_{n-1}(t) \cdot \lambda + 0 + 0,\]</span>
+<span class="math display">\[\dfrac{d}{dt}P_n(t)=-P_n(t) \cdot \lambda +  P_{n-1}(t) \cdot \lambda,\]</span>
 o que equivale a escrever que a probabilidade do acontecimento se realizar pelo menos uma vez no intervalo <span class="math inline">\([0,t]\)</span> satisfaz a equação diferencial
 <span class="math display">\[\boxed{P^{&#39;}_n(t)=\lambda P_{n-1}(t) - \lambda P_n(t), \quad n \in \mathbb{N}.}\]</span>
 A solução desta equação diferencial, tendo em conta que <span class="math inline">\(P_n(0)=0\)</span>, é dada por</p>
@@ -213,7 +220,7 @@ donde
 <span class="math display">\[
 P(X_t=n)=P_n(t)=\dfrac{(\lambda t)^n}{n!} e^{-\lambda t}, \quad n \in \mathbb{N}_0.
 \]</span></p>
-<p>Das propriedades da distribuição de Poisson, sabemos que <span class="math inline">\(E(X_t)=\lambda t\)</span>, o que significa que o número esperado de acontecimenrtos num intervalo de amplitude <span class="math inline">\(t\)</span> é proporcional à amplitude do intervalo.</p>
+<p>Das propriedades da distribuição de Poisson, sabemos que <span class="math inline">\(E(X_t)=\lambda t\)</span>, o que significa que o <strong>número esperado</strong> de acontecimentos num intervalo de amplitude <span class="math inline">\(t\)</span> é proporcional à amplitude do intervalo.</p>
 <p>No caso <span class="math inline">\(t=1\)</span>, temos que <span class="math inline">\(E(X_1)=\lambda\)</span>, pelo que:</p>
 <ul>
 <li><p><span class="math inline">\(\lambda\)</span> representa o número médio de acontecimentos que ocorrem por unidade de tempo;</p></li>
@@ -221,67 +228,79 @@ P(X_t=n)=P_n(t)=\dfrac{(\lambda t)^n}{n!} e^{-\lambda t}, \quad n \in \mathbb{N}
 </ul>
 <p>Com base no exposto, podemos definir processo de Poisson homogéneo do seguinte modo:</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-126" class="definition"><strong>Definição 3.1  (Processo de Poisson homogéneo) </strong></span>Um processo estocástico <span class="math inline">\((X_t, ~ t \in \mathbb{R}_0^+)\)</span> é um <strong>processo de Poisson homogéneo</strong> com taxa <span class="math inline">\(\lambda &gt;0\)</span> sse:</p>
+<p><span id="def:unlabeled-div-126" class="definition"><strong>Definição 3.1  (Processo de Poisson homogéneo) </strong></span>Um processo estocástico <span class="math inline">\((X_t,\,t\in\mathbb{R}_0^+)\)</span> é um <strong>processo de Poisson homogéneo</strong> com taxa <span class="math inline">\(\lambda&gt;0\)</span> sse:</p>
 <ol style="list-style-type: lower-roman">
-<li><p>tem incrementos independentes e estacionários, e <span class="math inline">\(X_0=0\)</span> q.c. (quase certamente);</p></li>
-<li><p><span class="math inline">\(X_t\)</span> segue uma distribuição de Poisson com parâmetro <span class="math inline">\(\lambda t\)</span>, isto é, <span class="math inline">\(X_t \sim Po(\lambda t)\)</span>, para todo <span class="math inline">\(t \in \mathbb{R}_0^+\)</span>.</p></li>
+<li><p><span class="math inline">\(X_0=0\)</span> quase certamente;</p></li>
+<li><p>tem incrementos independentes e estacionários;</p></li>
+<li><p><span class="math inline">\(X_t\)</span> tem distribuição de Poisson com parâmetro <span class="math inline">\(\lambda t\)</span>, i.e.
+<span class="math display">\[
+X_t \sim Po(\lambda t),\qquad t\ge0.
+\]</span></p></li>
 </ol>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="remark">
 <p><span id="unlabeled-div-127" class="remark"><em>Nota</em> (Observações sobre o processo de Poisson homogéneo). </span></p>
 <ol style="list-style-type: decimal">
-<li>Os postulados do processo de Poisson são suficientes para defini-lo e permitem também definir completamente a distribuição do vetor <span class="math inline">\((X_{t_1},X_{t_2},\dots, X_{t_k})\)</span>. Com efeito,
-por um lado verifica-se
-<span class="math display">\[\forall ~s,t \in \mathbb{R}_0^+: 0 \leq s \leq t, ~X_t-X_s \sim Po(\lambda(t-s)),\]</span>
-isto é, o número de acontecimentos que ocorrem num certo intervalo só depende da amplitude desse intervalo:
-<span class="math display">\[\begin{align*}
-X_t-X_s &amp; ~ {\buildrel d \over =} ~ X_{t-s+s}-X_s\\
-     &amp; ~ {\buildrel d \over =} ~  X_{t-s}-X_0\\
-     &amp; ~ {\buildrel d \over =} ~  X_{t-s}\\
-     &amp; = ~ Po(\lambda(t-s)).
-\end{align*}\]</span>
-Por outro lado, como os incrementos são independentes, temos que, para <span class="math inline">\(t_1 &lt; t_2 &lt; \dots &lt; t_k\)</span>:</li>
-</ol>
-<p><span class="math display">\[\begin{align*}
-P(X_{t_1}=n_1, \dots, X_{t_k}=n_k) &amp; =  P(X_{t_1}=n_1, \dots, X_{t_k}-X_{k_1}=n_k-n_{k-1})\\
-        &amp; =  P(X_{t_1}=n_1) \cdots P(X_{t_k}-X_{t_{k-1}}=n_k-n_{k-1})\\
-        &amp; =  \dfrac{(\lambda t_1)^{n_1}}{n_1!} e^{-\lambda t_1} \cdots \dfrac{(\lambda(t_k-t_{k-1}))^{n_k-n_{k-1}}}{(n_k-n_{k-1})!} e^{-\lambda(t_k-t_{k-1})}.
-\end{align*}\]</span></p>
-<ol start="2" style="list-style-type: decimal">
-<li>Ligada à v.a. <span class="math inline">\(X_t\)</span> costuma definir-se ainda a v.a. <span class="math inline">\(L\)</span> que representa o tempo de espera até ao primeiro acontecimento, isto é, <span class="math inline">\(L=\inf\{t \in \mathbb{R}_0^+: X_t&gt;0\}\)</span>. A v.a. <span class="math inline">\(L\)</span> segue uma distribuição exponencial com parâmetro <span class="math inline">\(\lambda\)</span>, ou seja, <span class="math inline">\(L \sim Exp(\lambda)\)</span>. Vejamos:</li>
-</ol>
-<ul>
-<li><span class="math inline">\(F_L(t)=P(L \leq t)=1-P(L&gt;t)=1-P(X_t=0)=1-P_0(t)=1-e^{-\lambda t}\)</span>.</li>
-<li><span class="math inline">\(f_L(t)=\lambda e^{-\lambda t}, \quad t&gt;0.\)</span></li>
-<li><span class="math inline">\(E(L)=1/\lambda\)</span>.</li>
-<li><span class="math inline">\(Var(L)=1/\lambda^2\)</span>.</li>
-<li><span class="math inline">\(M_L(t)=\dfrac{\lambda}{\lambda-t}, ~t&lt; \lambda\)</span>. (f.g.m.).</li>
-</ul>
-<ol start="3" style="list-style-type: decimal">
-<li><p>Considere-se a seguinte v.a.:
-<span class="math display">\[S_r=\text{ tempo de espera até à ocorrência do } r\text{-ésimo acontecimento},\]</span>
-isto é,
-<span class="math display">\[S_r=X_1+X_2+\dots+X_r, \quad X_i \text{ i.i.d.},\]</span>
-onde <span class="math inline">\(X_i\)</span> representa o tempo de espera desde o <span class="math inline">\((i-1)-\)</span>ésimo acontecimento até ocorrer o acontecimento de ordem <span class="math inline">\(i\)</span>. Assim,
-<span class="math inline">\(X_i \sim Exp(\lambda), ~\forall ~i =1, \dots,r.\)</span> Assim, calculando a f.g.m. de <span class="math inline">\(S_r\)</span>, e relacionando com a f.g.m. de <span class="math inline">\(X_i\)</span> vem:
+<li><p>Dos postulados segue que, para quaisquer <span class="math inline">\(0\le s\le t\)</span>,
 <span class="math display">\[
-M_{S_r}(t)=\prod\limits_{i=1}^{r}M_{X_i}(t)=(M_{X_i}(t))^r=\left(\dfrac{\lambda}{\lambda-t}\right)^r, ~t&lt; \lambda,
+X_t-X_s \sim Po\big(\lambda (t-s)\big),
 \]</span>
-ou seja, trata-se da f.g.m. de uma v.a. com distribuição Gamma com parâmetros <span class="math inline">\(r\)</span> e <span class="math inline">\(\lambda\)</span>, ou seja, <span class="math inline">\(S_r \sim \Gamma(r,\lambda)\)</span>, donde se obtém,
-<span class="math display">\[E(S_r)=r/\lambda \quad { e } \quad Var(S_r)=r/\lambda^2.\]</span></p></li>
-<li><p>O processo de Poisson é uma cadeia de Markov em tempo contínuo homogénea, isto é, <span class="math inline">\(\forall ~k_1,k_2,\dots,k_n,k \in \mathbb{N}_0, ~\forall ~t_1,t_2,\dots,t_n \in \mathbb{R}_0^+, ~t_1 \leq t_2 \leq \dots \leq t_n \leq t\)</span>:
-<span class="math display">\[P(X_{t}=k \mid X_{t_1}=k_1, \dots,X_{t_n}=k_n)=P(X_t=k \mid X_{t_n}=k_n)=P_{k_nk}(t-t_n).\]</span></p></li>
+isto é, o número de acontecimentos num intervalo depende só da amplitude. Além disso, para <span class="math inline">\(0\le t_1&lt;\dots&lt;t_k\)</span> e inteiros <span class="math inline">\(n_1\le n_2\le\cdots\le n_k\)</span>,
+<span class="math display">\[
+\begin{aligned}
+&amp;P(X_{t_1}=n_1,\dots,X_{t_k}=n_k) \\
+&amp;\quad= P(X_{t_1}=n_1)\prod_{j=2}^k P\big(X_{t_j}-X_{t_{j-1}}=n_j-n_{j-1}\big)\\
+&amp;\quad= \prod_{j=1}^k \frac{(\lambda (t_j-t_{j-1}))^{\,n_j-n_{j-1}}}{(n_j-n_{j-1})!} e^{-\lambda (t_j-t_{j-1})},
+\end{aligned}
+\]</span>
+com a convenção <span class="math inline">\(t_0=0\)</span> e <span class="math inline">\(n_0=0\)</span>.</p></li>
+<li><p>O tempo de espera até ao primeiro acontecimento <span class="math inline">\(L=\inf\{t&gt;0: X_t&gt;0\}\)</span> tem função de distribuição
+<span class="math display">\[
+F_L(t)=P(L\leq t)=1-P(L&gt;t).
+\]</span></p></li>
+</ol>
+<p>Note-se que o acontecimento <span class="math inline">\(\{L&gt;t\}\)</span> significa <em>“a primeira ocorrência ainda não aconteceu até ao tempo <span class="math inline">\(t\)</span>”</em>. Isto é equivalente a <em>“não houve nenhum acontecimento no intervalo <span class="math inline">\([0,t]\)</span>”</em>, o que corresponde a <span class="math inline">\(\{X_t=0\}\)</span>. Assim,
+<span class="math display">\[
+P(L&gt;t)=P(X_t=0)=e^{-\lambda t},\quad t\ge0.
+\]</span></p>
+<p>Logo,
+<span class="math display">\[
+F_L(t)=1-e^{-\lambda t},\quad t\ge0,
+\]</span></p>
+<p>e a f.d.p. é
+<span class="math display">\[
+f_L(t)=F_L&#39;(t)=\lambda e^{-\lambda t},\quad t&gt;0.
+\]</span></p>
+<p>Consequentemente, <span class="math inline">\(L\sim Exp(\lambda)\)</span>, com
+<span class="math display">\[
+E(L)=\frac{1}{\lambda}, \qquad \operatorname{Var}(L)=\frac{1}{\lambda^2}, \qquad M_L(u)=E[e^{uL}]=\frac{\lambda}{\lambda-u}, \quad u&lt;\lambda.
+\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Se <span class="math inline">\(T_1,T_2,\dots\)</span> são os tempos entre acontecimentos consecutivos, então <span class="math inline">\(T_i\stackrel{iid}{\sim}\operatorname{Exp}(\lambda)\)</span>.</p>
+<p>Definindo <span class="math inline">\(S_r=T_1+\cdots+T_r\)</span> (tempo do <span class="math inline">\(r\)</span>-ésimo acontecimento), temos <span class="math inline">\(S_r\sim \Gamma(r,\lambda)\)</span>, com f.g.m.
+<span class="math display">\[
+M_{S_r}(u)=\left(\frac{\lambda}{\lambda-u}\right)^r,\quad u&lt;\lambda,
+\]</span>
+e <span class="math inline">\(E(S_r)=r/\lambda,\ \operatorname{Var}(S_r)=r/\lambda^2\)</span>.</p></li>
+<li><p>O processo de Poisson homogéneo é uma C. M. com valores em <span class="math inline">\(\mathbb{N}_0\)</span> e em tempo contínuo. As probabilidades de transição são dadas por</p>
+<ul>
+<li><p><span class="math inline">\(P(X_{t+h}-X_t=1\mid X_t=x)=\lambda h+o(h);\)</span></p></li>
+<li><p><span class="math inline">\(P(X_{t+h}-X_t=0\mid X_t=x)=1-\lambda h+o(h);\)</span></p></li>
+<li><p><span class="math inline">\(P(X_{t+h}-X_t\ge2\mid X_t=x)=o(h),\)</span>
+com <span class="math inline">\(o(h)/h\to0\)</span> quando <span class="math inline">\(h\to0\)</span>.</p></li>
+</ul></li>
 </ol>
 </div>
 <p>Pelo exposto, podemos dar uma outra definição de processo de Poisson:</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-128" class="definition"><strong>Definição 3.2  (Processo de Poisson homogéneo) </strong></span>Se <span class="math inline">\((X_t, ~ t \in \mathbb{R}_0^+)\)</span> é um <strong>processo de Poisson homogéneo</strong> com taxa <span class="math inline">\(\lambda &gt;0\)</span>, então <span class="math inline">\((X_t, ~ t \in \mathbb{R}_0^+)\)</span> é uma cadeia de Markov com valores em <span class="math inline">\(\mathbb{N}_0\)</span>, tal que:</p>
-<ol style="list-style-type: lower-roman">
-<li><p><span class="math inline">\(P(X_{t+h}-X_t=1 \mid X_{t}=x)=\lambda h + o(h), ~x \in \mathbb{N}_0\)</span>, quando <span class="math inline">\(h \to 0\)</span>.</p></li>
-<li><p><span class="math inline">\(P(X_{t+h}-X_t=0 \mid X_{t}=x)=1-\lambda h + o(h), ~x \in \mathbb{N}_0\)</span>, quando <span class="math inline">\(h \to 0\)</span>.</p></li>
-<li><p><span class="math inline">\(X_0=0\)</span> q.c.</p></li>
-</ol>
+<p><span id="def:unlabeled-div-128" class="definition"><strong>Definição 3.2  (Processo de Poisson — formulação alternativa) </strong></span>Um processo de Poisson homogéneo com taxa <span class="math inline">\(\lambda&gt;0\)</span> é uma C. M. em tempo contínuo com estados em <span class="math inline">\(\mathbb{N}_0\)</span>, tal que, para todo <span class="math inline">\(x\in\mathbb{N}_0\)</span>:</p>
+<ul>
+<li><p><span class="math inline">\(P(X_{t+h}-X_t=1\mid X_t=x)=\lambda h+o(h),\)</span></p></li>
+<li><p><span class="math inline">\(P(X_{t+h}-X_t=0\mid X_t=x)=1-\lambda h+o(h),\)</span></p></li>
+<li><p><span class="math inline">\(P(X_{t+h}-X_t\ge2\mid X_t=x)=o(h),\)</span></p></li>
+</ul>
+<p>com <span class="math inline">\(X_0=0\)</span> q.c.</p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <p>Existem cadeias de Markov mais gerais e que nos permitem descrever fenómenos análogos aos descritos pelos processos de Poisson. É o que veremos nas secções seguintes.</p>
