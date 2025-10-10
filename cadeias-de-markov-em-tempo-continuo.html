@@ -108,7 +108,7 @@
 <li class="chapter" data-level="3.2" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html#processo-de-nascimento-puro"><i class="fa fa-check"></i><b>3.2</b> Processo de nascimento puro</a></li>
 <li class="chapter" data-level="3.3" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html#processo-de-nascimento-e-morte"><i class="fa fa-check"></i><b>3.3</b> Processo de nascimento e morte</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html#definicao-e-equacoes-de-chapman-kolmogorov"><i class="fa fa-check"></i><b>3.3.1</b> Definição e equações de Chapman-Kolmogorov</a></li>
+<li class="chapter" data-level="3.3.1" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html#definicao-e-equacoes-de-chapman-kolmogorov"><i class="fa fa-check"></i><b>3.3.1</b> Definição e equações de Chapman–Kolmogorov</a></li>
 <li class="chapter" data-level="3.3.2" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html#tempo-de-espera"><i class="fa fa-check"></i><b>3.3.2</b> Tempo de espera</a></li>
 <li class="chapter" data-level="3.3.3" data-path="cadeias-de-markov-em-tempo-continuo.html"><a href="cadeias-de-markov-em-tempo-continuo.html#equacoes-diferenciais-de-processos-de-nascimento-e-morte"><i class="fa fa-check"></i><b>3.3.3</b> Equações diferenciais de processos de nascimento e morte</a></li>
 </ul></li>
@@ -308,56 +308,60 @@ com <span class="math inline">\(o(h)/h\to0\)</span> quando <span class="math inl
 <div class="exercise">
 <p><span id="exr:unlabeled-div-129" class="exercise"><strong>Exercício 3.1  </strong></span></p>
 <!-- Ficha 4 ex3 -->
-<p>Seja <span class="math inline">\(X=(X_t: ~t \geq 0)\)</span> um PE real tal que <span class="math inline">\(X_0=0\)</span> q.c. e <span class="math inline">\(X_t \sim Po(\cdot)\)</span>.</p>
+<p>Seja <span class="math inline">\(X=(X_t: t \ge 0)\)</span> um processo estocástico real tal que <span class="math inline">\(X_0=0\)</span> q.c. e <span class="math inline">\(X_t \sim Po(\cdot)\)</span>.</p>
 <ol style="list-style-type: lower-alpha">
-<li><p>Em que condições será <span class="math inline">\(X\)</span> um processo de Poisson?</p></li>
-<li><p>Supondo que <span class="math inline">\(X\)</span> é um processo de Poisson, prove que <span class="math inline">\(\forall ~t,s,h \in \mathbb{R}_0^+\)</span>, com <span class="math inline">\(t&gt;s&gt;h\)</span>, e <span class="math inline">\(\forall ~x,y \in \mathbb{N}_0\)</span>:
-<span class="math display">\[P(X_t-X_s=x, X_s-X_h=y)=\dfrac{e^{-\lambda (t-h)} \lambda^{x+y} (t-s)^x (s-h)^y}{x!y!}.\]</span></p></li>
+<li><p>Em que condições será <span class="math inline">\(X\)</span> um <strong>processo de Poisson</strong>?</p></li>
+<li><p>Supondo que <span class="math inline">\(X\)</span> é um processo de Poisson, prove que, para todos <span class="math inline">\(t,s,h \in \mathbb{R}_0^+\)</span> com <span class="math inline">\(t&gt;s&gt;h\)</span> e todos <span class="math inline">\(x,y \in \mathbb{N}_0\)</span>:
+<span class="math display">\[
+P(X_t - X_s = x, \; X_s - X_h = y) = \frac{e^{-\lambda (t-h)} \lambda^{x+y} (t-s)^x (s-h)^y}{x! \, y!}.
+\]</span></p></li>
 </ol>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-130" class="exercise"><strong>Exercício 3.2  </strong></span></p>
 <!-- Ficha 4 ex4 -->
-<p>Considere uma estação de serviço de lavagem de automóveis na qual apenas um carro é atendido de cada vez e segundo a ordem de chegada. Um estudo realizado pela empresa permitiu concluir que as chegadas dos automóveis ocorrem segundo um processo de Poisson com intensidade média de 15 carros por hora. Designe por <span class="math inline">\(N_t,~t \geq 0\)</span>, o número de automóveis que chegam num intervalo de tempo de amplitude <span class="math inline">\(t\)</span> minutos.</p>
+<p>Considere uma estação de serviço de lavagem de automóveis, na qual apenas um carro é atendido de cada vez, segundo a ordem de chegada. Um estudo realizado pela empresa concluiu que as chegadas ocorrem segundo um <strong>processo de Poisson</strong> com intensidade média de 15 carros por hora. Denote por <span class="math inline">\(N_t,~t\ge 0\)</span> o número de automóveis que chegam num intervalo de tempo de amplitude <span class="math inline">\(t\)</span> minutos.</p>
 <ol style="list-style-type: lower-alpha">
-<li><p>Identifique a distribuição de <span class="math inline">\(N_t, ~ \forall ~t \geq 0\)</span>. Justifique a sua resposta.</p></li>
+<li><p>Identifique a distribuição de <span class="math inline">\(N_t\)</span>, <span class="math inline">\(\forall t \ge 0\)</span>. Justifique a sua resposta.</p></li>
 <li><p>Mostre que
-<span class="math display">\[\lim\limits_{h \to 0} \dfrac{P(N_h \geq 2)}{P(N_h =1)}=0.\]</span></p></li>
-</ol>
-<ol start="3" style="list-style-type: lower-alpha">
-<li><p>Prove que a condição expressa na alínea anterior é equivalente a
-<span class="math display">\[\lim\limits_{h \to 0} P(N_h &gt;1 \mid N_h \geq 1 )=0.\]</span>
+<span class="math display">\[
+\lim_{h \to 0} \frac{P(N_h \ge 2)}{P(N_h=1)} = 0.
+\]</span></p></li>
+<li><p>Prove que a condição anterior é equivalente a
+<span class="math display">\[
+\lim_{h \to 0} P(N_h&gt;1 \mid N_h \ge 1) = 0.
+\]</span>
 O que pode concluir sobre o processo em causa?</p></li>
-<li><p>Qual o tempo médio de espera entre duas chegadas consecutivas?</p></li>
+<li><p>Qual é o tempo médio de espera entre duas chegadas consecutivas?</p></li>
 </ol>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-131" class="exercise"><strong>Exercício 3.3  </strong></span></p>
 <!-- Ficha 4 ex6 -->
-<p>Seja <span class="math inline">\((N_t, ~ t \geq 0)\)</span> um processo de Poisson de intensidade <span class="math inline">\(\lambda &gt;0\)</span>.</p>
+<p>Seja <span class="math inline">\((N_t,~t\ge 0)\)</span> um processo de Poisson com intensidade <span class="math inline">\(\lambda &gt;0\)</span>.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Supondo que <span class="math inline">\(s&lt;t\)</span>, calcule:</li>
 </ol>
 <ol style="list-style-type: lower-roman">
-<li><p><span class="math inline">\(E(N_t-N_s)\)</span>.</p></li>
-<li><p><span class="math inline">\(Var(N_t-N_s)\)</span>.</p></li>
-<li><p><span class="math inline">\(Cov(N_t,N_s)\)</span>.</p></li>
+<li><p><span class="math inline">\(E(N_t-N_s)\)</span></p></li>
+<li><p><span class="math inline">\(Var(N_t-N_s)\)</span></p></li>
+<li><p><span class="math inline">\(Cov(N_t,N_s)\)</span></p></li>
 </ol>
 <ol start="2" style="list-style-type: lower-alpha">
-<li>Os Clientes de um vendedor de jornais chegam segundo um processo de Poisson a uma velocidade média de 2 Clientes por minuto.</li>
+<li>Os clientes de um vendedor de jornais chegam segundo um processo de Poisson com taxa média de 2 clientes por minuto.</li>
 </ol>
 <ol style="list-style-type: lower-roman">
-<li><p>Determine a probabilidade de não chegarem Clientes nos próximos três minutos sabendo que chegaram um ou mais Clientes nos últimos cinco minutos.</p></li>
-<li><p>O vendedor costuma fazer a seguinte aposta: paga ao seu assistente um euro se o próximo Cliente não chegar dentro de um minuto, caso contrário o assitente paga-lhe um euro. Qual o valor que o vendedor espera ganhar?</p></li>
+<li><p>Determine a probabilidade de <strong>não chegarem clientes nos próximos três minutos</strong>, sabendo que chegaram um ou mais clientes nos últimos cinco minutos.</p></li>
+<li><p>O vendedor faz a seguinte aposta: paga ao seu assistente 1€ se o próximo cliente não chegar dentro de um minuto; caso contrário, o assistente paga-lhe 1€. Qual é o valor esperado do ganho do vendedor?</p></li>
 </ol>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-132" class="exercise"><strong>Exercício 3.4  </strong></span></p>
 <!-- Alfredo ex3.1 -->
-<p>O volume de vendas de um determinado produto constitui um processo de Poisson, com um volume médio de vendas de 4 unidades por dia.</p>
+<p>O volume de vendas de um determinado produto constitui um <strong>processo de Poisson</strong>, com volume médio de 4 unidades por dia.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Qual é a probabilidade de que, em dois dias, se vendam exatamente 6 unidades?</p></li>
 <li><p>Qual é a probabilidade de que, em dois dias, se vendam mais de 6 unidades?</p></li>
@@ -369,8 +373,7 @@ O que pode concluir sobre o processo em causa?</p></li>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-133" class="exercise"><strong>Exercício 3.5  </strong></span></p>
 <!-- Alfredo ex3.2 -->
-<p>Numa loja os clientes chegam de acordo com uma lei de Poisson à média de 30 por hora. Qual a probabilidade de que o intervalo de tempo
-entre chegadas sucessivas seja:</p>
+<p>Numa loja, os clientes chegam de acordo com um <strong>processo de Poisson</strong> com média de 30 por hora. Qual é a probabilidade de que o <strong>intervalo de tempo entre chegadas sucessivas</strong> seja:</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Superior a 2 minutos?</p></li>
 <li><p>Inferior a 4 minutos?</p></li>
@@ -381,17 +384,15 @@ entre chegadas sucessivas seja:</p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-134" class="exercise"><strong>Exercício 3.6  </strong></span></p>
 <!-- Alfredo ex3.3 -->
-<p>Uma v.a. <span class="math inline">\(T\)</span> diz-se <em>sem memória</em> sse:
+<p>Uma v.a. <span class="math inline">\(T\)</span> diz-se <em>sem memória</em> se, e só se:
 <span class="math display">\[
-P(T&gt;x+y \mid T&gt;x)=P(T&gt;y),\;\;\;\forall \;x,y&gt;0.
-\]</span>
-Mostre que:</p>
+P(T&gt;x+y \mid T&gt;x) = P(T&gt;y), \quad \forall x,y&gt;0.
+\]</span></p>
 <ol style="list-style-type: lower-alpha">
-<li><p>Se <span class="math inline">\(T\)</span> for uma v.a. contínua, <span class="math inline">\(T\)</span> é sem memória sse <span class="math inline">\(T\)</span> for distribuída exponencialmente.</p></li>
-<li><p>Se <span class="math inline">\(T\)</span> tomar apenas valores inteiros e positivos, <span class="math inline">\(T\)</span> é sem memória para <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> não negativos sse existe uma constante <span class="math inline">\(p\)</span> tal
-que:
+<li><p>Mostre que, se <span class="math inline">\(T\)</span> for contínua, <span class="math inline">\(T\)</span> é sem memória <strong>se e só se</strong> <span class="math inline">\(T \sim Exp(\lambda)\)</span> para algum <span class="math inline">\(\lambda&gt;0\)</span>.</p></li>
+<li><p>Se <span class="math inline">\(T\)</span> assumir apenas valores inteiros positivos, <span class="math inline">\(T\)</span> é sem memória para <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> não negativos <strong>se e só se</strong> existe uma constante <span class="math inline">\(p\)</span> tal que
 <span class="math display">\[
-P(T=k)=p(1-p)^{k-1},\;\;\;k=1,2,3,\cdots .
+P(T=k) = p(1-p)^{k-1}, \quad k=1,2,3,\dots
 \]</span></p></li>
 </ol>
 </div>
@@ -399,38 +400,39 @@ P(T=k)=p(1-p)^{k-1},\;\;\;k=1,2,3,\cdots .
 <div class="exercise">
 <p><span id="exr:unlabeled-div-135" class="exercise"><strong>Exercício 3.7  </strong></span></p>
 <!-- Alfredo ex3.5 -->
-<p>A chegada de passageiros a uma paragem de autocarro segue um processo de Poisson com intensidade <span class="math inline">\(\lambda\)</span>. Suponha que um autocarro partiu no instante <span class="math inline">\(t=0\)</span>, não tendo deixado nenhum passageiro em espera. Seja <span class="math inline">\(T\)</span> o tempo de chegada do autocarro seguinte. Então, o número de pessoas na paragem aquando da sua chegada é <span class="math inline">\(N(T)\)</span>. Suponha que o tempo de chegada <span class="math inline">\(T\)</span> é independente do processo de Poisson e que <span class="math inline">\(T\)</span> tem distribuição uniforme no intervalo <span class="math inline">\((1,2)\)</span>.</p>
-<p>Calcule a média e a variância de <span class="math inline">\(N(T)\)</span>.</p>
+<p>A chegada de passageiros a uma paragem de autocarro segue um <strong>processo de Poisson</strong> com intensidade <span class="math inline">\(\lambda\)</span>. Suponha que um autocarro partiu no instante <span class="math inline">\(t=0\)</span>, não tendo deixado nenhum passageiro em espera. Seja <span class="math inline">\(T\)</span> o tempo de chegada do autocarro seguinte. Então, o número de pessoas na paragem aquando da sua chegada é <span class="math inline">\(N(T)\)</span>. Suponha que <span class="math inline">\(T\)</span> é independente do processo de Poisson e tem distribuição uniforme no intervalo <span class="math inline">\((1,2)\)</span>.</p>
+<p>Calcule a <strong>média</strong> e a <strong>variância</strong> de <span class="math inline">\(N(T)\)</span>.</p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-136" class="exercise"><strong>Exercício 3.8  </strong></span></p>
 <!-- Alfredo ex3.6 -->
-<p>Sejam <span class="math inline">\((N_t, ~t\geq 0)\)</span> um processo de Poisson com intensidade <span class="math inline">\(\lambda\)</span> e <span class="math inline">\(P_{k}(t)=P(N_t=k), ~k=0,1,2,\dots\)</span>.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Deduza as equações diferenciais:
-<span class="math display">\[\begin{eqnarray*}
-P_{0}^{\prime }(t) &amp;=&amp;-\lambda P_{0}(t) \\
-P_{k}^{\prime }(t) &amp;=&amp;-\lambda P_{k}(t)+\lambda P_{k-1}(t)\, ,%
-~ k=1,2,\cdots
-\end{eqnarray*}\]</span></p></li>
-<li><p>Encontre a partir das equações acima a função de
-probabilidade:
+<p>Sejam <span class="math inline">\((N_t,~t\ge 0)\)</span> um processo de Poisson com intensidade <span class="math inline">\(\lambda\)</span> e
 <span class="math display">\[
-P_{k}(t)=\frac{(\lambda t)^{k}}{k!}e^{-\lambda t} , \,k=0,1,2,\dots
+P_k(t) = P(N_t = k), \quad k=0,1,2,\dots
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Deduza as equações diferenciais de <span class="math inline">\(P_k(t)\)</span>:
+<span class="math display">\[\begin{align*}
+P_0&#39;(t) &amp;= -\lambda P_0(t), \\
+P_k&#39;(t) &amp;= -\lambda P_k(t) + \lambda P_{k-1}(t), \quad k=1,2,\dots
+\end{align*}\]</span></p></li>
+<li><p>A partir destas equações, encontre a função de probabilidade:
+<span class="math display">\[
+P_k(t) = \frac{(\lambda t)^k}{k!} e^{-\lambda t}, \quad k=0,1,2,\dots
 \]</span></p></li>
 </ol>
 </div>
 </div>
 <div id="processo-de-nascimento-puro" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Processo de nascimento puro<a href="cadeias-de-markov-em-tempo-continuo.html#processo-de-nascimento-puro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Considere-se uma sucessão de números positivos <span class="math inline">\(\{\lambda_k, ~k \in \mathbb{N}_0\}\)</span>.</p>
+<p>Considere-se uma sequência de números positivos <span class="math inline">\(\{\lambda_k, ~k \in \mathbb{N}_0\}\)</span>.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-137" class="definition"><strong>Definição 3.3  (Processo de nascimento puro) </strong></span>Um processo estocástico <span class="math inline">\((X_t, ~ t \in \mathbb{R}_0^+)\)</span>, com valores em <span class="math inline">\(\mathbb{N}_0\)</span>, é um <strong>processo de nascimento puro</strong> com taxa (ou razão de nascimento) <span class="math inline">\(\{\lambda_k, ~k \in \mathbb{N}_0\}\)</span> se é uma cadeia de markov em tempo contínuo homogénena, satisfazendo os axiomas:</p>
+<p><span id="def:unlabeled-div-137" class="definition"><strong>Definição 3.3  (Processo de nascimento puro) </strong></span>Um processo estocástico <span class="math inline">\((X_t, ~ t \in \mathbb{R}_0^+)\)</span>, com valores em <span class="math inline">\(\mathbb{N}_0\)</span>, é um <strong>processo de nascimento puro</strong> com taxa (ou razão de nascimento) <span class="math inline">\(\{\lambda_k, ~k \in \mathbb{N}_0\}\)</span> se for um processo de Markov homogéneo em tempo contínuo, que satisfaz os axiomas:</p>
 <ol style="list-style-type: lower-roman">
 <li><p><span class="math inline">\(P(X_{t+h}-X_t=1 \mid X_{t}=k)=\lambda_k h + o_{1,k}(h)=P_{k,k+1}(h)\)</span>.</p></li>
 <li><p><span class="math inline">\(P(X_{t+h}-X_t=0 \mid X_{t}=k)=1-\lambda_k h + o_{2,k}(h)=P_{k,k}(h)\)</span>.</p></li>
-<li><p><span class="math inline">\(P(X_{t+h}-X_t &lt; 0 \mid X_{t}=k)=0, ~ k \in \mathbb{N}_0\)</span>, quando <span class="math inline">\(h \to 0\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X_{t+h}-X_t &lt; 0 \mid X_{t}=k)=0, ~ k \in \mathbb{N}_0\)</span>, <span class="math inline">\(\forall ~ h &gt; 0\)</span>.</p></li>
 <li><p><span class="math inline">\(X_0=0\)</span> q.c.</p></li>
 </ol>
 </div>
@@ -438,99 +440,94 @@ P_{k}(t)=\frac{(\lambda t)^{k}}{k!}e^{-\lambda t} , \,k=0,1,2,\dots
 <div class="remark">
 <p><span id="unlabeled-div-138" class="remark"><em>Nota</em>. </span></p>
 <ol style="list-style-type: decimal">
-<li><p>A condição (iv) é admita por conveniência.</p></li>
+<li><p>A condição (iv) é técnica e admitida por conveniência.</p></li>
 <li><p><span class="math inline">\(X_t\)</span> <strong>não</strong> representa o tamanho da população mas o número de nascimentos no intervalo <span class="math inline">\([0,t]\)</span>.</p></li>
-<li><p>Uma vez que as probabilidades de transição dadas por (i) e (ii) são estacionárias, então <span class="math inline">\(o_{1,k}(h)\)</span> e <span class="math inline">\(o_{2,k}(h)\)</span> não dependem de <span class="math inline">\(t\)</span>.</p></li>
-<li><p>O processo de nascimento puro é uma generalização do processo de Poisson homogéneo, onde a probabilidade de um acontecimento ocorrer num certo instante depende do número de acontecimentos que já ocorreram. Assim, o processo de Poisson é um processo de nascimento puro de rezão de nascimento constante e igual <span class="math inline">\(\lambda\)</span>.</p></li>
+<li><p>Uma vez que as probabilidades de transição dadas por (i) e (ii) são estacionárias, então <span class="math inline">\(o_{1,k}(h)\)</span> e <span class="math inline">\(o_{2,k}(h)\)</span> não dependem de <span class="math inline">\(t\)</span> (são funções de <span class="math inline">\(h\)</span> quando <span class="math inline">\(h \to 0\)</span>).</p></li>
+<li><p>O processo de nascimento puro é uma generalização do processo de Poisson homogéneo: neste último, a razão de nascimento é constante <span class="math inline">\(\lambda\)</span>. Assim, o processo de Poisson é um processo de nascimento puro com taxa constante <span class="math inline">\(\lambda_k \equiv \lambda\)</span>.</p></li>
 </ol>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
-<p>Considere-se agora
-<span class="math display">\[P_n(t)=P(X_t=n),\]</span>
-e atente-se ao Teorema seguinte:</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-139" class="theorem"><strong>Teorema 3.1  </strong></span><span class="math inline">\(P_n(t)\)</span> satisfaz, para <span class="math inline">\(t \geq 0\)</span>, o sistema de equações diferenciais
+<p><span id="thm:unlabeled-div-139" class="theorem"><strong>Teorema 3.1  </strong></span>Seja <span class="math inline">\(P_n(t)=P(X_t=n)\)</span>. Para <span class="math inline">\(t \geq 0\)</span>, <span class="math inline">\(P_n(t)\)</span> satisfaz o sistema de equações diferenciais
 <span class="math display">\[
 \begin{cases}
 P^{\prime}_0(t)=-\lambda_0 P_0(t), \\
 P^{\prime}_n(t)=\lambda_{n-1} P_{n-1}(t) - \lambda_n P_n(t), ~ n \geq 1
 \end{cases},
 \]</span>
-com as condições fronteira
+com as condições iniciais
 <span class="math display">\[
 \begin{cases}
 P_0(0)=P(X_0=0)=1, \\
 P_n(0)=P(X_0=n)=0, ~ n &gt;0.\\
 \end{cases}
-\]</span>
-Adicionalmente,</p>
-<p><span class="math display">\[P_0(t)=P(X_t=0)=e^{\lambda_0 t}.\]</span></p>
+\]</span></p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <p>Consideremos agora a v.a.
-<span class="math display">\[T_k= \text{ tempo compreendido entre o instante } k \text{ e o } k+1-\text{ésimo nascimentos consecutivos},\]</span>
+<span class="math display">\[T_k= \text{ tempo entre o } k-\text{ésimo} \text{ e o } (k+1)-\text{ésimo nascimento},\]</span>
 isto é
 <span class="math display">\[T_k= \text{ tempo de espera entre nascimentos consecutivos}.\]</span></p>
 <p>Tem-se que
-<span class="math display">\[P_n(t)=P(X_t=n)=P\left(\sum\limits_{i=0}^{n-1}T_i \leq t \leq \sum\limits_{i=0}^{n}T_i\right).\]</span>
+<span class="math display">\[P_n(t)=P(X_t=n)=P\left(\sum\limits_{i=0}^{n-1}T_i \leq t &lt; \sum\limits_{i=0}^{n}T_i\right).\]</span>
 Considere-se
 <span class="math display">\[S_k=\sum\limits_{i=0}^{k-1}T_i,\]</span>
-o tempo durante o qual ocorrem <span class="math inline">\(k\)</span> nascimentos. Como se viu anteriormente,
+ou seja, <span class="math inline">\(S_k\)</span> é o instante em que ocorre o <span class="math inline">\(k-\)</span>ésimo nascimento (o tempo até ocorrerem <span class="math inline">\(k\)</span> nascimentos). Como se viu anteriormente,
 <span class="math display">\[\forall z &gt;0, ~P(T_0 \leq z)= 1-P(X_z=0)=1-e^{-\lambda_0 z},\]</span>
 isto é,
 <span class="math display">\[T_0 \sim Exp(\lambda_0).\]</span></p>
 <p>É possivel provar (ver Karlin &amp; Taylor, por exemplo) que <span class="math inline">\((T_k, ~ k \in \mathbb{N}_0)\)</span> é uma sucessão de v.a.’s independentes, tais que, para cada <span class="math inline">\(k \in \mathbb{N}_0\)</span>, <span class="math inline">\(T_k \sim Exp(\lambda_k)\)</span>.</p>
 <p>Adicionalmente, se <span class="math inline">\((X_t, t \geq 0)\)</span> é um processo de Poisson, então <span class="math inline">\(S_n\)</span> segue uma distribuição Gamma com parâmetros <span class="math inline">\(n\)</span> e <span class="math inline">\(\lambda\)</span>, ou seja, <span class="math inline">\(S_n \sim \Gamma(n,\lambda)\)</span>, onde <span class="math inline">\(\lambda\)</span> é a taxa do processo de Poisson.</p>
-<p>Terminamos esta secção com o seguinte Teorema:</p>
+<p>Terminamos esta secção com um teorema, fundamental para caracterizar a evolução temporal do processo de nascimento puro, permitindo derivar explicitamente as distribuições de probabilidade dos estados ao longo do tempo:</p>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-140" class="theorem"><strong>Teorema 3.2  </strong></span><span class="math inline">\(P_k(t)\)</span> verifica a equação de recorrência
-<span class="math display">\[P_k(t)=\lambda_{k-1} e^{-\lambda_k t}\int\limits_{0}^{1}e^{\lambda_k x}P_{k-1}(x) \, dx, \quad k \in \mathbb{N}.\]</span></p>
+<span class="math display">\[P_k(t)=\lambda_{k-1} e^{-\lambda_k t}\int\limits_{0}^{t}e^{\lambda_k x}P_{k-1}(x) \, dx, \quad k \in \mathbb{N}.\]</span></p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-141" class="exercise"><strong>Exercício 3.9  </strong></span></p>
 <!-- Ficha 4 ex7 -->
-<p>Com vista ao bom funcionamento de determinado consultório médico, a direção determinou que em cada instante, do período de funcionamento do mesmo, não poderia existir no consultório mais do que <span class="math inline">\(N\)</span> doentes. Apenas um doente é atendido de cada vez e segundo a respetiva ordem de chegada. Os doentes chegam ao consultório segundo um processo de Poisson de intensidade <span class="math inline">\(1/2\)</span>, ficando a aguardar a sua vez de atendimento apenas se nesse momento o número de utentes no consultório for inferior a <span class="math inline">\(N\)</span>. As consultas são concluídas segundo um processo de Poisson de intensidade <span class="math inline">\(1/3\)</span>.</p>
+<p>Para assegurar o bom funcionamento de um consultório médico, a direção determinou que, em qualquer instante durante o período de funcionamento, não poderia haver mais de <span class="math inline">\(N\)</span> doentes no consultório. Apenas um doente é atendido de cada vez, segundo a respetiva ordem de chegada. Os doentes chegam ao consultório segundo um processo de Poisson de intensidade <span class="math inline">\(1/2\)</span>, ficando a aguardar a sua vez de atendimento apenas se, nesse momento, o número de utentes no consultório for inferior a <span class="math inline">\(N\)</span>.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Designe por <span class="math inline">\(N_t, ~t \geq 0\)</span>, o número de doentes que chegam num intervalo de amplitude <span class="math inline">\(t\)</span>.</li>
 </ol>
 <ol style="list-style-type: decimal">
 <li><p>Prove que:</p>
 <ol style="list-style-type: lower-roman">
-<li><p><span class="math inline">\((N_t, ~t \geq 0)\)</span> é uma C.M. de tempo contínuo homogénea e indica a respetiva probabilidade de transição.</p></li>
+<li><p><span class="math inline">\((N_t, ~t \geq 0)\)</span> é uma C.M. homogénea em tempo contínuo e indique a respetiva probabilidade de transição.</p></li>
 <li><p><span class="math inline">\((N_t, ~t \geq 0)\)</span> é um processo de nascimento puro.</p></li>
 </ol></li>
 <li><p>Sendo <span class="math inline">\(T\)</span> uma v.a. que representa o tempo de espera entre duas chegadas consecutivas, prove que
-<span class="math display">\[P(T &gt; t)=e^{-t/2}, \quad t &gt; 0.\]</span></p></li>
-<li><p>Qual o tempo médio de espera entre chegadas?</p></li>
+<span class="math display">\[P(T &gt; t) = e^{-t/2}, \quad t &gt; 0.\]</span></p></li>
+<li><p>Qual é o tempo médio de espera entre chegadas?</p></li>
 </ol>
 <ol start="2" style="list-style-type: lower-alpha">
-<li>Seja agora <span class="math inline">\(X_t, ~t \geq 0\)</span>, o número total de doentes no consultório no instante <span class="math inline">\(t\)</span> Supondo que:
-<span class="math display">\[\forall ~k \in \{0,1,2,\dots,N\}: ~P(X_t=k)=\big(\dfrac{3}{2}\big)^k P(X_t=0),\]</span>
+<li>Seja agora <span class="math inline">\(X_t, ~t \geq 0\)</span>, o número total de doentes no consultório no instante <span class="math inline">\(t\)</span>. Supondo que:
+<span class="math display">\[\forall ~k \in \{0,1,2,\dots,N\}: ~P(X_t=k)=\left(\dfrac{3}{2}\right)^k P(X_t=0),\]</span>
 determine:</li>
 </ol>
 <ol style="list-style-type: decimal">
-<li><p>a probabilidade de que existam <span class="math inline">\(k\)</span> doentes à espera de serem atendidos, num qualquer instante <span class="math inline">\(t\)</span>.</p></li>
-<li><p>o número médio de doentes no consultório, num qualquer instante <span class="math inline">\(t\)</span>.</p></li>
+<li><p>A probabilidade de que existam <span class="math inline">\(k\)</span> doentes à espera de serem atendidos, num qualquer instante <span class="math inline">\(t\)</span>.</p></li>
+<li><p>O número médio de doentes no consultório, num qualquer instante <span class="math inline">\(t\)</span>.</p></li>
 </ol>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-142" class="exercise"><strong>Exercício 3.10  </strong></span></p>
 <!-- Ficha 4 ex8 -->
-<p>Considere um quiosque no qual os Clientes chegam de acordo com um processo de Poisson à razão de 32 Clientes por dia, durante o horário diário de abertura do quiosque (o qual corresponde a 8 horas). Designe por <span class="math inline">\(N_t, ~t \geq 0\)</span>, o número de Clientes que chegam ao quiosque num intervalo de tempo de amplitude <span class="math inline">\(t\)</span> horas.</p>
+<p>Considere um quiosque onde os clientes chegam segundo um processo de Poisson à razão de 32 clientes por dia, durante o horário diário de abertura do quiosque, correspondente a 8 horas. Designe por <span class="math inline">\(N_t, ~t \geq 0\)</span>, o número de clientes que chegam ao quiosque num intervalo de tempo de amplitude <span class="math inline">\(t\)</span> horas.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Identifique, justificando, a distribuição de <span class="math inline">\(N_t\)</span>.</p></li>
-<li><p>Sendo <span class="math inline">\(T_2\)</span> a v.a. que representa o instante de chegada (em horas) do segundo Cliente ao quiosque, em cada dia, mostre que:
-<span class="math display">\[P(T_2&gt;t)=e^{-4t}(1+4t), \quad t&gt;0.\]</span></p></li>
+<li><p>Sendo <span class="math inline">\(T_2\)</span> a v.a. que representa o instante de chegada (em horas) do segundo cliente ao quiosque, em cada dia, mostre que:
+<span class="math display">\[P(T_2&gt;t) = e^{-4t}(1+4t), \quad t&gt;0.\]</span></p></li>
 </ol>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-143" class="exercise"><strong>Exercício 3.11  </strong></span></p>
 <!-- Alfredo 4.1 -->
-<p>Uma população de organismos evolui da forma seguinte: cada organismo existe independentemente dos outros, e vive durante determinado tempo, aleatório, com distribuição exponencial de parâmetro <span class="math inline">\(\theta\)</span>, dividindo-se então em dois novos organismos. Por sua vez, a sua existência é também independente dos outros organismos e têm um tempo de vida exponencialmente distribuído de parâmetro <span class="math inline">\(\theta\)</span>, e assim sucessivamente.</p>
-<p>Seja <span class="math inline">\(X(t)\)</span> o número de organismos existentes no instante <span class="math inline">\(t\)</span>. Suponha que <span class="math inline">\(X(0) = 1\)</span> e defina <span class="math inline">\(P_n(t) = P(X(t) = n)\)</span>. Justifique que <span class="math inline">\(X(t)\)</span> é um processo de nascimento puro, ou seja, verifica
+<p>Uma população de organismos evolui da seguinte forma: cada organismo existe independentemente dos outros e vive durante um tempo aleatório, distribuído exponencialmente com parâmetro <span class="math inline">\(\theta\)</span>, dividindo-se então em dois novos organismos. Por sua vez, a existência de cada organismo é também independente da dos outros e tem tempo de vida exponencialmente distribuído de parâmetro <span class="math inline">\(\theta\)</span>, e assim sucessivamente.</p>
+<p>Seja <span class="math inline">\(X(t)\)</span> o número de organismos existentes no instante <span class="math inline">\(t\)</span>. Suponha que <span class="math inline">\(X(0) = 1\)</span> e defina <span class="math inline">\(P_n(t) = P(X(t) = n)\)</span>. Justifique que <span class="math inline">\(X(t)\)</span> é um processo de nascimento puro, ou seja,
 <span class="math display">\[
 P_n&#39;(t) = -\theta \left( n\,P_n(t) - (n-1)\,P_{n-1}(t) \right), \quad n = 1,2,\ldots
 \]</span></p>
@@ -539,16 +536,16 @@ P_n&#39;(t) = -\theta \left( n\,P_n(t) - (n-1)\,P_{n-1}(t) \right), \quad n = 1,
 <div class="exercise">
 <p><span id="exr:unlabeled-div-144" class="exercise"><strong>Exercício 3.12  </strong></span></p>
 <!-- Alfredo 4.3 -->
-<p>Considere uma população de dimensão <span class="math inline">\(N(t)\)</span> no instante <span class="math inline">\(t\)</span> tal que <span class="math inline">\(N(0) = 1\)</span>. Admita que qualquer dos membros desta população se divide em dois novos membros no intervalo <span class="math inline">\([t, t+h]\)</span> com probabilidade <span class="math inline">\(\lambda h + o(h)\)</span> ou mantém-se inalterado neste intervalo com probabilidade <span class="math inline">\(1 - \lambda h + o(h)\)</span>.</p>
+<p>Considere uma população de dimensão <span class="math inline">\(N(t)\)</span> no instante <span class="math inline">\(t\)</span> tal que <span class="math inline">\(N(0) = 1\)</span>. Admita que qualquer dos membros desta população se divide em dois novos membros no intervalo <span class="math inline">\([t, t+h]\)</span>, com probabilidade <span class="math inline">\(\lambda h + o(h)\)</span>, ou mantém-se inalterado neste intervalo, com probabilidade <span class="math inline">\(1 - \lambda h + o(h)\)</span>.</p>
 <ol style="list-style-type: lower-alpha">
-<li><p>Prove que <span class="math inline">\((N(t), ~ t \geq 0)\)</span> é um processo de nascimento puro com taxa de natalidade <span class="math inline">\(\lambda_n = n \lambda\)</span>, para todo o <span class="math inline">\(n = 1, 2, \cdots\)</span>.</p></li>
-<li><p>Designe por <span class="math inline">\(p_k(t) = P(N(t) = k)\)</span>, com <span class="math inline">\(k = 1, 2, \cdots\)</span> e prove que:
+<li><p>Prove que <span class="math inline">\((N(t), ~ t \geq 0)\)</span> é um processo de nascimento puro com taxa de natalidade <span class="math inline">\(\lambda_n = n \lambda\)</span>, para todo <span class="math inline">\(n = 1, 2, \dots\)</span>.</p></li>
+<li><p>Designe por <span class="math inline">\(p_k(t) = P(N(t) = k)\)</span>, com <span class="math inline">\(k = 1, 2, \dots\)</span>, e prove que:
 <span class="math display">\[
-p_k&#39;(t) = (k-1)\lambda\, p_{k-1}(t) - k\lambda\, p_k(t), \quad k = 1,2,\cdots.
+p_k&#39;(t) = (k-1)\lambda\, p_{k-1}(t) - k\lambda\, p_k(t), \quad k = 1,2,\dots.
 \]</span></p></li>
 <li><p>Tendo em conta a equação diferencial anterior, conclua por indução que:
 <span class="math display">\[
-p_k(t) = e^{-k\lambda t} \left( e^{\lambda t} - 1 \right)^{k-1}, \quad k = 1,2,\cdots.
+p_k(t) = e^{-k\lambda t} \left( e^{\lambda t} - 1 \right)^{k-1}, \quad k = 1,2,\dots.
 \]</span></p></li>
 <li><p>Seja <span class="math inline">\(P(z,t) = \sum\limits_{k=1}^{\infty} z^k p_k(t)\)</span> a função geradora das probabilidades <span class="math inline">\(p_k(t)\)</span>. Prove que:
 <span class="math display">\[
@@ -561,12 +558,12 @@ P(z,t) = \frac{z e^{-\lambda t}}{1 - z + z e^{-\lambda t}}.
 <div class="exercise">
 <p><span id="exr:unlabeled-div-145" class="exercise"><strong>Exercício 3.13  </strong></span></p>
 <!-- Alfredo 4.4 -->
-<p>Seja <span class="math inline">\((N(t), ~t \geq 0)\)</span> um processo de nascimento puro com <span class="math inline">\(N(0) = I\)</span> e taxa de natalidade <span class="math inline">\(\lambda_n = n \lambda\)</span>, sendo <span class="math inline">\(I\)</span> um inteiro positivo. Designe por <span class="math inline">\(P_n(t) = P(N(t) = n)\)</span>.</p>
+<p>Seja <span class="math inline">\((N(t), ~t \geq 0)\)</span> um processo de nascimento puro com <span class="math inline">\(N(0) = I\)</span>, um inteiro positivo, e taxa de natalidade <span class="math inline">\(\lambda_n = n \lambda\)</span>. Designe por <span class="math inline">\(P_n(t) = P(N(t) = n)\)</span>.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Prove que:
 <span class="math display">\[\begin{align*}
   P_I&#39;(t) &amp;= -I\lambda\, P_I(t) \\
-  P_n&#39;(t) &amp;= -n\lambda\, P_n(t) + (n-1)\lambda\, P_{n-1}(t), \quad n = I+1, I+2, \ldots
+  P_n&#39;(t) &amp;= -n\lambda\, P_n(t) + (n-1)\lambda\, P_{n-1}(t), \quad n = I+1, I+2, \dots
 \end{align*}\]</span></p></li>
 <li><p>Prove que:
 <span class="math display">\[
@@ -578,124 +575,133 @@ P_k(t) = \binom{k-1}{I-1} e^{-I\lambda t} \left( 1 - e^{-\lambda t} \right)^{k -
 <div id="processo-de-nascimento-e-morte" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Processo de nascimento e morte<a href="cadeias-de-markov-em-tempo-continuo.html#processo-de-nascimento-e-morte" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="definicao-e-equacoes-de-chapman-kolmogorov" class="section level3 hasAnchor" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> Definição e equações de Chapman-Kolmogorov<a href="cadeias-de-markov-em-tempo-continuo.html#definicao-e-equacoes-de-chapman-kolmogorov" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">3.3.1</span> Definição e equações de Chapman–Kolmogorov<a href="cadeias-de-markov-em-tempo-continuo.html#definicao-e-equacoes-de-chapman-kolmogorov" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="definition">
-<p><span id="def:unlabeled-div-146" class="definition"><strong>Definição 3.4  (Processo de nascimento e morte) </strong></span>Um processo estocástico <span class="math inline">\((X_t, ~ t \in \mathbb{R}_0^+)\)</span>, com valores em <span class="math inline">\(\mathbb{N}_0\)</span>, é um <strong>processo de nascimento e morte</strong> com taxas <span class="math inline">\(\{\lambda_k, ~k \in \mathbb{N}_0\}\)</span> e <span class="math inline">\(\{\mu_k, ~k \in \mathbb{N}_0\}\)</span> se é uma cadeia de markov em tempo contínuo homogénea, satisfazendo os axiomas:</p>
+<p><span id="def:unlabeled-div-146" class="definition"><strong>Definição 3.4  (Processo de nascimento e morte) </strong></span>Um processo estocástico <span class="math inline">\((X_t,\, t \in \mathbb{R}_0^+)\)</span>, com valores em <span class="math inline">\(\mathbb{N}_0\)</span>, é um <strong>processo de nascimento e morte</strong> com taxas <span class="math inline">\(\{\lambda_k:\, k \in \mathbb{N}_0\}\)</span> e <span class="math inline">\(\{\mu_k:\, k \in \mathbb{N}_0\}\)</span> se for uma C.M. homogénea em tempo contínuo e satisfizer os axiomas:</p>
 <ol style="list-style-type: decimal">
-<li><p><span class="math inline">\(P_{i,i+1}(h)=P(X_{t+h}=i+1 \mid X_{t}=i)=\lambda_i h + o(h), ~i \geq 0\)</span>,</p></li>
-<li><p><span class="math inline">\(P_{i,i-1}(h)=P(X_{t+h}=i-1 \mid X_{t}=i)=\mu_i h + o(h), ~i \geq 1\)</span>,</p></li>
-<li><p><span class="math inline">\(P_{i,i}(h)=P(X_{t+h}=i \mid X_{t}=i)=1-(\lambda_i+\mu_i) h + o(h), ~ i \geq 0\)</span>,</p></li>
-<li><p><span class="math inline">\(P_{i,j}(0)=P(X_{t}=j \mid X_{t}=i)=\delta_{ij}\)</span>,</p></li>
-<li><p><span class="math inline">\(\mu_0=0, ~\lambda_0 &gt;0, ~\mu_i, ~\lambda_i&gt;0, ~i \in \mathbb{N}\)</span>,</p></li>
+<li><p><span class="math inline">\(P_{i,i+1}(h)=P(X_{t+h}=i+1 \mid X_{t}=i)=\lambda_i h + o(h), \quad i \geq 0.\)</span></p></li>
+<li><p><span class="math inline">\(P_{i,i-1}(h)=P(X_{t+h}=i-1 \mid X_{t}=i)=\mu_i h + o(h), \quad i \geq 1.\)</span></p></li>
+<li><p><span class="math inline">\(P_{i,i}(h)=P(X_{t+h}=i \mid X_{t}=i)=1-(\lambda_i+\mu_i) h + o(h), \quad i \geq 0.\)</span></p></li>
+<li><p><span class="math inline">\(P_{i,j}(0)=\delta_{ij}.\)</span></p></li>
+<li><p><span class="math inline">\(\mu_0=0,\quad \lambda_0&gt;0,\quad \mu_i,\ \lambda_i \ge 0,\ i\in\mathbb{N}_0.\)</span></p></li>
 </ol>
-<p>onde <span class="math inline">\(o(h)\)</span>, em cada caso, pode depender de <span class="math inline">\(i\)</span> e considera-se que <span class="math inline">\(o(h) \to 0\)</span> quando <span class="math inline">\(h \to 0\)</span>.</p>
-<p>Quando ocorre um nascimento o processo passa do estado <span class="math inline">\(E_k\)</span> para o estado <span class="math inline">\(E_{k+1}\)</span> e, quando ocorre uma morte, o processo passa do estado <span class="math inline">\(E_k\)</span> para o estado <span class="math inline">\(E_{k-1}\)</span>. Assim, o processo de nascimento e morte é um processo de nascimento puro com a adição de mortes.</p>
+<p>Nota: (i) <span class="math inline">\(\delta_{ij}\)</span> é o símbolo de Kronecker, i.e., <span class="math inline">\(\delta_{ij}=1\)</span> se <span class="math inline">\(i=j\)</span> e <span class="math inline">\(\delta_{ij}=0\)</span> se <span class="math inline">\(i\neq j\)</span>; (ii) os termos <span class="math inline">\(o(h)\)</span> podem depender de <span class="math inline">\(i\)</span> e satisfazem <span class="math inline">\(o(h)\to 0\)</span> quando <span class="math inline">\(h\to 0\)</span>.</p>
+<p>Quando ocorre um nascimento, o processo passa do estado <span class="math inline">\(i\)</span> para <span class="math inline">\(i+1\)</span>; quando ocorre uma morte, passa de <span class="math inline">\(i\)</span> para <span class="math inline">\(i-1\)</span>. Em suma, é um processo de nascimento puro com a inclusão de mortes.</p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="remark">
-<p><span id="unlabeled-div-147" class="remark"><em>Nota</em>. </span>Uma das generalizações óbvias dos processos de nascimento puro considerados consiste em permitir que <span class="math inline">\(X_t\)</span> decresça, por exemplo através da morte dos seus memebros. Assim, se no instante <span class="math inline">\(t=0\)</span> o processo está no estado <span class="math inline">\(n\)</span> ele poderá mudar-se para os estados vizinhos <span class="math inline">\(n+1\)</span> ou <span class="math inline">\(n-1\)</span> após um tempo de espera aleatório. Um processo de nascimento e morte pode assim ser interpretado como um passeio aleatório de tempo contínuo.</p>
+<p><span id="unlabeled-div-147" class="remark"><em>Nota</em>. </span>Uma generalização óbvia dos processos de nascimento puro consiste em permitir que <span class="math inline">\(X_t\)</span> decresça (por exemplo, através de mortes). Se <span class="math inline">\(X_0=n\)</span>, o processo pode mover-se para os estados vizinhos <span class="math inline">\(n+1\)</span> ou <span class="math inline">\(n-1\)</span> após um tempo de espera aleatório.</p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
-<p>Num processo de nascimento e morte (com espaço de estados <span class="math inline">\(\mathbb{N}_0\)</span>) observa-se, <span class="math inline">\(\forall ~t\in\mathbb{R}_0^+\)</span> e <span class="math inline">\(\forall ~ i,j\in\mathbb{N}_0\)</span>:</p>
+<p>Num processo de nascimento e morte (com espaço de estados <span class="math inline">\(\mathbb{N}_0\)</span>) verifica-se, <span class="math inline">\(\forall\, t\in\mathbb{R}_0^+\)</span> e <span class="math inline">\(\forall\, i,j\in\mathbb{N}_0\)</span>:</p>
 <ol style="list-style-type: decimal">
-<li><p><span class="math inline">\(P_{ij}(t) \geq 0\)</span>, ou seja, as probabilidades de transição são não negativas para quaisquer pares <span class="math inline">\((i,j)\)</span> e qualquer tempo <span class="math inline">\(t\)</span>. Note-se que, em particular, <span class="math inline">\(P_{ij}(0)=\delta_{ij}\)</span>, onde <span class="math inline">\(\delta_{ij}\)</span> é o símbolo de Kronecker, i.e., <span class="math inline">\(\delta_{ij}=1\)</span> se <span class="math inline">\(i=j\)</span> e <span class="math inline">\(\delta_{ij}=0\)</span> se <span class="math inline">\(i \neq j\)</span>;</p></li>
-<li><p><span class="math inline">\(\displaystyle \sum_{j=0}^{\infty} P_{ij}(t)=1\)</span>, ou seja, a soma das probabilidades de transição a partir do estado <span class="math inline">\(i\)</span> para todos os estados possíveis é igual a 1, para qualquer tempo <span class="math inline">\(t\)</span>;</p></li>
-<li><p>As probabilidades de transição são dadas por: <span class="math inline">\(\forall ~s,t, \in \mathbb{R}_0^+\)</span>,
+<li><p><span class="math inline">\(P_{ij}(t) \ge 0\)</span>.</p></li>
+<li><p><span class="math inline">\(\displaystyle \sum_{j=0}^{\infty} P_{ij}(t)=1\)</span>.</p></li>
+<li><p>Para quaisquer <span class="math inline">\(s,t\in\mathbb{R}_0^+\)</span>,
 <span class="math display">\[\begin{align*}
-P_{ij}(t+s) &amp;= P(X_{n+t+s}=j \mid X_n=i)  \\
-         &amp;= \sum\limits_{k=0}^{+\infty} P(X_{n+t+s}=j, X_{n+t}=k \mid X_n=i) \\
-         &amp;= \sum\limits_{k=0}^{+\infty} P(X_{n+t+s}=j \mid X_{n+t}=k, X_n=i) \cdot P(X_{n+t}=k \mid X_n=i) \\
-         &amp;= \sum\limits_{k=0}^{+\infty} P(X_{n+t+s}=j \mid X_{n+t}=k) \cdot P(X_{n+t}=k \mid X_n=i) \\
-         &amp;= \sum\limits_{k=0}^{+\infty} P_{kj}(s) \cdot P_{ik}(t).
+P_{ij}(t+s) &amp;= P(X_{t+s}=j \mid X_0=i)  \\
+         &amp;= \sum_{k=0}^{\infty} P(X_{t+s}=j, X_t=k \mid X_0=i) \\
+         &amp;= \sum_{k=0}^{\infty} P(X_{t+s}=j \mid X_t=k, X_0=i)\, P(X_t=k \mid X_0=i) \\
+         &amp;= \sum_{k=0}^{\infty} P(X_{t+s}=j \mid X_t=k)\, P(X_t=k \mid X_0=i) \\
+         &amp;= \sum_{k=0}^{\infty} P_{ik}(t)\, P_{kj}(s).
 \end{align*}\]</span></p></li>
 </ol>
-<p>Temos então as <strong>Equações de Chapmnan-Kolmogorov</strong>:
+<p>Temos então as <strong>Equações de Chapman–Kolmogorov</strong>:
 <span class="math display" id="eq:chapkol">\[\begin{equation}
 \tag{3.1}
-\boxed{P_{ij}(t+s)=\sum\limits_{k=0}^{+\infty} P_{kj}(s) P_{ik}(t).}
+\boxed{P_{ij}(t+s)=\sum_{k=0}^{\infty} P_{ik}(t)\, P_{kj}(s).}
 \end{equation}\]</span></p>
-<p>Nesta dedução, em cada igualdade, utilizamos, respetivamente, as seguintes justificações:</p>
-<ol style="list-style-type: decimal">
-<li><p>Definição da probabilidade de transição do estado <span class="math inline">\(i\)</span> para o estado <span class="math inline">\(j\)</span> em <span class="math inline">\(t+s\)</span> passos, a partir do instante <span class="math inline">\(n\)</span>.</p></li>
-<li><p>Aplicação da regra da probabilidade total, ao considerar todos os possíveis estados <span class="math inline">\(k\)</span> em que a cadeia pode estar no instante intermédio <span class="math inline">\(n+t\)</span>.</p></li>
-<li><p>Aplicação da regra do produto das probabilidades condicionadas.</p></li>
-<li><p>Aplicação da propriedade de Markov, que garante que o futuro (a partir de <span class="math inline">\(n+t\)</span>) depende apenas do estado atual <span class="math inline">\(X_{n+t}=k\)</span>, e não do passado <span class="math inline">\(X_n=i\)</span>.</p></li>
-<li><p>Finalmente, identificamos as probabilidades de transição:
-<span class="math display">\[P_{kj}(s) = P(X_{n+t+s}=j \mid X_{n+t}=k) \text{ e } P_{ik}(t) = P(X_{n+t}=k \mid X_n=i).\]</span></p></li>
-</ol>
-<p><span class="math inline">\(\,\)</span></p>
-<p>As probabilidades de transição e as leis marginais caracterizam a distribuição do processo. As distribuições marginais dependem apenas da distribuição inicial e das probabilidades de transição. Assim, se
-<span class="math display">\[q_i:=P(X_0=i), ~i \in \mathbb{N}_0,\]</span>
-tem-se, <span class="math inline">\(\forall ~n \in \mathbb{N}_0\)</span>,
+<p>Nesta dedução, as igualdades usam, por ordem: definição das probabilidades de transição, a regra da probabilidade total, a regra do produto para condicionais, a propriedade de Markov (elimina a dependência de <span class="math inline">\(X_0\)</span> na condição) e a identificação das probabilidades de transição homogéneas no tempo.</p>
+<p>As probabilidades de transição e as leis marginais caracterizam a distribuição do processo. Se
+<span class="math display">\[
+q_i := P(X_0=i),\qquad i\in\mathbb{N}_0,
+\]</span>
+então, para todo <span class="math inline">\(n\in\mathbb{N}_0\)</span>,
 <span class="math display">\[\begin{align*}
-P(X_t=n) &amp;= \sum\limits_{i=0}^{+\infty} P(X_{t}=n, X_{0}=i) \\
-         &amp;= \sum\limits_{i=0}^{+\infty} P(X_{0}=i) \cdot P(X_{t}=n \mid X_{0}=i) \\
-         &amp;= \sum\limits_{k=0}^{+\infty} P_{in}(t) \cdot q_i. \\
-\end{align*}\]</span>
-Assim, as distribuições marginais do processo de nascimento e morte são dadas por
-<span class="math display">\[\boxed{P(X_t=n)=\sum\limits_{i=0}^{+\infty} P_{in}(t) q_i, ~n \in \mathbb{N}_0.}\]</span></p>
+P(X_t=n) &amp;= \sum_{i=0}^{\infty} P(X_t=n, X_0=i) \\
+         &amp;= \sum_{i=0}^{\infty} P(X_0=i)\, P(X_t=n \mid X_0=i) \\
+         &amp;= \sum_{i=0}^{\infty} q_i\, P_{in}(t).
+\end{align*}\]</span></p>
+<p>Logo, as distribuições marginais do processo de nascimento e morte são
+<span class="math display">\[
+\boxed{P(X_t=n)=\sum_{i=0}^{\infty} P_{in}(t)\, q_i,\quad n\in\mathbb{N}_0.}
+\]</span></p>
 </div>
 <div id="tempo-de-espera" class="section level3 hasAnchor" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> Tempo de espera<a href="cadeias-de-markov-em-tempo-continuo.html#tempo-de-espera" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Considere-se agora a v.a.</p>
-<p><span class="math display">\[T_i=\text{tempo de espera de } X_t \text{ no estado } i.\]</span></p>
-<p>É possível mostrar (Karlin &amp; Taylor, por exemplo) que, quando <span class="math inline">\(h \to 0\)</span>,</p>
-<p><span class="math display">\[P(T_i \geq t+h)=P(T_i \geq t) \cdot P(T_i \geq h).\]</span></p>
-<p>Podemos ainda escrever a igualdade anterior do seguinte modo</p>
-<p><span class="math display">\[\begin{align*}
-P(T_i \geq t+h) &amp;= P(T_i \geq t) \cdot P(T_i \geq h) \\
-                &amp;= P(T_i \geq t) \cdot P(X_{n+h}=i, X_{s+n}=i \mid X_n=i), \quad \forall ~s \in [0,h] \\
-                &amp;= P(T_i \geq t) \cdot (P_{ii}(h) + o(h))\\
-                &amp;= P(T_i \geq t) \cdot (1-(\lambda_i+\mu_i)h + o(h))\\
-                &amp;= P(T_i \geq t) \cdot (1-(\lambda_i+\mu_i))+ o(h).\\
+<p>Considere-se agora a variável aleatória</p>
+<p><span class="math display">\[T_i = \text{tempo de espera de } X_t \text{ no estado } i.\]</span></p>
+<p>É possível mostrar (ver, por exemplo, Karlin &amp; Taylor) que, quando <span class="math inline">\(h \to 0\)</span>,</p>
+<p><span class="math display">\[P(T_i \ge t+h) = P(T_i \ge t) \cdot P(T_i \ge h).\]</span></p>
+<p>Podemos ainda escrever esta igualdade do seguinte modo:
+<span class="math display">\[\begin{align*}
+P(T_i \ge t+h) &amp;= P(T_i \ge t) \cdot P(T_i \ge h) \\
+               &amp;= P(T_i \ge t) \cdot P(X_{t+h}=i \mid X_t=i) \\
+               &amp;= P(T_i \ge t) \cdot (P_{ii}(h) + o(h)) \\
+               &amp;= P(T_i \ge t) \cdot (1-(\lambda_i+\mu_i)h + o(h)).
 \end{align*}\]</span></p>
-<p>Designando por <span class="math inline">\(G_i(t)=P(T_i \geq t)\)</span>, obtemos</p>
-<p><span class="math display">\[G_i(t+h)=G_i(t) \cdot (1-(\lambda_i+\mu_i)h) + o(h),\]</span></p>
-<p>donde, dividindo por <span class="math inline">\(h\)</span> e aplicando o limite quando <span class="math inline">\(h \to 0\)</span>, obtemos</p>
-<p><span class="math display">\[\dfrac{d}{dt}G_i(t) = -(\lambda_i+\mu_i) G_i(t),\]</span></p>
-<p>pelo que,</p>
-<p><span class="math display">\[G_i(t) = \exp\{-(\lambda_i+\mu_i)t\} = 1-(1-\exp\{-(\lambda_i+\mu_i)t\}),\]</span></p>
-<p>isto é,</p>
-<p><span class="math display">\[P(T_i \geq t)=1-\exp\{-(\lambda_i+\mu_i)t\}, \quad t \geq 0,\]</span></p>
-<p>ou seja,</p>
-<p><span class="math display">\[\boxed{T_i \sim Exp(\lambda_i+\mu_i),}\]</span></p>
-<p>e o tempo médio de espera é dado por</p>
-<p><span class="math display">\[\dfrac{1}{\lambda_i+\mu_i}.\]</span></p>
+<p>Designando <span class="math inline">\(G_i(t)=P(T_i \ge t)\)</span>, obtemos
+<span class="math display">\[
+G_i(t+h) = G_i(t)\,[1-(\lambda_i+\mu_i)h] + o(h),
+\]</span>
+donde, dividindo por <span class="math inline">\(h\)</span> e tomando o limite quando <span class="math inline">\(h \to 0\)</span>,
+<span class="math display">\[
+\dfrac{d}{dt}G_i(t) = -(\lambda_i+\mu_i)\,G_i(t).
+\]</span></p>
+<p>A solução é
+<span class="math display">\[
+G_i(t) = \exp\{-(\lambda_i+\mu_i)t\},
+\]</span>
+isto é, a <strong>função de sobrevivência</strong> do tempo de espera em <span class="math inline">\(i\)</span>.<br />
+Logo, a <strong>função de distribuição</strong> é
+<span class="math display">\[
+P(T_i \le t) = 1 - \exp\{-(\lambda_i+\mu_i)t\}, \quad t \ge 0,
+\]</span>
+e, portanto,
+<span class="math display">\[
+\boxed{T_i \sim \text{Exp}(\lambda_i+\mu_i).}
+\]</span></p>
+<p>O tempo médio de espera é
+<span class="math display">\[
+E[T_i] = \dfrac{1}{\lambda_i+\mu_i}.
+\]</span></p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="remark">
-<p><span id="unlabeled-div-148" class="remark"><em>Nota</em>. </span>A descrição do movimento de <span class="math inline">\(X_t\)</span> descreve-se a seguir. O processo permanece num certo estado <span class="math inline">\(i\)</span> por um tempo aleatótio <span class="math inline">\(T_i\)</span> seguindo uma distribuição exponencial de parâmetro <span class="math inline">\(\lambda_i+\mu_i\)</span>. Quando deixa o estado <span class="math inline">\(i\)</span>, o processo ou entra no estdo <span class="math inline">\(i+1\)</span> ou <span class="math inline">\(i-1\)</span>:</p>
+<p><span id="unlabeled-div-148" class="remark"><em>Nota</em>. </span>O movimento de <span class="math inline">\(X_t\)</span> pode ser descrito do seguinte modo.<br />
+O processo permanece num certo estado <span class="math inline">\(i\)</span> por um tempo aleatório <span class="math inline">\(T_i\)</span>, com distribuição exponencial de parâmetro <span class="math inline">\(\lambda_i+\mu_i\)</span>.<br />
+Quando abandona o estado <span class="math inline">\(i\)</span>, o processo transita para um dos estados vizinhos:</p>
 <ul>
-<li><p>a probabilidade de que a transição seja para <span class="math inline">\(i+1\)</span> é dada por <span class="math inline">\(\lambda_i/(\lambda_i+\mu_i)\)</span>;</p></li>
-<li><p>a probabilidade de que a transição seja para <span class="math inline">\(i-1\)</span> é dada por <span class="math inline">\(\mu_i/(\lambda_i+\mu_i)\)</span>.</p></li>
+<li>com probabilidade <span class="math inline">\(\lambda_i / (\lambda_i+\mu_i)\)</span>, passa para <span class="math inline">\(i+1\)</span>;</li>
+<li>com probabilidade <span class="math inline">\(\mu_i / (\lambda_i+\mu_i)\)</span>, passa para <span class="math inline">\(i-1\)</span>.</li>
 </ul>
-<p>Esquematicamente, temos:</p>
-<p><img src="index_files/figure-html/fig7-1.png" width="50%" style="display: block; margin: auto;" /></p>
-<p>Uma possível realização de <span class="math inline">\(X_t\)</span> é:
+<p>Esquematicamente:</p>
+<p><img src="index_files/figure-html/fig7-1.png" width="55%" style="display: block; margin: auto;" /></p>
+<p>Uma possível realização de <span class="math inline">\(X_t\)</span> é:<br />
 <span class="math display">\[i \longrightarrow i+1 \longrightarrow i \longrightarrow i-1 \longrightarrow \dots\]</span></p>
-<p>O movimento é análogo ao do caminho aleatório, com a diferença de que o tempo de espera em cada estado é uma v.a. com distribuição exponencial.</p>
+<p>O movimento é análogo ao de um caminho aleatório (<em>random walk</em>), com a diferença de que o tempo de permanência em cada estado é uma v.a. exponencial.</p>
 </div>
 </div>
 <div id="equacoes-diferenciais-de-processos-de-nascimento-e-morte" class="section level3 hasAnchor" number="3.3.3">
 <h3><span class="header-section-number">3.3.3</span> Equações diferenciais de processos de nascimento e morte<a href="cadeias-de-markov-em-tempo-continuo.html#equacoes-diferenciais-de-processos-de-nascimento-e-morte" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>As equações de Chapman-Kolmogorov descrevem a evolução das probabilidades de transição ao longo do tempo. A partir destas equações, podemos deduzir as equações diferenciais que descrevem a evolução das probabilidades de transição em função do tempo.</p>
+<p>As equações de Chapman–Kolmogorov descrevem a evolução das probabilidades de transição ao longo do tempo. A partir destas equações, podemos deduzir as <strong>equações diferenciais de Kolmogorov</strong>, que descrevem a evolução de <span class="math inline">\(P_{ij}(t)\)</span> em função do tempo.</p>
 <p><span class="math inline">\(\,\)</span></p>
 <p>Pela relação <a href="cadeias-de-markov-em-tempo-continuo.html#eq:chapkol">(3.1)</a>, temos:</p>
 <p><span class="math display">\[\begin{align*}
-P_{ij}(t+h) &amp;= \sum_{k=0}^{+\infty} P_{ik}(h) \cdot P_{kj}(t) \\
-            &amp;= P_{ii}(h) \cdot P_{ij}(t) + P_{i,i+1}(h) \cdot P_{i+1,j}(t) + P_{i,i-1}(h) \cdot P_{i-1,j}(t) + \sum_{k \notin \{i-1,i,i+1\}} P_{ik}(h) \cdot P_{kj}(t) \\
-            &amp;= \left(1 - (\lambda_i + \mu_i) h\right) P_{ij}(t) + \lambda_i h \cdot P_{i+1,j}(t) + \mu_i h \cdot P_{i-1,j}(t) + o(h),
+P_{ij}(t+h) &amp;= \sum_{k=0}^{\infty} P_{ik}(h)\, P_{kj}(t) \\
+            &amp;= P_{ii}(h)\, P_{ij}(t) + P_{i,i+1}(h)\, P_{i+1,j}(t) + P_{i,i-1}(h)\, P_{i-1,j}(t) + \sum_{k \notin \{i-1,i,i+1\}} P_{ik}(h)\, P_{kj}(t) \\
+            &amp;= \left(1 - (\lambda_i + \mu_i) h\right) P_{ij}(t) + \lambda_i h\, P_{i+1,j}(t) + \mu_i h\, P_{i-1,j}(t) + o(h),
 \end{align*}\]</span></p>
-<p>assumindo que o processo é de saltos de primeiro vizinho, isto é, que <span class="math inline">\(P_{ik}(h) = o(h)\)</span> para <span class="math inline">\(|k - i| \geq 2\)</span>.</p>
-<p>Dividindo por <span class="math inline">\(h\)</span> e aplicando o limite quando <span class="math inline">\(h \to 0\)</span>, obtemos:</p>
+<p>assumindo que o processo é de saltos de primeiro vizinho, ou seja, <span class="math inline">\(P_{ik}(h) = o(h)\)</span> para <span class="math inline">\(|k-i|\ge 2\)</span>.</p>
+<p>Dividindo por <span class="math inline">\(h\)</span> e aplicando o limite <span class="math inline">\(h \to 0\)</span>, obtemos as <strong>equações de Kolmogorov de atraso</strong>:</p>
 <p><span class="math display">\[\begin{equation*}
 \boxed{
-P&#39;_{ij}(t) = \lambda_i P_{i+1,j}(t) + \mu_i P_{i-1,j}(t) - (\lambda_i + \mu_i) P_{ij}(t), \quad i \geq 1.
+P&#39;_{ij}(t) = \lambda_i P_{i+1,j}(t) + \mu_i P_{i-1,j}(t) - (\lambda_i + \mu_i) P_{ij}(t), \quad i \ge 1.
 }
 \end{equation*}\]</span></p>
 <p>Para <span class="math inline">\(i = 0\)</span>, temos:</p>
 <p><span class="math display">\[\begin{align*}
-P_{0j}(t+h) &amp;= P_{00}(h) \cdot P_{0j}(t) + P_{0,1}(h) \cdot P_{1j}(t) + \sum_{k \geq 2} P_{0k}(h) \cdot P_{kj}(t) \\
-            &amp;= \left(1 - \lambda_0 h\right) P_{0j}(t) + \lambda_0 h \cdot P_{1j}(t) + o(h),
+P_{0j}(t+h) &amp;= P_{00}(h)\, P_{0j}(t) + P_{0,1}(h)\, P_{1j}(t) + \sum_{k\ge 2} P_{0k}(h)\, P_{kj}(t) \\
+            &amp;= \left(1 - \lambda_0 h\right) P_{0j}(t) + \lambda_0 h\, P_{1j}(t) + o(h),
 \end{align*}\]</span></p>
 <p>donde se obtém:</p>
 <p><span class="math display">\[\begin{equation*}
@@ -703,74 +709,69 @@ P_{0j}(t+h) &amp;= P_{00}(h) \cdot P_{0j}(t) + P_{0,1}(h) \cdot P_{1j}(t) + \sum
 P&#39;_{0j}(t) = \lambda_0 P_{1j}(t) - \lambda_0 P_{0j}(t).
 }
 \end{equation*}\]</span></p>
-<p>Estas equações designam-se por <strong>Equações de Kolmogorov de atraso</strong>, e descrevem como a probabilidade de transição evolui em função do <strong>estado inicial</strong> <span class="math inline">\(i\)</span>.</p>
-<p>As condições iniciais associadas são:
+<p>As condições iniciais são:
 <span class="math display">\[
-P_{ij}(0) = \delta_{ij}, \quad i,j \in \mathbb{N}_0,
-\]</span>
-onde <span class="math inline">\(\delta_{ij}\)</span> representa o delta de Kronecker.</p>
+P_{ij}(0) = \delta_{ij}, \quad i,j \in \mathbb{N}_0.
+\]</span></p>
 <p><span class="math inline">\(\,\)</span></p>
-<p>Por outro lado, a equação de Chapman-Kolmogorov <a href="cadeias-de-markov-em-tempo-continuo.html#eq:chapkol">(3.1)</a> também pode ser escrita na forma:</p>
+<p>Por outro lado, a equação de Chapman–Kolmogorov também pode ser escrita na forma:</p>
 <p><span class="math display">\[\begin{align*}
-P_{ij}(t+h) &amp;= \sum_{k=0}^{+\infty} P_{ik}(t) \cdot P_{kj}(h) \\
-            &amp;= P_{ij}(t) \cdot P_{jj}(h) + P_{i,j+1}(t) \cdot P_{j+1,j}(h) + P_{i,j-1}(t) \cdot P_{j-1,j}(h) + \sum_{k \notin \{j-1,j,j+1\}} P_{ik}(t) \cdot P_{kj}(h) \\
-            &amp;= \left(1 - (\lambda_j + \mu_j) h \right) P_{ij}(t) + \lambda_{j-1} h \cdot P_{i,j-1}(t) + \mu_{j+1} h \cdot P_{i,j+1}(t) + o(h),
+P_{ij}(t+h) &amp;= \sum_{k=0}^{\infty} P_{ik}(t)\, P_{kj}(h) \\
+            &amp;= P_{ij}(t)\, P_{jj}(h) + P_{i,j+1}(t)\, P_{j+1,j}(h) + P_{i,j-1}(t)\, P_{j-1,j}(h) + \sum_{k\notin\{j-1,j,j+1\}} P_{ik}(t)\, P_{kj}(h) \\
+            &amp;= \left(1 - (\lambda_j + \mu_j)h\right) P_{ij}(t) + \lambda_{j-1} h\, P_{i,j-1}(t) + \mu_{j+1} h\, P_{i,j+1}(t) + o(h),
 \end{align*}\]</span></p>
-<p>assumindo, tal como anteriormente, que os saltos ocorrem apenas entre estados vizinhos.</p>
-<p>Dividindo por <span class="math inline">\(h\)</span> e aplicando o limite <span class="math inline">\(h \to 0\)</span>, obtemos:</p>
+<p>assumindo saltos apenas entre estados vizinhos.</p>
+<p>Dividindo por <span class="math inline">\(h\)</span> e aplicando o limite <span class="math inline">\(h \to 0\)</span>, obtemos as <strong>equações de Kolmogorov de avanço</strong>:</p>
 <p><span class="math display">\[\begin{equation*}
 \boxed{
-P&#39;_{ij}(t) = \lambda_{j-1} P_{i,j-1}(t) + \mu_{j+1} P_{i,j+1}(t) - (\lambda_j + \mu_j) P_{ij}(t), \quad j \geq 1.
+P&#39;_{ij}(t) = \lambda_{j-1} P_{i,j-1}(t) + \mu_{j+1} P_{i,j+1}(t) - (\lambda_j + \mu_j) P_{ij}(t), \quad j \ge 1,
 }
 \end{equation*}\]</span></p>
-<p>Para <span class="math inline">\(j = 0\)</span>, temos:</p>
+<p>com o caso <span class="math inline">\(j = 0\)</span>:</p>
 <p><span class="math display">\[\begin{equation*}
 \boxed{
 P&#39;_{i0}(t) = \mu_1 P_{i1}(t) - \lambda_0 P_{i0}(t).
 }
 \end{equation*}\]</span></p>
-<p>Estas equações designam-se por <strong>Equações de Kolmogorov de avanço</strong>, e descrevem como a probabilidade de transição evolui em função do <strong>estado final</strong> <span class="math inline">\(j\)</span>.</p>
 <p><span class="math inline">\(\,\)</span></p>
-<p>Vejamos agora se o comportamento de <span class="math inline">\(P_{ij}(t)\)</span> estabiliza à medida que <span class="math inline">\(t \to +\infty\)</span>.</p>
-<p>É possível demonstrar (ver, por exemplo, Karlin &amp; Taylor) que, sob condições adequadas (recorrência positiva e aperiocidade), as probabilidades de transição convergem para um valor limite, isto é:</p>
+<p>Se o comportamento do processo estabiliza quando <span class="math inline">\(t \to +\infty\)</span>, sob condições adequadas (recorrência positiva e aperiocidade), as probabilidades de transição convergem para um <strong>regime estacionário</strong>:</p>
 <p><span class="math display">\[
 \lim_{t \to +\infty} P_{ij}(t) = \pi_j,
-\]</span>
-onde <span class="math inline">\(\pi_j\)</span> é a probabilidade de que o sistema se encontre no estado <span class="math inline">\(j\)</span> em regime estacionário, independentemente do estado inicial <span class="math inline">\(i\)</span>.</p>
-<p>Por outras palavras, <span class="math inline">\(\pi_j\)</span> representa a probabilidade limite de que o sistema se encontre no estado <span class="math inline">\(j\)</span>, num instante arbitrário no futuro.</p>
-<p><span class="math inline">\(\,\)</span></p>
-<p>Neste caso, as equações de Kolmogorov de atraso (ou avanço) convergem para um sistema de equações algébricas conhecidas como <strong>Equações de Kolmogorov estacionárias</strong>, que descrevem o comportamento assintótico do processo de nascimento e morte:</p>
+\]</span></p>
+<p>onde <span class="math inline">\(\pi_j\)</span> é a probabilidade de encontrar o sistema no estado <span class="math inline">\(j\)</span>, independentemente do estado inicial <span class="math inline">\(i\)</span>.</p>
+<p>Neste caso, as equações de Kolmogorov de atraso ou avanço convergem para as <strong>equações de Kolmogorov estacionárias</strong>:</p>
 <p><span class="math display">\[
 \boxed{
 \begin{cases}
 \lambda_0 \pi_1 - \lambda_0 \pi_0 = 0, &amp; j = 0, \\
-\lambda_{j-1} \pi_{j-1} + \mu_{j+1} \pi_{j+1} - (\lambda_j + \mu_j) \pi_j = 0, &amp; j \geq 1.
+\lambda_{j-1} \pi_{j-1} + \mu_{j+1} \pi_{j+1} - (\lambda_j + \mu_j) \pi_j = 0, &amp; j \ge 1,
 \end{cases}}
 \]</span></p>
-<p>Estas equações, a par da condição de normalização
+<p>com a condição de normalização
 <span class="math display">\[
-\sum_{j=0}^{\infty} \pi_j = 1,
-\]</span>
-permitem determinar a distribuição de probabilidade estacionária <span class="math inline">\((\pi_j)_{j \in \mathbb{N}_0}\)</span>.</p>
+\sum_{j=0}^{\infty} \pi_j = 1.
+\]</span></p>
+<p>Estas equações permitem determinar a <strong>distribuição estacionária</strong> <span class="math inline">\((\pi_j)_{j \in \mathbb{N}_0}\)</span> do processo de nascimento e morte.</p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-149" class="exercise"><strong>Exercício 3.14  </strong></span></p>
 <!-- Ficha 4 ex10 Não tenho resolvido-->
-<p>Considere um sistema de self-service em que a probabilidade de haver uma chegada em <span class="math inline">\((t,t+h)\)</span> dado que existem <span class="math inline">\(j\)</span> Clientes a servirem-se no instante <span class="math inline">\(t\)</span> é igual a <span class="math inline">\(ajh+o(h), ~j \geq 0,\)</span> quando <span class="math inline">\(h \to 0\)</span>, onde <span class="math inline">\(a&gt;0\)</span> é uma constante real positiva. Suponha que os Clientes acabam o seu serviço segundo um processo de Poisson de intensidade <span class="math inline">\(2a\)</span> e que estão reunidas todas as condições para poder modelar o sistema por um processo de nascimento e morte, <span class="math inline">\(N_t\)</span>.</p>
+<p>Considere um sistema de self-service em que a probabilidade de haver uma chegada em <span class="math inline">\((t,t+h)\)</span>, dado que existem <span class="math inline">\(j\)</span> clientes a servirem-se no instante <span class="math inline">\(t\)</span>, é igual a <span class="math inline">\(ajh + o(h)\)</span>, <span class="math inline">\(j \geq 0\)</span>, quando <span class="math inline">\(h \to 0\)</span>, onde <span class="math inline">\(a&gt;0\)</span> é uma constante. Suponha que os clientes acabam o serviço segundo um processo de Poisson de intensidade <span class="math inline">\(2a\)</span>, e que estão reunidas todas as condições para modelar o sistema por um processo de nascimento e morte <span class="math inline">\(N_t\)</span>.</p>
 <ol style="list-style-type: lower-alpha">
-<li><p>Identifique um conjunto de axiomas que caracterize o processo <span class="math inline">\((M_t: ~t \geq 0)\)</span>, onde <span class="math inline">\(M_t\)</span> representa o número de Clientes que acabam de se servirem num intervalo de tempo de amplitude <span class="math inline">\(t\)</span>.</p></li>
+<li><p>Identifique um conjunto de axiomas que caracterize o processo <span class="math inline">\((M_t: ~t \geq 0)\)</span>, onde <span class="math inline">\(M_t\)</span> representa o número de clientes que acabam de se servir num intervalo de tempo de amplitude <span class="math inline">\(t\)</span>.</p></li>
 <li><p>Identifique, justificando, as taxas de nascimento e morte do processo <span class="math inline">\(N_t\)</span>.</p></li>
-<li><p>Faça um diagrama de velocidade de probabilidades de transição para o processo <span class="math inline">\(N_t\)</span> e escreva o correspondente sistema de equações de avanço de Kolmogorov.</p></li>
+<li><p>Faça um diagrama de velocidades de transição de probabilidade para o processo <span class="math inline">\(N_t\)</span> e escreva o correspondente sistema de equações de avanço de Kolmogorov.</p></li>
 </ol>
 </div>
+<p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-150" class="exercise"><strong>Exercício 3.15  </strong></span></p>
 <!-- Ficha 4 ex11 Não tenho resolvido-->
-<p>Considere que os autocarros chegam a uma certa rua segundo um processo de Poisson de intensidade de 10 por hora, e que percorrem num intervalo de tempo que é sempre constante e igual a 10 minutos. Suponha que a rua não tem limitação para o número de veículos que nela podem transitar.</p>
+<p>Considere que os autocarros chegam a uma certa rua segundo um processo de Poisson de intensidade 10 por hora, e percorrem um intervalo de tempo constante igual a 10 minutos. Suponha que a rua não tem limitação para o número de veículos que nela podem transitar.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Após associar ao problema um processo de nascimento e morte, determine a distribuição de equilíbrio e interprete o significado de <span class="math inline">\(\pi_0\)</span>.</p></li>
-<li><p>Determine o número médio de autocarros na rua depois de terem decorrido algumas horas desde o início da carreira.</p></li>
-<li><p>O número de autocarros tende a aumentar ou a diminuir com a passagem do tempo? Justifique.</p></li>
+<li><p>Determine o número médio de autocarros na rua depois de algumas horas desde o início da carreira.</p></li>
+<li><p>O número de autocarros tende a aumentar ou diminuir com a passagem do tempo? Justifique.</p></li>
 </ol>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
@@ -780,52 +781,51 @@ permitem determinar a distribuição de probabilidade estacionária <span class=
 <p>Seja <span class="math inline">\((X(t), ~t\geq 0)\)</span> um processo de nascimento e morte tal que:
 <span class="math display">\[
 \begin{array}{rclcc}
-\lambda _{n} &amp; = &amp; \lambda q^{n} &amp; 0&lt;q&lt;1,\;\lambda &gt;0 &amp; n=0,1,2,\cdots \\
-\mu _{n} &amp; = &amp; \mu &amp; \mu &gt;0 &amp; n=1,2,\cdots \\
-\mu _{0} &amp; = &amp; 0 &amp;  &amp; \
+\lambda_n &amp; = &amp; \lambda q^n &amp; 0&lt;q&lt;1,\;\lambda&gt;0 &amp; n=0,1,2,\dots \\
+\mu_n &amp; = &amp; \mu &amp; \mu&gt;0 &amp; n=1,2,\dots \\
+\mu_0 &amp; = &amp; 0 &amp; &amp;
 \end{array}
 \]</span>
-Designe por <span class="math inline">\(P_{n}(t)=P(X(t)=n)\)</span>. Prove que</p>
-<p><span class="math display">\[\begin{eqnarray*}
-P_{0}^{\prime }(t) &amp;=&amp;-\lambda P_{0}(t)+\mu P_{1}(t) \\
-P_{n}^{\prime }(t) &amp;=&amp;\lambda q^{n-1}P_{n-1}(t)-(\lambda q^{n}+\mu
-)P_{n}(t)+\mu P_{n+1}(t),\;\;\;n\geq 1.
-\end{eqnarray*}\]</span></p>
+Designe por <span class="math inline">\(P_n(t) = P(X(t)=n)\)</span>. Prove que:
+<span class="math display">\[\begin{align*}
+P_0&#39;(t) &amp;= -\lambda P_0(t) + \mu P_1(t), \\
+P_n&#39;(t) &amp;= \lambda q^{n-1} P_{n-1}(t) - (\lambda q^n + \mu) P_n(t) + \mu P_{n+1}(t), \quad n \geq 1.
+\end{align*}\]</span></p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-152" class="exercise"><strong>Exercício 3.17  </strong></span></p>
 <!-- Alfredo 4.10-->
-<p>Considere o processo estocástico <span class="math inline">\(N(t)\)</span>, que representa o número de linhas ocupadas numa central telefónica, a qual dispõe de um número elevado de linhas. Este processo é modelado por um sistema com chegadas espontâneas de chamadas e término aleatório de chamadas, com os seguintes pressupostos:</p>
+<p>Considere o processo estocástico <span class="math inline">\(N(t)\)</span>, que representa o número de linhas ocupadas numa central telefónica com um número elevado de linhas. Este processo é modelado por chegadas espontâneas de chamadas e término aleatório de chamadas, com os seguintes pressupostos:</p>
 <ul>
-<li><p>As chamadas chegam à central a uma taxa constante <span class="math inline">\(\lambda\)</span>, independentemente do número de linhas atualmente ocupadas.</p></li>
-<li><p>Cada chamada em curso termina a uma taxa <span class="math inline">\(\mu\)</span>, de forma independente das restantes. Assim, quando há <span class="math inline">\(k\)</span> chamadas em curso (ou <span class="math inline">\(k\)</span> linhas ocupadas), a taxa total de término é <span class="math inline">\(k\,\mu\)</span>.</p></li>
+<li>As chamadas chegam à central a uma taxa constante <span class="math inline">\(\lambda\)</span>, independentemente do número de linhas ocupadas.</li>
+<li>Cada chamada em curso termina a uma taxa <span class="math inline">\(\mu\)</span>, independentemente das restantes. Assim, quando há <span class="math inline">\(k\)</span> chamadas em curso (ou <span class="math inline">\(k\)</span> linhas ocupadas), a taxa total de término é <span class="math inline">\(k\,\mu\)</span>.</li>
 </ul>
 <ol style="list-style-type: lower-alpha">
-<li><p>Mostre que as Equações de Kolmogorov de avanço associadas às probabilidades <span class="math inline">\(P_i(t) = P(N(t) = i)\)</span> são dadas por:
+<li><p>Mostre que as Equações de Kolmogorov de avanço associadas às probabilidades <span class="math inline">\(P_i(t) = P(N(t) = i)\)</span> são:
 <span class="math display">\[
-P_i&#39;(t) = -(\lambda + i\,\mu)\,P_i(t) + \lambda\,P_{i-1}(t) + (i+1)\mu\,P_{i+1}(t), \quad i = 0,1,2,\ldots
+P_i&#39;(t) = -(\lambda + i\,\mu) P_i(t) + \lambda P_{i-1}(t) + (i+1)\mu P_{i+1}(t), \quad i = 0,1,2,\dots
 \]</span></p></li>
-<li><p>Suponha que, para cada <span class="math inline">\(i \in \mathbb{N}_0\)</span>, a função <span class="math inline">\(P_i(t)\)</span> é dada por:
+<li><p>Suponha que, para cada <span class="math inline">\(i \in \mathbb{N}_0\)</span>, a função <span class="math inline">\(P_i(t)\)</span> é:
 <span class="math display">\[
-P_i(t) = \frac{(\lambda/\mu)^i}{i!} \left( 1 - e^{-\mu t} \right)^i \exp\left\{ -\frac{\lambda}{\mu} \left( 1 - e^{-\mu t} \right) \right\}, \quad i = 0,1,2,\ldots
+P_i(t) = \frac{(\lambda/\mu)^i}{i!} \left(1 - e^{-\mu t}\right)^i \exp\left\{ -\frac{\lambda}{\mu} \left(1 - e^{-\mu t}\right) \right\}, \quad i = 0,1,2,\dots
 \]</span>
-Determine a probabilidade de todas as linhas estarem desocupadas no regime estacionário (isto é, quando <span class="math inline">\(t \to +\infty\)</span>), e deduza a forma da distribuição estacionária do número de linhas ocupadas.</p></li>
+Determine a probabilidade de todas as linhas estarem desocupadas no regime estacionário (<span class="math inline">\(t \to +\infty\)</span>) e deduza a forma da distribuição estacionária do número de linhas ocupadas.</p></li>
 </ol>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-153" class="exercise"><strong>Exercício 3.18  </strong></span></p>
 <!-- Alfredo 4.11-->
-<p>Seja <span class="math inline">\(Y_n\)</span>, <span class="math inline">\(n = 0,1,\ldots\)</span>, uma cadeia de Markov com espaço de estados <span class="math inline">\(E = \{0,1\}\)</span> e matriz de transição <span class="math inline">\(\mathbb{P}\)</span> dada por:
+<p>Seja <span class="math inline">\(Y_n\)</span>, <span class="math inline">\(n = 0,1,\dots\)</span>, uma cadeia de Markov com espaço de estados <span class="math inline">\(E = \{0,1\}\)</span> e matriz de transição <span class="math inline">\(\mathbb{P}\)</span>:
 <span class="math display">\[
 \mathbb{P} =
 \begin{bmatrix}
 0 &amp; 1 \\
-1 - \alpha &amp; \alpha
+1-\alpha &amp; \alpha
 \end{bmatrix}.
 \]</span></p>
-<p>Considere ainda um processo de Poisson com parâmetro <span class="math inline">\(\lambda\)</span>, isto é, <span class="math inline">\((N(t),\, t \geq 0)\)</span>. Mostre que o processo definido por <span class="math inline">\(X(t) = Y_{N(t)}\)</span>, para <span class="math inline">\(t \geq 0\)</span>, é um processo de nascimento e morte com dois estados, e determine os parâmetros <span class="math inline">\(\lambda_0\)</span> e <span class="math inline">\(\mu_1\)</span> em função de <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\lambda\)</span>.</p>
+<p>Considere ainda um processo de Poisson com parâmetro <span class="math inline">\(\lambda\)</span>, <span class="math inline">\((N(t),\, t \geq 0)\)</span>. Mostre que o processo definido por <span class="math inline">\(X(t) = Y_{N(t)}\)</span>, <span class="math inline">\(t \geq 0\)</span>, é um processo de nascimento e morte com dois estados, e determine os parâmetros <span class="math inline">\(\lambda_0\)</span> e <span class="math inline">\(\mu_1\)</span> em função de <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\lambda\)</span>.</p>
 </div>
 </div>
 </div>
