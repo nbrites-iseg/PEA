@@ -496,3 +496,9 @@ def:unlabeled-div-129
 prp:unlabeled-div-158
 thm:unlabeled-div-173
 thm:unlabeled-div-185
+exm:unlabeled-div-139
+exm:unlabeled-div-140
+def:unlabeled-div-149
+prp:unlabeled-div-160
+thm:unlabeled-div-175
+eq:distL
