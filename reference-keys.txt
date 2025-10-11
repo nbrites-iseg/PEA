@@ -502,3 +502,5 @@ def:unlabeled-div-149
 prp:unlabeled-div-160
 thm:unlabeled-div-175
 eq:distL
+exm:unlabeled-div-141
+thm:unlabeled-div-145

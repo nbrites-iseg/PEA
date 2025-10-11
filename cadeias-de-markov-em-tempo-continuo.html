@@ -424,13 +424,52 @@ P_k(t) = \frac{(\lambda t)^k}{k!} e^{-\lambda t}, \quad k=0,1,2,\dots
 \]</span></p></li>
 </ol>
 </div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-137" class="exercise"><strong>Exercício 3.9  </strong></span></p>
+<!-- Ficha 4 ex7 -->
+<p>Para assegurar o bom funcionamento de um consultório médico, a direção determinou que, em qualquer instante durante o período de funcionamento, não poderia haver mais de <span class="math inline">\(N\)</span> doentes no consultório. Apenas um doente é atendido de cada vez, segundo a respetiva ordem de chegada. Os doentes chegam ao consultório segundo um processo de Poisson de intensidade <span class="math inline">\(1/2\)</span>, ficando a aguardar a sua vez de atendimento apenas se, nesse momento, o número de utentes no consultório for inferior a <span class="math inline">\(N\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Designe por <span class="math inline">\(N_t, ~t \geq 0\)</span>, o número de doentes que chegam num intervalo de amplitude <span class="math inline">\(t\)</span>.</li>
+</ol>
+<ol style="list-style-type: decimal">
+<li><p>Prove que:</p>
+<ol style="list-style-type: lower-roman">
+<li><p><span class="math inline">\((N_t, ~t \geq 0)\)</span> é uma C.M. homogénea em tempo contínuo e indique a respetiva probabilidade de transição.</p></li>
+<li><p><span class="math inline">\((N_t, ~t \geq 0)\)</span> é um processo de nascimento puro.</p></li>
+</ol></li>
+<li><p>Sendo <span class="math inline">\(T\)</span> uma v.a. que representa o tempo de espera entre duas chegadas consecutivas, prove que
+<span class="math display">\[P(T &gt; t) = e^{-t/2}, \quad t &gt; 0.\]</span></p></li>
+<li><p>Qual é o tempo médio de espera entre chegadas?</p></li>
+</ol>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Seja agora <span class="math inline">\(X_t, ~t \geq 0\)</span>, o número total de doentes no consultório no instante <span class="math inline">\(t\)</span>. Supondo que:
+<span class="math display">\[\forall ~k \in \{0,1,2,\dots,N\}: ~P(X_t=k)=\left(\dfrac{3}{2}\right)^k P(X_t=0),\]</span>
+determine:</li>
+</ol>
+<ol style="list-style-type: decimal">
+<li><p>A probabilidade de que existam <span class="math inline">\(k\)</span> doentes à espera de serem atendidos, num qualquer instante <span class="math inline">\(t\)</span>.</p></li>
+<li><p>O número médio de doentes no consultório, num qualquer instante <span class="math inline">\(t\)</span>.</p></li>
+</ol>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-138" class="exercise"><strong>Exercício 3.10  </strong></span></p>
+<!-- Ficha 4 ex8 -->
+<p>Considere um quiosque onde os clientes chegam segundo um processo de Poisson à razão de 32 clientes por dia, durante o horário diário de abertura do quiosque, correspondente a 8 horas. Designe por <span class="math inline">\(N_t, ~t \geq 0\)</span>, o número de clientes que chegam ao quiosque num intervalo de tempo de amplitude <span class="math inline">\(t\)</span> horas.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Identifique, justificando, a distribuição de <span class="math inline">\(N_t\)</span>.</p></li>
+<li><p>Sendo <span class="math inline">\(T_2\)</span> a v.a. que representa o instante de chegada (em horas) do segundo cliente ao quiosque, em cada dia, mostre que:
+<span class="math display">\[P(T_2&gt;t) = e^{-4t}(1+4t), \quad t&gt;0.\]</span></p></li>
+</ol>
+</div>
 </div>
 <div id="processo-de-nascimento-puro" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Processo de nascimento puro<a href="cadeias-de-markov-em-tempo-continuo.html#processo-de-nascimento-puro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Um processo de nascimento puro é uma generalização do processo de Poisson homogéneo, onde a probabilidade de um acontecimento ocorrer num certo instante depende do número de acontecimentos que já ocorreram. Assim, o processo de Poisson é um processo de nascimento puro com razão de nascimentos constante e igual a <span class="math inline">\(\lambda.\)</span></p>
 <p>No que se segue, considere-se uma sequência de números positivos <span class="math inline">\(\{\lambda_k, ~k \in \mathbb{N}_0\}\)</span> e defina-se <span class="math inline">\(X_t\)</span> como o <strong>número de nascimentos</strong> no intervalo <span class="math inline">\([0,t]\)</span>.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-137" class="definition"><strong>Definição 3.3  (Processo de nascimento puro) </strong></span>Um processo estocástico <span class="math inline">\((X_t, ~ t \in \mathbb{R}_0^+)\)</span>, com valores em <span class="math inline">\(\mathbb{N}_0\)</span>, é um <strong>processo de nascimento puro</strong> com taxa (ou razão de nascimento) <span class="math inline">\(\{\lambda_k, ~k \in \mathbb{N}_0\}\)</span> se for um processo de Markov homogéneo em tempo contínuo, que satisfaz os axiomas:</p>
+<p><span id="def:unlabeled-div-139" class="definition"><strong>Definição 3.3  (Processo de nascimento puro) </strong></span>Um processo estocástico <span class="math inline">\((X_t, ~ t \in \mathbb{R}_0^+)\)</span>, com valores em <span class="math inline">\(\mathbb{N}_0\)</span>, é um <strong>processo de nascimento puro</strong> com taxa (ou razão de nascimento) <span class="math inline">\(\{\lambda_k, ~k \in \mathbb{N}_0\}\)</span> se for um processo de Markov homogéneo em tempo contínuo, que satisfaz os axiomas:</p>
 <ol style="list-style-type: lower-roman">
 <li><p><span class="math inline">\(P(X_{t+h}-X_t=1 \mid X_{t}=k)=\lambda_k h + o_{1,k}(h)=P_{k,k+1}(h)\)</span>.</p></li>
 <li><p><span class="math inline">\(P(X_{t+h}-X_t=0 \mid X_{t}=k)=1-\lambda_k h + o_{2,k}(h)=P_{k,k}(h)\)</span>.</p></li>
@@ -440,7 +479,7 @@ P_k(t) = \frac{(\lambda t)^k}{k!} e^{-\lambda t}, \quad k=0,1,2,\dots
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="remark">
-<p><span id="unlabeled-div-138" class="remark"><em>Nota</em>. </span></p>
+<p><span id="unlabeled-div-140" class="remark"><em>Nota</em>. </span></p>
 <ol style="list-style-type: decimal">
 <li><p>A condição (iv) pode ser relaxada conforme o estudo em causa. Ao considerar <span class="math inline">\(X_0 \neq 0\)</span>, define-se <span class="math inline">\(X_t\)</span> como o número de indivíduos no instante <span class="math inline">\(t\)</span>, uma vez que o número de nascimentos em <span class="math inline">\([0,t]\)</span> é <span class="math inline">\(X_t-X_0\)</span>.</p></li>
 <li><p>Uma vez que as probabilidades de transição dadas por (i) e (ii) são estacionárias, então <span class="math inline">\(o_{1,k}(h)\)</span> e <span class="math inline">\(o_{2,k}(h)\)</span> não dependem de <span class="math inline">\(t\)</span> (são funções de <span class="math inline">\(h\)</span> quando <span class="math inline">\(h \to 0\)</span>).</p></li>
@@ -448,7 +487,7 @@ P_k(t) = \frac{(\lambda t)^k}{k!} e^{-\lambda t}, \quad k=0,1,2,\dots
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-139" class="example"><strong>Exemplo 3.1  (Processo de Yule) </strong></span>O processo de Yule é um processo de nascimento puro usado para modelar o crescimento populacional. Seja <span class="math inline">\(\lambda_n = \lambda n\)</span> (com <span class="math inline">\(\lambda &gt; 0\)</span>) e <span class="math inline">\(X(0) = 1\)</span>.<br />
+<p><span id="exm:unlabeled-div-141" class="example"><strong>Exemplo 3.1  (Processo de Yule) </strong></span>O processo de Yule é um processo de nascimento puro usado para modelar o crescimento populacional. Seja <span class="math inline">\(\lambda_n = \lambda n\)</span> (com <span class="math inline">\(\lambda &gt; 0\)</span>) e <span class="math inline">\(X(0) = 1\)</span>.<br />
 Cada indivíduo origina novos indivíduos a uma taxa <span class="math inline">\(\lambda\)</span>, logo a taxa total de nascimentos aumenta proporcionalmente ao tamanho da população.</p>
 <p>A distribuição de <span class="math inline">\(X_t\)</span> é:
 <span class="math display">\[
@@ -509,7 +548,7 @@ E(X_t) = e^{\lambda t}.
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-140" class="exercise"><strong>Exercício 3.9  </strong></span></p>
+<p><span id="exr:unlabeled-div-142" class="exercise"><strong>Exercício 3.11  </strong></span></p>
 <!-- chatgpt -->
 <p>Considere um processo de nascimento puro <span class="math inline">\(\{X_t, ~ t \ge 0\}\)</span> com taxas <span class="math inline">\(\lambda_n = 0.5n\)</span> e condição inicial <span class="math inline">\(X_0 = 1\)</span>. Seja <span class="math inline">\(t = 2\)</span>.</p>
 <ol style="list-style-type: decimal">
@@ -520,7 +559,7 @@ E(X_t) = e^{\lambda t}.
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-141" class="theorem"><strong>Teorema 3.1  </strong></span>Seja <span class="math inline">\(P_n(t)=P(X_t=n)\)</span>. Para <span class="math inline">\(t \geq 0\)</span>, <span class="math inline">\(P_n(t)\)</span> satisfaz o sistema de equações diferenciais
+<p><span id="thm:unlabeled-div-143" class="theorem"><strong>Teorema 3.1  </strong></span>Seja <span class="math inline">\(P_n(t)=P(X_t=n)\)</span>. Para <span class="math inline">\(t \geq 0\)</span>, <span class="math inline">\(P_n(t)\)</span> satisfaz o sistema de equações diferenciais
 <span class="math display">\[
 \begin{cases}
 P^{\prime}_0(t)=-\lambda_0 P_0(t), \\
@@ -537,7 +576,7 @@ P_n(0)=P(X_0=n)=0, ~ n &gt;0.\\
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-142" class="definition"><strong>Definição 3.4  (Tempos de espera num processo de nascimento puro) </strong></span>Considere-se a variável aleatória
+<p><span id="def:unlabeled-div-144" class="definition"><strong>Definição 3.4  (Tempos de espera num processo de nascimento puro) </strong></span>Considere-se a variável aleatória
 <span class="math display">\[
 T_k=\text{o tempo entre o \(k\)-ésimo e o \((k+1)\)-ésimo nascimento},
 \]</span>
@@ -565,47 +604,8 @@ isto é, o instante do <span class="math inline">\(n\)</span>-ésimo evento tem 
 <p><span class="math inline">\(\,\)</span></p>
 <p>Terminamos esta secção com um teorema, fundamental para caracterizar a evolução temporal do processo de nascimento puro, permitindo derivar explicitamente as distribuições de probabilidade dos estados ao longo do tempo:</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-143" class="theorem"><strong>Teorema 3.2  </strong></span><span class="math inline">\(P_k(t)\)</span> verifica a equação de recorrência
+<p><span id="thm:unlabeled-div-145" class="theorem"><strong>Teorema 3.2  </strong></span><span class="math inline">\(P_k(t)\)</span> verifica a equação de recorrência
 <span class="math display">\[P_k(t)=\lambda_{k-1} e^{-\lambda_k t}\int\limits_{0}^{t}e^{\lambda_k x}P_{k-1}(x) \, dx, \quad k \in \mathbb{N}.\]</span></p>
-</div>
-<p><span class="math inline">\(\,\)</span></p>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-144" class="exercise"><strong>Exercício 3.10  </strong></span></p>
-<!-- Ficha 4 ex7 -->
-<p>Para assegurar o bom funcionamento de um consultório médico, a direção determinou que, em qualquer instante durante o período de funcionamento, não poderia haver mais de <span class="math inline">\(N\)</span> doentes no consultório. Apenas um doente é atendido de cada vez, segundo a respetiva ordem de chegada. Os doentes chegam ao consultório segundo um processo de Poisson de intensidade <span class="math inline">\(1/2\)</span>, ficando a aguardar a sua vez de atendimento apenas se, nesse momento, o número de utentes no consultório for inferior a <span class="math inline">\(N\)</span>.</p>
-<ol style="list-style-type: lower-alpha">
-<li>Designe por <span class="math inline">\(N_t, ~t \geq 0\)</span>, o número de doentes que chegam num intervalo de amplitude <span class="math inline">\(t\)</span>.</li>
-</ol>
-<ol style="list-style-type: decimal">
-<li><p>Prove que:</p>
-<ol style="list-style-type: lower-roman">
-<li><p><span class="math inline">\((N_t, ~t \geq 0)\)</span> é uma C.M. homogénea em tempo contínuo e indique a respetiva probabilidade de transição.</p></li>
-<li><p><span class="math inline">\((N_t, ~t \geq 0)\)</span> é um processo de nascimento puro.</p></li>
-</ol></li>
-<li><p>Sendo <span class="math inline">\(T\)</span> uma v.a. que representa o tempo de espera entre duas chegadas consecutivas, prove que
-<span class="math display">\[P(T &gt; t) = e^{-t/2}, \quad t &gt; 0.\]</span></p></li>
-<li><p>Qual é o tempo médio de espera entre chegadas?</p></li>
-</ol>
-<ol start="2" style="list-style-type: lower-alpha">
-<li>Seja agora <span class="math inline">\(X_t, ~t \geq 0\)</span>, o número total de doentes no consultório no instante <span class="math inline">\(t\)</span>. Supondo que:
-<span class="math display">\[\forall ~k \in \{0,1,2,\dots,N\}: ~P(X_t=k)=\left(\dfrac{3}{2}\right)^k P(X_t=0),\]</span>
-determine:</li>
-</ol>
-<ol style="list-style-type: decimal">
-<li><p>A probabilidade de que existam <span class="math inline">\(k\)</span> doentes à espera de serem atendidos, num qualquer instante <span class="math inline">\(t\)</span>.</p></li>
-<li><p>O número médio de doentes no consultório, num qualquer instante <span class="math inline">\(t\)</span>.</p></li>
-</ol>
-</div>
-<p><span class="math inline">\(\,\)</span></p>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-145" class="exercise"><strong>Exercício 3.11  </strong></span></p>
-<!-- Ficha 4 ex8 -->
-<p>Considere um quiosque onde os clientes chegam segundo um processo de Poisson à razão de 32 clientes por dia, durante o horário diário de abertura do quiosque, correspondente a 8 horas. Designe por <span class="math inline">\(N_t, ~t \geq 0\)</span>, o número de clientes que chegam ao quiosque num intervalo de tempo de amplitude <span class="math inline">\(t\)</span> horas.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Identifique, justificando, a distribuição de <span class="math inline">\(N_t\)</span>.</p></li>
-<li><p>Sendo <span class="math inline">\(T_2\)</span> a v.a. que representa o instante de chegada (em horas) do segundo cliente ao quiosque, em cada dia, mostre que:
-<span class="math display">\[P(T_2&gt;t) = e^{-4t}(1+4t), \quad t&gt;0.\]</span></p></li>
-</ol>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
@@ -632,29 +632,13 @@ p_k&#39;(t) = (k-1)\lambda\, p_{k-1}(t) - k\lambda\, p_k(t), \quad k = 1,2,\dots
 <span class="math display">\[
 p_k(t) = e^{-k\lambda t} \left( e^{\lambda t} - 1 \right)^{k-1}, \quad k = 1,2,\dots.
 \]</span></p></li>
-<li><p>Seja <span class="math inline">\(P(z,t) = \sum\limits_{k=1}^{\infty} z^k p_k(t)\)</span> a função geradora das probabilidades <span class="math inline">\(p_k(t)\)</span>. Prove que:
-<span class="math display">\[
-P(z,t) = \frac{z e^{-\lambda t}}{1 - z + z e^{-\lambda t}}.
-\]</span></p></li>
-<li><p>Calcule <span class="math inline">\(E(N(t))\)</span>.</p></li>
 </ol>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-148" class="exercise"><strong>Exercício 3.14  </strong></span></p>
-<!-- Alfredo 4.4 -->
-<p>Seja <span class="math inline">\((N(t), ~t \geq 0)\)</span> um processo de nascimento puro com <span class="math inline">\(N(0) = I\)</span>, um inteiro positivo, e taxa de natalidade <span class="math inline">\(\lambda_n = n \lambda\)</span>. Designe por <span class="math inline">\(P_n(t) = P(N(t) = n)\)</span>.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Prove que:
-<span class="math display">\[\begin{align*}
-  P_I&#39;(t) &amp;= -I\lambda\, P_I(t) \\
-  P_n&#39;(t) &amp;= -n\lambda\, P_n(t) + (n-1)\lambda\, P_{n-1}(t), \quad n = I+1, I+2, \dots
-\end{align*}\]</span></p></li>
-<li><p>Prove que:
-<span class="math display">\[
-P_k(t) = \binom{k-1}{I-1} e^{-I\lambda t} \left( 1 - e^{-\lambda t} \right)^{k - I}, \quad k \geq I.
-\]</span></p></li>
-</ol>
+<!-- ver sebenta isabel -->
+<p>Prove o Teorema 3.1.</p>
 </div>
 </div>
 <div id="processo-de-nascimento-e-morte" class="section level2 hasAnchor" number="3.3">
