@@ -472,7 +472,7 @@ determine:</li>
 <p><span id="def:unlabeled-div-139" class="definition"><strong>Definição 3.3  (Processo de nascimento puro) </strong></span>Um processo estocástico <span class="math inline">\((X_t, ~ t \in \mathbb{R}_0^+)\)</span>, com valores em <span class="math inline">\(\mathbb{N}_0\)</span>, é um <strong>processo de nascimento puro</strong> com taxa (ou razão de nascimento) <span class="math inline">\(\{\lambda_k, ~k \in \mathbb{N}_0\}\)</span> se for um processo de Markov homogéneo em tempo contínuo, que satisfaz os axiomas:</p>
 <ol style="list-style-type: lower-roman">
 <li><p><span class="math inline">\(P(X_{t+h}-X_t=1 \mid X_{t}=k)=\lambda_k h + o_{1,k}(h)=P_{k,k+1}(h)\)</span>.</p></li>
-<li><p><span class="math inline">\(P(X_{t+h}-X_t=0 \mid X_{t}=k)=1-\lambda_k h + o_{2,k}(h)=P_{k,k}(h)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X_{t+h}-X_t=0 \mid X_{t}=k)=1-\lambda_k h + o_{2,k}(h)=P_{kk}(h)\)</span>.</p></li>
 <li><p><span class="math inline">\(P(X_{t+h}-X_t &lt; 0 \mid X_{t}=k)=0, ~ k \in \mathbb{N}_0\)</span>, <span class="math inline">\(\forall ~ h &gt; 0\)</span>.</p></li>
 <li><p><span class="math inline">\(X_0=0\)</span> q.c.</p></li>
 </ol>
@@ -646,16 +646,16 @@ p_k(t) = e^{-k\lambda t} \left( e^{\lambda t} - 1 \right)^{k-1}, \quad k = 1,2,\
 <div id="definicao-e-equacoes-de-chapman-kolmogorov" class="section level3 hasAnchor" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> Definição e equações de Chapman–Kolmogorov<a href="cadeias-de-markov-em-tempo-continuo.html#definicao-e-equacoes-de-chapman-kolmogorov" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="definition">
-<p><span id="def:unlabeled-div-149" class="definition"><strong>Definição 3.5  (Processo de nascimento e morte) </strong></span>Um processo estocástico <span class="math inline">\((X_t,\, t \in \mathbb{R}_0^+)\)</span>, com valores em <span class="math inline">\(\mathbb{N}_0\)</span>, é um <strong>processo de nascimento e morte</strong> com taxas <span class="math inline">\(\{\lambda_k:\, k \in \mathbb{N}_0\}\)</span> e <span class="math inline">\(\{\mu_k:\, k \in \mathbb{N}_0\}\)</span> se for uma C.M. homogénea em tempo contínuo e satisfizer os axiomas:</p>
+<p><span id="def:unlabeled-div-149" class="definition"><strong>Definição 3.5  (Processo de nascimento e morte) </strong></span>Um processo estocástico <span class="math inline">\((X_t,\, t \in \mathbb{R}_0^+)\)</span>, com valores em <span class="math inline">\(\mathbb{N}_0\)</span>, é um <strong>processo de nascimento e morte</strong> com taxas <span class="math inline">\(\{\lambda_k:\, k \in \mathbb{N}_0\}\)</span> e <span class="math inline">\(\{\mu_k:\, k \in \mathbb{N}_0\}\)</span> se for uma C.M. homogénea em tempo contínuo que satisfaz os axiomas:</p>
 <ol style="list-style-type: decimal">
 <li><p><span class="math inline">\(P_{i,i+1}(h)=P(X_{t+h}=i+1 \mid X_{t}=i)=\lambda_i h + o(h), \quad i \geq 0.\)</span></p></li>
 <li><p><span class="math inline">\(P_{i,i-1}(h)=P(X_{t+h}=i-1 \mid X_{t}=i)=\mu_i h + o(h), \quad i \geq 1.\)</span></p></li>
-<li><p><span class="math inline">\(P_{i,i}(h)=P(X_{t+h}=i \mid X_{t}=i)=1-(\lambda_i+\mu_i) h + o(h), \quad i \geq 0.\)</span></p></li>
-<li><p><span class="math inline">\(P_{i,j}(0)=\delta_{ij}.\)</span></p></li>
+<li><p><span class="math inline">\(P_{ii}(h)=P(X_{t+h}=i \mid X_{t}=i)=1-(\lambda_i+\mu_i) h + o(h), \quad i \geq 0.\)</span></p></li>
+<li><p><span class="math inline">\(P_{ij}(0)=\delta_{ij}.\)</span></p></li>
 <li><p><span class="math inline">\(\mu_0=0,\quad \lambda_0&gt;0,\quad \mu_i,\ \lambda_i \ge 0,\ i\in\mathbb{N}_0.\)</span></p></li>
 </ol>
 <p>Nota: (i) <span class="math inline">\(\delta_{ij}\)</span> é o símbolo de Kronecker, i.e., <span class="math inline">\(\delta_{ij}=1\)</span> se <span class="math inline">\(i=j\)</span> e <span class="math inline">\(\delta_{ij}=0\)</span> se <span class="math inline">\(i\neq j\)</span>; (ii) os termos <span class="math inline">\(o(h)\)</span> podem depender de <span class="math inline">\(i\)</span> e satisfazem <span class="math inline">\(o(h)\to 0\)</span> quando <span class="math inline">\(h\to 0\)</span>.</p>
-<p>Quando ocorre um nascimento, o processo passa do estado <span class="math inline">\(i\)</span> para <span class="math inline">\(i+1\)</span>; quando ocorre uma morte, passa de <span class="math inline">\(i\)</span> para <span class="math inline">\(i-1\)</span>. Em suma, é um processo de nascimento puro com a inclusão de mortes.</p>
+<p>Quando ocorre um nascimento, o processo passa do estado <span class="math inline">\(i\)</span> para <span class="math inline">\(i+1\)</span>; quando ocorre uma morte, passa de <span class="math inline">\(i\)</span> para <span class="math inline">\(i-1\)</span>. Em suma, é a generalização do processo de nascimento puro que permite também mortes.</p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="remark">
@@ -666,21 +666,12 @@ p_k(t) = e^{-k\lambda t} \left( e^{\lambda t} - 1 \right)^{k-1}, \quad k = 1,2,\
 <ol style="list-style-type: decimal">
 <li><p><span class="math inline">\(P_{ij}(t) \ge 0\)</span>.</p></li>
 <li><p><span class="math inline">\(\displaystyle \sum_{j=0}^{\infty} P_{ij}(t)=1\)</span>.</p></li>
-<li><p>Para quaisquer <span class="math inline">\(s,t\in\mathbb{R}_0^+\)</span>,
-<span class="math display">\[\begin{align*}
-P_{ij}(t+s) &amp;= P(X_{t+s}=j \mid X_0=i)  \\
-         &amp;= \sum_{k=0}^{\infty} P(X_{t+s}=j, X_t=k \mid X_0=i) \\
-         &amp;= \sum_{k=0}^{\infty} P(X_{t+s}=j \mid X_t=k, X_0=i)\, P(X_t=k \mid X_0=i) \\
-         &amp;= \sum_{k=0}^{\infty} P(X_{t+s}=j \mid X_t=k)\, P(X_t=k \mid X_0=i) \\
-         &amp;= \sum_{k=0}^{\infty} P_{ik}(t)\, P_{kj}(s).
-\end{align*}\]</span></p></li>
-</ol>
-<p>Temos então as <strong>Equações de Chapman–Kolmogorov</strong>:
+<li><p>Para quaisquer <span class="math inline">\(s,t\in\mathbb{R}_0^+\)</span>, as <strong>Equações de Chapman–Kolmogorov</strong> são dadas por:
 <span class="math display" id="eq:chapkol">\[\begin{equation}
 \tag{3.2}
 \boxed{P_{ij}(t+s)=\sum_{k=0}^{\infty} P_{ik}(t)\, P_{kj}(s).}
-\end{equation}\]</span></p>
-<p>Nesta dedução, as igualdades usam, por ordem: definição das probabilidades de transição, a regra da probabilidade total, a regra do produto para condicionais, a propriedade de Markov (elimina a dependência de <span class="math inline">\(X_0\)</span> na condição) e a identificação das probabilidades de transição homogéneas no tempo.</p>
+\end{equation}\]</span></p></li>
+</ol>
 <p>As probabilidades de transição e as leis marginais caracterizam a distribuição do processo. Se
 <span class="math display">\[
 q_i := P(X_0=i),\qquad i\in\mathbb{N}_0,
@@ -701,58 +692,55 @@ P(X_t=n) &amp;= \sum_{i=0}^{\infty} P(X_t=n, X_0=i) \\
 <p>Considere-se agora a variável aleatória</p>
 <p><span class="math display">\[T_i = \text{tempo de espera de } X_t \text{ no estado } i.\]</span></p>
 <p>É possível mostrar (ver, por exemplo, Karlin &amp; Taylor) que, quando <span class="math inline">\(h \to 0\)</span>,</p>
-<p><span class="math display">\[P(T_i \ge t+h) = P(T_i \ge t) \cdot P(T_i \ge h).\]</span></p>
-<p>Podemos ainda escrever esta igualdade do seguinte modo:
-<span class="math display">\[\begin{align*}
-P(T_i \ge t+h) &amp;= P(T_i \ge t) \cdot P(T_i \ge h) \\
-               &amp;= P(T_i \ge t) \cdot P(X_{t+h}=i \mid X_t=i) \\
-               &amp;= P(T_i \ge t) \cdot (P_{ii}(h) + o(h)) \\
-               &amp;= P(T_i \ge t) \cdot (1-(\lambda_i+\mu_i)h + o(h)).
-\end{align*}\]</span></p>
-<p>Designando <span class="math inline">\(G_i(t)=P(T_i \ge t)\)</span>, obtemos
+<p><span class="math display">\[P(T_i \ge t+h) = P(T_i \ge t) \cdot (1-(\lambda_i+\mu_i)h + o(h)).\]</span></p>
+<p>Nesta equação, dividindo por <span class="math inline">\(h\)</span> e tomando o limite quando <span class="math inline">\(h \to 0\)</span>, obtém-se
 <span class="math display">\[
-G_i(t+h) = G_i(t)\,[1-(\lambda_i+\mu_i)h] + o(h),
+\dfrac{d}{dt}P(T_i \ge t) = -(\lambda_i+\mu_i)\,P(T_i \ge t),
 \]</span>
-donde, dividindo por <span class="math inline">\(h\)</span> e tomando o limite quando <span class="math inline">\(h \to 0\)</span>,
-<span class="math display">\[
-\dfrac{d}{dt}G_i(t) = -(\lambda_i+\mu_i)\,G_i(t).
-\]</span></p>
-<p>A solução é
-<span class="math display">\[
-G_i(t) = \exp\{-(\lambda_i+\mu_i)t\},
-\]</span>
-isto é, a <strong>função de sobrevivência</strong> do tempo de espera em <span class="math inline">\(i\)</span>.<br />
-Logo, a <strong>função de distribuição</strong> é
+cuja solução é:</p>
+<p><span class="math display">\[P(T_i \ge t) = \exp\{-(\lambda_i+\mu_i)t\}.\]</span>
+Logo, a <strong>função de distribuição</strong> de <span class="math inline">\(T_i\)</span> é
 <span class="math display">\[
 P(T_i \le t) = 1 - \exp\{-(\lambda_i+\mu_i)t\}, \quad t \ge 0,
 \]</span>
 e, portanto,
 <span class="math display">\[
-\boxed{T_i \sim \text{Exp}(\lambda_i+\mu_i).}
+\boxed{T_i \sim \text{Exp}(\lambda_i+\mu_i), \qquad 0&lt; \lambda_i+\mu_i &lt; +\infty.}
 \]</span></p>
-<p>O tempo médio de espera é
+<p>donde se obtém o tempo médio de espera:
 <span class="math display">\[
-E[T_i] = \dfrac{1}{\lambda_i+\mu_i}.
+E(T_i) = \dfrac{1}{\lambda_i+\mu_i}.
 \]</span></p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="remark">
-<p><span id="unlabeled-div-151" class="remark"><em>Nota</em>. </span>O movimento de <span class="math inline">\(X_t\)</span> pode ser descrito do seguinte modo.<br />
-O processo permanece num certo estado <span class="math inline">\(i\)</span> por um tempo aleatório <span class="math inline">\(T_i\)</span>, com distribuição exponencial de parâmetro <span class="math inline">\(\lambda_i+\mu_i\)</span>.<br />
-Quando abandona o estado <span class="math inline">\(i\)</span>, o processo transita para um dos estados vizinhos:</p>
+<p><span id="unlabeled-div-151" class="remark"><em>Nota</em>. </span>O movimento de <span class="math inline">\(X_t\)</span> pode ser descrito do seguinte modo. O processo permanece num certo estado <span class="math inline">\(i\)</span> por um tempo aleatório <span class="math inline">\(T_i\)</span>, com distribuição exponencial de parâmetro <span class="math inline">\(\lambda_i+\mu_i\)</span>. Quando abandona o estado <span class="math inline">\(i\)</span>, o processo transita para um dos estados vizinhos:</p>
 <ul>
 <li>com probabilidade <span class="math inline">\(\lambda_i / (\lambda_i+\mu_i)\)</span>, passa para <span class="math inline">\(i+1\)</span>;</li>
 <li>com probabilidade <span class="math inline">\(\mu_i / (\lambda_i+\mu_i)\)</span>, passa para <span class="math inline">\(i-1\)</span>.</li>
 </ul>
 <p>Esquematicamente:</p>
 <p><img src="index_files/figure-html/fig7-1.png" width="55%" style="display: block; margin: auto;" /></p>
-<p>Uma possível realização de <span class="math inline">\(X_t\)</span> é:<br />
-<span class="math display">\[i \longrightarrow i+1 \longrightarrow i \longrightarrow i-1 \longrightarrow \dots\]</span></p>
-<p>O movimento é análogo ao de um caminho aleatório (<em>random walk</em>), com a diferença de que o tempo de permanência em cada estado é uma v.a. exponencial.</p>
 </div>
 </div>
 <div id="equacoes-diferenciais-de-processos-de-nascimento-e-morte" class="section level3 hasAnchor" number="3.3.3">
 <h3><span class="header-section-number">3.3.3</span> Equações diferenciais de processos de nascimento e morte<a href="cadeias-de-markov-em-tempo-continuo.html#equacoes-diferenciais-de-processos-de-nascimento-e-morte" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>As equações de Chapman–Kolmogorov descrevem a evolução das probabilidades de transição ao longo do tempo. A partir destas equações, podemos deduzir as <strong>equações diferenciais de Kolmogorov</strong>, que descrevem a evolução de <span class="math inline">\(P_{ij}(t)\)</span> em função do tempo.</p>
+<p><strong>Equações de Chapman–Kolmogorov:</strong></p>
+<ul>
+<li><p>Expressam como as probabilidades de transição entre estados se relacionam em diferentes instantes de tempo.</p></li>
+<li><p>Permitem calcular a probabilidade de ir de um estado inicial para um estado final através de todos os estados intermediários.</p></li>
+</ul>
+<p><strong>Equações diferenciais de Kolmogorov:</strong></p>
+<ul>
+<li><p>São obtidas a partir das equações de Chapman–Kolmogorov.</p></li>
+<li><p>Descrevem explicitamente a evolução temporal das probabilidades de transição <span class="math inline">\(P_{ij}(t)\)</span>.</p></li>
+<li><p><strong>Para frente (Forward/Fokker-Planck),</strong> acompanham a evolução da <strong>densidade de probabilidade</strong>. As equações de <strong>avanço</strong> “olham para a frente” no tempo, isto é, descrevem como as probabilidades de estar em cada estado evoluem ao longo do tempo (a origem <span class="math inline">\(i\)</span> é fixa e o estado final é móvel).</p></li>
+<li><p><strong>Para trás (Backward),</strong> calculam <strong>a probabilidade futura de estados a partir do estado atual</strong>. As equações de <strong>atraso</strong> “olham para trás” no tempo, isto é, estudam como o estado inicial influencia a evolução futura (o destino <span class="math inline">\(j\)</span> é fixo e o estado inicial é móvel).</p></li>
+</ul>
+<p><em>Principais diferenças:</em></p>
+<ul>
+<li><p>As equações de Chapman–Kolmogorov mostram como as probabilidades de transição em diferentes instantes de tempo estão relacionadas, sem descrever diretamente a evolução temporal.</p></li>
+<li><p>As equações de Kolmogorov são equações diferenciais que descrevem explicitamente como essas probabilidades evoluem ao longo do tempo, seja para frente (densidade) ou para trás (probabilidade futura a partir do estado atual).</p></li>
+</ul>
 <p><span class="math inline">\(\,\)</span></p>
 <p>Pela relação <a href="cadeias-de-markov-em-tempo-continuo.html#eq:chapkol">(3.2)</a>, temos:</p>
 <p><span class="math display">\[\begin{align*}
@@ -768,11 +756,6 @@ P&#39;_{ij}(t) = \lambda_i P_{i+1,j}(t) + \mu_i P_{i-1,j}(t) - (\lambda_i + \mu_
 }
 \end{equation*}\]</span></p>
 <p>Para <span class="math inline">\(i = 0\)</span>, temos:</p>
-<p><span class="math display">\[\begin{align*}
-P_{0j}(t+h) &amp;= P_{00}(h)\, P_{0j}(t) + P_{0,1}(h)\, P_{1j}(t) + \sum_{k\ge 2} P_{0k}(h)\, P_{kj}(t) \\
-            &amp;= \left(1 - \lambda_0 h\right) P_{0j}(t) + \lambda_0 h\, P_{1j}(t) + o(h),
-\end{align*}\]</span></p>
-<p>donde se obtém:</p>
 <p><span class="math display">\[\begin{equation*}
 \boxed{
 P&#39;_{0j}(t) = \lambda_0 P_{1j}(t) - \lambda_0 P_{0j}(t).
@@ -812,8 +795,8 @@ P&#39;_{i0}(t) = \mu_1 P_{i1}(t) - \lambda_0 P_{i0}(t).
 <p><span class="math display">\[
 \boxed{
 \begin{cases}
-\lambda_0 \pi_1 - \lambda_0 \pi_0 = 0, &amp; j = 0, \\
-\lambda_{j-1} \pi_{j-1} + \mu_{j+1} \pi_{j+1} - (\lambda_j + \mu_j) \pi_j = 0, &amp; j \ge 1,
+\lambda_0 \pi_0 = \mu_1 \pi_1, &amp; j = 0, \\
+\lambda_{j-1} \pi_{j-1} + \mu_{j+1} \pi_{j+1} = (\lambda_j + \mu_j) \pi_j, &amp; j \ge 1,
 \end{cases}}
 \]</span></p>
 <p>com a condição de normalização
@@ -850,7 +833,7 @@ P&#39;_{i0}(t) = \mu_1 P_{i1}(t) - \lambda_0 P_{i0}(t).
 <p>Seja <span class="math inline">\((X(t), ~t\geq 0)\)</span> um processo de nascimento e morte tal que:
 <span class="math display">\[
 \begin{array}{rclcc}
-\lambda_n &amp; = &amp; \lambda q^n &amp; 0&lt;q&lt;1,\;\lambda&gt;0 &amp; n=0,1,2,\dots \\
+\lambda_n &amp; = &amp; \lambda q^n &amp; 0&lt;q&lt;1,\;\lambda&gt;0, &amp; n=0,1,2,\dots \\
 \mu_n &amp; = &amp; \mu &amp; \mu&gt;0 &amp; n=1,2,\dots \\
 \mu_0 &amp; = &amp; 0 &amp; &amp;
 \end{array}
@@ -879,7 +862,7 @@ P_i&#39;(t) = -(\lambda + i\,\mu) P_i(t) + \lambda P_{i-1}(t) + (i+1)\mu P_{i+1}
 <span class="math display">\[
 P_i(t) = \frac{(\lambda/\mu)^i}{i!} \left(1 - e^{-\mu t}\right)^i \exp\left\{ -\frac{\lambda}{\mu} \left(1 - e^{-\mu t}\right) \right\}, \quad i = 0,1,2,\dots
 \]</span>
-Determine a probabilidade de todas as linhas estarem desocupadas no regime estacionário (<span class="math inline">\(t \to +\infty\)</span>) e deduza a forma da distribuição estacionária do número de linhas ocupadas.</p></li>
+Determine a probabilidade de todas as linhas estarem desocupadas no regime estacionário <span class="math inline">\((t \to +\infty)\)</span> e deduza a forma da distribuição estacionária do número de linhas ocupadas.</p></li>
 </ol>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
