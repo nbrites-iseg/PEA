@@ -150,7 +150,7 @@ formada pelas álgebras-<span class="math inline">\(\sigma\)</span> geradas pelo
 <p>Um processo estocástico <span class="math inline">\(X = (X(t), ~ t \in T)\)</span> está <strong>adaptado</strong> à filtração <span class="math inline">\((\mathcal{F}_t, t \in T)\)</span> se, para todo <span class="math inline">\(t \in T\)</span>, a variável aleatória <span class="math inline">\(X(t)\)</span> é <span class="math inline">\(\mathcal{F}_t\)</span>-mensurável, isto é, as imagens inversas dos conjuntos <span class="math inline">\(B \in \mathcal{B}\)</span> estão contidas em <span class="math inline">\(\mathcal{F}_t\)</span>.</p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
-<p>Em 1828, o botânico inglês Robert Brown observou pequenas partículas de pólen imersas num líquido a movimentarem-se de forma completamente aleatória. Mais tarde, em 1905, Albert Einstein justificou este movimento com a constante colisão entre as partículas e as moléculas do líquido envolvente e caracterizou-o por um processo estocástico que viria a ser chamado processo de Wiener. Finalmente, em 1918, apareceu a primeira definição matemática do termo através do matemático Norbert Wiener.m</p>
+<p>Em 1828, o botânico inglês Robert Brown observou pequenas partículas de pólen imersas num líquido a movimentarem-se de forma completamente aleatória. Mais tarde, em 1905, Albert Einstein justificou este movimento com a constante colisão entre as partículas e as moléculas do líquido envolvente e caracterizou-o por um processo estocástico que viria a ser chamado processo de Wiener. Finalmente, em 1918, apareceu a primeira definição matemática do termo através do matemático Norbert Wiener.</p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="definition">
 <p><span id="def:unlabeled-div-158" class="definition"><strong>Definição 4.2  (Processo de Wiener padrão (ou movimento Browniano)) </strong></span>Um <strong>processo de Wiener padrão</strong> (ou <strong>movimento Browniano</strong>) é um processo estocástico <span class="math inline">\(W = (W_t)_{t \geq 0}\)</span> definido num espaço de probabilidade <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span>, que satisfaz as seguintes propriedades:</p>
@@ -176,36 +176,45 @@ onde <span class="math inline">\(C([0, \infty[)\)</span> denota o espaço das fu
 </ol>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
-<p>Nos processos estocásticos e, em particular, nas equações diferenciais estocásticas, o processo de Wiener representa o efeito acumulado das perturbações aleatórias na evolução de determinado fenómeno em estudo. Dada a importância deste processo, iremos apresentar algumas das suas propriedades.</p>
-<p><span class="math inline">\(\,\)</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-159" class="definition"><strong>Definição 4.3  </strong></span>Considere-se uma função <span class="math inline">\(f:[0,t] \rightarrow \mathbb{R}\)</span> e uma sequência de partições <span class="math inline">\(\mathcal{P}_n = \{t_0^n, t_1^n, \ldots, t_n^n\}\)</span> do intervalo <span class="math inline">\([0,t]\)</span>, com <span class="math inline">\(0 = t_0^n &lt; t_1^n &lt; \cdots &lt; t_n^n = t\)</span> para cada <span class="math inline">\(n \in \mathbb{N}\)</span>, tais que
+<p><span id="def:unlabeled-div-159" class="definition"><strong>Definição 4.3  </strong></span>Considere-se uma função <span class="math inline">\(f:[0,t]\to\mathbb{R}\)</span>. Para uma partição <span class="math inline">\(\mathcal{P}=\{0=s_0&lt; s_1&lt;\cdots&lt; s_m=t\}\)</span>, denote-se
 <span class="math display">\[
-\delta_n = \max_{0 \leq i \leq n-1} |t_{i+1}^n - t_i^n| \to 0 \quad \text{quando } n \to +\infty.
+S(f,\mathcal{P})=\sum_{i=0}^{m-1} |f(s_{i+1})-f(s_i)|.
 \]</span></p>
 <ul>
-<li><p>A <strong>variação</strong> da função <span class="math inline">\(f\)</span> no intervalo <span class="math inline">\([0,t]\)</span> é definida por
+<li><p>A <strong>variação total</strong> de <span class="math inline">\(f\)</span> no intervalo <span class="math inline">\([0,t]\)</span> é definida por
 <span class="math display">\[
-V_f([0,t]) = V_f(t) := \lim_{n \to +\infty} \sum_{i=0}^{n-1} |f(t_{i+1}^n) - f(t_i^n)|.
-\]</span></p></li>
-<li><p>Diz-se que <span class="math inline">\(f\)</span> tem <strong>variação finita</strong> no intervalo <span class="math inline">\([0,t]\)</span> se <span class="math inline">\(V_f(t) &lt; +\infty\)</span>.</p></li>
-<li><p>Diz-se que <span class="math inline">\(f\)</span> tem <strong>variação limitada</strong> no intervalo <span class="math inline">\([0,t]\)</span> se
+V_f([0,t]) := \sup_{\mathcal{P}} S(f,\mathcal{P}),
+\]</span>
+onde o supremo é tomado sobre todas as partições <span class="math inline">\(\mathcal{P}\)</span> de <span class="math inline">\([0,t]\)</span>.</p></li>
+<li><p>Diz-se que <span class="math inline">\(f\)</span> é de <strong>variação limitada</strong> (ou de <strong>variação finita</strong>) no intervalo <span class="math inline">\([0,t]\)</span> ) se <span class="math display">\[V_f([0,t])&lt;+\infty.\]</span></p></li>
+<li><p>Seja <span class="math inline">\((\mathcal{P}_n)_{n\ge1}\)</span> uma sequência de partições de <span class="math inline">\([0,t]\)</span> cujo diâmetro
+<span class="math inline">\(\delta_n:=\max_i (s_{i+1}^n-s_i^n)\)</span> satisfaz <span class="math inline">\(\delta_n\to0\)</span>. Se existir (e for finito) o limite
 <span class="math display">\[
-\sup_{u \in [0,t]} V_f(u) &lt; k, \quad \text{para algum } k &gt; 0.
-\]</span></p></li>
-<li><p>Diz-se que <span class="math inline">\(f\)</span> tem <strong>variação quadrática</strong> no intervalo <span class="math inline">\([0,t]\)</span> se existir e for finito o limite
-<span class="math display">\[
-V_f^2(t) := \lim_{n \to +\infty} \sum_{i=0}^{n-1} |f(t_{i+1}^n) - f(t_i^n)|^2.
-\]</span></p></li>
+V_f^2([0,t]):=\lim_{n\to\infty}\sum_{i} \big(f(s_{i+1}^n)-f(s_i^n)\big)^2,
+\]</span>
+diz-se que <span class="math inline">\(f\)</span> possui <strong>variação quadrática</strong> no intervalo <span class="math inline">\([0,t]\)</span>, e o valor acima é a sua variação quadrática.</p></li>
 </ul>
+<p>Note-se que, em geral, este limite pode depender da escolha da sequência de partições. Para funções contínuas de variação limitada, tem-se <span class="math inline">\(V_f^2([0,t])=0\)</span>.</p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-160" class="definition"><strong>Definição 4.4  (Função delta de Dirac) </strong></span>Chama-se <strong>função delta de Dirac</strong> (ou simplesmente <strong>delta de Dirac</strong>) à distribuição <span class="math inline">\(\delta(x)\)</span> definida pelas seguintes propriedades:</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(\delta(x) = 0\)</span> para todo <span class="math inline">\(x \neq 0\)</span>;</p></li>
+<li><p><span class="math inline">\(\displaystyle \int_{-\infty}^{+\infty} \delta(x)\,dx = 1\)</span>;</p></li>
+</ol>
+<p>De forma informal, pode pensar-se em <span class="math inline">\(\delta(x)\)</span> como uma “função” que vale zero em todo o lado, excepto em <span class="math inline">\(x=0\)</span>, onde assume um valor infinitamente grande de modo a que o seu integral total seja <span class="math inline">\(1\)</span>.</p>
+</div>
+<p><span class="math inline">\(\,\)</span></p>
+<p>Nos processos estocásticos e, em particular, nas equações diferenciais estocásticas, o processo de Wiener representa o efeito acumulado das perturbações aleatórias na evolução de determinado fenómeno em estudo. Dada a importância deste processo, iremos apresentar algumas das suas propriedades.</p>
+<p><span class="math inline">\(\,\)</span></p>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-160" class="proposition"><strong>Propriedade 4.1  (Propriedades do processo de Wiener) </strong></span>O processo de Wiener, <span class="math inline">\(W_t\)</span>, possui as seguintes propriedades:</p>
+<p><span id="prp:unlabeled-div-161" class="proposition"><strong>Propriedade 4.1  (Propriedades do processo de Wiener) </strong></span>O processo de Wiener, <span class="math inline">\(W_t\)</span>, possui as seguintes propriedades:</p>
 <ol style="list-style-type: decimal">
 <li><p>Existe uma versão separável e contínua do processo, isto é, com trajectórias quase certamente contínuas;</p></li>
 <li><p>Para todo <span class="math inline">\(t \geq 0\)</span>, <span class="math inline">\(W_t \sim \mathcal{N}(0,t);\)</span></p></li>
-<li><p>A função de covariância é dada por <span class="math inline">\(Cov[W_s, W_t] = E[W_s W_t] = s \wedge t;\)</span></p></li>
+<li><p>A função de covariância é dada por <span class="math inline">\(Cov(W_s, W_t) = E(W_s W_t) = s \wedge t;\)</span></p></li>
 <li><p><span class="math inline">\(W_t\)</span> é um processo de Markov homogéneo;</p></li>
 <li><p>A distribuição condicional de <span class="math inline">\(W_{s+\tau}\)</span> dado <span class="math inline">\(W_s = x\)</span> é Normal com média <span class="math inline">\(x\)</span> e variância <span class="math inline">\(\tau\)</span>;</p></li>
 <li><p><span class="math inline">\(W_t\)</span> é uma martingala em relação à sua filtração natural;</p></li>
@@ -216,36 +225,33 @@ V_f^2(t) := \lim_{n \to +\infty} \sum_{i=0}^{n-1} |f(t_{i+1}^n) - f(t_i^n)|^2.
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="remark">
-<p><span id="unlabeled-div-161" class="remark"><em>Nota</em> (Ruído branco como derivada generalizada do processo de Wiener). </span>Embora as trajectórias do processo de Wiener sejam, quase certamente, contínuas mas não diferenciáveis (propriedade 7), e tenham variação total infinita (propriedade 8), é possível interpretar a sua derivada no <strong>sentido das distribuições generalizadas</strong> (ou distribuições de Schwartz).</p>
-<p>Neste contexto, define-se a <strong>derivada generalizada</strong> do processo de Wiener como
+<p><span id="unlabeled-div-162" class="remark"><em>Nota</em> (Ruído branco como derivada generalizada do processo de Wiener). </span>Embora as trajectórias do processo de Wiener sejam, quase certamente, contínuas mas não diferenciáveis (propriedade 7), e possuam variação total infinita (propriedade 8), é possível interpretar a sua derivada no <strong>sentido das distribuições generalizadas</strong> (ou <strong>distribuições de Schwartz</strong>).</p>
+<p>Neste contexto, define-se a <strong>derivada generalizada</strong> do processo de Wiener por
 <span class="math display">\[
 \frac{dW_t}{dt} = \xi_t,
 \]</span>
-onde <span class="math inline">\(\xi_t\)</span> representa um <strong>processo estocástico generalizado</strong>, designado por <strong>ruído branco</strong> (ou <em>white noise</em>). Este processo não é uma função no sentido clássico, mas sim uma distribuição (ou funcional) que actua sobre funções teste suaves.</p>
-<p>O ruído branco <span class="math inline">\(\xi_t\)</span> caracteriza-se pelas seguintes propriedades formais:</p>
+onde <span class="math inline">\(\xi_t\)</span> representa um <strong>processo estocástico generalizado</strong>, designado por <strong>ruído branco</strong> (<em>white noise</em>).</p>
+<p>O ruído branco <span class="math inline">\(\xi_t\)</span> caracteriza-se pelas seguintes propriedades:</p>
 <ul>
-<li>É um processo com média nula: <span class="math inline">\(E(\xi_t) = 0\)</span>;</li>
-<li>A sua função de autocovariância é dada por:
-<span class="math display">\[
-E(\xi_s \xi_t) = \delta(t - s),
-\]</span>
-onde <span class="math inline">\(\delta\)</span> é a função delta de Dirac, interpretada como distribuição.</li>
+<li><p><strong>Média nula:</strong> <span class="math inline">\(E(\xi_t) = 0;\)</span></p></li>
+<li><p><strong>Autocovariância:</strong>
+<span class="math inline">\(E(\xi_s\,\xi_t) = \delta(t - s),\)</span> onde <span class="math inline">\(\delta\)</span> é a <strong>função delta de Dirac</strong>.</p></li>
 </ul>
-<p>Este formalismo é essencial na formulação de equações diferenciais estocásticas (EDEs), nas quais o ruído branco representa uma força aleatória infinitesimalmente perturbadora que actua continuamente ao longo do tempo.</p>
+<p>Em termos intuitivos, o ruído branco pode ser entendido como a “derivada em ordem ao tempo” do processo de Wiener. Este formalismo é fundamental na formulação das <strong>equações diferenciais estocásticas (EDEs)</strong>, nas quais o termo de ruído branco modela uma perturbação aleatória que actua continuamente ao longo do tempo.</p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
-<p>Na imagem seguinte apresentam-se duas trajectórias de um processo de Wiener. As trajectórias foram obtidas por simulação numérica, considerando incrementos independentes e normalmente distribuídos com média zero e variância proporcional ao incremento temporal.</p>
+<p>Na imagem seguinte apresentam-se duas trajetórias do processo de Wiener. As trajetórias foram obtidas por simulação numérica, considerando incrementos independentes e normalmente distribuídos com média zero e variância proporcional ao incremento temporal.</p>
 <p><img src="index_files/figure-html/fig-wiener-trajectories-1.png" width="672" /></p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-162" class="exercise"><strong>Exercício 4.1  (Braumann (2005)) </strong></span>Tirando partido das propriedades do processo de Wiener, calcule ou determine:</p>
+<p><span id="exr:unlabeled-div-163" class="exercise"><strong>Exercício 4.1  </strong></span>Tirando partido das propriedades do processo de Wiener, calcule ou determine:</p>
 <ol style="list-style-type: decimal">
 <li><p><span class="math inline">\(P(W(2.7) &gt; 1.5)\)</span>.</p></li>
 <li><p><span class="math inline">\(P(-1.5 &lt; W(2.7) &lt; 1.5)\)</span>.</p></li>
 <li><p><span class="math inline">\(P(W(2.7) &lt; 1.5 \mid W(1.8) = 1)\)</span>.</p></li>
 <li><p><span class="math inline">\(P(-1.5 &lt; W(2.7) &lt; 1.5 \mid W(1.8) = 1)\)</span>.</p></li>
-<li><p><span class="math inline">\(E(W(t) \mid W(s), W(u)) \quad \text{com } 0 &lt; u &lt; s &lt; t\)</span>.</p></li>
-<li><p><span class="math inline">\(Var(W(t) \mid W(s), W(u)) \quad \text{com } 0 &lt; u &lt; s &lt; t\)</span>.</p></li>
+<li><p><span class="math inline">\(E(W(t) \mid W(s), W(u)), \quad \text{com } 0 &lt; u &lt; s &lt; t\)</span>.</p></li>
+<li><p><span class="math inline">\(Var(W(t) \mid W(s), W(u)), \quad \text{com } 0 &lt; u &lt; s &lt; t\)</span>.</p></li>
 <li><p><span class="math inline">\(P(W(2.7) &gt; 1.5 \mid W(1.8) = 1,\, W(0.5) = -2)\)</span>.</p></li>
 <li><p><span class="math inline">\(E(W(2.7) \mid W(1.8) = 1,\, W(0.5) = -2)\)</span>.</p></li>
 <li><p><span class="math inline">\(P(W(1.8) &lt; 1 \mid W(2.7) = 1.5)\)</span>.</p></li>
@@ -258,7 +264,7 @@ onde <span class="math inline">\(\delta\)</span> é a função delta de Dirac, i
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-163" class="exercise"><strong>Exercício 4.2  </strong></span></p>
+<p><span id="exr:unlabeled-div-164" class="exercise"><strong>Exercício 4.2  </strong></span></p>
 <!-- Alfredo 6.1-->
 <p>Considere um movimento Browniano standard <span class="math inline">\((B(t), ~t\geq 0)\)</span> nos instantes <span class="math inline">\(0&lt;u&lt;u+v&lt;u+v+w\)</span>, em que <span class="math inline">\(u,v,w&gt;0\)</span>. Calcule
 <span class="math display">\[
@@ -267,7 +273,7 @@ E(B(u)B(u+v)B(u+v+w)).
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-164" class="exercise"><strong>Exercício 4.3  </strong></span></p>
+<p><span id="exr:unlabeled-div-165" class="exercise"><strong>Exercício 4.3  </strong></span></p>
 <!-- Alfredo 6.2-->
 <p>Seja <span class="math inline">\((B(t), ~t\geq 0)\)</span> com <span class="math inline">\(B(0)\equiv 3\)</span>, um movimento Browniano com variância <span class="math inline">\(\sigma^{2}\)</span>. Determine
 <span class="math display">\[
@@ -276,7 +282,7 @@ Cov(B(t),B(s)), \quad t,s \geq 0.
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-165" class="exercise"><strong>Exercício 4.4  </strong></span></p>
+<p><span id="exr:unlabeled-div-166" class="exercise"><strong>Exercício 4.4  </strong></span></p>
 <!-- Alfredo 6.3-->
 <p>Considere um movimento Browniano standard <span class="math inline">\((B(t), ~t\geq 0)\)</span>. Determine as funções de covariância para os processos estocásticos seguintes:</p>
 <ol style="list-style-type: lower-alpha">
@@ -287,7 +293,7 @@ Cov(B(t),B(s)), \quad t,s \geq 0.
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-166" class="exercise"><strong>Exercício 4.5  </strong></span></p>
+<p><span id="exr:unlabeled-div-167" class="exercise"><strong>Exercício 4.5  </strong></span></p>
 <!-- Alfredo 6.5-->
 <p>Considere um movimento Browniano standard <span class="math inline">\((B(t), ~t \geq 0)\)</span>. Para <span class="math inline">\(t\)</span> fixo e <span class="math inline">\(M(t)=\max\limits_{0\leq u\leq t}B(u)\)</span>, mostre que:</p>
 <ol style="list-style-type: lower-alpha">
@@ -300,13 +306,13 @@ f_{M(t)}(x)=\frac{2}{\sqrt{t}}\phi (x/\sqrt{t}),  ~ x&gt;0.
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-167" class="exercise"><strong>Exercício 4.6  </strong></span></p>
+<p><span id="exr:unlabeled-div-168" class="exercise"><strong>Exercício 4.6  </strong></span></p>
 <!-- Alfredo 6.6-->
 <p>Sejam <span class="math inline">\(B_{1}(t)\)</span> e <span class="math inline">\(B_{2}(t)\)</span> dois movimentos Brownianos independentes e <span class="math inline">\(R(t)=\sqrt{B_{1}(u)^{2}+B_{2}(u)^{2}},\)</span> <span class="math inline">\(t\geq 0\)</span>. Calcule <span class="math inline">\(E(R(t)).\)</span></p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-168" class="exercise"><strong>Exercício 4.7  </strong></span></p>
+<p><span id="exr:unlabeled-div-169" class="exercise"><strong>Exercício 4.7  </strong></span></p>
 <!-- Alfredo 6.7-->
 <p>As flutuações de preço das acções de determinada companhia são modeladas por um movimento Browniano <span class="math inline">\((A(t),\, t \geq 0)\)</span>. Suponha que a companhia entra em falência se o preço de mercado das acções atingir o nível zero.</p>
 <p>Se o valor inicial das acções for <span class="math inline">\(A(0) = 5\)</span> u.m., determine a probabilidade de …</p>
@@ -317,13 +323,13 @@ f_{M(t)}(x)=\frac{2}{\sqrt{t}}\phi (x/\sqrt{t}),  ~ x&gt;0.
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-169" class="exercise"><strong>Exercício 4.8  </strong></span></p>
+<p><span id="exr:unlabeled-div-170" class="exercise"><strong>Exercício 4.8  </strong></span></p>
 <!-- Alfredo 6.8-->
 <p>Considere um movimento Browniano com parâmetros <span class="math inline">\(\mu=0.1\)</span> e <span class="math inline">\(\sigma =2\)</span>. Calcule a probabilidade do processo sair fora do intervalo <span class="math inline">\((a,b]\)</span> no ponto <span class="math inline">\(b\)</span>, partindo de <span class="math inline">\(X(0)=0\)</span>, para <span class="math inline">\(b=1,10,100\)</span> e <span class="math inline">\(a=-b\)</span>.</p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-170" class="exercise"><strong>Exercício 4.9  </strong></span></p>
+<p><span id="exr:unlabeled-div-171" class="exercise"><strong>Exercício 4.9  </strong></span></p>
 <!-- Alfredo 6.9-->
 <p>A flutuação do preço de determinado tipo de acções pode ser descrita por um movimento browniano geométrico com desvio-padrão <span class="math inline">\(\alpha = 0\)</span>. Supondo que adquire estas acções, quais são as hipóteses de ver o seu capital investido duplicar?</p>
 </div>
@@ -331,14 +337,14 @@ f_{M(t)}(x)=\frac{2}{\sqrt{t}}\phi (x/\sqrt{t}),  ~ x&gt;0.
 <div id="o-integral-de-ito" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> O integral de Itô<a href="complementos-de-processos-estocasticos.html#o-integral-de-ito" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="remark">
-<p><span id="unlabeled-div-171" class="remark"><em>Nota</em>. </span>No que se segue, adoptámos a seguinte notação para esperança matemática e probabilidade condicionadas:</p>
+<p><span id="unlabeled-div-172" class="remark"><em>Nota</em>. </span>No que se segue, adoptámos a seguinte notação para esperança matemática e probabilidade condicionadas:</p>
 <p><span class="math display">\[E(\cdot \mid X_s=x)=E_{s,x}(\cdot)\]</span>
 e
 <span class="math display">\[P(\cdot \mid X_s=x)=P_{s,x}(\cdot).\]</span></p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-172" class="definition"><strong>Definição 4.4  (Processo de difusão) </strong></span>Seja <span class="math inline">\((\Omega,\mathcal{F},P)\)</span> um espaço de probabilidade e <span class="math inline">\((X_t, t \geq 0)\)</span> um processo estocástico definido nesse espaço. Diz-se que <span class="math inline">\(X_t\)</span> é um <strong>processo de difusão</strong> se satisfizer as seguintes propriedades:</p>
+<p><span id="def:unlabeled-div-173" class="definition"><strong>Definição 4.5  (Processo de difusão) </strong></span>Seja <span class="math inline">\((\Omega,\mathcal{F},P)\)</span> um espaço de probabilidade e <span class="math inline">\((X_t, t \geq 0)\)</span> um processo estocástico definido nesse espaço. Diz-se que <span class="math inline">\(X_t\)</span> é um <strong>processo de difusão</strong> se satisfizer as seguintes propriedades:</p>
 <ol style="list-style-type: lower-roman">
 <li><p><span class="math inline">\(X_t\)</span> é um processo de Markov;</p></li>
 <li><p>As trajectórias de <span class="math inline">\(X_t\)</span> são quase certamente contínuas;</p></li>
@@ -363,20 +369,11 @@ e
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-173" class="exercise"><strong>Exercício 4.10  (Fonte: Braumann (2005)) </strong></span></p>
+<p><span id="exr:unlabeled-div-174" class="exercise"><strong>Exercício 4.10  (Fonte: Braumann (2005)) </strong></span></p>
 <ol style="list-style-type: lower-roman">
 <li><p>Mostre que o processo de Wiener <span class="math inline">\(W_t\)</span> é um processo de difusão homogéneo com coeficiente de tendência nulo e coeficiente de difusão unitário.</p></li>
 <li><p>Mostre que <span class="math inline">\(X_t = x_0 + \sigma W_t\)</span>, com <span class="math inline">\(x_0\)</span> e <span class="math inline">\(\sigma\)</span> constantes, sendo um processo de Wiener (não-padrão), é um processo de difusão homogéneo com coeficiente de tendência nulo e coeficiente de difusão <span class="math inline">\(\sigma^2\)</span>.</p></li>
 <li><p>Mostre que <span class="math inline">\(Z_t = x_0 + \mu t + \sigma W_t\)</span>, com <span class="math inline">\(x_0\)</span>, <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> constantes, conhecido como movimento browniano com tendência, é um processo de difusão homogéneo com coeficiente de tendência <span class="math inline">\(\mu\)</span> e coeficiente de difusão <span class="math inline">\(\sigma^2\)</span>.</p></li>
-</ol>
-</div>
-<p><span class="math inline">\(\,\)</span></p>
-<div class="definition">
-<p><span id="def:unlabeled-div-174" class="definition"><strong>Definição 4.5  (Função delta de Dirac) </strong></span>Chama-se <strong>função delta de Dirac</strong> à função generalizada <span class="math inline">\(\delta(x)\)</span> com as seguintes propriedades:</p>
-<ol style="list-style-type: decimal">
-<li><p><span class="math inline">\(\delta(x) = 0\)</span>, para todo o <span class="math inline">\(x \neq 0\)</span>;</p></li>
-<li><p><span class="math inline">\(\delta(0) = +\infty\)</span>;</p></li>
-<li><p><span class="math inline">\(\displaystyle \int_{-\infty}^{+\infty} \delta(x)\,dx = 1\)</span>.</p></li>
 </ol>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
