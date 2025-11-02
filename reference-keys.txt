@@ -504,3 +504,9 @@ thm:unlabeled-div-175
 eq:distL
 exm:unlabeled-div-141
 thm:unlabeled-div-145
+thm:unlabeled-div-178
+exr:unlabeled-div-192
+thm:unlabeled-div-177
+exr:unlabeled-div-191
+exm:unlabeled-div-176
+exr:unlabeled-div-190
