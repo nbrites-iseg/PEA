@@ -785,17 +785,20 @@ P(X_t = Y_t) = 1, \quad \forall t \in [0, T].
 <p>A demonstração deste teorema recorre ao <em>Lema de Gronwall</em> e pode ser encontrada em qualquer bom livro sobre equações diferenciais estocásticas.</p>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-190" class="exercise"><strong>Exercício 4.8  (Fonte: Braumann (2005)) </strong></span>Determine <span class="math inline">\(d(tW(t))\)</span> e utilize o resultado para mostrar que
+<p><span id="exr:unlabeled-div-190" class="exercise"><strong>Exercício 4.8  </strong></span></p>
+<!-- ex6.10 pag 96 -->
+<p>Determine <span class="math inline">\(d(tW(t))\)</span> e utilize o resultado para mostrar que
 <span class="math display">\[
 \int_0^t s \, dW(s) = tW(t) - \int_0^t W(s)\, ds.
 \]</span></p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-191" class="exercise"><strong>Exercício 4.9  (Fonte: Braumann (2005)) </strong></span>Mostre que a equação <span class="math inline">\(dY(t) = Y(t)\, dW(t)\)</span>, com <span class="math inline">\(Y(0) = 1\)</span>, tem como solução
+<p><span id="exr:unlabeled-div-191" class="exercise"><strong>Exercício 4.9  </strong></span>Mostre que a equação <span class="math inline">\(dY(t) = Y(t)\, dW(t)\)</span>, com <span class="math inline">\(Y(0) = 1\)</span>, tem como solução
 <span class="math display">\[
 Y(t) = \exp\left(W(t) - \frac{t}{2}\right), \quad \text{para } t \geq 0.
 \]</span></p>
+<p><strong>Sugestão:</strong> aplique a mudança de variável <span class="math inline">\(X(t) = \ln Y(t)\)</span> e resolva a EDE resultante.</p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
@@ -842,13 +845,11 @@ dX(t)=rX(t)(\ln K - \ln X(t))\,dt + \sigma X(t)\,dW(t), \quad X(0)=x_0.
 Mostre que a solução deste modelo é dada por:
 <span class="math display">\[
 X(t)=\exp\!\left(
-   \ln K
-   + e^{-r t}\big(\ln x_0-\ln K\big)
-   - \frac{\sigma^2}{2r}\big(1-e^{-r t}\big)
-   + \sigma\int_0^t e^{-r (t-s)}\,dW_s
+   e^{-rt}\ln x_0+ (1-e^{-r t})\big(\ln K-\dfrac{\sigma^2}{2r}\big)  
+   + \sigma\int_0^t e^{r (s-t)}\,dW_s
 \right).
 \]</span>
-<strong>Sugestão:</strong> aplique a mudança de variável <span class="math inline">\(Z(t)=\ln X(t)\)</span> e resolva a EDE resultante.</p>
+<strong>Sugestão:</strong> aplique a mudança de variável <span class="math inline">\(Z(t)=e^{rt}\ln X(t)\)</span> e resolva a EDE resultante.</p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
@@ -862,43 +863,41 @@ Y(t) = y_0\, e^{\left(r - \frac{\sigma^2}{2}\right)t + \sigma W(t)}.
 \]</span>
 <strong>Sugestão:</strong> aplique a mudança de variável <span class="math inline">\(Z(t) = \ln Y(t)\)</span> e resolva a EDE resultante.</p>
 </div>
+<!-- $\,$ -->
+<!-- ::: {.exercise} -->
+<!-- Seja \( X(t) \) o valor de uma ação no instante \( t \geq 0 \), assumindo que satisfaz o modelo de Black-Scholes, com \( X(0) = \$52.800 \), \( r = 0.312/\text{trimestre} \) e \( \sigma^2 = 0.087/\text{trimestre} \). Determine: -->
+<!-- (a) \( P(X(2\ \text{trimestres}) > \$70.000 \mid X(1\ \text{trimestre}) = \$60.500) \) -->
+<!-- (b) \( E(X(1\ \text{trimestre})) \) -->
+<!-- (c) \( P(\$55.000 \leq X(1\ \text{trimestre}) \leq \$65.000) \) -->
+<!-- (d) \( Var(X(1\ \text{trimestre})) \) -->
+<!-- (e) \( E(X(2\ \text{trimestres}) \mid X(0.5\ \text{trimestre}) = \$54.200 \text{ e } X(1\ \text{trimestre}) = \$60.500) \) -->
+<!-- (f) \( P(X(2\ \text{trimestres}) > \$70.000 \mid X(0.5\ \text{trimestre}) = \$54.200 \text{ e } X(1\ \text{trimestre}) = \$60.500) \) -->
+<!-- (g) \( Var(X(2\ \text{trimestres}) \mid X(1\ \text{trimestre}) = \$60.500) \) -->
+<!-- (h) \( E(X(2\ \text{trimestres}) \mid X(1\ \text{trimestre}) = \$60.500) \) -->
+<!-- **Sugestão**: Use o facto de que \( X(t) = X(0) \cdot e^{Z(t)} \), com \( Z(t) \) gaussiano. Logo, -->
+<!-- \[ -->
+<!-- X^2(t) = X(0)^2 \cdot e^{2Z(t)} -->
+<!-- \] -->
+<!-- e então, -->
+<!-- \[ -->
+<!-- E(X^2(t)) = X(0)^2 \cdot E(e^{2Z(t)}) = X(0)^2 \cdot \exp\left( E(2Z(t)) + \frac{1}{2} Var(2Z(t)) \right). -->
+<!-- \] -->
+<!-- ::: -->
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-197" class="exercise"><strong>Exercício 4.15  </strong></span>Seja <span class="math inline">\(X(t)\)</span> o valor de uma ação no instante <span class="math inline">\(t \geq 0\)</span>, assumindo que satisfaz o modelo de Black-Scholes, com <span class="math inline">\(X(0) = \$52.800\)</span>, <span class="math inline">\(r = 0.312/\text{trimestre}\)</span> e <span class="math inline">\(\sigma^2 = 0.087/\text{trimestre}\)</span>. Determine:</p>
-<ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(P(X(2\ \text{trimestres}) &gt; \$70.000 \mid X(1\ \text{trimestre}) = \$60.500)\)</span></p></li>
-<li><p><span class="math inline">\(E(X(1\ \text{trimestre}))\)</span></p></li>
-<li><p><span class="math inline">\(P(\$55.000 \leq X(1\ \text{trimestre}) \leq \$65.000)\)</span></p></li>
-<li><p><span class="math inline">\(Var(X(1\ \text{trimestre}))\)</span></p></li>
-<li><p><span class="math inline">\(E(X(2\ \text{trimestres}) \mid X(0.5\ \text{trimestre}) = \$54.200 \text{ e } X(1\ \text{trimestre}) = \$60.500)\)</span></p></li>
-<li><p><span class="math inline">\(P(X(2\ \text{trimestres}) &gt; \$70.000 \mid X(0.5\ \text{trimestre}) = \$54.200 \text{ e } X(1\ \text{trimestre}) = \$60.500)\)</span></p></li>
-<li><p><span class="math inline">\(Var(X(2\ \text{trimestres}) \mid X(1\ \text{trimestre}) = \$60.500)\)</span></p></li>
-<li><p><span class="math inline">\(E(X(2\ \text{trimestres}) \mid X(1\ \text{trimestre}) = \$60.500)\)</span></p></li>
-</ol>
-<p><strong>Sugestão</strong>: Use o facto de que <span class="math inline">\(X(t) = X(0) \cdot e^{Z(t)}\)</span>, com <span class="math inline">\(Z(t)\)</span> gaussiano. Logo,
-<span class="math display">\[
-X^2(t) = X(0)^2 \cdot e^{2Z(t)}
-\]</span>
-e então,
-<span class="math display">\[
-E(X^2(t)) = X(0)^2 \cdot E(e^{2Z(t)}) = X(0)^2 \cdot \exp\left( E(2Z(t)) + \frac{1}{2} Var(2Z(t)) \right).
-\]</span></p>
-</div>
-<p><span class="math inline">\(\,\)</span></p>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-198" class="exercise"><strong>Exercício 4.16  </strong></span>Considere a seguinte EDE, conhecida como modelo de <strong>log-normal inverso</strong>:
+<p><span id="exr:unlabeled-div-197" class="exercise"><strong>Exercício 4.15  </strong></span>Considere a seguinte EDE
 <span class="math display">\[
 dY(t) = -\frac{\sigma^2}{2} Y(t)\,dt + \sigma Y(t)\,dW(t), \quad Y(0)=y_0.
 \]</span>
-Mostre que a solução deste modelo é dada por:
+Mostre que a sua solução é dada por:
 <span class="math display">\[
-Y(t) = y_0\,e^{\sigma W(t)}.
+Y(t) = y_0\,e^{-\sigma^2 t+\sigma W(t)}.
 \]</span>
 <strong>Sugestão:</strong> aplique a mudança de variável <span class="math inline">\(Z(t) = \ln Y(t)\)</span> e resolva a EDE resultante.</p>
 </div>
 <p><span class="math inline">\(\,\)</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-199" class="exercise"><strong>Exercício 4.17  </strong></span>Considere a seguinte EDE, conhecida como modelo de <strong>Gompertz com parâmetro limite</strong>:
+<p><span id="exr:unlabeled-div-198" class="exercise"><strong>Exercício 4.16  </strong></span>Considere a seguinte EDE, conhecida como modelo de <strong>Gompertz com parâmetro limite</strong>:
 <span class="math display">\[
 dX(t)=(X(t)-\gamma)(\alpha-\beta\ln(X(t)-\gamma))dt + \sigma (X(t)-\gamma)dW(t), \quad X(0)=x_0
 \]</span>
